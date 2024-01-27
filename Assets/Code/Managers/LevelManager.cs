@@ -26,11 +26,8 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-       
         DontDestroyOnLoad(loaderCanvas);
-        //GetAvailableLevels
         CurrentScene = SceneManager.GetActiveScene().name;
-
     }
 
     // Update is called once per frame
@@ -65,8 +62,6 @@ public class LevelManager : MonoBehaviour
         AsyncLoad.allowSceneActivation = true;
 
         //loaderCanvas.SetActive(false);
-
-        Debug.Log("LOADED");
     }
 
     public void LoadSpecificScene(string mainmenu)

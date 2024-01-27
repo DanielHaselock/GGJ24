@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject ScoreCanvas;
     [SerializeField] private GameObject PauseCanvas;
 
+
+    [SerializeField] private InputAction pause;
+
     void Start()
     {
         adddontdestroyonload();
@@ -33,7 +37,8 @@ public class GameManager : MonoBehaviour
         timeManager = GetComponent<TimeManager>();
         timeManager.enabled = false;
         levelManager.LoadNextLevel();
-        MainMenu = SceneManager.GetActiveScene().name; 
+        MainMenu = SceneManager.GetActiveScene().name;
+        pause.performed += _ => Pause();
     }
 
     private void adddontdestroyonload()
@@ -41,6 +46,16 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(ScoreCanvas);
         DontDestroyOnLoad(PauseCanvas);
+    }
+
+    private void OnEnable()
+    {
+        pause.Enable();
+    }
+
+    private void OnDisable()
+    {
+        pause.Disable();
     }
 
     public void PlayGame()
@@ -56,11 +71,13 @@ public class GameManager : MonoBehaviour
         if(state == GameState.Pause)
         {
             PauseCanvas.SetActive(false);
+            state = GameState.InGame;
             Time.timeScale = 1;
         }
         else if (state == GameState.InGame)
         {
             PauseCanvas.SetActive(true);
+            state = GameState.Pause;
             Time.timeScale = 0;
         }
     }

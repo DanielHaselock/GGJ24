@@ -58,11 +58,5 @@ public class TimeManager : MonoBehaviour
             gameManager.ShowScore(false);
             levelManager.PlayNextLevel();
         }
-        
-
-
-
     }
-
-
 }
