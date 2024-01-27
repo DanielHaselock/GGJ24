@@ -277,20 +277,39 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4169307855137132150, guid: 794085da964cd7a47ad647ab981665de, type: 3}
+      propertyPath: m_SortingOrder
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 4169307855137132150, guid: 794085da964cd7a47ad647ab981665de, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1627120775
+      objectReference: {fileID: 0}
     - target: {fileID: 5172902655179697344, guid: 794085da964cd7a47ad647ab981665de, type: 3}
       propertyPath: m_Name
       value: Score
+      objectReference: {fileID: 0}
+    - target: {fileID: 5172902655179697344, guid: 794085da964cd7a47ad647ab981665de, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6181119853223046432, guid: 794085da964cd7a47ad647ab981665de, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -375.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 6181119853223046432, guid: 794085da964cd7a47ad647ab981665de, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -297.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557128233617338439, guid: 794085da964cd7a47ad647ab981665de, type: 3}
+      propertyPath: m_DynamicPixelsPerUnit
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 794085da964cd7a47ad647ab981665de, type: 3}
---- !u!1 &88653737 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4624669859378570837, guid: 794085da964cd7a47ad647ab981665de, type: 3}
-  m_PrefabInstance: {fileID: 88653736}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &570716491
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,6 +378,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1009217366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6943299962196800404, guid: 794085da964cd7a47ad647ab981665de, type: 3}
+  m_PrefabInstance: {fileID: 88653736}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1431499329
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,6 +492,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2725178118640683227, guid: 3e41fac0f9db16c4599216905d877fca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5848373081272469094, guid: 3e41fac0f9db16c4599216905d877fca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.16576672
@@ -534,7 +562,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Coins: []
-  LevelEditor: {fileID: 0}
   CoinsCollected: 0
 --- !u!1001 &1012104571333598786
 PrefabInstance:
@@ -698,6 +725,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 47610227341778618, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: TimePlayingScore
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3408751182318222068, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: m_Name
       value: Managers
@@ -713,7 +744,7 @@ PrefabInstance:
     - target: {fileID: 5274261463659757168, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 88653737}
+      objectReference: {fileID: 1009217366}
     - target: {fileID: 5274261463659757168, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: PauseCanvas
       value: 

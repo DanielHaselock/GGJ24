@@ -21,7 +21,7 @@ public class TimeManager : MonoBehaviour
     public float TimePlayingCurrentLevel = 5f;
 
     [SerializeField]
-    private float TimePlayingScore = 5f;
+    private float TimePlayingScore = 2f;
 
     public bool pPlayTime = true;
 
