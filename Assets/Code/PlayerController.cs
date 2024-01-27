@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private bool m_isGrounded;
     private PlayerInputSystem m_playerInputSystem;
     private Rigidbody2D m_rb;
-    private float m_jumpInput, m_xAxisInput;
+    private float m_jumpInput, m_xAxisInput, m_yAxisInput;
 
     private void Start()
     {
@@ -27,7 +27,17 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         m_jumpInput = m_playerInputSystem.Platforming.Jump.ReadValue<float>();
-        m_xAxisInput = m_playerInputSystem.Platforming.Movement.ReadValue<float>();
+        m_xAxisInput = m_playerInputSystem.Platforming.Movement.ReadValue<Vector2>().x;
+
+        float previousYAxisInput = m_yAxisInput;
+        m_yAxisInput = m_playerInputSystem.Platforming.Movement.ReadValue<Vector2>().y;
+
+        if (previousYAxisInput != m_yAxisInput && previousYAxisInput == -1)
+            m_animator.SetBool("crouching", false);
+
+        if (m_yAxisInput == -1 && m_isGrounded)
+            m_animator.SetBool("crouching", true);
+            
     }
 
     private void FixedUpdate()
