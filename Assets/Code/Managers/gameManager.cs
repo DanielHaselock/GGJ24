@@ -149,24 +149,29 @@ public class GameManager : MonoBehaviour
         if (!ScoreCanvas)
             ScoreCanvas = GetDestroyonLoadGameobject("Score");
 
-        if(!ScoreText)
-        {
-            for (int i = 0; i < ScoreCanvas.transform.childCount; i++)
-            {
-                var child = ScoreCanvas.transform.GetChild(i);
-                for (int j = 0; j < child.childCount; j++)
-                {
-                    if (child.GetChild(j).tag == "ScoreText")
-                    {
-                        ScoreText = child.GetChild(j).gameObject;
-                    }
-                }
-            }
-        }
+        if (!ScoreText)
+            ScoreText = GameObject.FindGameObjectWithTag("ScoreText");
 
         ScoreText.GetComponent<TextMeshProUGUI>().SetText(PlayerPrefs.GetFloat("Score").ToString());
 
-        ScoreCanvas.SetActive(pShow);
+        ScoreCanvas.SetActive(true);
+        GameObject animobject = GameObject.FindGameObjectWithTag("UIScoreImage");
+        if (!animobject)
+            return;
+
+        Animator anim = animobject.GetComponent<Animator>();
+
+        if (pShow)
+        {
+            anim.SetBool("ScreenHide", false);
+            anim.SetBool("ScreenShow", true);
+        }
+        else
+        {
+            anim.SetBool("ScreenHide", true);
+            anim.SetBool("ScreenShow", false);
+        }
+
     }
 
     public void End()

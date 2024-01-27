@@ -9,6 +9,7 @@ TagManager:
   - LevelEditor
   - Score
   - ScoreText
+  - UIScoreImage
   layers:
   - Default
   - TransparentFX
@@ -48,4 +49,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 1627120775
     locked: 0
