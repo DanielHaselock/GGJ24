@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
             m_animator.SetTrigger("Impact");
 
         m_isGrounded = ComputeIsStandingOn("Solid");
+        m_animator.SetBool("grounded", m_isGrounded);
+
         if (m_isGrounded)
         {
             m_rb.gravityScale = 1.0f;
