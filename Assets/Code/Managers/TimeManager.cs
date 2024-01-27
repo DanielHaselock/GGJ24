@@ -48,6 +48,7 @@ public class TimeManager : MonoBehaviour
         {
             state = TimeState.Score;
             Timer = TimePlayingScore;
+            gameManager.Player.SetActive(false);
             gameManager.ShowScore(true);
             levelManager.LoadNextLevel();
         }

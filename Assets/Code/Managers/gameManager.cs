@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject ScoreCanvas;
     [SerializeField] private GameObject PauseCanvas;
+    [SerializeField] public GameObject Player;
 
 
     [SerializeField] private InputAction pause;
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
         levelManager = GetComponent<LevelManager>();
         timeManager = GetComponent<TimeManager>();
         timeManager.enabled = false;
+        levelManager.SetPlayer(Player);
         levelManager.LoadNextLevel();
         MainMenu = SceneManager.GetActiveScene().name;
         pause.performed += _ => Pause();
@@ -46,6 +48,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(ScoreCanvas);
         DontDestroyOnLoad(PauseCanvas);
+        DontDestroyOnLoad(Player);
     }
 
     private void OnEnable()

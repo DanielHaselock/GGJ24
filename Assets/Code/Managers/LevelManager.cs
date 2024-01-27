@@ -15,13 +15,13 @@ public class LevelManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public static LevelManager Instance;
-
     [SerializeField] private
     LevelInfo[] Scenes;
 
     [SerializeField]
     private GameObject loaderCanvas;
+
+    private GameObject Player;
 
     private LevelInfo NextScene;
 
@@ -36,10 +36,9 @@ public class LevelManager : MonoBehaviour
         DontDestroyOnLoad(loaderCanvas);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetPlayer(GameObject pPlayer)
     {
-
+        Player = pPlayer;
     }
 
     public async void LoadNextLevel() //loads in background for score to be shown
