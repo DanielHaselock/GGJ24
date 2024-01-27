@@ -223,22 +223,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2626981458280922483, guid: 86ccd36b1261c7d4498d2769035409ce, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2626981458280922483, guid: 86ccd36b1261c7d4498d2769035409ce, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
-    - target: {fileID: 2626981458280922483, guid: 86ccd36b1261c7d4498d2769035409ce, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadSpecificScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 2626981458280922483, guid: 86ccd36b1261c7d4498d2769035409ce, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LevelManager, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 7067000920683669647, guid: 86ccd36b1261c7d4498d2769035409ce, type: 3}
       propertyPath: m_LocalPosition.x
       value: 375.3529

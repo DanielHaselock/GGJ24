@@ -277,21 +277,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3659674012673019888, guid: 794085da964cd7a47ad647ab981665de, type: 3}
-      propertyPath: m_margin.w
-      value: 47.536255
-      objectReference: {fileID: 0}
-    - target: {fileID: 4737476282901714468, guid: 794085da964cd7a47ad647ab981665de, type: 3}
-      propertyPath: m_margin.w
-      value: 47.536255
-      objectReference: {fileID: 0}
     - target: {fileID: 5172902655179697344, guid: 794085da964cd7a47ad647ab981665de, type: 3}
       propertyPath: m_Name
       value: Score
       objectReference: {fileID: 0}
     - target: {fileID: 5172902655179697344, guid: 794085da964cd7a47ad647ab981665de, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_TagString
+      value: Score
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

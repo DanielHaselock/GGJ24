@@ -60,6 +60,8 @@ public class GameManager : MonoBehaviour
         state = GameState.MainMenu;
         levelManager.LoadNextLevel();
         MainMenu = SceneManager.GetActiveScene().name;
+
+        ShowScore(Score, false);
     }
 
     private void adddontdestroyonload()
@@ -85,6 +87,26 @@ public class GameManager : MonoBehaviour
         return objects.Length == 0;
     }
 
+    private GameObject GetDestroyonLoadGameobject(string tag)
+    {
+        GameObject temp = null;
+
+        temp = new GameObject();
+        Object.DontDestroyOnLoad(temp);
+        UnityEngine.SceneManagement.Scene dontDestroyOnLoad = temp.scene;
+        Object.DestroyImmediate(temp);
+        temp = null;
+
+        GameObject[] objects = dontDestroyOnLoad.GetRootGameObjects();
+
+        foreach (GameObject obj in objects)
+        {
+            if (obj.gameObject.tag == tag)
+                return obj;
+        }
+        return null;
+    }
+
     private void OnEnable()
     {
         pause.Enable();
@@ -97,6 +119,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayGame()
     {
+        Score = 0;
         state = GameState.InGame;
         levelManager.PlayNextLevel();
     }
@@ -120,7 +143,12 @@ public class GameManager : MonoBehaviour
 
     public void ShowScore(float score, bool pShow)
     {
-        ScoreText.GetComponent<TextMeshProUGUI>().SetText(score.ToString());
+        if (!ScoreCanvas)
+            ScoreCanvas = GetDestroyonLoadGameobject("Score");
+
+        if(ScoreText)
+            ScoreText.GetComponent<TextMeshProUGUI>().SetText(score.ToString());
+
         ScoreCanvas.SetActive(pShow);
     }
 
@@ -129,6 +157,7 @@ public class GameManager : MonoBehaviour
         state = GameState.End;
         timeManager.pPlayTime = false;
         levelManager.LoadSpecificScene(EndScene);
+        ShowScore(Score, true);
     }
 
     public void LevelSucceed(float pScore)
@@ -156,5 +185,10 @@ public class GameManager : MonoBehaviour
     {
         ShowScore(Score, false);
         timeManager.TimePlayingCurrentLevel = levelManager.PlayNextLevel();
+    }
+
+    public void ResetUI()
+    {
+        ShowScore(Score, false); //TODO FIX SCORE BUG
     }
 }
