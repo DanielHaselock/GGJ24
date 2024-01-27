@@ -23,7 +23,7 @@ public class CurrentLevelManager : MonoBehaviour
         SURVIVE
     }
 
-    public GameWinCondition condition;
+    public GameWinCondition wincondition;
 
     private void Start()
     {
@@ -77,7 +77,7 @@ public class CurrentLevelManager : MonoBehaviour
         Player.transform.position = PlayerSpawn.transform.position;
         Player.SetActive(true);
 
-        if(condition == GameWinCondition.COLLECTCOINS)
+        if(wincondition == GameWinCondition.COLLECTCOINS)
         {
             Player.GetComponent<CollectCoins>().Initialise(gameObject);
         }
@@ -95,7 +95,7 @@ public class CurrentLevelManager : MonoBehaviour
 
     public void CheckLevelWin()
     {
-        if (pWin)
+        if (pWin || wincondition == GameWinCondition.SURVIVE)
         {
             pWin = false;
             LevelSucceed();

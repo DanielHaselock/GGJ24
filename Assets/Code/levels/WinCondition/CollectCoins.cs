@@ -9,7 +9,7 @@ public class CollectCoins : MonoBehaviour
 
     [SerializeField] private List<CoinData> Coins;
 
-    [SerializeField] private GameObject LevelEditor;
+    private GameObject LevelEditor;
     [SerializeField] private int CoinsCollected;
     void Start()
     {

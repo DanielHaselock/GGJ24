@@ -1106,6 +1106,10 @@ PrefabInstance:
       propertyPath: PlayerSpawn
       value: 
       objectReference: {fileID: 4206923711732027217}
+    - target: {fileID: 1473885029295425384, guid: b957d9cb119502c45b1bea431c68b5b5, type: 3}
+      propertyPath: wincondition
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2612628122234155455, guid: b957d9cb119502c45b1bea431c68b5b5, type: 3}
       propertyPath: m_Name
       value: LevelEditor
