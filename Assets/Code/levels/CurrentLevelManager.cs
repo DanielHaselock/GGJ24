@@ -5,11 +5,11 @@ using static TimeManager;
 
 public class CurrentLevelManager : MonoBehaviour
 {
-    [SerializeField] private GameObject Player;
+    [HideInInspector] private GameObject Player;
 
     [SerializeField] private GameObject PlayerSpawn;
 
-    [SerializeField] private GameObject Managers;
+    [HideInInspector] private GameObject Managers;
 
     public float Score = 10;
 
