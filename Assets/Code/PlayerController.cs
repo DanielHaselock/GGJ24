@@ -50,11 +50,11 @@ public class PlayerController : MonoBehaviour
     {
         float xVelocity = 0;
 
-        if (m_xAxisInput != 0)
+        if (m_xAxisInput != 0) // Accelerate
         {
             xVelocity = Mathf.MoveTowards(m_rb.velocity.x, m_maxSpeed * m_xAxisInput, m_acceleration * Time.deltaTime);
         }
-        else
+        else // Decelerate
         {
             xVelocity = Mathf.MoveTowards(m_rb.velocity.x, 0, m_deceleration * Time.deltaTime);
         }
@@ -81,15 +81,15 @@ public class PlayerController : MonoBehaviour
         // Check if raycasts collide with ground
         foreach (RaycastHit2D collision in isMiddleTouching)
         {
-            if (collision.collider.tag.Equals("Solid")) return true;
+            if (collision.collider.tag.Equals(tag)) return true;
         }
         foreach (RaycastHit2D collision in isLeftTouching)
         {
-            if (collision.collider.tag.Equals("Solid")) return true;
+            if (collision.collider.tag.Equals(tag)) return true;
         }
         foreach (RaycastHit2D collision in isRightTouching)
         {
-            if (collision.collider.tag.Equals("Solid")) return true;
+            if (collision.collider.tag.Equals(tag)) return true;
         }
 
         return false;
