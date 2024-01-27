@@ -10,12 +10,10 @@ public class ReachCheckpoint : MonoBehaviour
     [SerializeField] private GameObject LevelEditor;
     void Start()
     {
-        
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
         LevelEditor.GetComponent<CurrentLevelManager>().SetWinAndFinish();
     }
 }
