@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 149345323}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Solid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -760,6 +760,7 @@ GameObject:
   - component: {fileID: 1576123591}
   - component: {fileID: 1576123590}
   - component: {fileID: 1576123594}
+  - component: {fileID: 1576123595}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -889,7 +890,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!4 &1576123593
 Transform:
@@ -918,12 +919,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e950b355827f8514bb620e7b08efe973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxSpeed: 0
-  m_acceleration: 0
-  m_deceleration: 0
-  m_jumpForce: 0
-  m_lowJumpModifier: 0
-  m_fallModifier: 0
+  m_maxSpeed: 7
+  m_acceleration: 50
+  m_deceleration: 15
+  m_jumpForce: 7
+  m_lowJumpModifier: 1
+  m_fallModifier: 1
+--- !u!114 &1576123595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576123589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: f4789aa447107e549a179482036f4a7c, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 422ceca0-4efb-4f57-a915-375d4221c0e8
+    m_ActionName: Platforming/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 676cfde1-ac98-4ab5-84ab-1b52df261170
+    m_ActionName: Platforming/Movement[/Keyboard/a,/Keyboard/d]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Platforming
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1948049000
 GameObject:
   m_ObjectHideFlags: 0
