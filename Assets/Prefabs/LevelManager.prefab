@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7557792590831216140}
   - component: {fileID: 8421790083955785621}
+  - component: {fileID: 3109901284041714541}
+  - component: {fileID: 6572396421552408071}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -44,4 +46,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd41d895174851241b4508d00f5bb84d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scenes: []
+  Scenes:
+  - Test1
+  - Test2
+  - Test3
+  loaderCanvas: {fileID: 0}
+  CurrentScene: 
+--- !u!114 &3109901284041714541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92969743350419242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 078e1c8a2216e1248a5565bf9e35ab0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Timer: 4
+  TimePlayingCurrentLevel: 5
+  TimePlayingScore: 5
+--- !u!114 &6572396421552408071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92969743350419242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4284279e15f7dd4f9de2d3677bf63cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainMenu: 
+  ScoreCanvas: {fileID: 5172902655179697344, guid: 794085da964cd7a47ad647ab981665de, type: 3}
+  PauseCanvas: {fileID: 5172902655179697344, guid: 794085da964cd7a47ad647ab981665de, type: 3}

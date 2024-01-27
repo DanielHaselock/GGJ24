@@ -6,12 +6,13 @@ public class TimeManager : MonoBehaviour
 {
     public enum TimeState
     {
-        Playing = 0,
-        Score = 1,
+        Playing = 1,
+        Score = 2,
     }
 
 
     private LevelManager levelManager;
+    private GameManager gameManager;
     // Start is called before the first frame update
 
     [SerializeField] private float Timer = 4f;
@@ -22,11 +23,11 @@ public class TimeManager : MonoBehaviour
     [SerializeField]
     private float TimePlayingScore = 5f;
 
-
     TimeState state;
     void Start()
     {
         levelManager = gameObject.GetComponent<LevelManager>();
+        gameManager = gameObject.GetComponent<GameManager>();
         state = TimeState.Playing;
     }
 
@@ -47,12 +48,14 @@ public class TimeManager : MonoBehaviour
         {
             state = TimeState.Score;
             Timer = TimePlayingScore;
+            gameManager.ShowScore(true);
             levelManager.LoadNextLevel();
         }
         else if (state == TimeState.Score)
         {
             state = TimeState.Playing;
             Timer = TimePlayingCurrentLevel; //todo Get Time for current LEvel
+            gameManager.ShowScore(false);
             levelManager.PlayNextLevel();
         }
         

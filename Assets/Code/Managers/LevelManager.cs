@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+       
         DontDestroyOnLoad(loaderCanvas);
         //GetAvailableLevels
         CurrentScene = SceneManager.GetActiveScene().name;
@@ -42,7 +42,7 @@ public class LevelManager : MonoBehaviour
     public async void LoadNextLevel() //loads in background for score to be shown
     {
         GetNextScene();
-        loaderCanvas.SetActive(true);
+        //loaderCanvas.SetActive(true);
         AsyncLoad = SceneManager.LoadSceneAsync(NextScene);
         AsyncLoad.allowSceneActivation = false;
     }
@@ -64,8 +64,14 @@ public class LevelManager : MonoBehaviour
 
         AsyncLoad.allowSceneActivation = true;
 
-        loaderCanvas.SetActive(false);
+        //loaderCanvas.SetActive(false);
 
         Debug.Log("LOADED");
     }
+
+    public void LoadSpecificScene(string mainmenu)
+    {
+        SceneManager.LoadScene(mainmenu);
+    }
+
 }
