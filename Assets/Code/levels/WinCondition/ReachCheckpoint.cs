@@ -10,7 +10,6 @@ public class ReachCheckpoint : MonoBehaviour
     [SerializeField] private GameObject LevelEditor;
     void Start()
     {
-        
     }
 
     void OnTriggerEnter2D(Collider2D col)

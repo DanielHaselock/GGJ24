@@ -16,6 +16,15 @@ public class CurrentLevelManager : MonoBehaviour
     [HideInInspector]
     public bool pWin = false;
 
+    public enum GameWinCondition
+    {
+        REACHCHECKPOINT,
+        COLLECTCOINS,
+        SURVIVE
+    }
+
+    public GameWinCondition condition;
+
     private void Start()
     {
         GetPlayer();
@@ -67,6 +76,11 @@ public class CurrentLevelManager : MonoBehaviour
     {
         Player.transform.position = PlayerSpawn.transform.position;
         Player.SetActive(true);
+
+        if(condition == GameWinCondition.COLLECTCOINS)
+        {
+            Player.GetComponent<CollectCoins>().Initialise(gameObject);
+        }
     }
 
     public void LevelSucceed()
