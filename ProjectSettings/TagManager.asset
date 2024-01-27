@@ -8,6 +8,7 @@ TagManager:
   - Manager
   - LevelEditor
   - Score
+  - ScoreText
   layers:
   - Default
   - TransparentFX

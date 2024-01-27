@@ -8,8 +8,8 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Jo/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/MainScenes/MainMenu.unity
+  - enabled: 0
+    path: Assets/Scenes/MainScenes/Start.unity
     guid: b271222f80393d540bcd46b3ed342739
   - enabled: 1
     path: Assets/Scenes/Daniel/Level1.unity
@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScenes/End.unity
     guid: ce03d39a55b80ea498fda2ed4a769b74
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/MainMenu.unity
+    guid: bb634b8d7781e9a44afa206fb3129787
   m_configObjects: {}

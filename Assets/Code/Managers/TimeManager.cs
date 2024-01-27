@@ -61,4 +61,21 @@ public class TimeManager : MonoBehaviour
             Timer = TimePlayingCurrentLevel;
         }
     }
+
+    public void SwitchTimeExternal(TimeState pstate)
+    {
+        state = pstate;
+
+        switch (pstate)
+        {
+            //case TimeState.Playing:
+            //    gameManager.PlayNextLevel(); Useless
+            //    Timer = TimePlayingCurrentLevel;
+            //    break;
+
+            case TimeState.Score:
+                Timer = TimePlayingScore; //Don't check for win here
+                break;
+        }
+    }
 }

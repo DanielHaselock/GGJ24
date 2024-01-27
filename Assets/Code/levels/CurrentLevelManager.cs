@@ -12,7 +12,9 @@ public class CurrentLevelManager : MonoBehaviour
     [SerializeField] private GameObject Managers;
 
     public float Score = 10;
-    private bool pWin = false;
+
+    [HideInInspector]
+    public bool pWin = false;
 
     private void Start()
     {
@@ -21,6 +23,7 @@ public class CurrentLevelManager : MonoBehaviour
         Managers.GetComponent<LevelManager>().CurrentLevelManager = this;
         Managers.GetComponent<TimeManager>().pPlayTime = true;
         Managers.GetComponent<TimeManager>().state = TimeState.Playing;
+        pWin = false;
     }
 
     private void GetPlayer()
@@ -73,17 +76,23 @@ public class CurrentLevelManager : MonoBehaviour
 
     public void LevelFail()
     {
-        Managers.GetComponent<GameManager>().LevelFail(Score);
+        Managers.GetComponent<GameManager>().LevelFail();
     }
 
     public void CheckLevelWin()
     {
         if (pWin)
+        {
+            pWin = false;
             LevelSucceed();
+        }
         else 
             LevelFail();
-
-       // pWin = false;
     }
 
+    public void SetWinAndFinish()
+    {
+        pWin = true;
+        CheckLevelWin();
+    }
 }

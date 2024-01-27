@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SocialPlatforms.Impl;
 using TMPro;
 using Unity.VisualScripting;
+using static TimeManager;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,12 +35,12 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private InputAction pause;
 
-    public float Score = 0;
+
+    [HideInInspector]
+    private float Score = 0;
 
     [SerializeField]
     private string EndScene;
-
-    private bool Loaded = false;
 
     void Start()
     {
@@ -61,7 +62,10 @@ public class GameManager : MonoBehaviour
         levelManager.LoadNextLevel();
         MainMenu = SceneManager.GetActiveScene().name;
 
-        ShowScore(Score, false);
+        
+        Score = PlayerPrefs.GetFloat("Score");
+
+        ShowScore(false);
     }
 
     private void adddontdestroyonload()
@@ -70,7 +74,6 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(ScoreCanvas);
         DontDestroyOnLoad(PauseCanvas);
         DontDestroyOnLoad(Player);
-        Loaded = true;
     }
 
     private bool CheckDontDestroy()
@@ -141,13 +144,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ShowScore(float score, bool pShow)
+    public void ShowScore(bool pShow)
     {
         if (!ScoreCanvas)
             ScoreCanvas = GetDestroyonLoadGameobject("Score");
 
-        if(ScoreText)
-            ScoreText.GetComponent<TextMeshProUGUI>().SetText(score.ToString());
+        if(!ScoreText)
+        {
+            for (int i = 0; i < ScoreCanvas.transform.childCount; i++)
+            {
+                var child = ScoreCanvas.transform.GetChild(i);
+                for (int j = 0; j < child.childCount; j++)
+                {
+                    if (child.GetChild(j).tag == "ScoreText")
+                    {
+                        ScoreText = child.GetChild(j).gameObject;
+                    }
+                }
+            }
+        }
+
+        ScoreText.GetComponent<TextMeshProUGUI>().SetText(PlayerPrefs.GetFloat("Score").ToString());
 
         ScoreCanvas.SetActive(pShow);
     }
@@ -157,38 +174,46 @@ public class GameManager : MonoBehaviour
         state = GameState.End;
         timeManager.pPlayTime = false;
         levelManager.LoadSpecificScene(EndScene);
-        ShowScore(Score, true);
+        ShowScore(true);
     }
 
     public void LevelSucceed(float pScore)
     {
-        Score += pScore;
+        Score = PlayerPrefs.GetFloat("Score") + pScore;
+        PlayerPrefs.SetFloat("Score", Score);
+        timeManager.SwitchTimeExternal(TimeState.Score);
         LoadNextLevel();
     }
 
-    public void LevelFail(float pScore)
+    public void LevelFail()
     {
-        Score += pScore;
         Player.SetActive(false);
-       // ShowScore(Score, true);
         End();
     }
 
     public void LoadNextLevel()
     {
         Player.SetActive(false);
-        ShowScore(Score, true);
+        ShowScore(true);
         levelManager.LoadNextLevel();
     }
 
     public void PlayNextLevel()
     {
-        ShowScore(Score, false);
+        ShowScore(false);
         timeManager.TimePlayingCurrentLevel = levelManager.PlayNextLevel();
     }
 
     public void ResetUI()
     {
-        ShowScore(Score, false); //TODO FIX SCORE BUG
+        PlayerPrefs.SetFloat("Score", 0);
+        Score = 0;
+        ShowScore(false);
     }
+    public void ResetScore()
+    {
+        PlayerPrefs.SetFloat("Score", 0);
+        PlayerPrefs.DeleteKey("Score");
+    }
+
 }
