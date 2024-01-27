@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private int m_maxSpeed, m_acceleration, m_deceleration, m_jumpForce;
     [SerializeField] private float m_lowJumpModifier, m_fallModifier;
+
     private bool m_isGrounded;
     private PlayerInputSystem m_playerInputSystem;
     private Rigidbody2D m_rb;
@@ -26,7 +27,7 @@ public class PlayerController : MonoBehaviour
         m_xAxisInput = m_playerInputSystem.Platforming.Movement.ReadValue<float>();
     }
 
-    virtual protected void FixedUpdate()
+    private void FixedUpdate()
     {
         m_isGrounded = ComputeIsStandingOn("Solid");
         if (m_isGrounded)
@@ -39,13 +40,13 @@ public class PlayerController : MonoBehaviour
         ComputeVelocity();
     }
 
-    protected void ComputeVelocity()
+    private void ComputeVelocity()
     {
         ComputeXVelocity();
         ComputeYVelocity();
     }
 
-    virtual protected void ComputeXVelocity()
+    private void ComputeXVelocity()
     {
         float xVelocity = 0;
 
@@ -60,7 +61,7 @@ public class PlayerController : MonoBehaviour
         m_rb.velocity = new Vector2(xVelocity, m_rb.velocity.y);
     }
 
-    virtual protected void ComputeYVelocity()
+    private void ComputeYVelocity()
     {
         // Up / Down acceleration
         if (m_rb.velocity.y > 0 && m_jumpInput == 0 && m_rb.gravityScale <= 1) m_rb.gravityScale += m_lowJumpModifier;
