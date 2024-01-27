@@ -18,22 +18,26 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private float Timer = 4f;
 
     [SerializeField]
-    private float TimePlayingCurrentLevel = 5f;
+    public float TimePlayingCurrentLevel = 5f;
 
     [SerializeField]
     private float TimePlayingScore = 5f;
 
-    TimeState state;
+    public bool pPlayTime = true;
+
+    public TimeState state;
     void Start()
     {
         levelManager = gameObject.GetComponent<LevelManager>();
         gameManager = gameObject.GetComponent<GameManager>();
-        state = TimeState.Playing;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!pPlayTime)
+            return;
+
         Timer -= Time.deltaTime;
 
         if (Timer <= 0.0f)
@@ -42,21 +46,18 @@ public class TimeManager : MonoBehaviour
         }
     }
 
-    void TimerEnded()
+    public void TimerEnded()
     {
         if(state == TimeState.Playing)
         {
             state = TimeState.Score;
             Timer = TimePlayingScore;
-            gameManager.Player.SetActive(false);
-            gameManager.ShowScore(true);
-            levelManager.LoadNextLevel();
+            levelManager.CheckLevelWin();
         }
         else if (state == TimeState.Score)
         {
             state = TimeState.Playing;
-            gameManager.ShowScore(false);
-            TimePlayingCurrentLevel = levelManager.PlayNextLevel();
+            gameManager.PlayNextLevel();
             Timer = TimePlayingCurrentLevel;
         }
     }

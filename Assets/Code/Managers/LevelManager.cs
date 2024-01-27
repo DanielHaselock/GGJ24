@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,6 +22,8 @@ public class LevelManager : MonoBehaviour
 
     private GameObject Player;
 
+    public CurrentLevelManager CurrentLevelManager; //Updates At start of level
+
     private LevelInfo NextScene;
 
     public LevelInfo CurrentScene;
@@ -33,7 +34,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        DontDestroyOnLoad(loaderCanvas);
+//        DontDestroyOnLoad(loaderCanvas);
     }
 
     public void SetPlayer(GameObject pPlayer)
@@ -67,13 +68,18 @@ public class LevelManager : MonoBehaviour
         AsyncLoad.allowSceneActivation = true;
 
         return NextScene.LevelTime;
-
-        //loaderCanvas.SetActive(false);
     }
 
     public void LoadSpecificScene(string mainmenu)
     {
-        SceneManager.LoadScene(mainmenu);
+       // SceneManager.LoadScene(mainmenu);
+        AsyncLoad = SceneManager.LoadSceneAsync(mainmenu);
+        AsyncLoad.allowSceneActivation = true;
+    }
+
+    public void CheckLevelWin()
+    {
+        CurrentLevelManager.CheckLevelWin();
     }
 
 }

@@ -277,6 +277,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3659674012673019888, guid: 794085da964cd7a47ad647ab981665de, type: 3}
+      propertyPath: m_margin.w
+      value: 47.536255
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737476282901714468, guid: 794085da964cd7a47ad647ab981665de, type: 3}
+      propertyPath: m_margin.w
+      value: 47.536255
+      objectReference: {fileID: 0}
     - target: {fileID: 5172902655179697344, guid: 794085da964cd7a47ad647ab981665de, type: 3}
       propertyPath: m_Name
       value: Score
@@ -290,6 +298,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 794085da964cd7a47ad647ab981665de, type: 3}
+--- !u!1 &88653737 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4624669859378570837, guid: 794085da964cd7a47ad647ab981665de, type: 3}
+  m_PrefabInstance: {fileID: 88653736}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &570716491
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,6 +582,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 880961894958058410, guid: 789e93805db703747b0b9aaa9141e706, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304196494486889932, guid: 789e93805db703747b0b9aaa9141e706, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6304196494486889932, guid: 789e93805db703747b0b9aaa9141e706, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -626,17 +647,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7538696401521411633, guid: 0c31d9cf1f816884d9eda1f3016693c3, type: 3}
-      propertyPath: m_text
-      value: Paused
-      objectReference: {fileID: 0}
     - target: {fileID: 7542640973418579372, guid: 0c31d9cf1f816884d9eda1f3016693c3, type: 3}
       propertyPath: m_Name
       value: Pause
-      objectReference: {fileID: 0}
-    - target: {fileID: 7542640973418579372, guid: 0c31d9cf1f816884d9eda1f3016693c3, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -659,34 +672,14 @@ PrefabInstance:
       propertyPath: loaderCanvas
       value: 
       objectReference: {fileID: 27489456}
-    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
-      propertyPath: Scenes.Array.data[0].Name
-      value: Level1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
-      propertyPath: Scenes.Array.data[1].Name
-      value: Level2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
-      propertyPath: Scenes.Array.data[2].Name
-      value: Level3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
-      propertyPath: Scenes.Array.data[0].LevelTime
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
-      propertyPath: Scenes.Array.data[1].LevelTime
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
-      propertyPath: Scenes.Array.data[2].LevelTime
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5274261463659757168, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 1787620549}
+    - target: {fileID: 5274261463659757168, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: ScoreText
+      value: 
+      objectReference: {fileID: 88653737}
     - target: {fileID: 5274261463659757168, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: PauseCanvas
       value: 

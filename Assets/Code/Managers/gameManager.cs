@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.SocialPlatforms.Impl;
+using TMPro;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
 
-    private LevelManager levelManager;  
+    private LevelManager levelManager;
     private TimeManager timeManager;  
 
 
@@ -21,26 +24,42 @@ public class GameManager : MonoBehaviour
 
     GameState state;
 
-    [SerializeField] private string MainMenu;
+    [SerializeField] private string MainMenu = "MainMenu";
 
     [SerializeField] private GameObject ScoreCanvas;
+    [SerializeField] private GameObject ScoreText;
     [SerializeField] private GameObject PauseCanvas;
     [SerializeField] public GameObject Player;
 
 
     [SerializeField] private InputAction pause;
 
+    public float Score = 0;
+
+    [SerializeField]
+    private string EndScene;
+
+    private bool Loaded = false;
+
     void Start()
     {
-        adddontdestroyonload();
-        state = GameState.MainMenu;
+
         levelManager = GetComponent<LevelManager>();
         timeManager = GetComponent<TimeManager>();
-        timeManager.enabled = false;
-        levelManager.SetPlayer(Player);
+
+        if (CheckDontDestroy())
+        {
+            adddontdestroyonload();
+
+            
+            levelManager.SetPlayer(Player);
+            pause.performed += _ => Pause();
+        }
+
+        timeManager.pPlayTime = false;
+        state = GameState.MainMenu;
         levelManager.LoadNextLevel();
         MainMenu = SceneManager.GetActiveScene().name;
-        pause.performed += _ => Pause();
     }
 
     private void adddontdestroyonload()
@@ -49,6 +68,21 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(ScoreCanvas);
         DontDestroyOnLoad(PauseCanvas);
         DontDestroyOnLoad(Player);
+        Loaded = true;
+    }
+
+    private bool CheckDontDestroy()
+    {
+        GameObject temp = null;
+  
+        temp = new GameObject();
+        Object.DontDestroyOnLoad(temp);
+        UnityEngine.SceneManagement.Scene dontDestroyOnLoad = temp.scene;
+        Object.DestroyImmediate(temp);
+        temp = null;
+
+        GameObject[] objects = dontDestroyOnLoad.GetRootGameObjects();
+        return objects.Length == 0;
     }
 
     private void OnEnable()
@@ -64,7 +98,6 @@ public class GameManager : MonoBehaviour
     public void PlayGame()
     {
         state = GameState.InGame;
-        timeManager.enabled = true;
         levelManager.PlayNextLevel();
     }
 
@@ -85,20 +118,43 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ShowScore(bool pShow)
+    public void ShowScore(float score, bool pShow)
     {
+        ScoreText.GetComponent<TextMeshProUGUI>().SetText(score.ToString());
         ScoreCanvas.SetActive(pShow);
     }
 
     public void End()
     {
-
+        state = GameState.End;
+        timeManager.pPlayTime = false;
+        levelManager.LoadSpecificScene(EndScene);
     }
 
-    public void Quit()
+    public void LevelSucceed(float pScore)
     {
-        state = GameState.MainMenu;
-        timeManager.enabled = false;
-        levelManager.LoadSpecificScene(MainMenu);
+        Score += pScore;
+        LoadNextLevel();
+    }
+
+    public void LevelFail(float pScore)
+    {
+        Score += pScore;
+        Player.SetActive(false);
+       // ShowScore(Score, true);
+        End();
+    }
+
+    public void LoadNextLevel()
+    {
+        Player.SetActive(false);
+        ShowScore(Score, true);
+        levelManager.LoadNextLevel();
+    }
+
+    public void PlayNextLevel()
+    {
+        ShowScore(Score, false);
+        timeManager.TimePlayingCurrentLevel = levelManager.PlayNextLevel();
     }
 }

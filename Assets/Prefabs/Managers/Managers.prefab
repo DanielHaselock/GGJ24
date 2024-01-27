@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5274261463659757168}
   m_Layer: 0
   m_Name: Managers
-  m_TagString: Untagged
+  m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,11 +47,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scenes:
-  - Test1
-  - Test2
-  - Test3
+  - Name: Level1
+    LevelTime: 5
+  - Name: Level2
+    LevelTime: 5
+  - Name: Level3
+    LevelTime: 5
   loaderCanvas: {fileID: 0}
-  CurrentScene: 
+  CurrentLevelManager: {fileID: 0}
+  CurrentScene:
+    Name: 
+    LevelTime: 0
 --- !u!114 &47610227341778618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,6 +73,7 @@ MonoBehaviour:
   Timer: 4
   TimePlayingCurrentLevel: 5
   TimePlayingScore: 5
+  pPlayTime: 1
 --- !u!114 &5274261463659757168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,9 +86,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4284279e15f7dd4f9de2d3677bf63cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenu: 
+  MainMenu: MainMenu
   ScoreCanvas: {fileID: 0}
+  ScoreText: {fileID: 0}
   PauseCanvas: {fileID: 0}
+  Player: {fileID: 0}
   pause:
     m_Name: Pause
     m_Type: 0
@@ -99,3 +108,5 @@ MonoBehaviour:
       m_Action: Pause
       m_Flags: 0
     m_Flags: 0
+  Score: 0
+  EndScene: End

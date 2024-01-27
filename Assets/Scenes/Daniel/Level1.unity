@@ -863,6 +863,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1473885029295425384, guid: b957d9cb119502c45b1bea431c68b5b5, type: 3}
+      propertyPath: pWin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1473885029295425384, guid: b957d9cb119502c45b1bea431c68b5b5, type: 3}
+      propertyPath: Score
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1473885029295425384, guid: b957d9cb119502c45b1bea431c68b5b5, type: 3}
       propertyPath: PlayerSpawn
       value: 
       objectReference: {fileID: 4206923711732027217}

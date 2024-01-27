@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static TimeManager;
 
 public class CurrentLevelManager : MonoBehaviour
 {
@@ -8,10 +9,18 @@ public class CurrentLevelManager : MonoBehaviour
 
     [SerializeField] private GameObject PlayerSpawn;
 
+    [SerializeField] private GameObject Managers;
+
+    public float Score = 10;
+    private bool pWin = false;
+
     private void Start()
     {
         GetPlayer();
         SpawnPlayer();
+        Managers.GetComponent<LevelManager>().CurrentLevelManager = this;
+        Managers.GetComponent<TimeManager>().pPlayTime = true;
+        Managers.GetComponent<TimeManager>().state = TimeState.Playing;
     }
 
     private void GetPlayer()
@@ -33,6 +42,10 @@ public class CurrentLevelManager : MonoBehaviour
                 {
                     Player = obj;
                 }
+                if (obj.tag == "Manager")
+                {
+                    Managers = obj;
+                }
             }
 
         }
@@ -53,5 +66,24 @@ public class CurrentLevelManager : MonoBehaviour
         Player.SetActive(true);
     }
 
+    public void LevelSucceed()
+    {
+        Managers.GetComponent<GameManager>().LevelSucceed(Score);
+    }
+
+    public void LevelFail()
+    {
+        Managers.GetComponent<GameManager>().LevelFail(Score);
+    }
+
+    public void CheckLevelWin()
+    {
+        if (pWin)
+            LevelSucceed();
+        else 
+            LevelFail();
+
+       // pWin = false;
+    }
 
 }
