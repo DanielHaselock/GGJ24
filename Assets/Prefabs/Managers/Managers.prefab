@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &92969743350419242
+--- !u!1 &3408751182318222068
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7557792590831216140}
-  - component: {fileID: 8421790083955785621}
-  - component: {fileID: 3109901284041714541}
-  - component: {fileID: 6572396421552408071}
+  - component: {fileID: 7258503583016231261}
+  - component: {fileID: 5066857189600997281}
+  - component: {fileID: 47610227341778618}
+  - component: {fileID: 5274261463659757168}
   m_Layer: 0
-  m_Name: LevelManager
+  m_Name: Managers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7557792590831216140
+--- !u!4 &7258503583016231261
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92969743350419242}
+  m_GameObject: {fileID: 3408751182318222068}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 48.32835, y: 32.664562, z: -1.8306333}
@@ -34,13 +34,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8421790083955785621
+--- !u!114 &5066857189600997281
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92969743350419242}
+  m_GameObject: {fileID: 3408751182318222068}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd41d895174851241b4508d00f5bb84d, type: 3}
@@ -52,13 +52,13 @@ MonoBehaviour:
   - Test3
   loaderCanvas: {fileID: 0}
   CurrentScene: 
---- !u!114 &3109901284041714541
+--- !u!114 &47610227341778618
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92969743350419242}
+  m_GameObject: {fileID: 3408751182318222068}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 078e1c8a2216e1248a5565bf9e35ab0e, type: 3}
@@ -67,18 +67,35 @@ MonoBehaviour:
   Timer: 4
   TimePlayingCurrentLevel: 5
   TimePlayingScore: 5
---- !u!114 &6572396421552408071
+--- !u!114 &5274261463659757168
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92969743350419242}
+  m_GameObject: {fileID: 3408751182318222068}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4284279e15f7dd4f9de2d3677bf63cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MainMenu: 
-  ScoreCanvas: {fileID: 5172902655179697344, guid: 794085da964cd7a47ad647ab981665de, type: 3}
-  PauseCanvas: {fileID: 5172902655179697344, guid: 794085da964cd7a47ad647ab981665de, type: 3}
+  ScoreCanvas: {fileID: 0}
+  PauseCanvas: {fileID: 0}
+  pause:
+    m_Name: Pause
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: cd9164e5-7525-48a7-a22c-48997e14d918
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: b97bad54-db2a-47a5-b53f-9b4935358f5f
+      m_Path: <Keyboard>/escape
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Pause
+      m_Flags: 0
+    m_Flags: 0
