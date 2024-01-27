@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static TimeManager;
 
 [System.Serializable]
 public class LevelInfo
@@ -66,6 +67,10 @@ public class LevelManager : MonoBehaviour
         CurrentScene = NextScene;
 
         AsyncLoad.allowSceneActivation = true;
+
+        GetComponent<TimeManager>().TimePlayingCurrentLevel = CurrentScene.LevelTime;
+        GetComponent<TimeManager>().ResetTime();
+        GetComponent<TimeManager>().SwitchTimeExternal(TimeState.Playing);
 
         return NextScene.LevelTime;
     }

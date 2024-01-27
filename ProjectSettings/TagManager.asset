@@ -10,6 +10,11 @@ TagManager:
   - Score
   - ScoreText
   - UIScoreImage
+  - UIScoreEnd
+  - UIScoreImageEnd
+  - MainMenuButton
+  - ScoreEnd
+  - EndUI
   layers:
   - Default
   - TransparentFX

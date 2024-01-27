@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private string MainMenu = "MainMenu";
 
     [SerializeField] private GameObject ScoreCanvas;
+    [SerializeField] private GameObject ScoreEndCanvas;
     [SerializeField] private GameObject ScoreText;
     [SerializeField] private GameObject PauseCanvas;
     [SerializeField] public GameObject Player;
@@ -45,16 +46,22 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
-        levelManager = GetComponent<LevelManager>();
-        timeManager = GetComponent<TimeManager>();
+
 
         if (CheckDontDestroy())
         {
             adddontdestroyonload();
 
-            
+            levelManager = GetComponent<LevelManager>();
+            timeManager = GetComponent<TimeManager>();
             levelManager.SetPlayer(Player);
             pause.performed += _ => Pause();
+        }
+        else
+        {
+            GameObject obj = GetDestroyonLoadGameobject("Manager");
+            levelManager = obj.GetComponent<LevelManager>();
+            timeManager = obj.GetComponent<TimeManager>();
         }
 
         timeManager.pPlayTime = false;
@@ -72,6 +79,7 @@ public class GameManager : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(ScoreCanvas);
+        DontDestroyOnLoad(ScoreEndCanvas);
         DontDestroyOnLoad(PauseCanvas);
         DontDestroyOnLoad(Player);
     }
@@ -124,7 +132,7 @@ public class GameManager : MonoBehaviour
     {
         Score = 0;
         state = GameState.InGame;
-        levelManager.PlayNextLevel();
+        PlayNextLevel();
     }
 
 
@@ -174,15 +182,55 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void ShowEndScore(bool pShow)
+    {
+       
+        var ScoreTextEnd = GameObject.FindGameObjectWithTag("UIScoreEnd");
+
+        ScoreTextEnd.GetComponent<TextMeshProUGUI>().SetText(PlayerPrefs.GetFloat("Score").ToString());
+
+        GameObject animobject = GameObject.FindGameObjectWithTag("UIScoreImageEnd");
+        if (!animobject)
+            return;
+
+        Animator anim = animobject.GetComponent<Animator>();
+
+        if (pShow)
+        {
+            anim.SetBool("ScreenHide", false);
+            anim.SetBool("ScreenShow", true);
+        }
+        else
+        {
+            anim.SetBool("ScreenHide", true);
+            anim.SetBool("ScreenShow", false);
+        }
+
+    }
+
     public void End()
     {
         state = GameState.End;
-        timeManager.pPlayTime = false;
+        ShowEndScore(true);
+        timeManager.SwitchTimeExternal(TimeState.End);
         levelManager.LoadSpecificScene(EndScene);
-        ShowScore(true);
     }
 
-    public void LevelSucceed(float pScore)
+    public void ShowEndUI()
+    {
+        GameObject[] gameObjects = SceneManager.GetActiveScene().GetRootGameObjects();
+        foreach (var gameObject in gameObjects)
+        {
+            if (gameObject.tag == "EndUI")
+            {
+                gameObject.SetActive(true);
+            }
+
+        }
+        timeManager.pPlayTime = false;
+    }
+
+        public void LevelSucceed(float pScore)
     {
         Score = PlayerPrefs.GetFloat("Score") + pScore;
         PlayerPrefs.SetFloat("Score", Score);
@@ -206,14 +254,14 @@ public class GameManager : MonoBehaviour
     public void PlayNextLevel()
     {
         ShowScore(false);
-        timeManager.TimePlayingCurrentLevel = levelManager.PlayNextLevel();
+        levelManager.PlayNextLevel();
     }
 
     public void ResetUI()
     {
         PlayerPrefs.SetFloat("Score", 0);
         Score = 0;
-        ShowScore(false);
+        ShowEndScore(false);
     }
     public void ResetScore()
     {

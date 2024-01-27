@@ -8,6 +8,7 @@ public class TimeManager : MonoBehaviour
     {
         Playing = 1,
         Score = 2,
+        End = 3,
     }
 
 
@@ -36,7 +37,10 @@ public class TimeManager : MonoBehaviour
     void Update()
     {
         if (!pPlayTime)
+        {
+            Timer = TimePlayingCurrentLevel;
             return;
+        }
 
         Timer -= Time.deltaTime;
 
@@ -60,6 +64,12 @@ public class TimeManager : MonoBehaviour
             gameManager.PlayNextLevel();
             Timer = TimePlayingCurrentLevel;
         }
+
+        else if (state == TimeState.End)
+        {
+            gameManager.ShowEndUI();
+            Timer = TimePlayingCurrentLevel;
+        }
     }
 
     public void SwitchTimeExternal(TimeState pstate)
@@ -68,14 +78,21 @@ public class TimeManager : MonoBehaviour
 
         switch (pstate)
         {
-            //case TimeState.Playing:
-            //    gameManager.PlayNextLevel(); Useless
-            //    Timer = TimePlayingCurrentLevel;
-            //    break;
+            case TimeState.Playing:
+                Timer = TimePlayingCurrentLevel;
+                break;
 
             case TimeState.Score:
                 Timer = TimePlayingScore; //Don't check for win here
                 break;
+            case TimeState.End:
+                Timer = TimePlayingScore; //Don't check for win here
+                break;
         }
+    }
+
+    public void ResetTime()
+    {
+        Timer = TimePlayingCurrentLevel;
     }
 }
