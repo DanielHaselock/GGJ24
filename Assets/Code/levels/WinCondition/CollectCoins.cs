@@ -7,7 +7,7 @@ public class CollectCoins : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField] private List<GameObject> Coins;
+    [SerializeField] private List<CoinData> Coins;
 
     [SerializeField] private GameObject LevelEditor;
     [SerializeField] private int CoinsCollected;
@@ -18,11 +18,11 @@ public class CollectCoins : MonoBehaviour
 
     public void Initialise(GameObject pLeveleditor)
     {
-        Coins = GameObject.FindGameObjectsWithTag("Coin").ToList();
+        Coins = GameObject.FindObjectsByType<CoinData>(FindObjectsSortMode.None).ToList();
         LevelEditor = pLeveleditor;
     }
     
-    public void AddCoin(GameObject Coin)
+    public void AddCoin(CoinData Coin)
     {
         Coins.Remove(Coin);
         CoinsCollected++;

@@ -8,9 +8,8 @@ public class CoinData : MonoBehaviour
     {
         if(col.gameObject.GetComponent<CollectCoins>())
         {
-            col.gameObject.GetComponent<CollectCoins>().AddCoin(this.gameObject);
+            col.gameObject.GetComponent<CollectCoins>().AddCoin(this);
             Destroy(this.gameObject);
         }
     }
-
 }
