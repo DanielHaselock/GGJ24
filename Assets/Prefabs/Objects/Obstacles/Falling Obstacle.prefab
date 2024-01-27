@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Falling Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 2535436254112059498, guid: cea31e03fd293d247985ada9159ccc8e, type: 3}
+      propertyPath: m_TagString
+      value: Solid
+      objectReference: {fileID: 0}
     - target: {fileID: 6150525192001705201, guid: cea31e03fd293d247985ada9159ccc8e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -101,7 +105,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 7
+  m_Mass: 8
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3

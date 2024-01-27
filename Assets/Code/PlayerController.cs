@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private int m_maxSpeed, m_acceleration, m_deceleration, m_jumpForce;
     [SerializeField] private float m_lowJumpModifier, m_fallModifier;
 
+    private Animator m_animator;
+    private BoxCollider2D m_collider;
     private bool m_isGrounded;
     private PlayerInputSystem m_playerInputSystem;
     private Rigidbody2D m_rb;
@@ -16,6 +17,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        m_animator = GetComponent<Animator>();
+        m_collider = GetComponent<BoxCollider2D>();
         m_rb = GetComponent<Rigidbody2D>();
         m_playerInputSystem = new PlayerInputSystem();
         m_playerInputSystem.Platforming.Enable();
@@ -29,6 +32,9 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (ComputeIsStandingOn("Solid") && !m_isGrounded)
+            m_animator.SetTrigger("Impact");
+
         m_isGrounded = ComputeIsStandingOn("Solid");
         if (m_isGrounded)
         {
@@ -73,10 +79,11 @@ public class PlayerController : MonoBehaviour
         // Make three raycasts for more accuracy
         float epsilon = 0.0625f;
         Vector3 offset = new Vector3(GetComponent<BoxCollider2D>().offset.x, GetComponent<BoxCollider2D>().offset.y);
-        Ray ray = new(transform.position - new Vector3(0, 0.46875f) + offset, Vector3.down);
+        Ray ray = new(transform.position - new Vector3(0, m_collider.size.y / 2.0f) + offset, Vector3.down);
+        Debug.DrawRay(ray.origin, Vector2.down, Color.yellow);
         RaycastHit2D[] isMiddleTouching = Physics2D.RaycastAll(ray.origin, ray.direction, epsilon);
-        RaycastHit2D[] isLeftTouching = Physics2D.RaycastAll(ray.origin - new Vector3(0.3125f - epsilon, 0), ray.direction, epsilon);
-        RaycastHit2D[] isRightTouching = Physics2D.RaycastAll(ray.origin + new Vector3(0.3125f - epsilon, 0), ray.direction, epsilon);
+        RaycastHit2D[] isLeftTouching = Physics2D.RaycastAll(ray.origin - new Vector3(m_collider.size.x / 2.0f - epsilon, 0), ray.direction, epsilon);
+        RaycastHit2D[] isRightTouching = Physics2D.RaycastAll(ray.origin + new Vector3(m_collider.size.x / 2.0f - epsilon, 0), ray.direction, epsilon);
 
         // Check if raycasts collide with ground
         foreach (RaycastHit2D collision in isMiddleTouching)
@@ -95,9 +102,15 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
+    public void Hurt()
+    {
+        m_animator.SetTrigger("Hurt");
+    }
+
     private void Jump()
     {
         m_rb.velocity = new Vector2(m_rb.velocity.x, 0);
         m_rb.AddForce(new Vector2(0f, m_jumpForce), ForceMode2D.Impulse);
+        m_animator.SetTrigger("Jump");
     }
 }
