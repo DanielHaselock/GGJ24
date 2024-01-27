@@ -4,21 +4,28 @@ using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[System.Serializable]
+public class LevelInfo
+{
+    public string Name;
+    public int LevelTime;
+}
+
 public class LevelManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
     public static LevelManager Instance;
 
-    [SerializeField]
-    public string[] Scenes;
+    [SerializeField] private
+    LevelInfo[] Scenes;
 
     [SerializeField]
     private GameObject loaderCanvas;
 
-    private string NextScene;
+    private LevelInfo NextScene;
 
-    public string CurrentScene;
+    public LevelInfo CurrentScene;
 
     AsyncOperation AsyncLoad;
 
@@ -27,7 +34,6 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(loaderCanvas);
-        CurrentScene = SceneManager.GetActiveScene().name;
     }
 
     // Update is called once per frame
@@ -40,7 +46,7 @@ public class LevelManager : MonoBehaviour
     {
         GetNextScene();
         //loaderCanvas.SetActive(true);
-        AsyncLoad = SceneManager.LoadSceneAsync(NextScene);
+        AsyncLoad = SceneManager.LoadSceneAsync(NextScene.Name);
         AsyncLoad.allowSceneActivation = false;
     }
 
@@ -55,11 +61,13 @@ public class LevelManager : MonoBehaviour
         GetNextScene();
     }
 
-    public void PlayNextLevel()
+    public int PlayNextLevel() //returns new time for timemanager
     {
         CurrentScene = NextScene;
 
         AsyncLoad.allowSceneActivation = true;
+
+        return NextScene.LevelTime;
 
         //loaderCanvas.SetActive(false);
     }

@@ -597,6 +597,30 @@ PrefabInstance:
       propertyPath: loaderCanvas
       value: 
       objectReference: {fileID: 27489456}
+    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: Scenes.Array.data[0].Name
+      value: Test1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: Scenes.Array.data[1].Name
+      value: Test2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: Scenes.Array.data[2].Name
+      value: Test3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: Scenes.Array.data[0].LevelTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: Scenes.Array.data[1].LevelTime
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: Scenes.Array.data[2].LevelTime
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5274261463659757168, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: PauseCanvas
       value: 

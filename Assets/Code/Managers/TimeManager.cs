@@ -54,9 +54,9 @@ public class TimeManager : MonoBehaviour
         else if (state == TimeState.Score)
         {
             state = TimeState.Playing;
-            Timer = TimePlayingCurrentLevel; //todo Get Time for current LEvel
             gameManager.ShowScore(false);
-            levelManager.PlayNextLevel();
+            TimePlayingCurrentLevel = levelManager.PlayNextLevel();
+            Timer = TimePlayingCurrentLevel;
         }
     }
 }
