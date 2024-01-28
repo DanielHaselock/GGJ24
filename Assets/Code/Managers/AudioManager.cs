@@ -5,15 +5,34 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager Instance;
+
     [SerializeField] AudioSource m_music, m_sfx;
     [SerializeField] AudioClip[] m_songs;
     [SerializeField] AudioClip[] m_fills;
     [SerializeField] int nextBeatSwitch;
 
+    public int NextBeatSwitch { set {  nextBeatSwitch = value; } }
+
     private float m_twoBarTimer, m_twoBeatTimer;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+
+        else
+            Destroy(gameObject);
+    }
 
     private void Update()
     {
+        if (!m_music.isPlaying && nextBeatSwitch != 0)
+            StartCoroutine(BeatSwitch(nextBeatSwitch - 1));
+
         m_twoBarTimer = m_music.time % 15;
 
         float previousTwoBeat = m_twoBeatTimer;

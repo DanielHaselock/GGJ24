@@ -49,11 +49,11 @@ MonoBehaviour:
   m_music: {fileID: 6474317671758216304}
   m_sfx: {fileID: 4628880059109202758}
   m_songs:
-  - {fileID: 8300000, guid: b8691b0ed9d1a974c80dcf85dc0a5798, type: 3}
   - {fileID: 8300000, guid: 34e778cdd95f0d34e96d431c4197901c, type: 3}
+  - {fileID: 8300000, guid: b8691b0ed9d1a974c80dcf85dc0a5798, type: 3}
   m_fills:
-  - {fileID: 8300000, guid: 5302d9cbe3924f3449f202b6678b713f, type: 3}
   - {fileID: 8300000, guid: b1342724d96b70748b17d9e265279c43, type: 3}
+  - {fileID: 8300000, guid: 5302d9cbe3924f3449f202b6678b713f, type: 3}
   nextBeatSwitch: 0
 --- !u!82 &6474317671758216304
 AudioSource:
@@ -66,7 +66,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 34e778cdd95f0d34e96d431c4197901c, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

@@ -13,8 +13,7 @@ public class GameManager : MonoBehaviour
 
     private LevelManager levelManager;
     private TimeManager timeManager;  
-    private DifficultyManager difficultyManager;  
-
+    private DifficultyManager difficultyManager;
 
     enum GameState
     {
@@ -251,6 +250,11 @@ public class GameManager : MonoBehaviour
         difficultyManager.UpdateScore(Score, levelManager);
         ShowScore(true);
         levelManager.LoadNextLevel();
+
+        if (levelManager.NextScene.Name.Contains("Coins"))
+            AudioManager.Instance.NextBeatSwitch = 2;
+        else
+            AudioManager.Instance.NextBeatSwitch = 1;
     }
 
     public void PlayNextLevel()
