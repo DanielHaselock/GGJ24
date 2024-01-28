@@ -135,26 +135,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin
       objectReference: {fileID: 0}
-    - target: {fileID: 2112581417793914866, guid: 88190863f9cab934bb532672baa31a7a, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 9e7dab238c0632941852b73488c7ddfb, type: 3}
-    - target: {fileID: 2866541972026186333, guid: 88190863f9cab934bb532672baa31a7a, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 2866541972026186333, guid: 88190863f9cab934bb532672baa31a7a, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6825294276934384173, guid: 88190863f9cab934bb532672baa31a7a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6825294276934384173, guid: 88190863f9cab934bb532672baa31a7a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6825294276934384173, guid: 88190863f9cab934bb532672baa31a7a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.58
@@ -280,26 +260,6 @@ PrefabInstance:
     - target: {fileID: 921874338069685760, guid: 88190863f9cab934bb532672baa31a7a, type: 3}
       propertyPath: m_Name
       value: Coin (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2112581417793914866, guid: 88190863f9cab934bb532672baa31a7a, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 9e7dab238c0632941852b73488c7ddfb, type: 3}
-    - target: {fileID: 2866541972026186333, guid: 88190863f9cab934bb532672baa31a7a, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 2866541972026186333, guid: 88190863f9cab934bb532672baa31a7a, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6825294276934384173, guid: 88190863f9cab934bb532672baa31a7a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6825294276934384173, guid: 88190863f9cab934bb532672baa31a7a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6825294276934384173, guid: 88190863f9cab934bb532672baa31a7a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -714,26 +674,6 @@ PrefabInstance:
     - target: {fileID: 921874338069685760, guid: 88190863f9cab934bb532672baa31a7a, type: 3}
       propertyPath: m_Name
       value: Coin (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2112581417793914866, guid: 88190863f9cab934bb532672baa31a7a, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 9e7dab238c0632941852b73488c7ddfb, type: 3}
-    - target: {fileID: 2866541972026186333, guid: 88190863f9cab934bb532672baa31a7a, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 2866541972026186333, guid: 88190863f9cab934bb532672baa31a7a, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6825294276934384173, guid: 88190863f9cab934bb532672baa31a7a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6825294276934384173, guid: 88190863f9cab934bb532672baa31a7a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6825294276934384173, guid: 88190863f9cab934bb532672baa31a7a, type: 3}
       propertyPath: m_LocalPosition.x

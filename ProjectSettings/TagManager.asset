@@ -16,6 +16,7 @@ TagManager:
   - ScoreEnd
   - EndUI
   - Clock
+  - GoalText
   layers:
   - Default
   - TransparentFX

@@ -140,6 +140,7 @@ public class GameManager : MonoBehaviour
         difficultyManager.UpdateScore(Score, levelManager);
         state = GameState.InGame;
         ShowScore(true);
+        SetGoalText();
         timeManager.SwitchTimeExternal(TimeState.Start);
         timeManager.pPlayTime = true;
         AudioManager.Instance.PlaySong("electro");
@@ -184,6 +185,7 @@ public class GameManager : MonoBehaviour
         {
             anim.SetBool("ScreenHide", false);
             anim.SetBool("ScreenShow", true);
+            
         }
         else
         {
@@ -191,6 +193,25 @@ public class GameManager : MonoBehaviour
             anim.SetBool("ScreenShow", false);
         }
 
+    }
+
+    public void SetGoalText()
+    {
+        GameObject goalText = GameObject.FindGameObjectWithTag("GoalText");
+        var wincondition = levelManager.NextScene.wincondition;
+
+        switch (wincondition)
+        {
+            case GameWinCondition.REACHCHECKPOINT:
+                goalText.GetComponent<TextMeshProUGUI>().SetText("Reach the Checkpoint");
+                break;
+            case GameWinCondition.SURVIVE:
+                goalText.GetComponent<TextMeshProUGUI>().SetText("Survive");
+                break;
+            case GameWinCondition.COLLECTCOINS:
+                goalText.GetComponent<TextMeshProUGUI>().SetText("CollectCoins");
+                break;
+        }
     }
 
     public void ShowEndScore(bool pShow)
@@ -263,8 +284,10 @@ public class GameManager : MonoBehaviour
         Player.SetActive(false);
         difficultyManager.UpdateScore(Score, levelManager);
         ClockHUD.SetActive(false);
-        ShowScore(true);
         levelManager.LoadNextLevel();
+
+        ShowScore(true);
+        SetGoalText();
 
         if (levelManager.NextScene.Name.Contains("Coins"))
             AudioManager.Instance.NextBeatSwitch = 2;

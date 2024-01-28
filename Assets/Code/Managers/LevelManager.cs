@@ -5,6 +5,15 @@ using UnityEngine.Device;
 using UnityEngine.SceneManagement;
 using static TimeManager;
 
+
+
+public enum GameWinCondition
+{
+    REACHCHECKPOINT,
+    COLLECTCOINS,
+    SURVIVE
+}
+
 [System.Serializable]
 public class LevelInfo
 {
@@ -17,6 +26,8 @@ public class LevelInfo
 
     public bool pSpeedUpTime = false;
     public int pSpeedUpTimeAmount = 0;
+
+    public GameWinCondition wincondition;
 }
 
 public class LevelManager : MonoBehaviour
