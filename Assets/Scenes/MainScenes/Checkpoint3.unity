@@ -472,21 +472,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinConditionCheckpoint
       objectReference: {fileID: 0}
-    - target: {fileID: 2512817183477055161, guid: 67162eb930105784fa2de05e6b5586a7, type: 3}
-      propertyPath: m_Size.x
-      value: 0.20580047
-      objectReference: {fileID: 0}
-    - target: {fileID: 2512817183477055161, guid: 67162eb930105784fa2de05e6b5586a7, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.0029002465
-      objectReference: {fileID: 0}
     - target: {fileID: 3309691396119365405, guid: 67162eb930105784fa2de05e6b5586a7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 8.564074
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3309691396119365405, guid: 67162eb930105784fa2de05e6b5586a7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 7.2637115
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3309691396119365405, guid: 67162eb930105784fa2de05e6b5586a7, type: 3}
       propertyPath: m_LocalPosition.x
