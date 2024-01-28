@@ -721,7 +721,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1752533848172607620, guid: 789e93805db703747b0b9aaa9141e706, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 789e93805db703747b0b9aaa9141e706, type: 3}
@@ -1032,15 +1033,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 590249267921136214, guid: 2c9eec993fb2c264f8de7133f8bda7f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 375.3529
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 590249267921136214, guid: 2c9eec993fb2c264f8de7133f8bda7f4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 286.36273
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 590249267921136214, guid: 2c9eec993fb2c264f8de7133f8bda7f4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.8969884
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 590249267921136214, guid: 2c9eec993fb2c264f8de7133f8bda7f4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1094,7 +1095,6 @@ SceneRoots:
   - {fileID: 455871212}
   - {fileID: 4279252957283469996}
   - {fileID: 27489455}
-  - {fileID: 1012104571333598786}
   - {fileID: 570716494}
   - {fileID: 88653736}
   - {fileID: 1099942697703099005}
@@ -1102,3 +1102,4 @@ SceneRoots:
   - {fileID: 8981275236330334312}
   - {fileID: 5977719511526826794}
   - {fileID: 664721689}
+  - {fileID: 1012104571333598786}
