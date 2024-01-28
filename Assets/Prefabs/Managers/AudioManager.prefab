@@ -53,9 +53,11 @@ MonoBehaviour:
   m_songs:
   - {fileID: 8300000, guid: 34e778cdd95f0d34e96d431c4197901c, type: 3}
   - {fileID: 8300000, guid: b8691b0ed9d1a974c80dcf85dc0a5798, type: 3}
+  - {fileID: 8300000, guid: 7c4f77409ce37a44a9a98d1fe3ee8ee7, type: 3}
   m_fills:
   - {fileID: 8300000, guid: b1342724d96b70748b17d9e265279c43, type: 3}
   - {fileID: 8300000, guid: 5302d9cbe3924f3449f202b6678b713f, type: 3}
+  - {fileID: 8300000, guid: 279b70aeaab931e4ea3abaf6d707d97e, type: 3}
   m_cheers:
   - {fileID: 8300000, guid: 46caa849043f1d3499f247e5811c4e58, type: 3}
   - {fileID: 8300000, guid: 5ea749d61146e27438001b51d38af0de, type: 3}

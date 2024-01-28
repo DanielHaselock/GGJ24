@@ -291,6 +291,8 @@ public class GameManager : MonoBehaviour
 
         if (levelManager.NextScene.Name.Contains("Coins"))
             AudioManager.Instance.NextBeatSwitch = 2;
+        else if (levelManager.NextScene.Name.Contains("Checkpoint"))
+            AudioManager.Instance.NextBeatSwitch = 3;
         else
             AudioManager.Instance.NextBeatSwitch = 1;
     }
