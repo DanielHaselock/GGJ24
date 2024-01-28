@@ -181,16 +181,28 @@ public class GameManager : MonoBehaviour
 
         Animator anim = animobject.GetComponent<Animator>();
 
+        GameObject animobject2 = GameObject.FindGameObjectWithTag("UIScoreImage2");
+        if (!animobject)
+            return;
+
+        Animator anim2 = animobject2.GetComponent<Animator>();
+
         if (pShow)
         {
             anim.SetBool("ScreenHide", false);
             anim.SetBool("ScreenShow", true);
-            
+
+            anim2.SetBool("ScreenHide", false);
+            anim2.SetBool("ScreenShow", true);
+
         }
         else
         {
             anim.SetBool("ScreenHide", true);
             anim.SetBool("ScreenShow", false);
+
+            anim2.SetBool("ScreenHide", true);
+            anim2.SetBool("ScreenShow", false);
         }
 
     }

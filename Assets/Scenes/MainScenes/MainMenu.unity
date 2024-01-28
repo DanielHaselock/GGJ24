@@ -282,6 +282,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3639690444043644294, guid: 794085da964cd7a47ad647ab981665de, type: 3}
+      propertyPath: m_TagString
+      value: UIScoreImage2
+      objectReference: {fileID: 0}
     - target: {fileID: 5172902655179697344, guid: 794085da964cd7a47ad647ab981665de, type: 3}
       propertyPath: m_Name
       value: Score
@@ -305,6 +309,10 @@ PrefabInstance:
     - target: {fileID: 6181119853223046432, guid: 794085da964cd7a47ad647ab981665de, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -297.42734
+      objectReference: {fileID: 0}
+    - target: {fileID: 6242070662696089340, guid: 794085da964cd7a47ad647ab981665de, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
