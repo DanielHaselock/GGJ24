@@ -14,6 +14,7 @@ public class ReachCheckpoint : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        LevelEditor.GetComponent<CurrentLevelManager>().SetWinAndFinish();
+        if(col.gameObject.tag == "Player")
+            LevelEditor.GetComponent<CurrentLevelManager>().SetWinAndFinish();
     }
 }
