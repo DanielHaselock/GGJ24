@@ -11,7 +11,7 @@ using static TimeManager;
 public class GameManager : MonoBehaviour
 {
 
-    private LevelManager levelManager;
+    public LevelManager levelManager;
     private TimeManager timeManager;  
     private DifficultyManager difficultyManager;
 
