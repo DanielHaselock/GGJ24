@@ -33,7 +33,7 @@ public class LevelManager : MonoBehaviour
 
     public CurrentLevelManager CurrentLevelManager; //Updates At start of level
 
-    private LevelInfo NextScene;
+    public LevelInfo NextScene;
 
     public LevelInfo CurrentScene;
 
