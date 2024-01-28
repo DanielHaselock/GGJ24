@@ -1,12 +1,10 @@
 TODO -- PRIORITIES
 
 ART
-    Finish tileset
     Title screen UI
     Level win / level lose screens
     Backgrounds
 PROGRAMMING
-    Finalize music implementation
     Sound effect implementation
     Figure out proper build settings
 LEVEL DESIGN
@@ -16,6 +14,7 @@ AUDIO
     Anchor hit floor
     Anchor hit skull
     Balloon pop
+    Coin get
 
 
 TODO -- NICE TO HAVES

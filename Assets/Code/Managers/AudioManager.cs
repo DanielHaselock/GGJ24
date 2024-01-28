@@ -9,12 +9,12 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] AudioSource m_music, m_sfx;
     [SerializeField] AudioClip m_mainMenu, m_loseScreen;
-    [SerializeField] AudioClip[] m_songs;
-    [SerializeField] AudioClip[] m_fills;
-    [SerializeField] int nextBeatSwitch;
+    [SerializeField] AudioClip[] m_songs, m_fills, m_cheers, m_laughs, m_insults;
+    int m_nextBeatSwitch;
     [SerializeField] GameManager m_gameManager;
+    int m_sfxCounter;
 
-    public int NextBeatSwitch { set {  nextBeatSwitch = value; } }
+    public int NextBeatSwitch { set {  m_nextBeatSwitch = value; } }
 
     private float m_twoBarTimer, m_twoBeatTimer;
 
@@ -32,10 +32,10 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        if (!m_music.isPlaying && nextBeatSwitch != 0)
+        if (!m_music.isPlaying && m_nextBeatSwitch != 0)
         {
-            StartCoroutine(BeatSwitch(nextBeatSwitch - 1));
-            nextBeatSwitch = 0;
+            StartCoroutine(BeatSwitch(m_nextBeatSwitch - 1));
+            m_nextBeatSwitch = 0;
         }
 
         m_twoBarTimer = m_music.time % 15;
@@ -43,10 +43,10 @@ public class AudioManager : MonoBehaviour
         float previousTwoBeat = m_twoBeatTimer;
         m_twoBeatTimer = m_music.time % 3.75f;
 
-        if (previousTwoBeat < 1.875f && m_twoBeatTimer >= 1.875f && nextBeatSwitch > 0)
+        if (previousTwoBeat < 1.875f && m_twoBeatTimer >= 1.875f && m_nextBeatSwitch > 0)
         {
-            StartCoroutine(BeatSwitch(nextBeatSwitch - 1));
-            nextBeatSwitch = 0;
+            StartCoroutine(BeatSwitch(m_nextBeatSwitch - 1));
+            m_nextBeatSwitch = 0;
         }
     }
 
@@ -54,12 +54,31 @@ public class AudioManager : MonoBehaviour
     {
         m_music.clip = m_fills[beatIndex];
         m_music.Play();
+        PlayInsult();
 
         yield return new WaitForSeconds(1.875f);
         m_music.clip = m_songs[beatIndex];
         m_music.Play();
 
         m_gameManager.PlayNextLevel(); // added for audio continuity between scenes
+    }
+
+    public void PlayCheer()
+    {
+        int random = Random.Range(0, m_cheers.Length);
+        StartCoroutine(ProcessSoundEffect(m_cheers[random]));
+    }
+
+    public void PlayInsult()
+    {
+        int random = Random.Range(0, m_insults.Length);
+        m_sfx.PlayOneShot(m_insults[random]);
+    }
+
+    public void PlayLaughTrack()
+    {
+        int random = Random.Range(0, m_laughs.Length);
+        StartCoroutine(ProcessSoundEffect(m_laughs[random]));
     }
 
     public void PlaySong(string songName)
@@ -77,5 +96,17 @@ public class AudioManager : MonoBehaviour
             m_music.clip = m_songs[1];
 
         m_music.Play();
+    }
+
+    private IEnumerator ProcessSoundEffect(AudioClip sound)
+    {
+        if (m_sfxCounter >= 5)
+            yield break;
+
+        m_sfxCounter++;
+        m_sfx.PlayOneShot(sound);
+        yield return new WaitForSeconds(3.0f);
+
+        m_sfxCounter--;
     }
 }

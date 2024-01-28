@@ -56,7 +56,28 @@ MonoBehaviour:
   m_fills:
   - {fileID: 8300000, guid: b1342724d96b70748b17d9e265279c43, type: 3}
   - {fileID: 8300000, guid: 5302d9cbe3924f3449f202b6678b713f, type: 3}
-  nextBeatSwitch: 0
+  m_cheers:
+  - {fileID: 8300000, guid: 46caa849043f1d3499f247e5811c4e58, type: 3}
+  - {fileID: 8300000, guid: 5ea749d61146e27438001b51d38af0de, type: 3}
+  - {fileID: 8300000, guid: 896a419746b60c04fa1488c625e54c2a, type: 3}
+  - {fileID: 8300000, guid: 94cd6f4eb4eebfc44a36cf9f716bc849, type: 3}
+  - {fileID: 8300000, guid: a6379eff558eca041b1901137227514e, type: 3}
+  m_laughs:
+  - {fileID: 8300000, guid: e5bb787805bec904d929426646440bc3, type: 3}
+  - {fileID: 8300000, guid: 082a24ab2fd93f94390ff5a786ec3625, type: 3}
+  - {fileID: 8300000, guid: 47129237322e9874bafd935229f9ac20, type: 3}
+  m_insults:
+  - {fileID: 8300000, guid: d71f77e15b5bcb14c9c00feff582ed6e, type: 3}
+  - {fileID: 8300000, guid: 7700086fab275014ca07f5a7fb1f2f56, type: 3}
+  - {fileID: 8300000, guid: c4f6dd8afcddc064896036ce5e2efc2a, type: 3}
+  - {fileID: 8300000, guid: 13b1e233cd0759842bbb3cb04b53f2d2, type: 3}
+  - {fileID: 8300000, guid: dd7e8c1bf0b08e842839e8b9e876394d, type: 3}
+  - {fileID: 8300000, guid: 4ede09c835026f149b8a7c4df7bf4853, type: 3}
+  - {fileID: 8300000, guid: c5ecc73838ffbde43b89a41fa93a10aa, type: 3}
+  - {fileID: 8300000, guid: d315bfdb94198ce4b8d0a4f22374d1a1, type: 3}
+  - {fileID: 8300000, guid: f2366c53dfaf663488251e28fa7cf5ca, type: 3}
+  - {fileID: 8300000, guid: 5b832249d79c8244d8060d9604e62697, type: 3}
+  - {fileID: 8300000, guid: 987417127123c0a489a82d1b3e76d530, type: 3}
   m_gameManager: {fileID: 0}
 --- !u!82 &6474317671758216304
 AudioSource:
@@ -70,7 +91,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e00a94e3e4c1dad4bb77e5a5e9c6b6e3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
