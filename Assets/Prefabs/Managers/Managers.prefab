@@ -64,11 +64,11 @@ MonoBehaviour:
     wincondition: 0
   - DebugNoPlayLevel: 0
     MinDifficultyForLevel: 0
-    Name: Survive1
+    Name: Survive2
     LevelTime: 30
     pSpeedUpTime: 0
-    pSpeedUpTimeAmount: 0
-    wincondition: 0
+    pSpeedUpTimeAmount: -5
+    wincondition: 2
   - DebugNoPlayLevel: 0
     MinDifficultyForLevel: 0
     Name: Checkpoint2
@@ -104,6 +104,13 @@ MonoBehaviour:
     pSpeedUpTime: 1
     pSpeedUpTimeAmount: 5
     wincondition: 0
+  - DebugNoPlayLevel: 0
+    MinDifficultyForLevel: 0
+    Name: Coins3
+    LevelTime: 25
+    pSpeedUpTime: 1
+    pSpeedUpTimeAmount: 3
+    wincondition: 1
   - DebugNoPlayLevel: 0
     MinDifficultyForLevel: 0
     Name: Coins3
