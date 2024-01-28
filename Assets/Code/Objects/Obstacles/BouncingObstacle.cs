@@ -19,6 +19,8 @@ public class BouncingObstacle : GenericObstacle
 
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
+        AudioManager.Instance.Boing();
+
         base.OnCollisionEnter2D(collision);
 
         Vector2 relativevVelocity = collision.relativeVelocity;
