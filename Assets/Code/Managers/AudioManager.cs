@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] AudioSource m_music, m_sfx;
     [SerializeField] AudioClip m_mainMenu, m_loseScreen;
-    [SerializeField] AudioClip[] m_songs, m_fills, m_cheers, m_laughs, m_insults;
+    [SerializeField] AudioClip[] m_songs, m_fills, m_cheers, m_laughs, m_gasps, m_insults;
     int m_nextBeatSwitch;
     [SerializeField] GameManager m_gameManager;
     int m_sfxCounter;
@@ -75,10 +75,19 @@ public class AudioManager : MonoBehaviour
         m_sfx.PlayOneShot(m_insults[random]);
     }
 
-    public void PlayLaughTrack()
+    public void PlayLaughTrackOrGasp()
     {
-        int random = Random.Range(0, m_laughs.Length);
-        StartCoroutine(ProcessSoundEffect(m_laughs[random]));
+        int coinFlip = Random.Range(0, 2);
+
+        AudioClip[] audioArray;
+        if (coinFlip == 0)
+            audioArray = m_laughs;
+
+        else
+            audioArray = m_gasps;
+
+        int random = Random.Range(0, audioArray.Length);
+        StartCoroutine(ProcessSoundEffect(audioArray[random]));
     }
 
     public void PlaySong(string songName)
@@ -105,7 +114,7 @@ public class AudioManager : MonoBehaviour
 
         m_sfxCounter++;
         m_sfx.PlayOneShot(sound);
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(2.0f);
 
         m_sfxCounter--;
     }

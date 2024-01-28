@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ButtonHandler : MonoBehaviour
@@ -46,7 +47,12 @@ public class ButtonHandler : MonoBehaviour
             //buttonList[selectedButton].action();
         //}
 
-        if (Input.anyKeyDown)
+        if (Input.anyKeyDown && SceneManager.GetActiveScene().name.Contains("Menu"))
+        {
+            PlayButtonAction();
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Space) && SceneManager.GetActiveScene().name.Contains("End"))
         {
             PlayButtonAction();
         }

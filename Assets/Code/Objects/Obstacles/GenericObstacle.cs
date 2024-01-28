@@ -29,6 +29,6 @@ public class GenericObstacle : MonoBehaviour
         PlayerController playerController = collision.collider.GetComponent<PlayerController>();
         playerController.Hurt();
 
-        AudioManager.Instance.PlayLaughTrack();
+        AudioManager.Instance.PlayLaughTrackOrGasp();
     }
 }

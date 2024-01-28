@@ -68,6 +68,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e5bb787805bec904d929426646440bc3, type: 3}
   - {fileID: 8300000, guid: 082a24ab2fd93f94390ff5a786ec3625, type: 3}
   - {fileID: 8300000, guid: 47129237322e9874bafd935229f9ac20, type: 3}
+  m_gasps:
+  - {fileID: 8300000, guid: 75829a58962eabc4d87b52c5d8c403bb, type: 3}
+  - {fileID: 8300000, guid: 15a8202f2af277646880dfcfd2109cba, type: 3}
+  - {fileID: 8300000, guid: d0fbad79babf95d4094037e853a142e1, type: 3}
+  - {fileID: 8300000, guid: dca95deb9bf73f642830d0c9e55f7f85, type: 3}
+  - {fileID: 8300000, guid: 14271164f2e1cf84e9c294d529bdc37d, type: 3}
   m_insults:
   - {fileID: 8300000, guid: d71f77e15b5bcb14c9c00feff582ed6e, type: 3}
   - {fileID: 8300000, guid: 7700086fab275014ca07f5a7fb1f2f56, type: 3}
