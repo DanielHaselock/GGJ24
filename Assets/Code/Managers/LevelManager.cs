@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Device;
 using UnityEngine.SceneManagement;
 using static TimeManager;
 
@@ -9,6 +10,9 @@ public class LevelInfo
 {
     public string Name;
     public int LevelTime;
+
+    public bool pSpeedUpTime = false;
+    public int pSpeedUpTimeAmount = 0;
 }
 
 public class LevelManager : MonoBehaviour
@@ -16,7 +20,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField] private
-    LevelInfo[] Scenes;
+    List<LevelInfo> Scenes;
 
     [SerializeField]
     private GameObject loaderCanvas;
@@ -43,7 +47,7 @@ public class LevelManager : MonoBehaviour
         Player = pPlayer;
     }
 
-    public async void LoadNextLevel() //loads in background for score to be shown
+    public void LoadNextLevel() //loads in background for score to be shown
     {
         GetNextScene();
         //loaderCanvas.SetActive(true);
@@ -53,7 +57,7 @@ public class LevelManager : MonoBehaviour
 
     public void GetNextScene()
     {
-        int a = Random.Range(0, Scenes.Length);
+        int a = Random.Range(0, Scenes.Count);
         if(CurrentScene == null || CurrentScene != Scenes[a])
         {
             NextScene = Scenes[a];
@@ -69,7 +73,7 @@ public class LevelManager : MonoBehaviour
         AsyncLoad.allowSceneActivation = true;
 
         GetComponent<TimeManager>().TimePlayingCurrentLevel = CurrentScene.LevelTime;
-        GetComponent<TimeManager>().ResetTime();
+        //GetComponent<TimeManager>().ResetTime();
         GetComponent<TimeManager>().SwitchTimeExternal(TimeState.Playing);
 
         return NextScene.LevelTime;
@@ -85,6 +89,23 @@ public class LevelManager : MonoBehaviour
     public void CheckLevelWin()
     {
         CurrentLevelManager.CheckLevelWin();
+    }
+
+    public void ChangeAllSceneTime()
+    {
+        foreach(LevelInfo scene in Scenes)
+        {
+            if(scene.pSpeedUpTime)
+            {
+                scene.LevelTime -= scene.pSpeedUpTimeAmount;
+            }
+        }
+    }
+
+    public void ChangeCurrentSceneTime(int pTimeTakeOff)
+    {
+        int index = Scenes.FindIndex(0, go => go == CurrentScene);
+        Scenes[index].LevelTime -= pTimeTakeOff;
     }
 
 }

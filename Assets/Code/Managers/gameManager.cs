@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     private LevelManager levelManager;
     private TimeManager timeManager;  
+    private DifficultyManager difficultyManager;  
 
 
     enum GameState
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour
 
             levelManager = GetComponent<LevelManager>();
             timeManager = GetComponent<TimeManager>();
+            difficultyManager = GetComponent<DifficultyManager>();
             levelManager.SetPlayer(Player);
             pause.performed += _ => Pause();
         }
@@ -62,6 +64,7 @@ public class GameManager : MonoBehaviour
             GameObject obj = GetDestroyonLoadGameobject("Manager");
             levelManager = obj.GetComponent<LevelManager>();
             timeManager = obj.GetComponent<TimeManager>();
+            difficultyManager = obj.GetComponent<DifficultyManager>();
         }
 
         timeManager.pPlayTime = false;
@@ -130,7 +133,8 @@ public class GameManager : MonoBehaviour
 
     public void PlayGame()
     {
-        Score = 0;
+        Score = 0; 
+        difficultyManager.UpdateScore(Score, levelManager);
         state = GameState.InGame;
         PlayNextLevel();
     }
@@ -247,6 +251,7 @@ public class GameManager : MonoBehaviour
     public void LoadNextLevel()
     {
         Player.SetActive(false);
+        difficultyManager.UpdateScore(Score, levelManager);
         ShowScore(true);
         levelManager.LoadNextLevel();
     }
@@ -265,6 +270,7 @@ public class GameManager : MonoBehaviour
     }
     public void ResetScore()
     {
+        difficultyManager.ResetScore();
         PlayerPrefs.SetFloat("Score", 0);
         PlayerPrefs.DeleteKey("Score");
     }

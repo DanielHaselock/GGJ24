@@ -25,6 +25,7 @@ public class CurrentLevelManager : MonoBehaviour
 
     public GameWinCondition wincondition;
 
+
     private void Start()
     {
         GetPlayer();
@@ -109,4 +110,10 @@ public class CurrentLevelManager : MonoBehaviour
         pWin = true;
         CheckLevelWin();
     }
+
+    //public void IncreaseDifficuty(DifficultyManager DifficultyManager)
+    //{
+    //    if(difficultyImpact.pSpeedUpTime)
+    //        Managers.GetComponent<LevelManager>().ChangeCurrentSceneTime(difficultyImpact.pSpeedUpTimeAmount);
+    //}
 }
