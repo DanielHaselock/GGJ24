@@ -32,18 +32,23 @@ public class ButtonHandler : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            MoveToNextButton();
-        }
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            MoveToPreviousButton();
-        }
+        //if (Input.GetKeyDown(KeyCode.W))
+        //{
+            //MoveToNextButton();
+        //}
+        //else if (Input.GetKeyDown(KeyCode.S))
+        //{
+            //MoveToPreviousButton();
+        //}
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+            //buttonList[selectedButton].action();
+        //}
+
+        if (Input.anyKeyDown)
         {
-            buttonList[selectedButton].action();
+            PlayButtonAction();
         }
     }
 

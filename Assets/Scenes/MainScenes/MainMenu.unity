@@ -360,7 +360,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1140064317107158520, guid: 2d46bfc02f7d1814591d8b54e6f143c7, type: 3}
-      insertIndex: -1
+      insertIndex: 3
       addedObject: {fileID: 455871214}
   m_SourcePrefab: {fileID: 100100000, guid: 2d46bfc02f7d1814591d8b54e6f143c7, type: 3}
 --- !u!1 &455871213 stripped
@@ -684,6 +684,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 3714718078676815799, guid: 789e93805db703747b0b9aaa9141e706, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5605802552676093166, guid: 789e93805db703747b0b9aaa9141e706, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -707,6 +711,14 @@ PrefabInstance:
     - target: {fileID: 6304196494486889932, guid: 789e93805db703747b0b9aaa9141e706, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355851330792072496, guid: 789e93805db703747b0b9aaa9141e706, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387373413292064282, guid: 789e93805db703747b0b9aaa9141e706, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
