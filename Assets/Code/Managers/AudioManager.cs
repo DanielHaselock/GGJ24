@@ -7,9 +7,10 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
-    [SerializeField] AudioSource m_music, m_sfx;
-    [SerializeField] AudioClip m_mainMenu, m_loseScreen;
+    [SerializeField] AudioSource m_music, m_sfx, m_boing;
+    [SerializeField] AudioClip m_mainMenu, m_loseScreen, m_coin, m_pop;
     [SerializeField] AudioClip[] m_songs, m_fills, m_cheers, m_laughs, m_gasps, m_insults;
+
     int m_nextBeatSwitch;
     [SerializeField] GameManager m_gameManager;
     int m_sfxCounter;
@@ -17,6 +18,7 @@ public class AudioManager : MonoBehaviour
     public int NextBeatSwitch { set {  m_nextBeatSwitch = value; } }
 
     private float m_twoBarTimer, m_twoBeatTimer;
+    private int m_boinging;
 
     private void Awake()
     {
@@ -61,6 +63,26 @@ public class AudioManager : MonoBehaviour
         m_music.Play();
 
         m_gameManager.PlayNextLevel(); // added for audio continuity between scenes
+    }
+
+    public IEnumerator Boing()
+    {
+        if (m_boinging < 4)
+        {
+            m_boinging++;
+            m_boing.pitch = Random.Range(0.9f, 1.1f);
+            m_boing.Play();
+            yield return new WaitForSeconds(3.0f);
+            m_boinging--;
+        }
+    }
+
+    public void Coin() { 
+        m_sfx.PlayOneShot(m_coin);
+    }
+    
+    public void Pop() { 
+        m_sfx.PlayOneShot(m_pop);
     }
 
     public void PlayCheer()

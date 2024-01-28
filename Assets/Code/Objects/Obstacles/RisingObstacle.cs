@@ -11,6 +11,7 @@ public class RisingObstacle : GenericObstacle
         if (collision.collider.tag.Equals("Player"))
         {
             m_animator.SetTrigger("Pop");
+            AudioManager.Instance.Pop();
         }
     }
 

@@ -19,6 +19,7 @@ public class CoinData : MonoBehaviour
             m_collected = true;
             col.gameObject.GetComponent<CollectCoins>().AddCoin(this);
             m_animator.SetTrigger("Collect");
+            AudioManager.Instance.Coin();
         }
     }
 
