@@ -6,7 +6,6 @@ ART
     Level win / level lose screens
     Backgrounds
 PROGRAMMING
-    Main menu options
     Finalize music implementation
     Sound effect implementation
     Figure out proper build settings

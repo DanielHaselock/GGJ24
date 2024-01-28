@@ -75,6 +75,8 @@ public class GameManager : MonoBehaviour
         ClockHUD.SetActive(false);
 
         ShowScore(false);
+
+        AudioManager.Instance.PlaySong("menu");
     }
 
     private void adddontdestroyonload()
@@ -140,6 +142,7 @@ public class GameManager : MonoBehaviour
         ShowScore(true);
         timeManager.SwitchTimeExternal(TimeState.Start);
         timeManager.pPlayTime = true;
+        AudioManager.Instance.PlaySong("electro");
         //PlayNextLevel();
     }
 
@@ -223,6 +226,7 @@ public class GameManager : MonoBehaviour
         ShowEndScore(true);
         timeManager.SwitchTimeExternal(TimeState.End);
         levelManager.LoadSpecificScene(EndScene);
+        AudioManager.Instance.PlaySong("lose");
     }
 
     public void ShowEndUI()

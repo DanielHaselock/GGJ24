@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
 
     [SerializeField] AudioSource m_music, m_sfx;
+    [SerializeField] AudioClip m_mainMenu, m_loseScreen;
     [SerializeField] AudioClip[] m_songs;
     [SerializeField] AudioClip[] m_fills;
     [SerializeField] int nextBeatSwitch;
@@ -59,5 +60,22 @@ public class AudioManager : MonoBehaviour
         m_music.Play();
 
         m_gameManager.PlayNextLevel(); // added for audio continuity between scenes
+    }
+
+    public void PlaySong(string songName)
+    {
+        if (songName.Equals("menu"))
+            m_music.clip = m_mainMenu;
+
+        else if (songName.Equals("lose"))
+            m_music.clip = m_loseScreen;
+
+        else if (songName.Equals("dubsteb"))
+            m_music.clip = m_songs[1];
+
+        else if (songName.Equals("electro"))
+            m_music.clip = m_songs[1];
+
+        m_music.Play();
     }
 }
