@@ -172,7 +172,7 @@ public class GameManager : MonoBehaviour
         if (!ScoreText)
             ScoreText = GameObject.FindGameObjectWithTag("ScoreText");
 
-        ScoreText.GetComponent<TextMeshProUGUI>().SetText(PlayerPrefs.GetFloat("Score").ToString());
+        ScoreText.GetComponent<TextMeshProUGUI>().SetText("Score " + PlayerPrefs.GetFloat("Score").ToString());
 
         ScoreCanvas.SetActive(true);
         GameObject animobject = GameObject.FindGameObjectWithTag("UIScoreImage");
@@ -215,13 +215,13 @@ public class GameManager : MonoBehaviour
         switch (wincondition)
         {
             case GameWinCondition.REACHCHECKPOINT:
-                goalText.GetComponent<TextMeshProUGUI>().SetText("Reach the Checkpoint");
+                goalText.GetComponent<TextMeshProUGUI>().SetText("RUN CLOWN RUN");
                 break;
             case GameWinCondition.SURVIVE:
-                goalText.GetComponent<TextMeshProUGUI>().SetText("Survive");
+                goalText.GetComponent<TextMeshProUGUI>().SetText("DON'T DIE");
                 break;
             case GameWinCondition.COLLECTCOINS:
-                goalText.GetComponent<TextMeshProUGUI>().SetText("CollectCoins");
+                goalText.GetComponent<TextMeshProUGUI>().SetText("GRAB THE CASH");
                 break;
         }
     }
@@ -231,23 +231,32 @@ public class GameManager : MonoBehaviour
        
         var ScoreTextEnd = GameObject.FindGameObjectWithTag("UIScoreEnd");
 
-        ScoreTextEnd.GetComponent<TextMeshProUGUI>().SetText(PlayerPrefs.GetFloat("Score").ToString());
+        ScoreTextEnd.GetComponent<TextMeshProUGUI>().SetText("Score " + PlayerPrefs.GetFloat("Score").ToString());
 
-        GameObject animobject = GameObject.FindGameObjectWithTag("UIScoreImageEnd");
-        if (!animobject)
+        GameObject leftCurtain = GameObject.FindGameObjectWithTag("UIScoreImageEnd1");
+        GameObject rightCurtain = GameObject.FindGameObjectWithTag("UIScoreImageEnd2");
+        if (!leftCurtain)
             return;
 
-        Animator anim = animobject.GetComponent<Animator>();
+        Animator anim1 = leftCurtain.GetComponent<Animator>();
+        Animator anim2 = rightCurtain.GetComponent<Animator>();
 
         if (pShow)
         {
-            anim.SetBool("ScreenHide", false);
-            anim.SetBool("ScreenShow", true);
+            anim1.SetBool("ScreenHide", false);
+            anim1.SetBool("ScreenShow", true);
+
+            anim2.SetBool("ScreenHide", false);
+            anim2.SetBool("ScreenShow", true);
+
         }
         else
         {
-            anim.SetBool("ScreenHide", true);
-            anim.SetBool("ScreenShow", false);
+            anim1.SetBool("ScreenHide", true);
+            anim1.SetBool("ScreenShow", false);
+
+            anim2.SetBool("ScreenHide", true);
+            anim2.SetBool("ScreenShow", false);
         }
 
     }

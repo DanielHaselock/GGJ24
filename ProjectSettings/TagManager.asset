@@ -11,13 +11,14 @@ TagManager:
   - ScoreText
   - UIScoreImage
   - UIScoreEnd
-  - UIScoreImageEnd
   - MainMenuButton
   - ScoreEnd
   - EndUI
   - Clock
   - GoalText
   - UIScoreImage2
+  - UIScoreImageEnd1
+  - UIScoreImageEnd2
   layers:
   - Default
   - TransparentFX
