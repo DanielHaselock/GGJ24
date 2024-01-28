@@ -17,6 +17,7 @@ TagManager:
   - EndUI
   - Clock
   - GoalText
+  - UIScoreImage2
   layers:
   - Default
   - TransparentFX
