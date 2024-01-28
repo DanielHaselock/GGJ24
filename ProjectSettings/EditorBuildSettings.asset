@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScenes/Coins3.unity
     guid: 3192c42066b3b4587a06157ec573e880
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/Coins4.unity
+    guid: 93f34504c149d4ce28073cefed11580c
   m_configObjects: {}
