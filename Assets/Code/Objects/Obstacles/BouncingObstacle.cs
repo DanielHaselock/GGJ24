@@ -19,7 +19,7 @@ public class BouncingObstacle : GenericObstacle
 
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
-        AudioManager.Instance.Boing();
+        StartCoroutine(AudioManager.Instance.Boing());
 
         base.OnCollisionEnter2D(collision);
 

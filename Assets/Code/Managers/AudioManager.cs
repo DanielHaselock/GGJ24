@@ -18,6 +18,7 @@ public class AudioManager : MonoBehaviour
     public int NextBeatSwitch { set {  m_nextBeatSwitch = value; } }
 
     private float m_twoBarTimer, m_twoBeatTimer;
+    private int m_boinging;
 
     private void Awake()
     {
@@ -64,10 +65,16 @@ public class AudioManager : MonoBehaviour
         m_gameManager.PlayNextLevel(); // added for audio continuity between scenes
     }
 
-    public void Boing()
+    public IEnumerator Boing()
     {
-        m_boing.pitch = Random.Range(0.9f, 1.1f);
-        m_boing.Play();
+        if (m_boinging < 4)
+        {
+            m_boinging++;
+            m_boing.pitch = Random.Range(0.9f, 1.1f);
+            m_boing.Play();
+            yield return new WaitForSeconds(3.0f);
+            m_boinging--;
+        }
     }
 
     public void Coin() { 
