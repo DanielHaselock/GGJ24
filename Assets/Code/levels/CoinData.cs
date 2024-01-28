@@ -4,12 +4,26 @@ using UnityEngine;
 
 public class CoinData : MonoBehaviour
 {
+    private Animator m_animator;
+    private bool m_collected;
+
+    private void Start()
+    {
+        m_animator = GetComponent<Animator>();
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.GetComponent<CollectCoins>())
+        if(!m_collected && col.gameObject.GetComponent<CollectCoins>())
         {
+            m_collected = true;
             col.gameObject.GetComponent<CollectCoins>().AddCoin(this);
-            Destroy(this.gameObject);
+            m_animator.SetTrigger("Collect");
         }
+    }
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
     }
 }
