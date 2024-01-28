@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip[] m_songs;
     [SerializeField] AudioClip[] m_fills;
     [SerializeField] int nextBeatSwitch;
+    [SerializeField] GameManager m_gameManager;
 
     public int NextBeatSwitch { set {  nextBeatSwitch = value; } }
 
@@ -31,7 +32,10 @@ public class AudioManager : MonoBehaviour
     private void Update()
     {
         if (!m_music.isPlaying && nextBeatSwitch != 0)
+        {
             StartCoroutine(BeatSwitch(nextBeatSwitch - 1));
+            nextBeatSwitch = 0;
+        }
 
         m_twoBarTimer = m_music.time % 15;
 
@@ -41,17 +45,19 @@ public class AudioManager : MonoBehaviour
         if (previousTwoBeat < 1.875f && m_twoBeatTimer >= 1.875f && nextBeatSwitch > 0)
         {
             StartCoroutine(BeatSwitch(nextBeatSwitch - 1));
+            nextBeatSwitch = 0;
         }
     }
 
     private IEnumerator BeatSwitch(int beatIndex)
     {
-        nextBeatSwitch = 0;
         m_music.clip = m_fills[beatIndex];
         m_music.Play();
 
         yield return new WaitForSeconds(1.875f);
         m_music.clip = m_songs[beatIndex];
         m_music.Play();
+
+        m_gameManager.PlayNextLevel(); // added for audio continuity between scenes
     }
 }

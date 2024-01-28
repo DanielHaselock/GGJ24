@@ -61,7 +61,7 @@ public class TimeManager : MonoBehaviour
         else if (state == TimeState.Score)
         {
             state = TimeState.Playing;
-            gameManager.PlayNextLevel();
+            //gameManager.PlayNextLevel(); commendted out because it breaks audio
             Timer = TimePlayingCurrentLevel;
         }
 
@@ -95,4 +95,5 @@ public class TimeManager : MonoBehaviour
     {
         Timer = TimePlayingCurrentLevel;
     }
+
 }
