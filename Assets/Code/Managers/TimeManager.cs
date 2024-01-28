@@ -137,23 +137,26 @@ public class TimeManager : MonoBehaviour
         if (percentage > 60 && clockstate != ClockState.Calm)
         {
             clockstate = ClockState.Calm;
-            Clock.GetComponent<Animator>().SetBool("Calm", true);
-            Clock.GetComponent<Animator>().SetBool("Medium", false);
-            Clock.GetComponent<Animator>().SetBool("Red", false);
+            Clock.GetComponent<Animator>().speed = 1;
+            //Clock.GetComponent<Animator>().SetBool("Calm", true);
+            //Clock.GetComponent<Animator>().SetBool("Medium", false);
+            //Clock.GetComponent<Animator>().SetBool("Red", false);
         }
         else if (percentage > 30 && percentage < 60 && clockstate != ClockState.Medium)
         {
             clockstate = ClockState.Medium;
-            Clock.GetComponent<Animator>().SetBool("Calm", false);
-            Clock.GetComponent<Animator>().SetBool("Medium", true);
-            Clock.GetComponent<Animator>().SetBool("Red", false);
+            Clock.GetComponent<Animator>().speed = 1.5f;
+            //Clock.GetComponent<Animator>().SetBool("Calm", false);
+            //Clock.GetComponent<Animator>().SetBool("Medium", true);
+            //Clock.GetComponent<Animator>().SetBool("Red", false);
         }
         else if (percentage < 30 && clockstate != ClockState.Red)
         {
             clockstate = ClockState.Red;
-            Clock.GetComponent<Animator>().SetBool("Calm", false);
-            Clock.GetComponent<Animator>().SetBool("Medium", false);
-            Clock.GetComponent<Animator>().SetBool("Red", true);
+            Clock.GetComponent<Animator>().speed = 3f;
+            //Clock.GetComponent<Animator>().SetBool("Calm", false);
+            //Clock.GetComponent<Animator>().SetBool("Medium", false);
+            //Clock.GetComponent<Animator>().SetBool("Red", true);
         }
     }
 }

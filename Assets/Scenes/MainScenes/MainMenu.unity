@@ -311,11 +311,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 794085da964cd7a47ad647ab981665de, type: 3}
---- !u!1 &115932438 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8138920427430152852, guid: f4cd639f98cc19a4d8b11615163f7991, type: 3}
-  m_PrefabInstance: {fileID: 5977719511526826794}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &570716491
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,7 +1083,7 @@ PrefabInstance:
     - target: {fileID: 47610227341778618, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Clock
       value: 
-      objectReference: {fileID: 115932438}
+      objectReference: {fileID: 0}
     - target: {fileID: 3408751182318222068, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: m_Name
       value: Managers
