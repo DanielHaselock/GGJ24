@@ -281,6 +281,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Score
       objectReference: {fileID: 0}
+    - target: {fileID: 5172902655179697344, guid: 794085da964cd7a47ad647ab981665de, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6181119853223046432, guid: 794085da964cd7a47ad647ab981665de, type: 3}
       propertyPath: m_SizeDelta.x
       value: 19.1516
@@ -791,19 +795,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7044406893847076874, guid: 2c9eec993fb2c264f8de7133f8bda7f4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 13.3897
+      value: 19.1516
       objectReference: {fileID: 0}
     - target: {fileID: 7044406893847076874, guid: 2c9eec993fb2c264f8de7133f8bda7f4, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 9.9334
+      value: 12.1123
       objectReference: {fileID: 0}
     - target: {fileID: 7044406893847076874, guid: 2c9eec993fb2c264f8de7133f8bda7f4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -375.33957
+      value: -374.9648
       objectReference: {fileID: 0}
     - target: {fileID: 7044406893847076874, guid: 2c9eec993fb2c264f8de7133f8bda7f4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -297.38986
+      objectReference: {fileID: 0}
+    - target: {fileID: 7371056595295980673, guid: 2c9eec993fb2c264f8de7133f8bda7f4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7371056595295980673, guid: 2c9eec993fb2c264f8de7133f8bda7f4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.549
+      objectReference: {fileID: 0}
+    - target: {fileID: 7474068581376567871, guid: 2c9eec993fb2c264f8de7133f8bda7f4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.93
       objectReference: {fileID: 0}
     - target: {fileID: 8695899004876521600, guid: 2c9eec993fb2c264f8de7133f8bda7f4, type: 3}
       propertyPath: m_AnchoredPosition.x

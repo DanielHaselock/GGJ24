@@ -7,6 +7,8 @@ public class BouncingObstacle : GenericObstacle
     private Rigidbody2D m_rb;
     [SerializeField] private Vector2 m_startingVelocity;
 
+    [SerializeField] private float m_bouncingforce = 0.5f;
+
     private void Start()
     {
         m_rb = GetComponent<Rigidbody2D>();
@@ -31,6 +33,6 @@ public class BouncingObstacle : GenericObstacle
         averageNormal /= collision.contacts.Length;
 
         // Bouncing direction
-        m_rb.velocity = -velocity + 2 * Vector2.Dot(velocity, averageNormal) * averageNormal;
+        m_rb.velocity = (-velocity + 2 * Vector2.Dot(velocity, averageNormal) * averageNormal) * m_bouncingforce;
     }
 }

@@ -171,14 +171,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6363142188303557942, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
-      propertyPath: SpawnRateLower
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6363142188303557942, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
-      propertyPath: SpawnRateUpper
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7096481261963746136, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: m_Name
       value: Spawner (1)

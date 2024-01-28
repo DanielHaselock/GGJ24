@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
         temp = null;
 
         GameObject[] objects = dontDestroyOnLoad.GetRootGameObjects();
-        return objects.Length == 0;
+        return objects.Length <= 2;
     }
 
     private GameObject GetDestroyonLoadGameobject(string tag)

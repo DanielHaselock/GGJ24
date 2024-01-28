@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3e3b56cd4aff941bdfe5bc24728595, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnRate: 5
+  SpawnRateUpper: 1
+  SpawnRateLower: 4
   Spawned: {fileID: 8257206748512138988, guid: e088a2989e3f3e948a26c6af6e06cf8e, type: 3}
