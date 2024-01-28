@@ -858,7 +858,7 @@ PrefabInstance:
       objectReference: {fileID: 27489456}
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Scenes.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Scenes.Array.data[0].Name
@@ -881,6 +881,10 @@ PrefabInstance:
       value: Coins2
       objectReference: {fileID: 0}
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: Scenes.Array.data[5].Name
+      value: Checkpoint3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Scenes.Array.data[0].LevelTime
       value: 50
       objectReference: {fileID: 0}
@@ -898,6 +902,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Scenes.Array.data[4].LevelTime
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: Scenes.Array.data[5].LevelTime
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
@@ -921,16 +929,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: Scenes.Array.data[5].pSpeedUpTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Scenes.Array.data[1].DebugNoPlayLevel
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Scenes.Array.data[2].DebugNoPlayLevel
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Scenes.Array.data[3].DebugNoPlayLevel
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: Scenes.Array.data[4].DebugNoPlayLevel
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Scenes.Array.data[0].pSpeedUpTimeAmount
@@ -950,6 +966,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Scenes.Array.data[4].pSpeedUpTimeAmount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: Scenes.Array.data[5].pSpeedUpTimeAmount
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5274261463659757168, guid: f68522d166c604a499926bbaff7e584c, type: 3}

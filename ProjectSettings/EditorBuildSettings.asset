@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScenes/Coins2.unity
     guid: ca6f8719b822bd74fb97b6ef27220e8c
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/Checkpoint3.unity
+    guid: b952b7a2e847e1345ac53fe65da6d386
   m_configObjects: {}
