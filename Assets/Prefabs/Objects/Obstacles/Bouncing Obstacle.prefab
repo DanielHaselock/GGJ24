@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bouncing Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 3951224985141655678, guid: cea31e03fd293d247985ada9159ccc8e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 09f191789ee223649968faaca3915eee, type: 3}
     - target: {fileID: 6150525192001705201, guid: cea31e03fd293d247985ada9159ccc8e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -52,6 +56,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6752942850111678273, guid: cea31e03fd293d247985ada9159ccc8e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5e100aa059c8e3d42bf68f5579be780a, type: 2}
     m_RemovedComponents:
     - {fileID: 7552367927310092500, guid: cea31e03fd293d247985ada9159ccc8e, type: 3}
     m_RemovedGameObjects: []

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BouncingObstacle : GenericObstacle
@@ -9,8 +10,9 @@ public class BouncingObstacle : GenericObstacle
 
     [SerializeField] private float m_bouncingforce = 0.5f;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         m_rb = GetComponent<Rigidbody2D>();
         m_rb.velocity = m_startingVelocity;
     }
@@ -19,10 +21,16 @@ public class BouncingObstacle : GenericObstacle
     {
         base.OnCollisionEnter2D(collision);
 
+        Vector2 relativevVelocity = collision.relativeVelocity;
+
+        if (Mathf.Abs(Mathf.Acos(Vector2.Dot(relativevVelocity, Vector2.down))) < Mathf.PI / 4)
+            m_animator.SetTrigger("BounceFloor");
+
+        else
+            m_animator.SetTrigger("BounceWall");
+
         if (collision.collider.tag.Equals("Player"))
             return;
-
-        Vector2 velocity = collision.relativeVelocity;
 
         // Get average surface normal
         Vector2 averageNormal = Vector2.zero;
@@ -33,6 +41,6 @@ public class BouncingObstacle : GenericObstacle
         averageNormal /= collision.contacts.Length;
 
         // Bouncing direction
-        m_rb.velocity = (-velocity + 2 * Vector2.Dot(velocity, averageNormal) * averageNormal) * m_bouncingforce;
+        m_rb.velocity = (-relativevVelocity + 2 * Vector2.Dot(relativevVelocity, averageNormal) * averageNormal) * m_bouncingforce;
     }
 }

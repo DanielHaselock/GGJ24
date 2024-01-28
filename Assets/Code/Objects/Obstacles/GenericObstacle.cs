@@ -6,6 +6,12 @@ public class GenericObstacle : MonoBehaviour
 {
 
     [SerializeField] private int m_xBounceForce = 25, m_xBounceBias = -10, m_yBounceForce = 15, m_yBounceBias = -5;
+    protected Animator m_animator;
+
+    protected virtual void Start()
+    {
+        m_animator = GetComponent<Animator>();
+    }
 
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {

@@ -13,5 +13,7 @@ public class FallingObstacle : GenericObstacle
 
         if (!m_hasFallen)
             base.OnCollisionEnter2D(collision);
+
+        m_animator.SetTrigger("Impact");
     }
 }
