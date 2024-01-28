@@ -87,6 +87,7 @@ public class CurrentLevelManager : MonoBehaviour
     public void LevelSucceed()
     {
         Managers.GetComponent<GameManager>().LevelSucceed(Score);
+        AudioManager.Instance.PlayCheer();
     }
 
     public void LevelFail()
