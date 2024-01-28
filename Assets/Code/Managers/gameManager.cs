@@ -253,6 +253,7 @@ public class GameManager : MonoBehaviour
 
     public void LevelFail()
     {
+        Player.GetComponent<PlayerCustomization>().Randomize();
         Player.SetActive(false);
         End();
     }

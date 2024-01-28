@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2257231119019016172}
   - component: {fileID: 1994892837877050797}
   - component: {fileID: 4498871560270290629}
+  - component: {fileID: 8451361391753385194}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -130,7 +131,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9e6b8dbe0100fd34bab19d5b46b6b255, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -228,7 +229,7 @@ Animator:
   m_GameObject: {fileID: 2725178118640683227}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 687ee6a4f8fb4a940aa19d940cc69abd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 33b412589666eaa4dac02c620331961a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -253,3 +254,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Coins: []
   CoinsCollected: 0
+--- !u!114 &8451361391753385194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2725178118640683227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75875e93263c39045a244a2f00d6b89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_palettes:
+  - {fileID: 2800000, guid: d3660b02220c03e40be52f1220b8369a, type: 3}
+  - {fileID: 2800000, guid: f5b7ad213ea93c0409be4ad336c1be0b, type: 3}
+  - {fileID: 2800000, guid: 111f4d7b0bced9442b3e488458f24e5e, type: 3}
+  - {fileID: 2800000, guid: 32840a8695ed8ed4fad1e7e13c396e2f, type: 3}
+  - {fileID: 2800000, guid: 90682d7da68c81d40beac3229e538e93, type: 3}
+  - {fileID: 2800000, guid: 2e4bc17ee876e9d4f8bc95cbd942ce87, type: 3}
+  - {fileID: 2800000, guid: ab6843d71edbb874ca3f9fb908d8a3f7, type: 3}
+  - {fileID: 2800000, guid: 1a7721bd13d31d841becf842b77ef7e4, type: 3}
+  - {fileID: 2800000, guid: 9ce2124664663a547af3e38d753809fb, type: 3}
+  - {fileID: 2800000, guid: df50a10abe6c2c94fbee6d5195c1a251, type: 3}
+  - {fileID: 2800000, guid: 29865ec3b8098844bb8c4853a245c736, type: 3}
+  - {fileID: 2800000, guid: 83feb85ef2eb33e488fc873dd5831e41, type: 3}
+  - {fileID: 2800000, guid: ab54ac4804e6f764aaa7505209eca36d, type: 3}
+  - {fileID: 2800000, guid: b35dcceb5757f7841a8a68a2e70c4246, type: 3}
+  - {fileID: 2800000, guid: 2bb968c03f2e8e842bcab6a54870cfe1, type: 3}
+  - {fileID: 2800000, guid: 6301586401625954d80bb1d73bb76706, type: 3}
+  m_spriteRenderer: {fileID: 2487610207616000207}

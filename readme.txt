@@ -5,7 +5,6 @@ ART
     Level win / level lose screens
     Backgrounds
 PROGRAMMING
-    Sound effect implementation
     Figure out proper build settings
 LEVEL DESIGN
     Add tileset to levels
@@ -28,6 +27,7 @@ PROGRAMMING
     UI control with keyboard
     High score save file
     Orb
+    Gasp Sound effect
 LEVEL DESIGN
     Polishing and balancing
 AUDIO

@@ -446,10 +446,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6474317671758216304, guid: 5aadcfefb16710b489e572538fb10487, type: 3}
-      propertyPath: m_Volume
-      value: 0.4
-      objectReference: {fileID: 0}
     - target: {fileID: 7492250970325340863, guid: 5aadcfefb16710b489e572538fb10487, type: 3}
       propertyPath: m_gameManager
       value: 
@@ -1101,6 +1097,26 @@ PrefabInstance:
       propertyPath: loaderCanvas
       value: 
       objectReference: {fileID: 27489456}
+    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: Scenes.Array.data[0].DebugNoPlayLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: Scenes.Array.data[1].DebugNoPlayLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: Scenes.Array.data[2].DebugNoPlayLevel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: Scenes.Array.data[3].DebugNoPlayLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: Scenes.Array.data[4].DebugNoPlayLevel
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5274261463659757168, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Player
       value: 

@@ -101,7 +101,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: a18e39ea7bc35a04facbeba467f411d2, type: 2}
+  m_Motion: {fileID: 7400000, guid: b10f0d5fcc522bb41820897efb5a4a17, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -222,7 +222,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: test clown
+  m_Name: bald_clown
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Jump
