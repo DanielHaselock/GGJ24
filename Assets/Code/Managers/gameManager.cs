@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject ScoreEndCanvas;
     [SerializeField] private GameObject ScoreText;
     [SerializeField] private GameObject PauseCanvas;
+    [SerializeField] private GameObject ClockHUD;
     [SerializeField] public GameObject Player;
 
 
@@ -71,6 +72,8 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.DeleteKey("Score");
         Score = PlayerPrefs.GetFloat("Score");
 
+        ClockHUD.SetActive(false);
+
         ShowScore(false);
     }
 
@@ -80,6 +83,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(ScoreCanvas);
         DontDestroyOnLoad(ScoreEndCanvas);
         DontDestroyOnLoad(PauseCanvas);
+        DontDestroyOnLoad(ClockHUD);
         DontDestroyOnLoad(Player);
     }
 
@@ -131,6 +135,7 @@ public class GameManager : MonoBehaviour
     {
         Score = 0; 
         difficultyManager.UpdateScore(Score, levelManager);
+        ClockHUD.SetActive(true);
         state = GameState.InGame;
         PlayNextLevel();
     }
@@ -248,6 +253,7 @@ public class GameManager : MonoBehaviour
     {
         Player.SetActive(false);
         difficultyManager.UpdateScore(Score, levelManager);
+        ClockHUD.SetActive(false);
         ShowScore(true);
         levelManager.LoadNextLevel();
 
@@ -260,6 +266,7 @@ public class GameManager : MonoBehaviour
     public void PlayNextLevel()
     {
         ShowScore(false);
+        ClockHUD.SetActive(true);
         levelManager.PlayNextLevel();
     }
 
