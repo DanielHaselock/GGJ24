@@ -133,7 +133,7 @@ MonoBehaviour:
   m_yBounceForce: 15
   m_yBounceBias: -5
   m_startingVelocity: {x: 0, y: 0}
-  m_bouncingforce: 0.75
+  m_bouncingforce: 0.6
 --- !u!50 &5257636511808098254
 Rigidbody2D:
   serializedVersion: 4

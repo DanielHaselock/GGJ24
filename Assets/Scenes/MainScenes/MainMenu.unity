@@ -741,11 +741,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 461042158381786895, guid: 3e41fac0f9db16c4599216905d877fca, type: 3}
       propertyPath: m_Size.y
-      value: 1.3140494
+      value: 0.9342258
       objectReference: {fileID: 0}
     - target: {fileID: 461042158381786895, guid: 3e41fac0f9db16c4599216905d877fca, type: 3}
       propertyPath: m_Offset.y
-      value: 0
+      value: -0.18991172
       objectReference: {fileID: 0}
     - target: {fileID: 2725178118640683227, guid: 3e41fac0f9db16c4599216905d877fca, type: 3}
       propertyPath: m_Name
@@ -1113,6 +1113,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 27489456}
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: Scenes.Array.data[2].LevelTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Scenes.Array.data[0].DebugNoPlayLevel
       value: 0
       objectReference: {fileID: 0}
@@ -1199,6 +1203,22 @@ PrefabInstance:
     - target: {fileID: 7258503583016231261, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439170858118672844, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: LevelThreshholds.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439170858118672844, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: LevelThreshholds.Array.data[4]
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439170858118672844, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: LevelThreshholds.Array.data[5]
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439170858118672844, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: LevelThreshholds.Array.data[6]
+      value: 1200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
