@@ -8,6 +8,8 @@ using static TimeManager;
 [System.Serializable]
 public class LevelInfo
 {
+    public bool DebugNoPlayLevel = false;
+
     public string Name;
     public int LevelTime;
 
@@ -58,7 +60,7 @@ public class LevelManager : MonoBehaviour
     public void GetNextScene()
     {
         int a = Random.Range(0, Scenes.Count);
-        if(CurrentScene == null || CurrentScene != Scenes[a])
+        if(CurrentScene == null || CurrentScene != Scenes[a] && Scenes[a].DebugNoPlayLevel == false)
         {
             NextScene = Scenes[a];
             return;
