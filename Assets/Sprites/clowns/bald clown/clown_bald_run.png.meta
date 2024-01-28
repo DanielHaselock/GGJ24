@@ -141,8 +141,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 21
+        width: 20
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,10 +160,10 @@ TextureImporter:
       name: clown_bald_run_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 20
         y: 0
-        width: 16
-        height: 21
+        width: 20
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: clown_bald_run_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 40
         y: 0
-        width: 16
-        height: 21
+        width: 20
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,10 +202,10 @@ TextureImporter:
       name: clown_bald_run_3
       rect:
         serializedVersion: 2
-        x: 48
+        x: 60
         y: 0
-        width: 16
-        height: 21
+        width: 20
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
