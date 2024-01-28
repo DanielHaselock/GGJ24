@@ -194,7 +194,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &4101530001874668321
 MonoBehaviour:
@@ -379,9 +379,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7067000920683669647}
+  - component: {fileID: 3293498679628334728}
   m_Layer: 0
   m_Name: EndUI
-  m_TagString: Untagged
+  m_TagString: EndUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -403,6 +404,21 @@ Transform:
   - {fileID: 6156296732426186215}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3293498679628334728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7081766918623135719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfba245eea7882e49bcc4ce4077e87b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonList:
+  - image: {fileID: 6626216214895527437}
+  selectedButton: 0
 --- !u!1 &7260498093832447734
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +540,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 5274261463659757168, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ResetUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
       - m_Target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: LoadSpecificScene
@@ -536,18 +564,6 @@ MonoBehaviour:
           m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 5274261463659757168, guid: f68522d166c604a499926bbaff7e584c, type: 3}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ResetUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &7817579571304794475
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +624,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &1890512870705037955
 MonoBehaviour:
