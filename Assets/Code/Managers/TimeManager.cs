@@ -11,6 +11,16 @@ public class TimeManager : MonoBehaviour
         End = 3,
     }
 
+    public enum ClockState
+    {
+        Calm,
+        Medium,
+        Red,
+        Start
+    }
+
+    ClockState clockstate;
+
 
     private LevelManager levelManager;
     private GameManager gameManager;
@@ -26,11 +36,16 @@ public class TimeManager : MonoBehaviour
 
     public bool pPlayTime = true;
 
+    [SerializeField]
+    private GameObject Clock;
+
     public TimeState state;
     void Start()
     {
         levelManager = gameObject.GetComponent<LevelManager>();
         gameManager = gameObject.GetComponent<GameManager>();
+        Clock = GameObject.FindGameObjectWithTag("Clock");
+        clockstate = ClockState.Start;
     }
 
     // Update is called once per frame
@@ -43,6 +58,7 @@ public class TimeManager : MonoBehaviour
         }
 
         Timer -= Time.deltaTime;
+        SetClockState();
 
         if (Timer <= 0.0f)
         {
@@ -96,4 +112,35 @@ public class TimeManager : MonoBehaviour
         Timer = TimePlayingCurrentLevel;
     }
 
+    public float CalculatePercentage()
+    {
+        return (Timer / TimePlayingCurrentLevel) * 100;
+    }
+
+    public void SetClockState()
+    {
+        float percentage = CalculatePercentage();
+
+        if(percentage > 60 && clockstate != ClockState.Calm)
+        {
+            clockstate = ClockState.Calm;
+            Clock.GetComponent<Animator>().SetBool("Calm", true);
+            Clock.GetComponent<Animator>().SetBool("Medium", false);
+            Clock.GetComponent<Animator>().SetBool("Red", false);
+        }
+        else if (percentage > 30 && percentage < 60 && clockstate != ClockState.Medium)
+        {
+            clockstate = ClockState.Medium;
+            Clock.GetComponent<Animator>().SetBool("Calm", false);
+            Clock.GetComponent<Animator>().SetBool("Medium", true);
+            Clock.GetComponent<Animator>().SetBool("Red", false);
+        }
+        else if (percentage < 30 && clockstate != ClockState.Red)
+        {
+            clockstate = ClockState.Red;
+            Clock.GetComponent<Animator>().SetBool("Calm", false);
+            Clock.GetComponent<Animator>().SetBool("Medium", false);
+            Clock.GetComponent<Animator>().SetBool("Red", true);
+        }
+    }
 }

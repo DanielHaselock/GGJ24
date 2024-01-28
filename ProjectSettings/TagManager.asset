@@ -15,6 +15,7 @@ TagManager:
   - MainMenuButton
   - ScoreEnd
   - EndUI
+  - Clock
   layers:
   - Default
   - TransparentFX

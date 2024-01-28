@@ -1182,6 +1182,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1129905253833559145, guid: f4cd639f98cc19a4d8b11615163f7991, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1129905253833559145, guid: f4cd639f98cc19a4d8b11615163f7991, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1627120775
+      objectReference: {fileID: 0}
     - target: {fileID: 4657519725003282110, guid: f4cd639f98cc19a4d8b11615163f7991, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -131.6
@@ -1233,6 +1241,10 @@ PrefabInstance:
     - target: {fileID: 7831816280676357189, guid: f4cd639f98cc19a4d8b11615163f7991, type: 3}
       propertyPath: m_Name
       value: ClockHUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138920427430152852, guid: f4cd639f98cc19a4d8b11615163f7991, type: 3}
+      propertyPath: m_TagString
+      value: Clock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
