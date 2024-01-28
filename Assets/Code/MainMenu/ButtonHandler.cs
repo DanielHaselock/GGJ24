@@ -21,13 +21,13 @@ public class ButtonHandler : MonoBehaviour
         // Set up the first button, finding the game object based off its name. We also 
         // must set the expected onClick method, and should trigger the selected colour.
        // buttonList[0].image = GameObject.Find("PlayButton").GetComponent<Image>();
-        buttonList[0].image.color = Color.yellow;
-        buttonList[0].action = PlayButtonAction;
+        //buttonList[0].image.color = Color.yellow;
+        //buttonList[0].action = PlayButtonAction;
         // Do the same for the second button. We are also ensuring the image colour is
         // set to our normalColor, to ensure uniformity.
       //  buttonList[1].image = GameObject.Find("OptionsButton").GetComponent<Image>();
-        buttonList[1].image.color = Color.white;
-        buttonList[1].action = OptionsButtonAction;
+        //buttonList[1].image.color = Color.white;
+        //buttonList[1].action = OptionsButtonAction;
     }
 
     void Update()
@@ -85,14 +85,12 @@ public class ButtonHandler : MonoBehaviour
     ///<summary>This is the method that will call when selecting "Play".</summary>
     void PlayButtonAction()
     {
-        Debug.Log("Play");
         buttonList[0].image.gameObject.GetComponent<Button>().onClick.Invoke();
     }
 
     ///<summary>This is the method that will call when selecting "Options".</summary>
     void OptionsButtonAction()
     {
-        Debug.Log("Options");
         buttonList[1].image.gameObject.GetComponent<Button>().onClick.Invoke();
     }
 

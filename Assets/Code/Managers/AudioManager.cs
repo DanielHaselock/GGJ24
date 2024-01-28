@@ -100,7 +100,7 @@ public class AudioManager : MonoBehaviour
 
     private IEnumerator ProcessSoundEffect(AudioClip sound)
     {
-        if (m_sfxCounter >= 5)
+        if (m_sfxCounter >= 1)
             yield break;
 
         m_sfxCounter++;

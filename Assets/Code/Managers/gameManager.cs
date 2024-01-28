@@ -189,20 +189,14 @@ public class GameManager : MonoBehaviour
 
         if (pShow)
         {
-            anim.SetBool("ScreenHide", false);
-            anim.SetBool("ScreenShow", true);
-
-            anim2.SetBool("ScreenHide", false);
-            anim2.SetBool("ScreenShow", true);
+            anim.SetTrigger("Show");
+            anim2.SetTrigger("Show");
 
         }
         else
         {
-            anim.SetBool("ScreenHide", true);
-            anim.SetBool("ScreenShow", false);
-
-            anim2.SetBool("ScreenHide", true);
-            anim2.SetBool("ScreenShow", false);
+            anim.SetTrigger("Hide");
+            anim2.SetTrigger("Hide");
         }
 
     }
@@ -243,20 +237,14 @@ public class GameManager : MonoBehaviour
 
         if (pShow)
         {
-            anim1.SetBool("ScreenHide", false);
-            anim1.SetBool("ScreenShow", true);
-
-            anim2.SetBool("ScreenHide", false);
-            anim2.SetBool("ScreenShow", true);
+            anim1.SetTrigger("Show");
+            anim2.SetTrigger("Show");
 
         }
         else
         {
-            anim1.SetBool("ScreenHide", true);
-            anim1.SetBool("ScreenShow", false);
-
-            anim2.SetBool("ScreenHide", true);
-            anim2.SetBool("ScreenShow", false);
+            anim1.SetTrigger("Hide");
+            anim2.SetTrigger("Hide");
         }
 
     }
