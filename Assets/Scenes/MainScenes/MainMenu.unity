@@ -858,7 +858,7 @@ PrefabInstance:
       objectReference: {fileID: 27489456}
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Scenes.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Scenes.Array.data[0].Name
@@ -874,7 +874,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Scenes.Array.data[3].Name
-      value: Checkpoint1
+      value: Checkpoint2
       objectReference: {fileID: 0}
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Scenes.Array.data[0].LevelTime
@@ -890,7 +890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Scenes.Array.data[3].LevelTime
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Scenes.Array.data[0].pSpeedUpTime
@@ -905,6 +905,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: Scenes.Array.data[3].pSpeedUpTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Scenes.Array.data[0].pSpeedUpTimeAmount
       value: 5
       objectReference: {fileID: 0}
@@ -915,6 +919,10 @@ PrefabInstance:
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Scenes.Array.data[2].pSpeedUpTimeAmount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: Scenes.Array.data[3].pSpeedUpTimeAmount
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5274261463659757168, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Player
@@ -1027,7 +1035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLevels: 5
-  LevelThreshholds: 000000003200000064000000c8000000d0070000
+  LevelThreshholds: 00000000960000002c010000f4010000d0070000
   CurrentLevel: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

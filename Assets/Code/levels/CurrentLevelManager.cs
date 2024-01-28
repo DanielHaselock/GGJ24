@@ -111,9 +111,4 @@ public class CurrentLevelManager : MonoBehaviour
         CheckLevelWin();
     }
 
-    //public void IncreaseDifficuty(DifficultyManager DifficultyManager)
-    //{
-    //    if(difficultyImpact.pSpeedUpTime)
-    //        Managers.GetComponent<LevelManager>().ChangeCurrentSceneTime(difficultyImpact.pSpeedUpTimeAmount);
-    //}
 }

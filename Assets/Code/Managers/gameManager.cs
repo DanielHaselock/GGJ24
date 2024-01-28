@@ -46,9 +46,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-
-
-
         if (CheckDontDestroy())
         {
             adddontdestroyonload();
@@ -72,7 +69,7 @@ public class GameManager : MonoBehaviour
         levelManager.LoadNextLevel();
         MainMenu = SceneManager.GetActiveScene().name;
 
-        
+        PlayerPrefs.DeleteKey("Score");
         Score = PlayerPrefs.GetFloat("Score");
 
         ShowScore(false);
