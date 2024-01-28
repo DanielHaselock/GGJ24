@@ -97,6 +97,13 @@ MonoBehaviour:
     pSpeedUpTime: 1
     pSpeedUpTimeAmount: -5
     wincondition: 2
+  - DebugNoPlayLevel: 0
+    MinDifficultyForLevel: 0
+    Name: Checkpoint4
+    LevelTime: 40
+    pSpeedUpTime: 1
+    pSpeedUpTimeAmount: 5
+    wincondition: 0
   loaderCanvas: {fileID: 0}
   CurrentLevelManager: {fileID: 0}
   NextScene:
