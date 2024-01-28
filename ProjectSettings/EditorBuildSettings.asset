@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScenes/Checkpoint3.unity
     guid: b952b7a2e847e1345ac53fe65da6d386
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/Survive2.unity
+    guid: 5060cd0d8703c42df92d7814925cdeea
   m_configObjects: {}

@@ -54,36 +54,49 @@ MonoBehaviour:
     LevelTime: 50
     pSpeedUpTime: 1
     pSpeedUpTimeAmount: 5
+    wincondition: 0
   - DebugNoPlayLevel: 0
     MinDifficultyForLevel: 0
     Name: Checkpoint1
     LevelTime: 30
     pSpeedUpTime: 1
     pSpeedUpTimeAmount: 5
+    wincondition: 0
   - DebugNoPlayLevel: 0
     MinDifficultyForLevel: 0
     Name: Survive1
     LevelTime: 30
     pSpeedUpTime: 0
     pSpeedUpTimeAmount: 0
+    wincondition: 0
   - DebugNoPlayLevel: 0
     MinDifficultyForLevel: 0
     Name: Checkpoint2
     LevelTime: 40
     pSpeedUpTime: 1
     pSpeedUpTimeAmount: 4
+    wincondition: 0
   - DebugNoPlayLevel: 0
     MinDifficultyForLevel: 0
     Name: Coins2
     LevelTime: 40
     pSpeedUpTime: 1
     pSpeedUpTimeAmount: 4
+    wincondition: 0
   - DebugNoPlayLevel: 0
     MinDifficultyForLevel: 0
     Name: Checkpoint3
     LevelTime: 40
     pSpeedUpTime: 1
     pSpeedUpTimeAmount: 4
+    wincondition: 0
+  - DebugNoPlayLevel: 0
+    MinDifficultyForLevel: 0
+    Name: Survive2
+    LevelTime: 30
+    pSpeedUpTime: 1
+    pSpeedUpTimeAmount: -5
+    wincondition: 2
   loaderCanvas: {fileID: 0}
   CurrentLevelManager: {fileID: 0}
   NextScene:
@@ -93,6 +106,7 @@ MonoBehaviour:
     LevelTime: 0
     pSpeedUpTime: 0
     pSpeedUpTimeAmount: 0
+    wincondition: 0
   CurrentScene:
     DebugNoPlayLevel: 0
     MinDifficultyForLevel: 0
@@ -100,6 +114,7 @@ MonoBehaviour:
     LevelTime: 0
     pSpeedUpTime: 0
     pSpeedUpTimeAmount: 0
+    wincondition: 0
 --- !u!114 &47610227341778618
 MonoBehaviour:
   m_ObjectHideFlags: 0
