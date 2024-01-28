@@ -131,13 +131,16 @@ public class GameManager : MonoBehaviour
         pause.Disable();
     }
 
-    public void PlayGame()
+    public void PlayGame(GameObject canvas)
     {
+        canvas.SetActive(false);
         Score = 0; 
         difficultyManager.UpdateScore(Score, levelManager);
-        ClockHUD.SetActive(true);
         state = GameState.InGame;
-        PlayNextLevel();
+        ShowScore(true);
+        timeManager.SwitchTimeExternal(TimeState.Start);
+        timeManager.pPlayTime = true;
+        //PlayNextLevel();
     }
 
 
@@ -216,6 +219,7 @@ public class GameManager : MonoBehaviour
     public void End()
     {
         state = GameState.End;
+        ClockHUD.SetActive(false);
         ShowEndScore(true);
         timeManager.SwitchTimeExternal(TimeState.End);
         levelManager.LoadSpecificScene(EndScene);

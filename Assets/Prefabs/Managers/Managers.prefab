@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5066857189600997281}
   - component: {fileID: 47610227341778618}
   - component: {fileID: 5274261463659757168}
+  - component: {fileID: 8439170858118672844}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Manager
@@ -47,17 +48,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scenes:
-  - Name: Level1
-    LevelTime: 5
-  - Name: Level2
-    LevelTime: 5
-  - Name: Level3
-    LevelTime: 5
+  - DebugNoPlayLevel: 0
+    MinDifficultyForLevel: 0
+    Name: Coins1
+    LevelTime: 50
+    pSpeedUpTime: 1
+    pSpeedUpTimeAmount: 5
+  - DebugNoPlayLevel: 0
+    MinDifficultyForLevel: 0
+    Name: Checkpoint1
+    LevelTime: 30
+    pSpeedUpTime: 1
+    pSpeedUpTimeAmount: 5
+  - DebugNoPlayLevel: 0
+    MinDifficultyForLevel: 0
+    Name: Survive1
+    LevelTime: 30
+    pSpeedUpTime: 0
+    pSpeedUpTimeAmount: 0
+  - DebugNoPlayLevel: 0
+    MinDifficultyForLevel: 0
+    Name: Checkpoint2
+    LevelTime: 40
+    pSpeedUpTime: 1
+    pSpeedUpTimeAmount: 4
+  - DebugNoPlayLevel: 0
+    MinDifficultyForLevel: 0
+    Name: Coins2
+    LevelTime: 40
+    pSpeedUpTime: 1
+    pSpeedUpTimeAmount: 4
+  - DebugNoPlayLevel: 0
+    MinDifficultyForLevel: 0
+    Name: Checkpoint3
+    LevelTime: 40
+    pSpeedUpTime: 1
+    pSpeedUpTimeAmount: 4
   loaderCanvas: {fileID: 0}
   CurrentLevelManager: {fileID: 0}
-  CurrentScene:
+  NextScene:
+    DebugNoPlayLevel: 0
+    MinDifficultyForLevel: 0
     Name: 
     LevelTime: 0
+    pSpeedUpTime: 0
+    pSpeedUpTimeAmount: 0
+  CurrentScene:
+    DebugNoPlayLevel: 0
+    MinDifficultyForLevel: 0
+    Name: 
+    LevelTime: 0
+    pSpeedUpTime: 0
+    pSpeedUpTimeAmount: 0
 --- !u!114 &47610227341778618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,8 +114,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Timer: 4
   TimePlayingCurrentLevel: 5
-  TimePlayingScore: 5
+  TimePlayingScore: 2
   pPlayTime: 1
+  Clock: {fileID: 0}
+  state: 0
 --- !u!114 &5274261463659757168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,8 +132,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainMenu: MainMenu
   ScoreCanvas: {fileID: 0}
+  ScoreEndCanvas: {fileID: 0}
   ScoreText: {fileID: 0}
   PauseCanvas: {fileID: 0}
+  ClockHUD: {fileID: 0}
   Player: {fileID: 0}
   pause:
     m_Name: Pause
@@ -108,5 +154,19 @@ MonoBehaviour:
       m_Action: Pause
       m_Flags: 0
     m_Flags: 0
-  Score: 0
   EndScene: End
+--- !u!114 &8439170858118672844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3408751182318222068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bbe1bd5afcad594b87f2a32b1f7ec29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxLevels: 5
+  LevelThreshholds: 00000000960000002c010000f4010000d0070000
+  CurrentLevel: 0

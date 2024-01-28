@@ -9,14 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Jo/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Daniel/Level1.unity
-    guid: e874918bd48aa7640a1a661f3c892c76
+    path: Assets/Scenes/MainScenes/MainMenu.unity
+    guid: bb634b8d7781e9a44afa206fb3129787
   - enabled: 1
     path: Assets/Scenes/MainScenes/End.unity
     guid: ce03d39a55b80ea498fda2ed4a769b74
-  - enabled: 1
-    path: Assets/Scenes/MainScenes/MainMenu.unity
-    guid: bb634b8d7781e9a44afa206fb3129787
   - enabled: 1
     path: Assets/Scenes/MainScenes/Checkpoint1.unity
     guid: 9454fe75e933f844db3262a3a3b590cd

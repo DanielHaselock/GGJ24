@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 1129905253833559145}
   m_Layer: 0
   m_Name: calm1
-  m_TagString: Untagged
+  m_TagString: Clock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,7 +170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -122.4, y: -91.9}
+  m_AnchoredPosition: {x: -131.6, y: -92.4}
   m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &8689946979662094071
@@ -270,8 +270,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1627120775
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a85f1d61070c6474ab50e287708f9927, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

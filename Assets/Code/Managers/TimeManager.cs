@@ -9,6 +9,7 @@ public class TimeManager : MonoBehaviour
         Playing = 1,
         Score = 2,
         End = 3,
+        Start = 4
     }
 
     public enum ClockState
@@ -86,6 +87,12 @@ public class TimeManager : MonoBehaviour
             gameManager.ShowEndUI();
             Timer = TimePlayingCurrentLevel;
         }
+        else if (state == TimeState.Start)
+        {
+            state = TimeState.Playing;
+            gameManager.PlayNextLevel();
+            Timer = TimePlayingCurrentLevel;
+        }
     }
 
     public void SwitchTimeExternal(TimeState pstate)
@@ -102,6 +109,9 @@ public class TimeManager : MonoBehaviour
                 Timer = TimePlayingScore; //Don't check for win here
                 break;
             case TimeState.End:
+                Timer = TimePlayingScore; //Don't check for win here
+                break;
+            case TimeState.Start:
                 Timer = TimePlayingScore; //Don't check for win here
                 break;
         }
@@ -121,7 +131,10 @@ public class TimeManager : MonoBehaviour
     {
         float percentage = CalculatePercentage();
 
-        if(percentage > 60 && clockstate != ClockState.Calm)
+        if(!Clock)
+            Clock = GameObject.FindGameObjectWithTag("Clock");
+
+        if (percentage > 60 && clockstate != ClockState.Calm)
         {
             clockstate = ClockState.Calm;
             Clock.GetComponent<Animator>().SetBool("Calm", true);
