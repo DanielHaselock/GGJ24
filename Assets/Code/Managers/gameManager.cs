@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
             timeManager = GetComponent<TimeManager>();
             difficultyManager = GetComponent<DifficultyManager>();
             levelManager.SetPlayer(Player);
-            pause.performed += _ => Pause();
+           // pause.performed += _ => Pause();
 
             Screen.SetResolution(1440, 1080, FullScreenMode.FullScreenWindow);
         }
