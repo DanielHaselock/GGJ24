@@ -324,8 +324,10 @@ public class GameManager : MonoBehaviour
     public void ResetScore()
     {
         difficultyManager.ResetScore();
+        levelManager.ResetSceneTimes();
         PlayerPrefs.SetFloat("Score", 0);
         PlayerPrefs.DeleteKey("Score");
+
     }
 
 }

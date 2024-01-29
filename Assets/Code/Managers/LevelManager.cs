@@ -24,6 +24,8 @@ public class LevelInfo
     public string Name;
     public int LevelTime;
 
+    public int StartLevelTime;
+
     public bool pSpeedUpTime = false;
     public int pSpeedUpTimeAmount = 0;
 
@@ -121,6 +123,14 @@ public class LevelManager : MonoBehaviour
     {
         int index = Scenes.FindIndex(0, go => go == CurrentScene);
         Scenes[index].LevelTime -= pTimeTakeOff;
+    }
+
+    public void ResetSceneTimes()
+    {
+        foreach (LevelInfo scene in Scenes)
+        {
+            scene.LevelTime = scene.StartLevelTime;
+        }
     }
 
 }
