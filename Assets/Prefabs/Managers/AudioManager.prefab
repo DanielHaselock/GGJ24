@@ -50,7 +50,7 @@ MonoBehaviour:
   m_music: {fileID: 6474317671758216304}
   m_sfx: {fileID: 4628880059109202758}
   m_boing: {fileID: 5419128537724704173}
-  m_mainMenu: {fileID: 8300000, guid: e00a94e3e4c1dad4bb77e5a5e9c6b6e3, type: 3}
+  m_mainMenu: {fileID: 8300000, guid: a7b828ddcd64f914b86a39172acea526, type: 3}
   m_loseScreen: {fileID: 8300000, guid: e00a94e3e4c1dad4bb77e5a5e9c6b6e3, type: 3}
   m_coin: {fileID: 8300000, guid: 00dfe67112e83fc4595038387b526d1a, type: 3}
   m_pop: {fileID: 8300000, guid: c6f7726ee0d8740459c624a50d796e68, type: 3}
