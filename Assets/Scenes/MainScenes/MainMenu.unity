@@ -857,11 +857,19 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: Scenes.Array.data[2].pSpeedUpTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Scenes.Array.data[2].wincondition
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Scenes.Array.data[4].wincondition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: Scenes.Array.data[10].pSpeedUpTime
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
@@ -903,6 +911,10 @@ PrefabInstance:
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Scenes.Array.data[9].DebugNoPlayLevel
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
+      propertyPath: Scenes.Array.data[10].pSpeedUpTimeAmount
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 5066857189600997281, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: Scenes.Array.data[10].MinDifficultyForLevel
