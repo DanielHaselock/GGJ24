@@ -355,6 +355,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7544956589105500695, guid: 2d46bfc02f7d1814591d8b54e6f143c7, type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0.055555556
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544956589105500695, guid: 2d46bfc02f7d1814591d8b54e6f143c7, type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0.055555556
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544956589105500695, guid: 2d46bfc02f7d1814591d8b54e6f143c7, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.8888889
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544956589105500695, guid: 2d46bfc02f7d1814591d8b54e6f143c7, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 0.8888889
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -642,15 +658,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 217651966267691720, guid: 789e93805db703747b0b9aaa9141e706, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.3005146
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 217651966267691720, guid: 789e93805db703747b0b9aaa9141e706, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.6028485
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 217651966267691720, guid: 789e93805db703747b0b9aaa9141e706, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.054680575
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 217651966267691720, guid: 789e93805db703747b0b9aaa9141e706, type: 3}
       propertyPath: m_LocalRotation.w
@@ -719,6 +735,18 @@ PrefabInstance:
     - target: {fileID: 6387373413292064282, guid: 789e93805db703747b0b9aaa9141e706, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8213017440169386982, guid: 789e93805db703747b0b9aaa9141e706, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8481357753009160983, guid: 789e93805db703747b0b9aaa9141e706, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8481357753009160983, guid: 789e93805db703747b0b9aaa9141e706, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

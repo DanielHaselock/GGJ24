@@ -55,6 +55,8 @@ public class GameManager : MonoBehaviour
             difficultyManager = GetComponent<DifficultyManager>();
             levelManager.SetPlayer(Player);
             pause.performed += _ => Pause();
+
+            Screen.SetResolution(1440, 1080, FullScreenMode.FullScreenWindow);
         }
         else
         {
