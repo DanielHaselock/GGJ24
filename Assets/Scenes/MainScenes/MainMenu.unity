@@ -272,11 +272,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2607337256002426708, guid: 794085da964cd7a47ad647ab981665de, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -11.5625
+      value: -11
       objectReference: {fileID: 0}
-    - target: {fileID: 3116950077801083238, guid: 794085da964cd7a47ad647ab981665de, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
+    - target: {fileID: 3709758530372817502, guid: 794085da964cd7a47ad647ab981665de, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3809336546530930181, guid: 794085da964cd7a47ad647ab981665de, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -353,19 +353,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7544956589105500695, guid: 2d46bfc02f7d1814591d8b54e6f143c7, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.05959886
+      value: 0.042831652
       objectReference: {fileID: 0}
     - target: {fileID: 7544956589105500695, guid: 2d46bfc02f7d1814591d8b54e6f143c7, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.059633028
+      value: 0.042857144
       objectReference: {fileID: 0}
     - target: {fileID: 7544956589105500695, guid: 2d46bfc02f7d1814591d8b54e6f143c7, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.8802293
+      value: 0.9137419
       objectReference: {fileID: 0}
     - target: {fileID: 7544956589105500695, guid: 2d46bfc02f7d1814591d8b54e6f143c7, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.88073397
+      value: 0.9142857
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -563,11 +563,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aadcfefb16710b489e572538fb10487, type: 3}
---- !u!1 &1009217366 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6943299962196800404, guid: 794085da964cd7a47ad647ab981665de, type: 3}
-  m_PrefabInstance: {fileID: 88653736}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1543339306 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5172902655179697344, guid: 794085da964cd7a47ad647ab981665de, type: 3}
@@ -971,7 +966,7 @@ PrefabInstance:
     - target: {fileID: 5274261463659757168, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 1009217366}
+      objectReference: {fileID: 0}
     - target: {fileID: 5274261463659757168, guid: f68522d166c604a499926bbaff7e584c, type: 3}
       propertyPath: PauseCanvas
       value: 
@@ -1171,9 +1166,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 998934342690451957, guid: 2c9eec993fb2c264f8de7133f8bda7f4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -11
+      objectReference: {fileID: 0}
     - target: {fileID: 3176835272494869639, guid: 2c9eec993fb2c264f8de7133f8bda7f4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092243525737006813, guid: 2c9eec993fb2c264f8de7133f8bda7f4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6673772856520064673, guid: 2c9eec993fb2c264f8de7133f8bda7f4, type: 3}
       propertyPath: m_Name
