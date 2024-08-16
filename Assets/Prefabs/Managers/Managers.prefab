@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 47610227341778618}
   - component: {fileID: 5274261463659757168}
   - component: {fileID: 8439170858118672844}
+  - component: {fileID: 8569145052020618201}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Manager
@@ -52,27 +53,31 @@ MonoBehaviour:
     MinDifficultyForLevel: 0
     Name: Coins1
     LevelTime: 50
+    StartLevelTime: 50
     pSpeedUpTime: 1
     pSpeedUpTimeAmount: 5
-    wincondition: 0
+    wincondition: 1
   - DebugNoPlayLevel: 0
     MinDifficultyForLevel: 0
     Name: Checkpoint1
     LevelTime: 30
+    StartLevelTime: 30
     pSpeedUpTime: 1
     pSpeedUpTimeAmount: 5
     wincondition: 0
   - DebugNoPlayLevel: 0
     MinDifficultyForLevel: 0
-    Name: Survive2
-    LevelTime: 30
-    pSpeedUpTime: 0
+    Name: Survive1
+    LevelTime: 20
+    StartLevelTime: 20
+    pSpeedUpTime: 1
     pSpeedUpTimeAmount: -5
     wincondition: 2
   - DebugNoPlayLevel: 0
     MinDifficultyForLevel: 0
     Name: Checkpoint2
     LevelTime: 40
+    StartLevelTime: 40
     pSpeedUpTime: 1
     pSpeedUpTimeAmount: 4
     wincondition: 0
@@ -80,13 +85,15 @@ MonoBehaviour:
     MinDifficultyForLevel: 0
     Name: Coins2
     LevelTime: 40
+    StartLevelTime: 40
     pSpeedUpTime: 1
     pSpeedUpTimeAmount: 4
-    wincondition: 0
+    wincondition: 1
   - DebugNoPlayLevel: 0
     MinDifficultyForLevel: 0
     Name: Checkpoint3
     LevelTime: 40
+    StartLevelTime: 40
     pSpeedUpTime: 1
     pSpeedUpTimeAmount: 4
     wincondition: 0
@@ -94,6 +101,7 @@ MonoBehaviour:
     MinDifficultyForLevel: 0
     Name: Survive2
     LevelTime: 30
+    StartLevelTime: 30
     pSpeedUpTime: 1
     pSpeedUpTimeAmount: -5
     wincondition: 2
@@ -101,6 +109,7 @@ MonoBehaviour:
     MinDifficultyForLevel: 0
     Name: Checkpoint4
     LevelTime: 40
+    StartLevelTime: 40
     pSpeedUpTime: 1
     pSpeedUpTimeAmount: 5
     wincondition: 0
@@ -108,6 +117,7 @@ MonoBehaviour:
     MinDifficultyForLevel: 0
     Name: Coins3
     LevelTime: 25
+    StartLevelTime: 25
     pSpeedUpTime: 1
     pSpeedUpTimeAmount: 3
     wincondition: 1
@@ -115,15 +125,41 @@ MonoBehaviour:
     MinDifficultyForLevel: 0
     Name: Coins4
     LevelTime: 25
+    StartLevelTime: 25
     pSpeedUpTime: 1
     pSpeedUpTimeAmount: 3
     wincondition: 1
   - DebugNoPlayLevel: 0
-    MinDifficultyForLevel: 0
+    MinDifficultyForLevel: 2
     Name: Survive3
     LevelTime: 5
-    pSpeedUpTime: 0
-    pSpeedUpTimeAmount: 0
+    StartLevelTime: 5
+    pSpeedUpTime: 1
+    pSpeedUpTimeAmount: -5
+    wincondition: 2
+  - DebugNoPlayLevel: 0
+    MinDifficultyForLevel: 0
+    Name: Checkpoint5
+    LevelTime: 35
+    StartLevelTime: 35
+    pSpeedUpTime: 1
+    pSpeedUpTimeAmount: 4
+    wincondition: 0
+  - DebugNoPlayLevel: 0
+    MinDifficultyForLevel: 0
+    Name: Checkpoint6
+    LevelTime: 45
+    StartLevelTime: 45
+    pSpeedUpTime: 1
+    pSpeedUpTimeAmount: 4
+    wincondition: 0
+  - DebugNoPlayLevel: 0
+    MinDifficultyForLevel: 0
+    Name: Survive4
+    LevelTime: 5
+    StartLevelTime: 5
+    pSpeedUpTime: 1
+    pSpeedUpTimeAmount: -5
     wincondition: 2
   loaderCanvas: {fileID: 0}
   CurrentLevelManager: {fileID: 0}
@@ -132,6 +168,7 @@ MonoBehaviour:
     MinDifficultyForLevel: 0
     Name: 
     LevelTime: 0
+    StartLevelTime: 0
     pSpeedUpTime: 0
     pSpeedUpTimeAmount: 0
     wincondition: 0
@@ -140,6 +177,7 @@ MonoBehaviour:
     MinDifficultyForLevel: 0
     Name: 
     LevelTime: 0
+    StartLevelTime: 0
     pSpeedUpTime: 0
     pSpeedUpTimeAmount: 0
     wincondition: 0
@@ -211,5 +249,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLevels: 5
-  LevelThreshholds: 00000000960000002c010000f4010000d0070000
+  LevelThreshholds: 00000000960000002c010000f4010000bc020000e8030000b0040000
   CurrentLevel: 0
+--- !u!114 &8569145052020618201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3408751182318222068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59025871e8d64794484831d333e10812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

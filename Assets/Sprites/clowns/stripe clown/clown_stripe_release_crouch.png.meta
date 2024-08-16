@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 563d19760aaaea64aafde01201a4332c
+guid: cef9b66a72721714e9a9dd3064a9ba93
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: clown_stripe_release_crouch_0
+      name: clown_bald_release_crouch_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdb04decd6240d049a7fff273e22e7f5
-      internalID: 1870683895
+      spriteID: 4fd0a6aa29fc0ee4c8651e78713368ed
+      internalID: 1092413789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: clown_stripe_release_crouch_1
+      name: clown_bald_release_crouch_1
       rect:
         serializedVersion: 2
-        x: 20
+        x: 32
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74a3fff2ddabc0c4fb9e60d89f22e006
-      internalID: -1854411644
+      spriteID: 9ce6659dca5a3764d8f439bc50f729e2
+      internalID: -1025383507
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: clown_stripe_release_crouch_2
+      name: clown_bald_release_crouch_2
       rect:
         serializedVersion: 2
-        x: 40
+        x: 64
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a77aa91b2f14a5049844c51b73a3d9c9
-      internalID: 1459407106
+      spriteID: 3c9340c5ccf92d444b232ca70aaf33a1
+      internalID: -200482305
       vertices: []
       indices: 
       edges: []
@@ -209,9 +209,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      clown_stripe_release_crouch_0: 1870683895
-      clown_stripe_release_crouch_1: -1854411644
-      clown_stripe_release_crouch_2: 1459407106
+      clown_bald_release_crouch_0: 1092413789
+      clown_bald_release_crouch_1: -1025383507
+      clown_bald_release_crouch_2: -200482305
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

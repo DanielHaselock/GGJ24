@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4fe334e836075fb41b33322265294c07
+guid: 9472210414376d541bc42bdf066a49ae
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: clown_stripe_jump_0
+      name: clown_bald_jump_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2343db047aa112a4fb3c774b75ca54d4
-      internalID: -1224348247
+      spriteID: c0ef0f55f2b45b14a9b8136cb0045beb
+      internalID: 1842794274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: clown_stripe_jump_1
+      name: clown_bald_jump_1
       rect:
         serializedVersion: 2
-        x: 20
+        x: 32
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bed966164a43d6e44be02c7bd7972644
-      internalID: 1315879618
+      spriteID: b7f407c09db32ec48b6869197fcfa7fa
+      internalID: -1570719127
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: clown_stripe_jump_2
+      name: clown_bald_jump_2
       rect:
         serializedVersion: 2
-        x: 40
+        x: 64
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b27baecf12592f4c9fd2a3261c12a64
-      internalID: -1691673614
+      spriteID: b61d51f553fedeb489e3d4e0fddc6cde
+      internalID: 1587739357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: clown_stripe_jump_3
+      name: clown_bald_jump_3
       rect:
         serializedVersion: 2
-        x: 60
+        x: 96
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,8 +213,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bacee4fefcdbab9479009db1e8e7b9dd
-      internalID: 1568958597
+      spriteID: f1d974a2b59271848b4e96c1593d4af7
+      internalID: 825226309
       vertices: []
       indices: 
       edges: []
@@ -230,10 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      clown_stripe_jump_0: -1224348247
-      clown_stripe_jump_1: 1315879618
-      clown_stripe_jump_2: -1691673614
-      clown_stripe_jump_3: 1568958597
+      clown_bald_jump_0: 1842794274
+      clown_bald_jump_1: -1570719127
+      clown_bald_jump_2: 1587739357
+      clown_bald_jump_3: 825226309
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

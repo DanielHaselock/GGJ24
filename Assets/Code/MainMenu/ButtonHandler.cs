@@ -49,7 +49,14 @@ public class ButtonHandler : MonoBehaviour
 
         if (Input.anyKeyDown && SceneManager.GetActiveScene().name.Contains("Menu"))
         {
-            PlayButtonAction();
+		    if (Input.GetKey("escape"))
+		    {
+			    return;
+		    }
+		    else
+		    {
+			    PlayButtonAction();
+		    }
         }
 
         else if (Input.GetKeyDown(KeyCode.Space) && SceneManager.GetActiveScene().name.Contains("End"))

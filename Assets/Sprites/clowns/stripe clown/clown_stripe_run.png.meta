@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 69e8cb23f6ec5ec409221ae5f3d3e065
+guid: ab337fce1661ae543aef41f9fe42f5e2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: clown_stripe_run_0
+      name: clown_bald_run_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16ed312b136a7a84d8ab23f40f797269
-      internalID: -1456475427
+      spriteID: 8a0f88c2db546cf4e8be8493f615eb51
+      internalID: 1402236252
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: clown_stripe_run_1
+      name: clown_bald_run_1
       rect:
         serializedVersion: 2
-        x: 20
+        x: 32
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b336c40b0ef47a040809e93e98607c13
-      internalID: -1704753410
+      spriteID: 02c6aebb29bef374ca3e505a31c3f448
+      internalID: 435498749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: clown_stripe_run_2
+      name: clown_bald_run_2
       rect:
         serializedVersion: 2
-        x: 40
+        x: 64
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 828ac3c47b0ff5841ab16fb2699fe07d
-      internalID: -2135375108
+      spriteID: de13dd7f78d5a804c82c72910e957bf3
+      internalID: 1114812434
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: clown_stripe_run_3
+      name: clown_bald_run_3
       rect:
         serializedVersion: 2
-        x: 60
+        x: 96
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,8 +213,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2e756474965571429c3b38fe8328441
-      internalID: -1098874549
+      spriteID: a8e07f24d240a804093e6d805c3513a1
+      internalID: 2134555282
       vertices: []
       indices: 
       edges: []
@@ -230,10 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      clown_stripe_run_0: -1456475427
-      clown_stripe_run_1: -1704753410
-      clown_stripe_run_2: -2135375108
-      clown_stripe_run_3: -1098874549
+      clown_bald_run_0: 1402236252
+      clown_bald_run_1: 435498749
+      clown_bald_run_2: 1114812434
+      clown_bald_run_3: 2134555282
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -6109,7 +6109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7544956589105500695, guid: 2d46bfc02f7d1814591d8b54e6f143c7, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 1
+      value: 1.0006762
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5027506783164023127, guid: 2d46bfc02f7d1814591d8b54e6f143c7, type: 3}

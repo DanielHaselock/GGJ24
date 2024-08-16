@@ -81,6 +81,17 @@ public class GameManager : MonoBehaviour
         AudioManager.Instance.PlaySong("menu");
     }
 
+    void Update()
+    {
+        if(Input.GetKey("escape") && (SceneManager.GetActiveScene().name == MainMenu)) {
+            Application.Quit();
+        }
+
+        if(Input.GetKey("escape") && (SceneManager.GetActiveScene().name != MainMenu) && (SceneManager.GetActiveScene().name != EndScene)) {
+            LevelFail();
+        }
+    }
+
     private void adddontdestroyonload()
     {
         DontDestroyOnLoad(gameObject);

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 82bb69995ef15a54b9dd89ceb9f77251
+guid: 541783c6c4b9ce64584a17e8010a8605
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -46,8 +46,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 7
-  spritePivot: {x: 0.5, y: 0}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: clown_afro_impact_0
+      name: clown_bald_impact_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7a8c37ab0072ec4da5ae67a158a63e4
-      internalID: -1582458528
+      spriteID: ca4c24c40d20e744a8eb04c160b5946f
+      internalID: 975650168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: clown_afro_impact_1
+      name: clown_bald_impact_1
       rect:
         serializedVersion: 2
-        x: 20
+        x: 32
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec4224e89edacb74ebba73cced6c25c1
-      internalID: -1547938281
+      spriteID: df52a3b269110b043b3af8b28cb278c7
+      internalID: 2059364664
       vertices: []
       indices: 
       edges: []
@@ -188,8 +188,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      clown_afro_impact_0: -1582458528
-      clown_afro_impact_1: -1547938281
+      clown_bald_impact_0: 975650168
+      clown_bald_impact_1: 2059364664
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

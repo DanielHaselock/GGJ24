@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dd0e999150159f7478db71d55e2a6a65
+guid: 63fdf39e7e87b7c46839fe071a521621
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -46,8 +46,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 7
-  spritePivot: {x: 0.5, y: 0}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: clown_afro_run_0
+      name: clown_bald_run_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb917f8df26b57747b11f5b5fba654ed
-      internalID: -1414438787
+      spriteID: 8a0f88c2db546cf4e8be8493f615eb51
+      internalID: 1402236252
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: clown_afro_run_1
+      name: clown_bald_run_1
       rect:
         serializedVersion: 2
-        x: 20
+        x: 32
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a437747f48226944b79c4c7b7918f80
-      internalID: -1175048848
+      spriteID: 02c6aebb29bef374ca3e505a31c3f448
+      internalID: 435498749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: clown_afro_run_2
+      name: clown_bald_run_2
       rect:
         serializedVersion: 2
-        x: 40
+        x: 64
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab065d8acbd5c474fb64e8b7fc10b076
-      internalID: -11749643
+      spriteID: de13dd7f78d5a804c82c72910e957bf3
+      internalID: 1114812434
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: clown_afro_run_3
+      name: clown_bald_run_3
       rect:
         serializedVersion: 2
-        x: 60
+        x: 96
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,8 +213,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02a253404e96494478506bf0c6da9d0a
-      internalID: -1215464079
+      spriteID: a8e07f24d240a804093e6d805c3513a1
+      internalID: 2134555282
       vertices: []
       indices: 
       edges: []
@@ -230,10 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      clown_afro_run_0: -1414438787
-      clown_afro_run_1: -1175048848
-      clown_afro_run_2: -11749643
-      clown_afro_run_3: -1215464079
+      clown_bald_run_0: 1402236252
+      clown_bald_run_1: 435498749
+      clown_bald_run_2: 1114812434
+      clown_bald_run_3: 2134555282
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

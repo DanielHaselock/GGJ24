@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 857825625739df640b356853c53ea228
+guid: 508b737a056211f42b2a4671379f41bf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -46,8 +46,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 7
-  spritePivot: {x: 0.5, y: 0}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: clown_afro_release_crouch_0
+      name: clown_bald_release_crouch_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a29a1a3018f56834b8436939e4e2a38f
-      internalID: -1568876398
+      spriteID: 4fd0a6aa29fc0ee4c8651e78713368ed
+      internalID: 1092413789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: clown_afro_release_crouch_1
+      name: clown_bald_release_crouch_1
       rect:
         serializedVersion: 2
-        x: 20
+        x: 32
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84da5b4167e3c1742900a7aad4254b2e
-      internalID: 381969545
+      spriteID: 9ce6659dca5a3764d8f439bc50f729e2
+      internalID: -1025383507
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: clown_afro_release_crouch_2
+      name: clown_bald_release_crouch_2
       rect:
         serializedVersion: 2
-        x: 40
+        x: 64
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 503a8538b21a5f949add7d4696e5205b
-      internalID: -1417160154
+      spriteID: 3c9340c5ccf92d444b232ca70aaf33a1
+      internalID: -200482305
       vertices: []
       indices: 
       edges: []
@@ -209,9 +209,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      clown_afro_release_crouch_0: -1568876398
-      clown_afro_release_crouch_1: 381969545
-      clown_afro_release_crouch_2: -1417160154
+      clown_bald_release_crouch_0: 1092413789
+      clown_bald_release_crouch_1: -1025383507
+      clown_bald_release_crouch_2: -200482305
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

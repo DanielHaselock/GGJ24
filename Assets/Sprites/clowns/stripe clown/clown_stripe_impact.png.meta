@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3b66641c4cca72c4a8bcaf760c7a2384
+guid: 3252de50bad21c84fb5b5379f2f2c5af
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: clown_stripe_impact_0
+      name: clown_bald_impact_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d618215665dcced42af3bb344d609c52
-      internalID: 1209628777
+      spriteID: ca4c24c40d20e744a8eb04c160b5946f
+      internalID: 975650168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: clown_stripe_impact_1
+      name: clown_bald_impact_1
       rect:
         serializedVersion: 2
-        x: 20
+        x: 32
         y: 0
-        width: 20
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a15cce0ef1d95549844f7527577c3f6
-      internalID: -165914119
+      spriteID: df52a3b269110b043b3af8b28cb278c7
+      internalID: 2059364664
       vertices: []
       indices: 
       edges: []
@@ -188,8 +188,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      clown_stripe_impact_0: 1209628777
-      clown_stripe_impact_1: -165914119
+      clown_bald_impact_0: 975650168
+      clown_bald_impact_1: 2059364664
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

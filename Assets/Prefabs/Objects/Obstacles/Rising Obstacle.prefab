@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1243588208, guid: 1f5f7ed852442b74587f98f343453d5a, type: 3}
+    - target: {fileID: 3951224985141655678, guid: cea31e03fd293d247985ada9159ccc8e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6150525192001705201, guid: cea31e03fd293d247985ada9159ccc8e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -60,6 +64,18 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: bf6d96470abf68d449ea978138e68356, type: 2}
+    - target: {fileID: 7975553515054024774, guid: cea31e03fd293d247985ada9159ccc8e, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975553515054024774, guid: cea31e03fd293d247985ada9159ccc8e, type: 3}
+      propertyPath: m_Size.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975553515054024774, guid: cea31e03fd293d247985ada9159ccc8e, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.025
+      objectReference: {fileID: 0}
     - target: {fileID: 7975553515054024774, guid: cea31e03fd293d247985ada9159ccc8e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.875
@@ -127,4 +143,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
