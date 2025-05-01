@@ -6,54 +6,55 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/Jo/SampleScene.unity
+    path: Assets/Scenes/Test Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/MainScenes/MainMenu.unity
+    path: Assets/Scenes/Main Scenes/MainMenu.unity
     guid: bb634b8d7781e9a44afa206fb3129787
   - enabled: 1
-    path: Assets/Scenes/MainScenes/End.unity
+    path: Assets/Scenes/Main Scenes/End.unity
     guid: ce03d39a55b80ea498fda2ed4a769b74
   - enabled: 1
-    path: Assets/Scenes/MainScenes/Checkpoint1.unity
+    path: Assets/Scenes/Main Scenes/Checkpoint1.unity
     guid: 9454fe75e933f844db3262a3a3b590cd
   - enabled: 1
-    path: Assets/Scenes/MainScenes/Checkpoint2.unity
+    path: Assets/Scenes/Main Scenes/Checkpoint2.unity
     guid: 0899f21d19c309440a3dec7afb293df6
   - enabled: 1
-    path: Assets/Scenes/MainScenes/Checkpoint3.unity
+    path: Assets/Scenes/Main Scenes/Checkpoint3.unity
     guid: b952b7a2e847e1345ac53fe65da6d386
   - enabled: 1
-    path: Assets/Scenes/MainScenes/Checkpoint4.unity
+    path: Assets/Scenes/Main Scenes/Checkpoint4.unity
     guid: 206bfb5324f7043c48c9f70f3b72f7f3
   - enabled: 1
-    path: Assets/Scenes/MainScenes/Checkpoint5.unity
+    path: Assets/Scenes/Main Scenes/Checkpoint5.unity
     guid: c2d5957485dbeeb42b77a207b05b2d88
   - enabled: 1
-    path: Assets/Scenes/MainScenes/Checkpoint6.unity
+    path: Assets/Scenes/Main Scenes/Checkpoint6.unity
     guid: 436e3610e25cffb4f83d3d000520411a
   - enabled: 1
-    path: Assets/Scenes/MainScenes/Coins1.unity
+    path: Assets/Scenes/Main Scenes/Coins1.unity
     guid: 6811863c13dd71d40a75118a5eb766a2
   - enabled: 1
-    path: Assets/Scenes/MainScenes/Coins2.unity
+    path: Assets/Scenes/Main Scenes/Coins2.unity
     guid: ca6f8719b822bd74fb97b6ef27220e8c
   - enabled: 1
-    path: Assets/Scenes/MainScenes/Coins3.unity
+    path: Assets/Scenes/Main Scenes/Coins3.unity
     guid: 3192c42066b3b4587a06157ec573e880
   - enabled: 1
-    path: Assets/Scenes/MainScenes/Coins4.unity
+    path: Assets/Scenes/Main Scenes/Coins4.unity
     guid: 93f34504c149d4ce28073cefed11580c
   - enabled: 1
-    path: Assets/Scenes/MainScenes/Survive1.unity
+    path: Assets/Scenes/Main Scenes/Survive1.unity
     guid: bc504c95538bd094fa3a25f317b831a1
   - enabled: 1
-    path: Assets/Scenes/MainScenes/Survive2.unity
+    path: Assets/Scenes/Main Scenes/Survive2.unity
     guid: 5060cd0d8703c42df92d7814925cdeea
   - enabled: 1
-    path: Assets/Scenes/MainScenes/Survive3.unity
+    path: Assets/Scenes/Main Scenes/Survive3.unity
     guid: 564c7741d142c4b1b890ef21104047fe
   - enabled: 1
-    path: Assets/Scenes/MainScenes/Survive4.unity
+    path: Assets/Scenes/Main Scenes/Survive4.unity
     guid: 177a20640a620314884e95d2d744b496
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

@@ -14,7 +14,7 @@ public class BouncingObstacle : GenericObstacle
     {
         base.Start();
         m_rb = GetComponent<Rigidbody2D>();
-        m_rb.velocity = m_startingVelocity;
+        m_rb.linearVelocity = m_startingVelocity;
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)
@@ -43,6 +43,6 @@ public class BouncingObstacle : GenericObstacle
         averageNormal /= collision.contacts.Length;
 
         // Bouncing direction
-        m_rb.velocity = (-relativevVelocity + 2 * Vector2.Dot(relativevVelocity, averageNormal) * averageNormal) * m_bouncingforce;
+        m_rb.linearVelocity = (-relativevVelocity + 2 * Vector2.Dot(relativevVelocity, averageNormal) * averageNormal) * m_bouncingforce;
     }
 }

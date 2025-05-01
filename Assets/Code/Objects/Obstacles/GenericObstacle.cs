@@ -24,7 +24,7 @@ public class GenericObstacle : MonoBehaviour
 
         // Bounce
         Rigidbody2D playerRb = collision.collider.GetComponent<Rigidbody2D>();
-        playerRb.velocity = new Vector2(newX, newY);
+        playerRb.linearVelocity = new Vector2(newX, newY);
 
         PlayerController playerController = collision.collider.GetComponent<PlayerController>();
         playerController.Hurt();

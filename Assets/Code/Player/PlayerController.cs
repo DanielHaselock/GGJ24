@@ -71,20 +71,20 @@ public class PlayerController : MonoBehaviour
 
         if (m_xAxisInput != 0) // Accelerate
         {
-            xVelocity = Mathf.MoveTowards(m_rb.velocity.x, m_maxSpeed * m_xAxisInput, m_acceleration * Time.deltaTime);
+            xVelocity = Mathf.MoveTowards(m_rb.linearVelocity.x, m_maxSpeed * m_xAxisInput, m_acceleration * Time.deltaTime);
         }
         else // Decelerate
         {
-            xVelocity = Mathf.MoveTowards(m_rb.velocity.x, 0, m_deceleration * Time.deltaTime);
+            xVelocity = Mathf.MoveTowards(m_rb.linearVelocity.x, 0, m_deceleration * Time.deltaTime);
         }
-        m_rb.velocity = new Vector2(xVelocity, m_rb.velocity.y);
+        m_rb.linearVelocity = new Vector2(xVelocity, m_rb.linearVelocity.y);
     }
 
     private void ComputeYVelocity()
     {
         // Up / Down acceleration
-        if (m_rb.velocity.y > 0 && m_jumpInput == 0 && m_rb.gravityScale <= 1) m_rb.gravityScale += m_lowJumpModifier;
-        if (m_rb.velocity.y < 0 && m_rb.gravityScale <= 1.0f + m_lowJumpModifier) m_rb.gravityScale += m_fallModifier;
+        if (m_rb.linearVelocity.y > 0 && m_jumpInput == 0 && m_rb.gravityScale <= 1) m_rb.gravityScale += m_lowJumpModifier;
+        if (m_rb.linearVelocity.y < 0 && m_rb.gravityScale <= 1.0f + m_lowJumpModifier) m_rb.gravityScale += m_fallModifier;
     }
 
     private bool ComputeIsStandingOn(string tag)
@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        m_rb.velocity = new Vector2(m_rb.velocity.x, 0);
+        m_rb.linearVelocity = new Vector2(m_rb.linearVelocity.x, 0);
         m_rb.AddForce(new Vector2(0f, m_jumpForce), ForceMode2D.Impulse);
         m_animator.SetTrigger("Jump");
     }
