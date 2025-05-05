@@ -32,7 +32,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: clown_test_hurt
+  m_Name: clown_bald_hurt
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -59,7 +59,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: clown_test_impact
+  m_Name: clown_bald_impact
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -300,7 +300,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: clown_test_release_crouch
+  m_Name: clown_bald_release_crouch
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -327,7 +327,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: clown_test_jump
+  m_Name: clown_bald_jump
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -428,7 +428,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: clown_test_crouch
+  m_Name: clown_bald_crouch
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

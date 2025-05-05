@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7552367927310092500}
   - component: {fileID: 6752942850111678273}
   m_Layer: 0
-  m_Name: Generic Obstacle
+  m_Name: Sawblade_Large
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

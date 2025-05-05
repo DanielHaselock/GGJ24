@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2535436254112059498, guid: cea31e03fd293d247985ada9159ccc8e, type: 3}
       propertyPath: m_Name
-      value: Falling Obstacle
+      value: Anvil
       objectReference: {fileID: 0}
     - target: {fileID: 2535436254112059498, guid: cea31e03fd293d247985ada9159ccc8e, type: 3}
       propertyPath: m_TagString
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_yBounceBias: -5
 --- !u!50 &4137503821331449987
 Rigidbody2D:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -122,8 +122,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 8
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_GravityScale: 3
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -135,4 +135,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
