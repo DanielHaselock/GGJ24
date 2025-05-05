@@ -365,7 +365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7544956589105500695, guid: 2d46bfc02f7d1814591d8b54e6f143c7, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.9995961
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7674926836969764351, guid: 2d46bfc02f7d1814591d8b54e6f143c7, type: 3}
       propertyPath: m_FilterMode
@@ -373,7 +373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7674926836969764351, guid: 2d46bfc02f7d1814591d8b54e6f143c7, type: 3}
       propertyPath: m_GridSnapping
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
