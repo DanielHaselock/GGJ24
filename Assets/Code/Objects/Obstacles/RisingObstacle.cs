@@ -6,7 +6,7 @@ public class RisingObstacle : GenericObstacle
 {
     private Rigidbody2D m_rb;
     private BoxCollider2D collider;
-    public ParticleSystem confetti;
+    [SerializeField] private ParticleSystem confetti;
 
     protected override void Start()
     {
@@ -24,14 +24,13 @@ public class RisingObstacle : GenericObstacle
             AudioManager.Instance.Pop();
             confetti.Play();
             m_rb.bodyType = RigidbodyType2D.Static;
-            collider.enabled = false;
+            //collider.enabled = false;
         }
     }
 
     public void Destroy()
     {
-        if (confetti.isStopped) {
-            Destroy(gameObject);
-        }
+        Instantiate(confetti, transform.position,transform.rotation);
+        Destroy(this);
     }
 }
