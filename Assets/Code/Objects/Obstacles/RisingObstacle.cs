@@ -5,6 +5,8 @@ using UnityEngine;
 public class RisingObstacle : GenericObstacle
 {
     private Rigidbody2D m_rb;
+    private BoxCollider2D collider;
+    public ParticleSystem confetti;
 
     protected override void Start()
     {
@@ -20,12 +22,16 @@ public class RisingObstacle : GenericObstacle
         {
             m_animator.SetTrigger("Pop");
             AudioManager.Instance.Pop();
+            confetti.Play();
             m_rb.bodyType = RigidbodyType2D.Static;
+            collider.enabled = false;
         }
     }
 
     public void Destroy()
     {
-        Destroy(gameObject);
+        if (confetti.isStopped) {
+            Destroy(gameObject);
+        }
     }
 }
