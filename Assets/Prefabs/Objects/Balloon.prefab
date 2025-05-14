@@ -80,12 +80,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1243588208, guid: 1f5f7ed852442b74587f98f343453d5a, type: 3}
+  m_Sprite: {fileID: -602269165, guid: 1f5f7ed852442b74587f98f343453d5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.875, y: 1.125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -125,7 +125,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.075}
+  m_Offset: {x: 0, y: 0.1}
   m_Radius: 0.35
 --- !u!95 &3421836042836001573
 Animator:
@@ -165,6 +165,15 @@ MonoBehaviour:
   m_xBounceBias: -10
   m_yBounceForce: 15
   m_yBounceBias: -5
+  BalloonMaterials:
+  - {fileID: 2100000, guid: 97c99c907e963f347a128a6bded612d2, type: 2}
+  - {fileID: 2100000, guid: a968bd293ddb7a145842d58aaabe60c3, type: 2}
+  - {fileID: 2100000, guid: 432a332b9913d92479d7a734961722d4, type: 2}
+  - {fileID: 2100000, guid: 3a88abcd315ec72499127df67f02ed3f, type: 2}
+  - {fileID: 2100000, guid: 50c9067d4aecd3a4bb55e0c2ed64c1df, type: 2}
+  - {fileID: 2100000, guid: 8850e762b4e4f4141b464e89cd203718, type: 2}
+  - {fileID: 2100000, guid: 1dfe5c78cbb80e44fa4fa7a849d1e562, type: 2}
+  - {fileID: 2100000, guid: 96b1277b550057d458bbd8da953a83c8, type: 2}
   confetti: {fileID: 4791644950911959813, guid: 7cb2adfbae1ea454383a44a4499c7834, type: 3}
 --- !u!50 &8469676173690398383
 Rigidbody2D:

@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: balloon_blue_0
+      name: balloon_idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 14
-        height: 17
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,20 +151,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5670521c287d7d54b882c589ccbf313d
-      internalID: -1243588208
+      spriteID: b48c3b53a00c28f459cd339779ea27ad
+      internalID: -602269165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: balloon_blue_1
+      name: balloon_idle_1
       rect:
         serializedVersion: 2
         x: 14
         y: 0
         width: 14
-        height: 17
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcd82eda3329cbb4ea564450d755a670
-      internalID: 1597072955
+      spriteID: 25a304677c86b7c48bf6940b50e6e328
+      internalID: -1358494472
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: balloon_blue_2
+      name: balloon_idle_2
       rect:
         serializedVersion: 2
         x: 28
         y: 0
         width: 14
-        height: 17
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 447e35236ffad194c8ad73c90549a41e
-      internalID: 1388030030
+      spriteID: dc7b2fb69cc165b478fd78db8834389a
+      internalID: -1958126093
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: balloon_blue_3
+      name: balloon_idle_3
       rect:
         serializedVersion: 2
         x: 42
         y: 0
         width: 14
-        height: 17
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,8 +217,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37ec4d8bcd1474b438463b99b058c685
-      internalID: 1979170711
+      spriteID: 2918a6d4010ad5144ba071927bb7380e
+      internalID: 1263790713
       vertices: []
       indices: 
       edges: []
@@ -237,10 +237,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      balloon_blue_0: -1243588208
-      balloon_blue_1: 1597072955
-      balloon_blue_2: 1388030030
-      balloon_blue_3: 1979170711
+      balloon_idle_0: -602269165
+      balloon_idle_1: -1358494472
+      balloon_idle_2: -1958126093
+      balloon_idle_3: 1263790713
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
