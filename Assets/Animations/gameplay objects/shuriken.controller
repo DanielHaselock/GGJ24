@@ -6,7 +6,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: buzzsaw
+  m_Name: shuriken
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
@@ -41,7 +41,7 @@ AnimatorStateMachine:
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
-  m_ExitPosition: {x: 310, y: 170, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 7567988816604922604}
 --- !u!1102 &7567988816604922604
@@ -51,7 +51,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: buzzsaw
+  m_Name: shuriken
   m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions: []
@@ -64,7 +64,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: dee0418bef471a04bad4ddf53fb62678, type: 2}
+  m_Motion: {fileID: 7400000, guid: 8cd7999f422d5184b8d11a95da49e428, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

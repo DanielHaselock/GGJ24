@@ -4903,7 +4903,7 @@ GameObject:
   - component: {fileID: 2673164975297639311}
   - component: {fileID: 7060668433369813131}
   m_Layer: 6
-  m_Name: confetti_burst
+  m_Name: Confetti_burst
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
