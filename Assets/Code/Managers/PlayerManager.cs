@@ -15,9 +15,6 @@ public class PlayerManager : MonoBehaviour
     {
         Debug.Log("Player joined");
 
-    // Log control scheme
-        Debug.Log("Control Scheme: " + input.currentControlScheme);
-
         // Log devices used by the player
         foreach (var device in input.devices)
         {
@@ -44,13 +41,13 @@ public class PlayerManager : MonoBehaviour
         Debug.Log("Joining with device: " + device.name);
     
         string controlScheme = "Gameplay";
+
+        Debug.Log(controlScheme);
         
         PlayerInput player = PlayerInput.Instantiate(
             inputManager.playerPrefab,
             controlScheme: controlScheme,
             pairWithDevice: device);
-
-        
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
