@@ -15,42 +15,32 @@ public class PlayerManager : MonoBehaviour
     {
         Debug.Log("Player joined");
 
-    // Log control scheme
-        Debug.Log("Control Scheme: " + input.currentControlScheme);
-
-        // Log devices used by the player
-        foreach (var device in input.devices)
-        {
-            Debug.Log("Paired Device: " + device.name);
-        }
-
         // Example: Call JoinPlayer with the first device (most setups have only one device per player)
-        if (input.devices.Count > 0)
-        {
-            InputDevice triggeringDevice = input.devices[0];
-            JoinPlayer(triggeringDevice);
-        }
+        InputDevice triggeringDevice = input.devices[0];
+        JoinPlayer(triggeringDevice);
+        
     }
 
     
 
     void JoinPlayer(InputDevice device)
     {
+        Debug.Log("Attempting to Join");
+
         if (inputDevices.Contains(device) || device.name == "Mouse")
             return;
 
-        inputDevices.Add(device);
-
         Debug.Log("Joining with device: " + device.name);
     
-        string controlScheme = "Gameplay";
+        /*string controlScheme = "Gameplay";
+
+        Debug.Log("Attempt to Instantiate");
         
         PlayerInput player = PlayerInput.Instantiate(
             inputManager.playerPrefab,
             controlScheme: controlScheme,
             pairWithDevice: device);
-
-        
+        */
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
