@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.TextCore.Text;
+
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private int m_maxSpeed, m_acceleration, m_deceleration, m_jumpForce;
     [SerializeField] private float m_lowJumpModifier, m_fallModifier;
-
     private Animator m_animator;
     private BoxCollider2D m_collider;
     private bool m_isGrounded;
-    private PlayerInputSystem m_playerInputSystem;
     private Rigidbody2D m_rb;
     private float m_jumpInput, m_xAxisInput, m_yAxisInput;
 
@@ -21,23 +22,35 @@ public class PlayerController : MonoBehaviour
         m_animator = GetComponent<Animator>();
         m_collider = GetComponent<BoxCollider2D>();
         m_rb = GetComponent<Rigidbody2D>();
-        m_playerInputSystem = new PlayerInputSystem();
-        m_playerInputSystem.Platforming.Enable();
     }
 
-    private void Update()
+    public void OnMove(InputAction.CallbackContext context)
     {
-        m_jumpInput = m_playerInputSystem.Platforming.Jump.ReadValue<float>();
-        m_xAxisInput = m_playerInputSystem.Platforming.Movement.ReadValue<Vector2>().x;
+        m_xAxisInput = context.ReadValue<Vector2>().x;
 
         float previousYAxisInput = m_yAxisInput;
-        m_yAxisInput = m_playerInputSystem.Platforming.Movement.ReadValue<Vector2>().y;
+        m_yAxisInput = context.ReadValue<Vector2>().y;
 
         if (previousYAxisInput != m_yAxisInput && previousYAxisInput == -1)
             m_animator.SetBool("crouching", false);
 
         if (m_yAxisInput == -1 && m_isGrounded)
             m_animator.SetBool("crouching", true);
+    }
+
+    public void OnJump(InputAction.CallbackContext context){
+        m_jumpInput = context.ReadValue<float>();
+        if (m_isGrounded)
+        {
+            m_rb.gravityScale = 1.0f;
+
+            if (m_jumpInput != 0) Jump();
+        }
+    }
+
+    private void Update()
+    {
+        
             
     }
 
@@ -49,12 +62,7 @@ public class PlayerController : MonoBehaviour
         m_isGrounded = ComputeIsStandingOn("Solid");
         m_animator.SetBool("grounded", m_isGrounded);
 
-        if (m_isGrounded)
-        {
-            m_rb.gravityScale = 1.0f;
-
-            if (m_jumpInput != 0) Jump();
-        }
+        
 
         ComputeVelocity();
     }

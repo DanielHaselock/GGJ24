@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     private TimeManager timeManager;  
     private DifficultyManager difficultyManager;
 
+    private PlayerManager playerManager;
+
     enum GameState
     {
         MainMenu = 0,
@@ -53,6 +55,7 @@ public class GameManager : MonoBehaviour
             levelManager = GetComponent<LevelManager>();
             timeManager = GetComponent<TimeManager>();
             difficultyManager = GetComponent<DifficultyManager>();
+            playerManager = GetComponent<PlayerManager>();
             levelManager.SetPlayer(Player);
            // pause.performed += _ => Pause();
 
