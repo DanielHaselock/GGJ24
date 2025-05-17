@@ -13,7 +13,6 @@ public class PlayerManager : MonoBehaviour
 
     public void OnPlayerJoined(PlayerInput input)
     {
-        Debug.Log("Player joined");
 
         // Example: Call JoinPlayer with the first device (most setups have only one device per player)
         InputDevice triggeringDevice = input.devices[0];
@@ -25,22 +24,17 @@ public class PlayerManager : MonoBehaviour
 
     void JoinPlayer(InputDevice device)
     {
-        Debug.Log("Attempting to Join");
 
         if (inputDevices.Contains(device) || device.name == "Mouse")
             return;
-
-        Debug.Log("Joining with device: " + device.name);
-    
-        /*string controlScheme = "Gameplay";
-
-        Debug.Log("Attempt to Instantiate");
+        inputDevices.Add(device); 
+        string controlScheme = "Gameplay";
         
         PlayerInput player = PlayerInput.Instantiate(
             inputManager.playerPrefab,
             controlScheme: controlScheme,
             pairWithDevice: device);
-        */
+        
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
