@@ -330,6 +330,86 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1001 &604178412
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 76550229408475120, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 604178413}
+    - target: {fileID: 76550229408475120, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnPlayerJoined
+      objectReference: {fileID: 0}
+    - target: {fileID: 76550229408475120, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerJoinHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 229252357925244521, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 229252357925244521, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 229252357925244521, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 229252357925244521, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 229252357925244521, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 229252357925244521, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 229252357925244521, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 229252357925244521, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 229252357925244521, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 229252357925244521, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 734288877666542891, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_Name
+      value: Player Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+--- !u!114 &604178413 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6074318205735575119, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+  m_PrefabInstance: {fileID: 604178412}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b944c37d2604b14eb09243e7b912856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &665437349
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +632,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 731449826}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1812665193}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: GoToScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: LobbyScene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &827156067
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,7 +886,7 @@ GameObject:
   - component: {fileID: 1111403082}
   - component: {fileID: 1111403081}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: GameManagerRemake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1466,3 +1558,4 @@ SceneRoots:
   - {fileID: 1563180499}
   - {fileID: 1564489301}
   - {fileID: 1111403082}
+  - {fileID: 604178412}

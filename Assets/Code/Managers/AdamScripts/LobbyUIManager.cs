@@ -1,48 +1,51 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
+using UnityEngine.InputSystem;
 using TMPro;
 
 public class LobbyUIManager : MonoBehaviour
 {
-    //Manager that handles the Lobby UI in LobbyScene.
+    public static LobbyUIManager Instance { get; private set; }
 
-    public TextMeshProUGUI[] playerSlots;
+    [Header("UI Elements")]
+    public TMP_Text[] playerSlots; // Assign in inspector
     public Button startButton;
 
-    void Start()
+    private void Awake()
     {
+        Instance = this;
+    }
+
+    private void Start()
+    {
+        Refresh();
+        startButton.onClick.AddListener(StartGame);
         startButton.gameObject.SetActive(false);
-        UpdateLobbyUI();
     }
 
-    public void OnPlayerJoined(PlayerInput playerInput)
+    public void Refresh()
     {
-        PlayerManager.Instance.RegisterPlayer(playerInput);
-        UpdateLobbyUI();
-    }
+        var players = PlayerManager.Instance?.players;
 
-    private void UpdateLobbyUI()
-    {
-        int playerCount = PlayerManager.Instance.GetPlayerCount();
+        if (players == null || playerSlots == null) return;
 
         for (int i = 0; i < playerSlots.Length; i++)
         {
-            if (i < playerCount)
-                playerSlots[i].text = $"Player {i + 1}: Joined";
+            if (i < players.Count)
+                playerSlots[i].text = $"Clown {i + 1}: Joined";
             else
-                playerSlots[i].text = $"Player {i + 1}: Not Joined";
+                playerSlots[i].text = $"Clown {i + 1}: Waiting...";
         }
 
-        startButton.gameObject.SetActive(playerCount >= 2); // Minimum 2 players
+        startButton.gameObject.SetActive(players.Count >= 2);
     }
 
-    public void StartGame()
+    private void StartGame()
     {
-        //This will start the randomly generated levels.
+        //SceneManager.LoadScene("GameScene"); // Change to your scene name
     }
 }
+
 
 
