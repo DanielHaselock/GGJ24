@@ -5,36 +5,34 @@ using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
+    public static PlayerManager Instance;
+
     public List<InputDevice> inputDevices;
 
     private PlayerInputManager inputManager;
+
+    public int playerCount = 0;
 
     [SerializeField] private int MAX_PLAYERS = 4;
 
     public void OnPlayerJoined(PlayerInput input)
     {
-
-        // Example: Call JoinPlayer with the first device (most setups have only one device per player)
-        InputDevice triggeringDevice = input.devices[0];
-        JoinPlayer(triggeringDevice);
-        
+        Debug.Log("Player Joined: " + input.user + " with device: " + input.devices[0]);
+        JoinPlayer(input.devices[0]);
     }
 
     
 
     void JoinPlayer(InputDevice device)
     {
+        Debug.Log("Joining player with device: " + device);
+        
+    }
 
-        if (inputDevices.Contains(device) || device.name == "Mouse")
-            return;
-        inputDevices.Add(device); 
-        string controlScheme = "Gameplay";
-        
-        PlayerInput player = PlayerInput.Instantiate(
-            inputManager.playerPrefab,
-            controlScheme: controlScheme,
-            pairWithDevice: device);
-        
+    void Awake()
+    {
+        if (Instance != null && Instance != this) Destroy(this.gameObject);
+        else Instance = this;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
