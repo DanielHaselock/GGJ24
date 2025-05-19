@@ -1,28 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCustomization : MonoBehaviour
 {
-    [SerializeField] RuntimeAnimatorController[] m_clownAnimators;
-    [SerializeField] Texture2D[] m_palettes;
-    [SerializeField] SpriteRenderer m_spriteRenderer;
+    [SerializeField] private RuntimeAnimatorController[] m_clownAnimators;
+    [SerializeField] private Texture2D[] m_palettes;
+    [SerializeField] private SpriteRenderer m_spriteRenderer;
 
     public void Randomize()
     {
-        // Randomize clown
-        int random = Random.Range(0, m_clownAnimators.Length);
-        GetComponent<Animator>().runtimeAnimatorController = m_clownAnimators[random];
+        Animator animator = GetComponent<Animator>();
 
-        // Randomize color
-        Material material = m_spriteRenderer.material;
-        m_spriteRenderer.enabled = false;
-        m_spriteRenderer.material = null;
+        if (m_clownAnimators.Length > 0)
+        {
+            int animIndex = Random.Range(0, m_clownAnimators.Length);
+            animator.runtimeAnimatorController = m_clownAnimators[animIndex];
+        }
 
-        random = Random.Range(0, m_palettes.Length);
-        material.SetTexture("_GradientTexture", m_palettes[random]);
+        if (m_palettes.Length > 0 && m_spriteRenderer != null)
+        {
+            int texIndex = Random.Range(0, m_palettes.Length);
+            Texture2D palette = m_palettes[texIndex];
 
-        m_spriteRenderer.materials = new Material[1] { material };
-        m_spriteRenderer.enabled = true;
+            Material material = new Material(m_spriteRenderer.material); // Avoid modifying shared material
+            material.SetTexture("_GradientTexture", palette);
+
+            m_spriteRenderer.enabled = false;
+            m_spriteRenderer.material = material;
+            m_spriteRenderer.enabled = true;
+        }
     }
 }
+

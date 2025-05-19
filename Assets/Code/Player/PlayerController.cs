@@ -17,6 +17,27 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D m_rb;
     private float m_jumpInput, m_xAxisInput, m_yAxisInput;
 
+     public int PlayerIndex { get; private set; }
+    public string PlayerName { get; private set; }
+
+    private PlayerInput _playerInput;
+    private PlayerCustomization _customization;
+
+    private void Awake()
+    {
+        _playerInput = GetComponent<PlayerInput>();
+        _customization = GetComponent<PlayerCustomization>();
+    }
+
+    public void InitializePlayer(int index, string name)
+    {
+        PlayerIndex = index;
+        PlayerName = name;
+
+        // Randomize visual customization
+        _customization?.Randomize();
+    }
+
     private void Start()
     {
         m_animator = GetComponent<Animator>();
