@@ -1,4 +1,7 @@
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManagerRemake : MonoBehaviour
 {
@@ -14,6 +17,21 @@ public class GameManagerRemake : MonoBehaviour
     void Start()
     {
         
+    }
+
+    public void StartSingleplayerGame()
+    {
+        if (PlayerManager.Instance.players.Count >= 1) return;
+        PlayerInputManager.instance.JoinPlayer();
+
+        SceneManager.LoadScene("SampleScene");
+
+    }
+
+    public void StartMultiplayerGame()
+    {
+
+        SceneManager.LoadScene("SampleScene");
     }
 
     // Update is called once per frame
