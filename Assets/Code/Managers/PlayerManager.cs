@@ -70,7 +70,11 @@ public class PlayerManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "LobbyScene")
         {
             // Refresh the UI in the lobby scene
-            LobbyUIManager.Instance?.Refresh();
+            LobbyUIManager lobbyUIManager = FindAnyObjectByType<LobbyUIManager>();
+            if (lobbyUIManager != null)
+            {
+                lobbyUIManager.Refresh();
+            }
         }
     }
 

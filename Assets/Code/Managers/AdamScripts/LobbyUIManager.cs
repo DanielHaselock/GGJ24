@@ -6,21 +6,20 @@ using TMPro;
 
 public class LobbyUIManager : MonoBehaviour
 {
-    public static LobbyUIManager Instance { get; private set; }
 
     [Header("UI Elements")]
-    public TMP_Text[] playerSlots; // Assign in inspector
-    public Button startButton;
+    // Assign in inspector
+    [SerializeField] private TMP_Text[] playerSlots;
+    [SerializeField] private Button startButton;
 
     private void Awake()
     {
-        Instance = this;
+        
     }
 
     private void Start()
     {
         Refresh();
-        startButton.onClick.AddListener(StartGame);
         startButton.gameObject.SetActive(false);
     }
 
@@ -41,10 +40,6 @@ public class LobbyUIManager : MonoBehaviour
         startButton.gameObject.SetActive(players.Count >= 2);
     }
 
-    private void StartGame()
-    {
-        //SceneManager.LoadScene("GameScene"); // Change to your scene name
-    }
 }
 
 
