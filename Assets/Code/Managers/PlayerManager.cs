@@ -78,6 +78,17 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    public void UpdateScoreOrder()
+    {
+        //Testing
+        foreach (var player in players)
+        {
+            player.AddScore(0);
+        }
+        if (players.Count <= 1) return; // No need to sort if there's only one player
+        players.Sort((a, b) => b.score.CompareTo(a.score)); // Sort in descending order
+    }
+
     public int GetPlayerCount() => players.Count;
 }
 

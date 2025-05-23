@@ -24,14 +24,14 @@ public class GameManagerRemake : MonoBehaviour
         if (PlayerManager.Instance.players.Count >= 1) return;
         PlayerInputManager.instance.JoinPlayer();
 
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("ScoreBoard");
 
     }
 
     public void StartMultiplayerGame()
     {
 
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("ScoreBoard");
     }
 
     // Update is called once per frame
