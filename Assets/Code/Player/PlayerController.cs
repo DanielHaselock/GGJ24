@@ -17,8 +17,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D m_rb;
     private float m_jumpInput, m_xAxisInput, m_yAxisInput;
 
-     public int PlayerIndex { get; private set; }
+    public int PlayerIndex { get; private set; }
     public string PlayerName { get; private set; }
+
+    public int score { get; private set; }
 
     private PlayerInput _playerInput;
     private PlayerCustomization _customization;
@@ -59,7 +61,8 @@ public class PlayerController : MonoBehaviour
             m_animator.SetBool("crouching", true);
     }
 
-    public void OnJump(InputAction.CallbackContext context){
+    public void OnJump(InputAction.CallbackContext context)
+    {
         m_jumpInput = context.ReadValue<float>();
         if (m_isGrounded)
         {
@@ -71,8 +74,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        
-            
+
+
     }
 
     private void FixedUpdate()
@@ -83,7 +86,7 @@ public class PlayerController : MonoBehaviour
         m_isGrounded = ComputeIsStandingOn("Solid");
         m_animator.SetBool("grounded", m_isGrounded);
 
-        
+
 
         ComputeVelocity();
     }
@@ -154,5 +157,11 @@ public class PlayerController : MonoBehaviour
         m_rb.linearVelocity = new Vector2(m_rb.linearVelocity.x, 0);
         m_rb.AddForce(new Vector2(0f, m_jumpForce), ForceMode2D.Impulse);
         m_animator.SetTrigger("Jump");
+    }
+
+    public void AddScore(int score)
+    {
+        int scoreTest = Random.Range(0,999);//Testing
+        this.score += scoreTest;
     }
 }
