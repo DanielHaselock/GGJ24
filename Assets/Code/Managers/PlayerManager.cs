@@ -2,7 +2,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-
+/// <summary>
+/// Manages player instances, handles player joining, scene transitions, and player list updates.
+/// Implements a singleton pattern to persist across scenes.
+/// </summary>
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance { get; private set; }
@@ -48,7 +51,13 @@ public class PlayerManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-
+    /// <summary>
+    /// Registers a new player when they join the game.
+    /// - Retrieves the PlayerController from the PlayerInput.
+    /// - Adds the player to the players list and persists their GameObject across scenes.
+    /// - Randomizes the player's customization.
+    /// - If in the LobbyScene, refreshes the lobby UI to reflect the new player.
+    /// </summary>
     public void RegisterPlayer(PlayerInput input)
     {
         var controller = input.GetComponent<PlayerController>();

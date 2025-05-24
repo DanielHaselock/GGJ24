@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using TMPro;
 
+/// <summary>
+/// Manages the lobby UI in the game, including displaying player slots and controlling the visibility of the start button.
+/// Updates the UI to reflect the current list of players and enables the start button when enough players have joined.
+/// </summary>
 public class LobbyUIManager : MonoBehaviour
 {
 
@@ -22,7 +26,10 @@ public class LobbyUIManager : MonoBehaviour
         Refresh();
         startButton.gameObject.SetActive(false);
     }
-
+    /// <summary>
+    /// Refreshes the lobby UI to display the current players and their status.
+    /// Updates the text of each player slot to indicate whether a player has joined or is waiting.
+    /// </summary>
     public void Refresh()
     {
         var players = PlayerManager.Instance?.players;

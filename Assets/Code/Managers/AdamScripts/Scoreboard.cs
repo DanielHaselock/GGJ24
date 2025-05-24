@@ -3,6 +3,12 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
+/// <summary>
+/// Manages the creation and display of the player scoreboard in the game.
+/// Instantiates player score panels for each player, sets their placement (1st, 2nd, etc.),
+/// assigns the player's sprite and material, and displays their current score.
+/// Relies on the PlayerManager singleton for player data and score ordering.
+/// </summary>
 public class Scoreboard : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
