@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -78,10 +79,12 @@ public class PlayerManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "LobbyScene")
         {
+            
             // Refresh the UI in the lobby scene
             LobbyUIManager lobbyUIManager = FindAnyObjectByType<LobbyUIManager>();
             if (lobbyUIManager != null)
             {
+                //controller.gameObject.SetActive(false); // Hide the player in the lobby scene
                 lobbyUIManager.Refresh();
             }
         }

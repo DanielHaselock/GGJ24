@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2456737718872409583}
   - component: {fileID: 2854218134773533737}
-  - component: {fileID: 4724352086430468200}
+  - component: {fileID: 3852745785247651454}
   m_Layer: 0
   m_Name: GameManagerRemake
   m_TagString: Untagged
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05974be4f5dba0c419d9b4e51d6a6157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4724352086430468200
+--- !u!114 &3852745785247651454
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

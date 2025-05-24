@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
-using TMPro;
 
 /// <summary>
 /// Manages the lobby UI in the game, including displaying player slots and controlling the visibility of the start button.
@@ -13,7 +12,8 @@ public class LobbyUIManager : MonoBehaviour
 
     [Header("UI Elements")]
     // Assign in inspector
-    [SerializeField] private TMP_Text[] playerSlots;
+    [SerializeField] private GameObject[] playerSlots;
+    [SerializeField] private GameObject[] buttonPromptSlots;
     [SerializeField] private Button startButton;
 
     private void Awake()
@@ -24,6 +24,10 @@ public class LobbyUIManager : MonoBehaviour
     private void Start()
     {
         Refresh();
+        // Make sure GameManager is the actual runtime instance
+
+        startButton.onClick.RemoveAllListeners();
+        startButton.onClick.AddListener(() => GameManagerRemake.Instance.GetComponent<Loader>().LoadScene("ScoreBoard"));
         startButton.gameObject.SetActive(false);
     }
     /// <summary>
@@ -39,9 +43,10 @@ public class LobbyUIManager : MonoBehaviour
         for (int i = 0; i < playerSlots.Length; i++)
         {
             if (i < players.Count)
-                playerSlots[i].text = $"Clown {i + 1}: Joined";
-            else
-                playerSlots[i].text = $"Clown {i + 1}: Waiting...";
+            {
+                playerSlots[i].GetComponent<Animator>().SetTrigger("join");
+                buttonPromptSlots[i].GetComponent<Animator>().SetTrigger("player_"+(i+1));
+            }
         }
 
         startButton.gameObject.SetActive(players.Count >= 2);
