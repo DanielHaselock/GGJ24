@@ -4,8 +4,7 @@ using UnityEngine.InputSystem;
 /// <summary>
 /// GameManagerRemake is a singleton MonoBehaviour that manages game state transitions.
 /// - Ensures only one instance exists (singleton pattern).
-/// - Provides methods to start singleplayer or multiplayer games, loading the "ScoreBoard" scene.
-/// - In singleplayer, ensures only one player is joined before starting.
+/// - Will check the settings of the game and load the appropriate scene based on game settings.
 /// </summary>
 public class GameManagerRemake : MonoBehaviour
 {

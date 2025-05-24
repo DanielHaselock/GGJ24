@@ -1,5 +1,9 @@
 using UnityEngine;
-
+/// <summary>
+///  MonoBehaviour script that manages scene loading.
+/// - Ensures the right scene is loading using strings.
+/// - Handles scene transitions.
+/// </summary>
 public class Loader : MonoBehaviour
 {
 
