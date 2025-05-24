@@ -1,7 +1,6 @@
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 /// <summary>
 /// GameManagerRemake is a singleton MonoBehaviour that manages game state transitions.
 /// - Ensures only one instance exists (singleton pattern).
@@ -29,14 +28,14 @@ public class GameManagerRemake : MonoBehaviour
         if (PlayerManager.Instance.players.Count >= 1) return;
         PlayerInputManager.instance.JoinPlayer();
 
-        SceneManager.LoadScene("ScoreBoard");
+        GetComponent<Loader>().LoadScene("ScoreBoard");
 
     }
 
     public void StartMultiplayerGame()
     {
 
-        SceneManager.LoadScene("ScoreBoard");
+        GetComponent<Loader>().LoadScene("LobbyScene");
     }
 
     // Update is called once per frame

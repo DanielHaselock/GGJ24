@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections;
 
 /// <summary>
 /// Manages the creation and display of the player scoreboard in the game.
@@ -12,11 +13,13 @@ using UnityEngine.UI;
 public class Scoreboard : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-
+    [Header("Scoreboard Settings")]
+    [SerializeField] private float timer = 5f; // Time before transitioning to the next scene
     [SerializeField] private GameObject playerScorePanelPrefab;
     void Start()
     {
         CreateScoreboard();
+        StartCoroutine(TimerUntilNextScene());
     }
 
     void CreateScoreboard()
@@ -80,5 +83,13 @@ public class Scoreboard : MonoBehaviour
                 Debug.LogError("Score GameObject not found in prefab.");
             }
         }
+    }
+
+
+    IEnumerator TimerUntilNextScene()
+    {
+        yield return new WaitForSeconds(timer);
+        // Load the next scene here
+        FindAnyObjectByType<GameManagerRemake>().gameObject.GetComponent<Loader>().LoadScene("SampleScene");
     }
 }
