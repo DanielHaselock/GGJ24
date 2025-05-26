@@ -1175,8 +1175,6 @@ RectTransform:
   m_Children:
   - {fileID: 5904531708716812805}
   - {fileID: 4093707074597581069}
-  - {fileID: 8020163668798228899}
-  - {fileID: 5004236151461049884}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1560,6 +1558,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8020163668798228899}
+  - {fileID: 5004236151461049884}
   - {fileID: 5959080999821531382}
   - {fileID: 5680596085450392877}
   - {fileID: 7936899023901316083}
@@ -1616,7 +1616,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 8466254554074132429}
+    m_TransformParent: {fileID: 5904531708716812805}
     m_Modifications:
     - target: {fileID: 986581621083794600, guid: cdf47860a20217846a707efec72b4072, type: 3}
       propertyPath: m_Name
@@ -1718,7 +1718,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 8466254554074132429}
+    m_TransformParent: {fileID: 5904531708716812805}
     m_Modifications:
     - target: {fileID: 21338052548816345, guid: 1ba48ac081d097a488c0aaba453d0ecf, type: 3}
       propertyPath: m_Pivot.x
