@@ -12,6 +12,29 @@ public class GameManagerRemake : MonoBehaviour
 
     private Loader loader;
 
+    private MusicManager musicManager;
+
+    private GameStates currentGameState { get; set; } = GameStates.MainMenu;
+    public enum GameStates
+    {
+        MainMenu,
+        Lobby,
+        Scoreboard,
+        Level,
+        Credits,
+        GameOver,
+    }
+
+    public GameStates CurrentGameState
+    {
+        get { return currentGameState; }
+        set
+        {
+            currentGameState = value;
+            Debug.Log("Current Game State: " + currentGameState);
+        }
+    }
+
     private void Awake()
     {
         if (Instance != null && Instance != this) Destroy(this.gameObject);
@@ -22,14 +45,16 @@ public class GameManagerRemake : MonoBehaviour
     void Start()
     {
         loader = GetComponent<Loader>();
+        musicManager = GetComponent<MusicManager>();
     }
-        
+
 
 
     public void StartSingleplayerGame()
     {
         if (PlayerManager.Instance.players.Count >= 1) return;
         PlayerInputManager.instance.JoinPlayer();
+        currentGameState = GameStates.Scoreboard;
 
         loader.LoadScene("ScoreBoard");
     }
@@ -37,12 +62,26 @@ public class GameManagerRemake : MonoBehaviour
     public void StartMultiplayerGame()
     {
 
+        musicManager.StopMenuMusic();
         loader.LoadScene("ScoreBoard");
+        
+    }
+
+    public void GoToLobby()
+    {
+        currentGameState = GameStates.Lobby;
+        loader.LoadScene("LobbyScene");
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit Game");
+        Application.Quit();
     }
 }

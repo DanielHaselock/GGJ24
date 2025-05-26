@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// Manages the lobby UI in the game, including displaying player slots and controlling the visibility of the start button.
@@ -15,10 +16,12 @@ public class LobbyUIManager : MonoBehaviour
     [SerializeField] private GameObject[] playerSlots;
     [SerializeField] private GameObject[] buttonPromptSlots;
     [SerializeField] private Button startButton;
+    
+    private EventSystem eventSystem;
 
     private void Awake()
     {
-        
+
     }
 
     private void Start()
@@ -26,9 +29,11 @@ public class LobbyUIManager : MonoBehaviour
         Refresh();
         // Make sure GameManager is the actual runtime instance
 
-        startButton.onClick.RemoveAllListeners();
-        startButton.onClick.AddListener(() => GameManagerRemake.Instance.GetComponent<Loader>().LoadScene("ScoreBoard"));
-        startButton.gameObject.SetActive(false);
+        eventSystem = EventSystem.current;
+        if (eventSystem == null)
+        {
+            Debug.LogError("EventSystem not found in the scene. Please add an EventSystem component.");
+        }
     }
     /// <summary>
     /// Refreshes the lobby UI to display the current players and their status.

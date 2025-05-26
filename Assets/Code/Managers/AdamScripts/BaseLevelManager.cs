@@ -7,7 +7,13 @@ public class BaseLevelManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        for(int i = 0; i < PlayerManager.Instance.players.Count && i < spawnPoints.Length; i++)
+        if (GameManagerRemake.Instance.CurrentGameState != GameManagerRemake.GameStates.Level)
+        {
+            GameManagerRemake.Instance.CurrentGameState = GameManagerRemake.GameStates.Level;
+            Debug.Log("Current Game State: " + GameManagerRemake.Instance.CurrentGameState);
+        }
+
+        for (int i = 0; i < PlayerManager.Instance.players.Count && i < spawnPoints.Length; i++)
         {
             PlayerManager.Instance.players[i].gameObject.SetActive(true);
             PlayerManager.Instance.players[i].transform.position = spawnPoints[i].transform.position;

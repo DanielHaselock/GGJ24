@@ -9,13 +9,19 @@ public class Balloon : GenericObstacle
     private SpriteRenderer m_sr;
     public Material[] BalloonMaterials;
     [SerializeField] private GameObject confetti;
+    
+    private AudioSource audioSource;
+
+    [SerializeField] private AudioClip popSound;
 
     protected override void Start()
     {
         base.Start();
         m_rb = GetComponent<Rigidbody2D>();
         m_sr = GetComponent<SpriteRenderer>();
-        
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = popSound;
+
         int randomIndex = Random.Range(0, BalloonMaterials.Length);
         m_sr.material = BalloonMaterials[randomIndex];
     }
@@ -28,13 +34,18 @@ public class Balloon : GenericObstacle
         {
             Instantiate(confetti, transform.position,transform.rotation);
             m_animator.SetTrigger("Pop");
-            AudioManager.Instance.Pop();
+            StartCoroutine(Pop());
             m_rb.bodyType = RigidbodyType2D.Static;
         }
     }
 
-    public void Destroy()
+    IEnumerator Pop()
     {
+        if (audioSource != null && !audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
+        yield return new WaitForSeconds(audioSource.clip.length);
         Destroy(gameObject);
     }
 }
