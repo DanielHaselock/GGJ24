@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8963897717540376090}
   - component: {fileID: 2299287003506909845}
-  - component: {fileID: 3101931958035897016}
+  - component: {fileID: 1451720893873347329}
   - component: {fileID: 8397633127033093546}
   - component: {fileID: 8868884594873684825}
   m_Layer: 0
@@ -90,8 +90,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &3101931958035897016
-BoxCollider2D:
+--- !u!70 &1451720893873347329
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -124,18 +124,9 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.37}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.375}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: -0.4}
   m_Size: {x: 0.75, y: 0.6}
-  m_EdgeRadius: 0
+  m_Direction: 0
 --- !u!95 &8397633127033093546
 Animator:
   serializedVersion: 7
@@ -171,4 +162,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BounceForce: 18
+  m_xBounceBias: 0
+  m_yBounceBias: 7
   can_kill: 1
