@@ -605,7 +605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8963897717540376090, guid: a83e8e1795d70c542a32c1e2a495d054, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8963897717540376090, guid: a83e8e1795d70c542a32c1e2a495d054, type: 3}
       propertyPath: m_LocalPosition.y
@@ -757,7 +757,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball_big
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8257206748512138988, guid: 82b4c9b69159b8b41a2771d9c3b23473, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8581494693713673147, guid: 82b4c9b69159b8b41a2771d9c3b23473, type: 3}
+      propertyPath: m_bouncingforce
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4539656367513664345, guid: 82b4c9b69159b8b41a2771d9c3b23473, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
