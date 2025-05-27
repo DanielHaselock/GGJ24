@@ -162,13 +162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5da8866fc80b8649adbc6f56ee01155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_xBounceForce: 25
-  m_xBounceBias: -10
-  m_yBounceForce: 15
-  m_yBounceBias: -5
-  m_startingVelocity: {x: 1, y: 0}
-  m_bouncingforce: 1
-  m_bounceSound: {fileID: 8300000, guid: d4e3b714d7a93fa47b712342464f0145, type: 3}
+  m_BounceForce: 10
+  m_startingVelocity: {x: 0, y: 0}
+  m_bouncingforce: 0.6
 --- !u!50 &5257636511808098254
 Rigidbody2D:
   serializedVersion: 5

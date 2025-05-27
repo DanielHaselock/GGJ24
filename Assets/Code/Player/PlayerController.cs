@@ -86,8 +86,6 @@ public class PlayerController : MonoBehaviour
         m_isGrounded = ComputeIsStandingOn("Solid");
         m_animator.SetBool("grounded", m_isGrounded);
 
-
-
         ComputeVelocity();
     }
 

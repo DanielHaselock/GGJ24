@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8868884594873684825}
   m_Layer: 0
   m_Name: Spikes
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,7 +134,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.67}
+  m_Size: {x: 0.75, y: 0.6}
   m_EdgeRadius: 0
 --- !u!95 &8397633127033093546
 Animator:
@@ -170,7 +170,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb180f92f1c77464f8cad035bcf7c682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_xBounceForce: 0
-  m_xBounceBias: -20
-  m_yBounceForce: 15
-  m_yBounceBias: -5
+  m_BounceForce: 18
+  can_kill: 1
