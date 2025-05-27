@@ -69,8 +69,8 @@ public class GameManagerRemake : MonoBehaviour
 
     public void GoToLobby()
     {
-        currentGameState = GameStates.Lobby;
         loader.LoadScene("LobbyScene");
+        currentGameState = GameStates.Lobby;
     }
 
     // Update is called once per frame

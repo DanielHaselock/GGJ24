@@ -163,8 +163,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BounceForce: 10
+  m_xBounceBias: 0
+  m_yBounceBias: 0
+  can_kill: 0
   m_startingVelocity: {x: 0, y: 0}
   m_bouncingforce: 0.6
+  m_bounceSound: {fileID: 8300000, guid: d4e3b714d7a93fa47b712342464f0145, type: 3}
 --- !u!50 &5257636511808098254
 Rigidbody2D:
   serializedVersion: 5
