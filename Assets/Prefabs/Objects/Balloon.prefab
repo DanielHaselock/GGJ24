@@ -161,10 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b32bac756639a1d4baf3785368b8d289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_xBounceForce: 25
-  m_xBounceBias: -10
-  m_yBounceForce: 15
-  m_yBounceBias: -5
+  m_BounceForce: 10
   BalloonMaterials:
   - {fileID: 2100000, guid: 97c99c907e963f347a128a6bded612d2, type: 2}
   - {fileID: 2100000, guid: a968bd293ddb7a145842d58aaabe60c3, type: 2}

@@ -171,10 +171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab367e45a5810d248b3d00bafc9c90f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_xBounceForce: 25
-  m_xBounceBias: -10
-  m_yBounceForce: 15
-  m_yBounceBias: -5
+  m_BounceForce: 18
+  can_kill: 1
 --- !u!50 &4137503821331449987
 Rigidbody2D:
   serializedVersion: 5
