@@ -57,6 +57,7 @@ public class GameManagerRemake : MonoBehaviour
         currentGameState = GameStates.Scoreboard;
 
         loader.LoadScene("ScoreBoard");
+        PlayerManager.Instance.SwitchFromUIToGame();
     }
 
     public void StartMultiplayerGame()
@@ -64,6 +65,8 @@ public class GameManagerRemake : MonoBehaviour
 
         musicManager.StopMenuMusic();
         loader.LoadScene("ScoreBoard");
+        
+        PlayerManager.Instance.SwitchFromUIToGame();
     }
 
     public void GoToLobby()

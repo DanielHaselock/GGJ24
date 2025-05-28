@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
             case GameManagerRemake.GameStates.Lobby:
                 _playerInput.SwitchCurrentActionMap("UI");
                 break;
+            case GameManagerRemake.GameStates.Scoreboard:
             case GameManagerRemake.GameStates.Level:
                 _playerInput.SwitchCurrentActionMap("Keyboard");
                 break;

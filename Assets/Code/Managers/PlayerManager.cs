@@ -90,7 +90,13 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-
+    public void SwitchFromUIToGame()
+    {
+        foreach (var player in players)
+        {
+            player.switchActionMap();
+        }
+    }
     public void UpdateScoreOrder()
     {
         //Testing
