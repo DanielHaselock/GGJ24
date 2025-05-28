@@ -70,25 +70,26 @@ public class PlayerManager : MonoBehaviour
         }
 
         int index = players.Count;
-        //controller.InitializePlayer(index, $"Player {index + 1}");
         players.Add(controller);
-
         DontDestroyOnLoad(controller.gameObject);
 
+        controller.InitializePlayer(index, $"Player {index + 1}");
         controller.GetComponent<PlayerCustomization>().Randomize();
+
+        // ✅ Pass the input explicitly
+        controller.Setup(input);
 
         if (SceneManager.GetActiveScene().name == "LobbyScene")
         {
-            
-            // Refresh the UI in the lobby scene
+            controller.SetVisible(false);
             LobbyUIManager lobbyUIManager = FindAnyObjectByType<LobbyUIManager>();
             if (lobbyUIManager != null)
             {
-                //controller.gameObject.SetActive(false); // Hide the player in the lobby scene
                 lobbyUIManager.Refresh();
             }
         }
     }
+
 
     public void UpdateScoreOrder()
     {

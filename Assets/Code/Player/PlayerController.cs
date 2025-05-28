@@ -25,10 +25,54 @@ public class PlayerController : MonoBehaviour
     private PlayerInput _playerInput;
     private PlayerCustomization _customization;
 
+    public void Setup(PlayerInput input)
+    {
+        _playerInput = input;
+        switchActionMap();
+        
+    }
+
+    public void switchActionMap()
+    {
+        if (_playerInput == null)
+        {
+            Debug.LogError("PlayerInput component is not assigned.");
+            return;
+        }
+        switch (GameManagerRemake.Instance.CurrentGameState)
+        {
+            case GameManagerRemake.GameStates.MainMenu:
+            case GameManagerRemake.GameStates.Lobby:
+                _playerInput.SwitchCurrentActionMap("UI");
+                break;
+            case GameManagerRemake.GameStates.Level:
+                _playerInput.SwitchCurrentActionMap("Keyboard");
+                break;
+        }
+        Debug.Log($"Switched action map to {_playerInput.currentActionMap.name} for player {PlayerIndex}");
+    }
+
     private void Awake()
     {
-        _playerInput = GetComponent<PlayerInput>();
+        //_playerInput = GetComponent<PlayerInput>();
         _customization = GetComponent<PlayerCustomization>();
+    }
+
+    private void Start()
+    {
+        m_animator = GetComponent<Animator>();
+        m_collider = GetComponent<BoxCollider2D>();
+        m_rb = GetComponent<Rigidbody2D>();
+    }
+
+    public void OnSubmit(InputAction.CallbackContext context)
+    {
+        Debug.Log("Player is submitting");
+    }
+
+    public void OnCancel(InputAction.CallbackContext context)
+    {
+        Debug.Log("Player is canceling");
     }
 
     public void InitializePlayer(int index, string name)
@@ -40,12 +84,13 @@ public class PlayerController : MonoBehaviour
         _customization?.Randomize();
     }
 
-    private void Start()
+    public void SetVisible(bool visible)
     {
-        m_animator = GetComponent<Animator>();
-        m_collider = GetComponent<BoxCollider2D>();
-        m_rb = GetComponent<Rigidbody2D>();
+        foreach (var r in GetComponentsInChildren<Renderer>()) r.enabled = visible;
+        foreach (var c in GetComponentsInChildren<Collider2D>()) c.enabled = visible;
+        GetComponent<Rigidbody2D>().simulated = visible;
     }
+
 
     public void OnMove(InputAction.CallbackContext context)
     {

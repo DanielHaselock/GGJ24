@@ -64,7 +64,6 @@ public class GameManagerRemake : MonoBehaviour
 
         musicManager.StopMenuMusic();
         loader.LoadScene("ScoreBoard");
-        
     }
 
     public void GoToLobby()
