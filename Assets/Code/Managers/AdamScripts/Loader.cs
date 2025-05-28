@@ -34,7 +34,7 @@ public class Loader : MonoBehaviour
     IEnumerator LoadSceneWithCurtains(string sceneName)
     {
         //If currently in the lobby scene, close the lobby board instead of the curtains.
-        /*if (GameManagerRemake.Instance.CurrentGameState == GameManagerRemake.GameStates.Lobby)
+        if (GameManagerRemake.Instance.CurrentGameState == GameManagerRemake.GameStates.Lobby)
         {
             // If the scene is the lobby, we don't want to close the curtains but to close the lobby board instead.
             GameObject lobbyBoard = GameObject.Find("LobbyBoard");
@@ -42,7 +42,7 @@ public class Loader : MonoBehaviour
             // Close the lobby board instead of the curtains
             if (lobbyBoard != null)
             {
-                lobbyBoard.GetComponent<Animator>().SetTrigger("close");
+                lobbyBoard.GetComponent<Animator>().SetTrigger("hide");
             }
             else
             {
@@ -55,7 +55,7 @@ public class Loader : MonoBehaviour
                 yield return null; // Wait until the scene is loaded
             }
             InitializeCurtains();
-        }*/
+        }
 
         LeftCurtain.GetComponent<Animator>().SetTrigger("close");
         RightCurtain.GetComponent<Animator>().SetTrigger("close");
@@ -65,7 +65,7 @@ public class Loader : MonoBehaviour
         {
             yield return null; // Wait until the scene is loaded
         }
-        /*if (GameManagerRemake.Instance.CurrentGameState == GameManagerRemake.GameStates.Lobby)
+        if (GameManagerRemake.Instance.CurrentGameState == GameManagerRemake.GameStates.Lobby)
         {
             GameManagerRemake.Instance.CurrentGameState = GameManagerRemake.GameStates.Lobby;
             InitializeLobbyboard();
@@ -73,9 +73,7 @@ public class Loader : MonoBehaviour
         else
         {
             InitializeCurtains();
-        }*/
-
-        InitializeCurtains();
+        }
     }
 
     public void InitializeCurtains()
@@ -99,7 +97,7 @@ public class Loader : MonoBehaviour
         GameObject lobbyBoard = GameObject.Find("LobbyBoard");
         if (lobbyBoard != null)
         {
-            lobbyBoard.GetComponent<Animator>().SetTrigger("open");
+            lobbyBoard.GetComponent<Animator>().SetTrigger("show");
         }
         else
         {

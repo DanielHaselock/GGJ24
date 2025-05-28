@@ -30,7 +30,7 @@ public class GenericObstacle : MonoBehaviour
         Rigidbody2D playerRb = collision.collider.GetComponent<Rigidbody2D>();
         playerRb.linearVelocity = new Vector2(newX, newY);
         if (can_kill == false) {
-            playerController.GetComponent<Animator>().SetBool("jumping", true);
+            playerController.GetComponent<Animator>().SetTrigger("Jump");
         }
         // Kill player
         if (can_kill == true) {

@@ -57,3 +57,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32c0900dbd9b59a4ba470b941133f798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LeftCurtain: {fileID: 0}
+  RightCurtain: {fileID: 0}
+  closedDelay: 1
