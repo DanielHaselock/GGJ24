@@ -82,6 +82,7 @@ public class TimeManager : MonoBehaviour
         if (clockAnimator)
         {
             clockAnimator.SetTrigger("times_up");
+            clockAnimator.speed = 1f;
         }
 
         if (state == TimeState.Playing)
@@ -146,37 +147,6 @@ public class TimeManager : MonoBehaviour
     {
         float percentage = CalculatePercentage();
 
-        if (Clock)
-        {
-            if (percentage > 60 && clockstate != ClockState.Calm)
-            {
-                clockstate = ClockState.Calm;
-                clockAnimator.speed = 1;
-                //Clock.GetComponent<Animator>().SetBool("Calm", true);
-                //Clock.GetComponent<Animator>().SetBool("Medium", false);
-                //Clock.GetComponent<Animator>().SetBool("Red", false);
-            }
-            else if (percentage > 30 && percentage < 60 && clockstate != ClockState.Medium)
-            {
-                clockstate = ClockState.Medium;
-                clockAnimator.speed = 1.5f;
-                //Clock.GetComponent<Animator>().SetBool("Calm", false);
-                //Clock.GetComponent<Animator>().SetBool("Medium", true);
-                //Clock.GetComponent<Animator>().SetBool("Red", false);
-            }
-            else if (percentage < 30 && clockstate != ClockState.Red)
-            {
-                clockstate = ClockState.Red;
-                clockAnimator.speed = 3f;
-                //Clock.GetComponent<Animator>().SetBool("Calm", false);
-                //Clock.GetComponent<Animator>().SetBool("Medium", false);
-                //Clock.GetComponent<Animator>().SetBool("Red", true);
-            }
-            else if (percentage < 0 && clockstate != ClockState.Red)
-            {
-                clockstate = ClockState.Red;
-                clockAnimator.speed = 1f;
-            }
-        }
+        clockAnimator.speed = 2f - (percentage/100f);
     }
 }
