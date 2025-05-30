@@ -53,8 +53,8 @@ MonoBehaviour:
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LobbyUIManager, Assembly-CSharp
+      - m_Target: {fileID: 6074318205735575119}
+        m_TargetAssemblyTypeName: PlayerJoinHandler, Assembly-CSharp
         m_MethodName: OnPlayerJoined
         m_Mode: 0
         m_Arguments:
@@ -71,13 +71,29 @@ MonoBehaviour:
   m_JoinAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Join
       m_Type: 0
       m_ExpectedControlType: 
       m_Id: ceabf9b5-2f20-4a6e-a116-45e050907cf4
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings: []
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 075401e9-fcf7-4324-9551-65f8bd7c24b5
+        m_Path: <Keyboard>/space
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Join
+        m_Flags: 0
+      - m_Name: 
+        m_Id: e5ceef6e-6d51-47d0-9b65-7e3d565a85f4
+        m_Path: <Gamepad>/start
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Join
+        m_Flags: 0
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_PlayerPrefab: {fileID: 2725178118640683227, guid: 3e41fac0f9db16c4599216905d877fca, type: 3}

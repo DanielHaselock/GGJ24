@@ -57,7 +57,7 @@ public class GameManagerRemake : MonoBehaviour
         currentGameState = GameStates.Scoreboard;
 
         loader.LoadScene("ScoreBoard");
-        PlayerManager.Instance.SwitchFromUIToGame();
+        PlayerManager.Instance.SwitchActionMaps();
     }
 
     public void StartMultiplayerGame()
@@ -66,13 +66,21 @@ public class GameManagerRemake : MonoBehaviour
         musicManager.StopMenuMusic();
         loader.LoadScene("ScoreBoard");
         currentGameState = GameStates.Scoreboard;
-        PlayerManager.Instance.SwitchFromUIToGame();
+        PlayerManager.Instance.SwitchActionMaps();
     }
 
     public void GoToLobby()
     {
         loader.LoadScene("LobbyScene");
         currentGameState = GameStates.Lobby;
+    }
+
+    public void GoToMainMenu()
+    {
+        loader.LoadScene("NewMainMenu");
+        currentGameState = GameStates.MainMenu;
+        PlayerManager.Instance.SwitchActionMaps();
+        PlayerManager.Instance.ClearPlayers();
     }
 
     // Update is called once per frame
