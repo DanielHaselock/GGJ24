@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour
 {
@@ -40,6 +41,8 @@ public class TimeManager : MonoBehaviour
     [SerializeField]
     private GameObject Clock;
 
+    private Slider clockSlider;
+
     public TimeState state;
 
     private Animator clockAnimator;
@@ -54,6 +57,12 @@ public class TimeManager : MonoBehaviour
         if (!clockAnimator)
         {
             Debug.LogError("Clock Animator not found!");
+            return;
+        }
+        clockSlider = Clock.GetComponentInChildren<Slider>();
+        if (!clockSlider)
+        {
+            Debug.LogError("Clock Slider not found!");
             return;
         }
     }
@@ -147,7 +156,7 @@ public class TimeManager : MonoBehaviour
     {
         float percentage = CalculatePercentage();
 
-        clockAnimator.speed = 2f - (percentage/100f);
+        clockAnimator.speed = 2f - (percentage / 100f);
         // commented out since I got it to work smoothly with the above expression. Remove anything regarding staes since, unless I'm worng, I'm not sure we need them if it was only for animation speed.
         // if (Clock)
         // {
@@ -181,5 +190,6 @@ public class TimeManager : MonoBehaviour
         //         clockAnimator.speed = 1f;
         //     }
         // }
+        clockSlider.value = percentage/100f; // Assuming the slider value is between 0 and 1
     }
 }
