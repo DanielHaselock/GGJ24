@@ -20,13 +20,13 @@ public class LobbyUIManager : MonoBehaviour
     [SerializeField] private GameObject[] buttonPromptSlots;
     [SerializeField] private Slider startBar;
 
-    [SerializeField] private const float maxTimeToStart = 5f; // Maximum time to fill the start bar
+    private const float MAX_TIME_TO_START = 3f; // Maximum time to fill the start bar
     [SerializeField] private Slider cancelBar;
     private EventSystem eventSystem;
 
     private Coroutine fillStartCoroutine;
 
-    private Coroutine FillCancelBarCoroutine;
+    private Coroutine fillCancelBarCoroutine;
 
     private Dictionary<PlayerController, int> playerSlotMap = new();
 
@@ -161,7 +161,7 @@ public class LobbyUIManager : MonoBehaviour
 
         while (startBar.value < 1f)
         {
-            startBar.value += Time.deltaTime / maxTimeToStart;
+            startBar.value += Time.deltaTime / MAX_TIME_TO_START;
             yield return null;
         }
 
@@ -192,9 +192,9 @@ public class LobbyUIManager : MonoBehaviour
             return;
         }
 
-        if (FillCancelBarCoroutine == null)
+        if (fillCancelBarCoroutine == null)
         {
-            FillCancelBarCoroutine = StartCoroutine(FillCancelBarOverTime());
+            fillCancelBarCoroutine = StartCoroutine(FillCancelBarOverTime());
         }
     }
 
@@ -202,7 +202,7 @@ public class LobbyUIManager : MonoBehaviour
     {
         while (cancelBar.value < 1f)
         {
-            cancelBar.value += Time.deltaTime / maxTimeToStart;
+            cancelBar.value += Time.deltaTime / MAX_TIME_TO_START;
             yield return null;
         }
 
@@ -212,10 +212,10 @@ public class LobbyUIManager : MonoBehaviour
 
     public void CancelFillCancelBar()
     {
-        if (FillCancelBarCoroutine != null)
+        if (fillCancelBarCoroutine != null)
         {
-            StopCoroutine(FillCancelBarCoroutine);
-            FillCancelBarCoroutine = null;
+            StopCoroutine(fillCancelBarCoroutine);
+            fillCancelBarCoroutine = null;
             ResetCancelBar();
         }
     }
