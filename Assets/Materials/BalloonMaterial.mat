@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerMaterial_25
+  m_Name: BalloonMaterial
   m_Shader: {fileID: -6465566751694194690, guid: d020a6265c4331a4cbf5ee13927fa44c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GradientTexture:
-        m_Texture: {fileID: 2800000, guid: ff60040ed70d36245b5c8ab8ce242d26, type: 3}
+        m_Texture: {fileID: 2800000, guid: 394060ae2b169504b9aef3150ec2bcc6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:

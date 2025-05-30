@@ -163,15 +163,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BounceForce: 10
-  BalloonMaterials:
-  - {fileID: 2100000, guid: 97c99c907e963f347a128a6bded612d2, type: 2}
-  - {fileID: 2100000, guid: a968bd293ddb7a145842d58aaabe60c3, type: 2}
-  - {fileID: 2100000, guid: 432a332b9913d92479d7a734961722d4, type: 2}
-  - {fileID: 2100000, guid: 3a88abcd315ec72499127df67f02ed3f, type: 2}
-  - {fileID: 2100000, guid: 50c9067d4aecd3a4bb55e0c2ed64c1df, type: 2}
-  - {fileID: 2100000, guid: 8850e762b4e4f4141b464e89cd203718, type: 2}
-  - {fileID: 2100000, guid: 1dfe5c78cbb80e44fa4fa7a849d1e562, type: 2}
-  - {fileID: 2100000, guid: 96b1277b550057d458bbd8da953a83c8, type: 2}
+  m_xBounceBias: 0
+  m_yBounceBias: 0
+  can_kill: 0
+  m_palettes:
+  - {fileID: 2800000, guid: 394060ae2b169504b9aef3150ec2bcc6, type: 3}
+  - {fileID: 2800000, guid: 74e790dc0b8d4be48b0bd360d220297e, type: 3}
+  - {fileID: 2800000, guid: 2655dcc92a0e7884090bc47e5efb27e3, type: 3}
+  - {fileID: 2800000, guid: 2f6cdb82e499c8f4782830d8789dd8b6, type: 3}
+  - {fileID: 2800000, guid: c3d5947b997412440a27187c504ba2ba, type: 3}
+  - {fileID: 2800000, guid: 6e0319f3cb3ffa24c9d77fc0978cc7c0, type: 3}
+  - {fileID: 2800000, guid: e8bb3ce0efbcc2c458177f79c93aa87f, type: 3}
+  - {fileID: 2800000, guid: 970466ad4e2fa1c4d9604ede0cb5265d, type: 3}
+  m_spriteRenderer: {fileID: 4908389568584211482}
   confetti: {fileID: 4791644950911959813, guid: 7cb2adfbae1ea454383a44a4499c7834, type: 3}
   popSound: {fileID: 8300000, guid: c6f7726ee0d8740459c624a50d796e68, type: 3}
 --- !u!50 &8469676173690398383

@@ -6,8 +6,8 @@ public class Balloon : GenericObstacle
 {
     private Rigidbody2D m_rb;
     private BoxCollider2D collider;
-    private SpriteRenderer m_sr;
-    public Material[] BalloonMaterials;
+    [SerializeField] private Texture2D[] m_palettes;
+    [SerializeField] private SpriteRenderer m_spriteRenderer;
     [SerializeField] private GameObject confetti;
     
     private AudioSource audioSource;
@@ -18,12 +18,23 @@ public class Balloon : GenericObstacle
     {
         base.Start();
         m_rb = GetComponent<Rigidbody2D>();
-        m_sr = GetComponent<SpriteRenderer>();
+        m_spriteRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = popSound;
 
-        int randomIndex = Random.Range(0, BalloonMaterials.Length);
-        m_sr.material = BalloonMaterials[randomIndex];
+        // randomize the balloon's colors
+        if (m_palettes.Length > 0 && m_spriteRenderer != null)
+        {
+            int texIndex = Random.Range(0, m_palettes.Length);
+            Texture2D palette = m_palettes[texIndex];
+
+            Material material = new Material(m_spriteRenderer.material); // Avoid modifying shared material
+            material.SetTexture("_GradientTexture", palette);
+
+            m_spriteRenderer.enabled = false;
+            m_spriteRenderer.material = material;
+            m_spriteRenderer.enabled = true;
+        }
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)
