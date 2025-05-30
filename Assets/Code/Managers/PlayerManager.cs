@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -62,6 +63,10 @@ public class PlayerManager : MonoBehaviour
     public void RegisterPlayer(PlayerInput input)
     {
 
+        if (input.GetDevice<Mouse>() != null)
+        {
+            Destroy(input.gameObject);
+        }
         var controller = input.GetComponent<PlayerController>();
 
         controller.SetVisible(false);
@@ -79,7 +84,6 @@ public class PlayerManager : MonoBehaviour
         controller.InitializePlayer(index, $"Player {index + 1}");
         controller.GetComponent<PlayerCustomization>().Randomize();
 
-        // ✅ Pass the input explicitly
         controller.Setup(input);
 
         if (SceneManager.GetActiveScene().name == "LobbyScene")
@@ -89,10 +93,43 @@ public class PlayerManager : MonoBehaviour
             {
                 lobbyUIManager.Refresh();
             }
+            else
+            {
+                Debug.LogWarning("LobbyUIManager not found in the scene. Cannot refresh lobby UI.");
+            }
         }
     }
 
-    public void SwitchFromUIToGame()
+
+    public void RemovePlayer(PlayerController player)
+    {
+        if (players.Contains(player))
+        {
+            players.Remove(player);
+            Destroy(player.gameObject);
+            LobbyUIManager lobbyUIManager = FindAnyObjectByType<LobbyUIManager>();
+            if (lobbyUIManager != null)
+            {
+                lobbyUIManager.Refresh();
+            }
+            else
+            {
+                Debug.LogWarning("LobbyUIManager not found in the scene. Cannot refresh lobby UI.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Player not found in the player list.");
+        }
+    }
+
+    public void ClearPlayers()
+    {
+        foreach (var player in players) Destroy(player.gameObject);
+        players.Clear();
+    }
+
+    public void SwitchActionMaps()
     {
         foreach (var player in players)
         {

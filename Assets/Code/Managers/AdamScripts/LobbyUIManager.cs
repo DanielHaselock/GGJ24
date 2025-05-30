@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 using System.Collections;
+using System.Collections.Generic;
 using Unity.Multiplayer.Center.Common;
 
 /// <summary>
@@ -24,6 +25,11 @@ public class LobbyUIManager : MonoBehaviour
     private EventSystem eventSystem;
 
     private Coroutine fillStartCoroutine;
+
+    private Coroutine FillCancelBarCoroutine;
+
+    private Dictionary<PlayerController, int> playerSlotMap = new();
+
 
     private void Awake()
     {
@@ -48,18 +54,87 @@ public class LobbyUIManager : MonoBehaviour
     public void Refresh()
     {
         var players = PlayerManager.Instance?.players;
+        if (players == null || playerSlots == null || buttonPromptSlots == null) return;
 
-        if (players == null || playerSlots == null) return;
+        int slotCount = playerSlots.Length;
+        bool[] slotTaken = new bool[slotCount];
 
-        for (int i = 0; i < playerSlots.Length; i++)
+        // STEP 1: Validate and assign each player to a slot
+        foreach (var player in players)
         {
-            if (i < players.Count)
+            int assignedSlot = -1;
+
+            // Check if player has a previously assigned slot
+            if (playerSlotMap.TryGetValue(player, out int existingSlot))
             {
-                playerSlots[i].GetComponent<Animator>().SetTrigger("join");
-                buttonPromptSlots[i].GetComponent<Animator>().SetTrigger("player_" + (i + 1));
+                if (existingSlot >= 0 && existingSlot < slotCount && !slotTaken[existingSlot])
+                {
+                    assignedSlot = existingSlot; // Keep their original slot
+                }
+            }
+
+            // If no valid assigned slot, assign the first available one
+            if (assignedSlot == -1)
+            {
+                for (int i = 0; i < slotCount; i++)
+                {
+                    if (!slotTaken[i])
+                    {
+                        assignedSlot = i;
+                        break;
+                    }
+                }
+            }
+
+            // Update the slot map
+            if (assignedSlot != -1)
+            {
+                playerSlotMap[player] = assignedSlot;
+                slotTaken[assignedSlot] = true;
+
+                var playerAnimator = playerSlots[assignedSlot].GetComponent<Animator>();
+                var promptAnimator = buttonPromptSlots[assignedSlot].GetComponent<Animator>();
+
+                if (playerAnimator != null)
+                    playerAnimator.SetBool("hasJoined", true);
+
+                if (promptAnimator != null)
+                {
+                    promptAnimator.SetBool("hasJoined", true);
+                    promptAnimator.SetTrigger("player_" + (assignedSlot + 1)); // Optional
+                }
             }
         }
+
+        // STEP 2: Clear any unused slots
+        for (int i = 0; i < slotCount; i++)
+        {
+            if (!slotTaken[i])
+            {
+                var playerAnimator = playerSlots[i].GetComponent<Animator>();
+                var promptAnimator = buttonPromptSlots[i].GetComponent<Animator>();
+
+                if (playerAnimator != null)
+                    playerAnimator.SetBool("hasJoined", false);
+
+                if (promptAnimator != null)
+                    promptAnimator.SetBool("hasJoined", false);
+            }
+        }
+
+        // STEP 3: Remove players that are no longer in the player list
+        var disconnectedPlayers = new List<PlayerController>();
+        foreach (var kvp in playerSlotMap)
+        {
+            if (!players.Contains(kvp.Key))
+                disconnectedPlayers.Add(kvp.Key);
+        }
+
+        foreach (var player in disconnectedPlayers)
+            playerSlotMap.Remove(player);
     }
+
+
 
     public void FillStartBar(PlayerController player)
     {
@@ -77,11 +152,11 @@ public class LobbyUIManager : MonoBehaviour
 
         if (fillStartCoroutine == null)
         {
-            fillStartCoroutine = StartCoroutine(FillBarOverTime());
+            fillStartCoroutine = StartCoroutine(FillStartBarOverTime());
         }
     }
 
-    public IEnumerator FillBarOverTime()
+    public IEnumerator FillStartBarOverTime()
     {
 
         while (startBar.value < 1f)
@@ -104,12 +179,51 @@ public class LobbyUIManager : MonoBehaviour
         }
     }
 
-
-
     public void ResetStartBar()
     {
         startBar.value = 0f;
     }
+
+    public void FillCancelBar(PlayerController player)
+    {
+        if (PlayerManager.Instance.players.Find(p => p == player) == null)
+        {
+            Debug.LogWarning("Player not found in the player list.");
+            return;
+        }
+
+        if (FillCancelBarCoroutine == null)
+        {
+            FillCancelBarCoroutine = StartCoroutine(FillCancelBarOverTime());
+        }
+    }
+
+    private IEnumerator FillCancelBarOverTime()
+    {
+        while (cancelBar.value < 1f)
+        {
+            cancelBar.value += Time.deltaTime / maxTimeToStart;
+            yield return null;
+        }
+
+        ResetCancelBar();
+        GameManagerRemake.Instance.GoToMainMenu();
+    }
+
+    public void CancelFillCancelBar()
+    {
+        if (FillCancelBarCoroutine != null)
+        {
+            StopCoroutine(FillCancelBarCoroutine);
+            FillCancelBarCoroutine = null;
+            ResetCancelBar();
+        }
+    }
+
+    public void ResetCancelBar()
+    {
+        cancelBar.value = 0f;
+    } 
 
 }
 

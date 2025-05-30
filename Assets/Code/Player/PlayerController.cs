@@ -98,6 +98,27 @@ public class PlayerController : MonoBehaviour
     public void OnCancel(InputAction.CallbackContext context)
     {
         Debug.Log("Player is canceling");
+        if (GameManagerRemake.Instance.CurrentGameState == GameManagerRemake.GameStates.Lobby)
+        {
+            if (context.started)
+            {
+                // If in the lobby, reset the start bar
+                LobbyUIManager lobbyUIManager = FindAnyObjectByType<LobbyUIManager>();
+                if (lobbyUIManager != null)
+                {
+                    lobbyUIManager.FillCancelBar(this);
+                }
+            }
+            if (context.canceled)
+            {
+                LobbyUIManager lobbyUIManager = FindAnyObjectByType<LobbyUIManager>();
+                if (lobbyUIManager != null)
+                {
+                    lobbyUIManager.CancelFillCancelBar();
+                }
+                PlayerManager.Instance.RemovePlayer(this);
+            }
+        }
     }
 
     public void InitializePlayer(int index, string name)
