@@ -112,8 +112,6 @@ public class PlayerController : MonoBehaviour
     public void SetVisible(bool visible)
     {
         foreach (var r in GetComponentsInChildren<Renderer>()) r.enabled = visible;
-        foreach (var c in GetComponentsInChildren<Collider2D>()) c.enabled = visible;
-        GetComponent<Rigidbody2D>().simulated = visible;
     }
 
 
