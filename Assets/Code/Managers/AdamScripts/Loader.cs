@@ -42,7 +42,7 @@ public class Loader : MonoBehaviour
             // Close the lobby board instead of the curtains
             if (lobbyBoard != null)
             {
-                lobbyBoard.GetComponent<Animator>().SetTrigger("hide");
+                lobbyBoard.GetComponent<Animator>().SetBool("show", false);
             }
             else
             {
@@ -99,7 +99,7 @@ public class Loader : MonoBehaviour
         GameObject lobbyBoard = GameObject.Find("LobbyBoard");
         if (lobbyBoard != null)
         {
-            lobbyBoard.GetComponent<Animator>().SetTrigger("show");
+            lobbyBoard.GetComponent<Animator>().SetBool("show", true);
         }
         else
         {
