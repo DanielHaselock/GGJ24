@@ -65,7 +65,7 @@ public class GameManagerRemake : MonoBehaviour
 
         musicManager.StopMenuMusic();
         loader.LoadScene("ScoreBoard");
-        
+        currentGameState = GameStates.Scoreboard;
         PlayerManager.Instance.SwitchFromUIToGame();
     }
 

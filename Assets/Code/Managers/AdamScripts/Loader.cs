@@ -56,15 +56,17 @@ public class Loader : MonoBehaviour
             }
             InitializeCurtains();
         }
-
-        LeftCurtain.GetComponent<Animator>().SetTrigger("close");
-        RightCurtain.GetComponent<Animator>().SetTrigger("close");
-        yield return new WaitForSeconds(closedDelay);
-        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName);
-        while (!UnityEngine.SceneManagement.SceneManager.GetSceneByName(sceneName).isLoaded)
+        else
         {
-            yield return null; // Wait until the scene is loaded
+            LeftCurtain.GetComponent<Animator>().SetTrigger("close");
+            RightCurtain.GetComponent<Animator>().SetTrigger("close");
+            yield return new WaitForSeconds(closedDelay);
+            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName);
         }
+        while (!UnityEngine.SceneManagement.SceneManager.GetSceneByName(sceneName).isLoaded)
+            {
+                yield return null; // Wait until the scene is loaded
+            }
         if (GameManagerRemake.Instance.CurrentGameState == GameManagerRemake.GameStates.Lobby)
         {
             GameManagerRemake.Instance.CurrentGameState = GameManagerRemake.GameStates.Lobby;

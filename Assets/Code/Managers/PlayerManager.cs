@@ -61,7 +61,10 @@ public class PlayerManager : MonoBehaviour
     /// </summary>
     public void RegisterPlayer(PlayerInput input)
     {
+
         var controller = input.GetComponent<PlayerController>();
+
+        controller.SetVisible(false);
 
         if (controller == null)
         {
@@ -81,7 +84,6 @@ public class PlayerManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "LobbyScene")
         {
-            controller.SetVisible(false);
             LobbyUIManager lobbyUIManager = FindAnyObjectByType<LobbyUIManager>();
             if (lobbyUIManager != null)
             {

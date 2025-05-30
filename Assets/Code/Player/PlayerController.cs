@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         _playerInput = input;
         switchActionMap();
-        
+
     }
 
     public void switchActionMap()
@@ -69,6 +69,29 @@ public class PlayerController : MonoBehaviour
     public void OnSubmit(InputAction.CallbackContext context)
     {
         Debug.Log("Player is submitting");
+        if(GameManagerRemake.Instance.CurrentGameState == GameManagerRemake.GameStates.Lobby)
+        {
+            if (context.started)
+            {
+                // If in the lobby, fill the start bar
+                LobbyUIManager lobbyUIManager = FindAnyObjectByType<LobbyUIManager>();
+                if (lobbyUIManager != null)
+                {
+                    lobbyUIManager.FillStartBar(this);
+                }
+            }
+            else if (context.canceled)
+            {
+                // If the action is canceled, reset the start bar
+                LobbyUIManager lobbyUIManager = FindAnyObjectByType<LobbyUIManager>();
+                if (lobbyUIManager != null)
+                {
+                    lobbyUIManager.CancelFillStartBar();
+                }
+            }
+        }
+        
+        
     }
 
     public void OnCancel(InputAction.CallbackContext context)

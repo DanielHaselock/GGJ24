@@ -15,8 +15,10 @@ public class BaseLevelManager : MonoBehaviour
 
         for (int i = 0; i < PlayerManager.Instance.players.Count && i < spawnPoints.Length; i++)
         {
+            Debug.Log($"Activating player {i} at spawn point {spawnPoints[i].name}");
             PlayerManager.Instance.players[i].gameObject.SetActive(true);
             PlayerManager.Instance.players[i].transform.position = spawnPoints[i].transform.position;
+            PlayerManager.Instance.players[i].SetVisible(true);
         }
     }
 
