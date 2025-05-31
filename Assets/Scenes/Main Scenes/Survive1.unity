@@ -480,7 +480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 360977328239426535, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 360977328239426535, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: m_LocalRotation.x
@@ -492,7 +492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 360977328239426535, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 360977328239426535, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -504,19 +504,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 360977328239426535, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 6363142188303557942, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
+      propertyPath: SpawnedObject
+      value: 
+      objectReference: {fileID: 8257206748512138988, guid: e088a2989e3f3e948a26c6af6e06cf8e, type: 3}
+    - target: {fileID: 6363142188303557942, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: SpawnRateLower
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6363142188303557942, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: SpawnRateUpper
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6363142188303557942, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
+      propertyPath: SpawnedObjectSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7096481261963746136, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: m_Name
-      value: Spawner
+      value: Cannon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7761,8 +7769,12 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7544956589105500695, guid: 2d46bfc02f7d1814591d8b54e6f143c7, type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0.12463768
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544956589105500695, guid: 2d46bfc02f7d1814591d8b54e6f143c7, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 1
+      value: 0.7497584
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5027506783164023127, guid: 2d46bfc02f7d1814591d8b54e6f143c7, type: 3}
