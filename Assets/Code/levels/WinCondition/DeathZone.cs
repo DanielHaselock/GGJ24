@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class DeathZone : MonoBehaviour
 {
-    [SerializeField] private GameObject LevelEditor;
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter(Collision collision)
     {
-        
+        Destroy(collision.gameObject);
     }
 }

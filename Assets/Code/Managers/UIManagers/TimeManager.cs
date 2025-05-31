@@ -148,39 +148,7 @@ public class TimeManager : MonoBehaviour
         float percentage = CalculatePercentage();
 
         clockAnimator.speed = 2f - (percentage / 100f);
-        // commented out since I got it to work smoothly with the above expression. Remove anything regarding staes since, unless I'm worng, I'm not sure we need them if it was only for animation speed.
-        // if (Clock)
-        // {
-        //     if (percentage > 60 && clockstate != ClockState.Calm)
-        //     {
-        //         clockstate = ClockState.Calm;
-        //         clockAnimator.speed = 1f;
-        //         //Clock.GetComponent<Animator>().SetBool("Calm", true);
-        //         //Clock.GetComponent<Animator>().SetBool("Medium", false);
-        //         //Clock.GetComponent<Animator>().SetBool("Red", false);
-        //     }
-        //     else if (percentage > 30 && percentage < 60 && clockstate != ClockState.Medium)
-        //     {
-        //         clockstate = ClockState.Medium;
-        //         clockAnimator.speed = 1.5f;
-        //         //Clock.GetComponent<Animator>().SetBool("Calm", false);
-        //         //Clock.GetComponent<Animator>().SetBool("Medium", true);
-        //         //Clock.GetComponent<Animator>().SetBool("Red", false);
-        //     }
-        //     else if (percentage < 30 && clockstate != ClockState.Red)
-        //     {
-        //         clockstate = ClockState.Red;
-        //         clockAnimator.speed = 3f;
-        //         //Clock.GetComponent<Animator>().SetBool("Calm", false);
-        //         //Clock.GetComponent<Animator>().SetBool("Medium", false);
-        //         //Clock.GetComponent<Animator>().SetBool("Red", true);
-        //     }
-        //     else if (percentage < 0 && clockstate != ClockState.Red)
-        //     {
-        //         clockstate = ClockState.Red;
-        //         clockAnimator.speed = 1f;
-        //     }
-        // }
+        
         clockSlider.value = percentage/100f; // Assuming the slider value is between 0 and 1
     }
 }

@@ -410,8 +410,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078e1c8a2216e1248a5565bf9e35ab0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 30
-  TimePlayingCurrentLevel: 20
+  Timer: 17
+  TimePlayingCurrentLevel: 15
   TimePlayingScore: 2
   pPlayTime: 1
   Clock: {fileID: 9062426023657764276}

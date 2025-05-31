@@ -4,42 +4,48 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     [SerializeField] private float SpawnRateUpper = 2f;
     [SerializeField] private float SpawnRateLower = 5f;
-    private float Timer = 0f;
+    // initial timer value to set up a delay before cannons start shooting when the level starts
+    private float Timer = 2f;
     [SerializeField] private Animator m_animator;
     [SerializeField] private Transform SpawnPoint;
 
     private float SpawnRate;
-    [SerializeField] private float SpawnedObjectSpeed = 10f;
+    [SerializeField] public float forceMagnitude = 1000f;
 
-    [SerializeField] private GameObject SpawnedObject;
+    [SerializeField] public GameObject SpawnedObject;
+    [SerializeField] private GameObject CannonPuff;
 
     void Start()
     {
         m_animator = GetComponent<Animator>();
-
-        SpawnRate = Random.Range(SpawnRateLower, SpawnRateUpper);
-        Timer = SpawnRate;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        StartCoroutine(ShootObject());
+    }
+
+   IEnumerator ShootObject()
+   {
         Timer -= Time.deltaTime;
-        if(Timer <= 0)
+        while (Timer <= 0)
         {
-            Instantiate(SpawnedObject, SpawnPoint.transform.position, Quaternion.identity);
-
-            Rigidbody2D SpawnedObjectRb = SpawnedObject.GetComponent<Rigidbody2D>();
-            SpawnedObjectRb.linearVelocity = SpawnPoint.forward * SpawnedObjectSpeed;
-
             SpawnRate = Random.Range(SpawnRateLower, SpawnRateUpper);
             Timer = SpawnRate;
+            // spawn object
+            GameObject instance = Instantiate(SpawnedObject, SpawnPoint.transform.position, Quaternion.identity);
+            // get the rigidbody of the object and apply a force
+            Rigidbody2D rigidbody = instance.GetComponent<Rigidbody2D>();
+            if (rigidbody != null)
+            {
+                rigidbody.AddForce(SpawnPoint.transform.up * forceMagnitude, ForceMode2D.Impulse);
+            }
+            // play shooting animations
             m_animator.SetTrigger("shoot");
+            CannonPuff.GetComponent<Animator>().Play("cannon_puff");
         }
-
-    }
+        yield return new WaitForSeconds(Timer);
+   }
 }
