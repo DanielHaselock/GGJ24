@@ -26,10 +26,7 @@ public class CollectCoins : MonoBehaviour
     {
         Coins.Remove(Coin);
         CoinsCollected++;
-        if(Coins.Count == 0)
-        {
-            LevelEditor.GetComponent<CurrentLevelManager>().SetWinAndFinish();
-        }
+        
     }
 
 }

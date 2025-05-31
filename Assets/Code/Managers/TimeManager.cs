@@ -22,10 +22,6 @@ public class TimeManager : MonoBehaviour
     }
 
     ClockState clockstate;
-
-
-    private LevelManager levelManager;
-    private GameManager gameManager;
     // Start is called before the first frame update
 
     [SerializeField] private float Timer = 4f;
@@ -48,8 +44,6 @@ public class TimeManager : MonoBehaviour
     private Animator clockAnimator;
     void Start()
     {
-        levelManager = gameObject.GetComponent<LevelManager>();
-        gameManager = gameObject.GetComponent<GameManager>();
         Clock = GameObject.FindGameObjectWithTag("Clock");
         clockstate = ClockState.Start;
 
@@ -98,7 +92,6 @@ public class TimeManager : MonoBehaviour
         {
             state = TimeState.Score;
             Timer = TimePlayingScore;
-            levelManager.CheckLevelWin();
         }
         else if (state == TimeState.Score)
         {
@@ -109,13 +102,11 @@ public class TimeManager : MonoBehaviour
 
         else if (state == TimeState.End)
         {
-            gameManager.ShowEndUI();
             Timer = TimePlayingCurrentLevel;
         }
         else if (state == TimeState.Start)
         {
             state = TimeState.Playing;
-            gameManager.PlayNextLevel();
             Timer = TimePlayingCurrentLevel;
         }
     }

@@ -58,7 +58,7 @@ public class Scoreboard : MonoBehaviour
                     }
                 }
             }
-            Transform playerSpriteTransform = playerScorePanel.transform.Find("PlayerSprite");
+            /*Transform playerSpriteTransform = playerScorePanel.transform.Find("PlayerSprite");
             GameObject playerSprite = playerSpriteTransform?.gameObject;
             if (playerSprite != null)
             {
@@ -70,7 +70,7 @@ public class Scoreboard : MonoBehaviour
             else
             {
                 Debug.LogError("PlayerSprite GameObject not found in prefab.");
-            }
+            }*/
             Transform scoreTransform = playerScorePanel.transform.Find("Score");
             GameObject score = scoreTransform?.gameObject;
             if (score != null)
