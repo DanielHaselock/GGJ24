@@ -166,7 +166,7 @@ public class LobbyUIManager : MonoBehaviour
         }
 
         ResetStartBar();
-        GameManagerRemake.Instance.StartMultiplayerGame();
+        GameManager.Instance.StartMultiplayerGame();
     }
 
     public void CancelFillStartBar()
@@ -207,7 +207,7 @@ public class LobbyUIManager : MonoBehaviour
         }
 
         ResetCancelBar();
-        GameManagerRemake.Instance.GoToMainMenu();
+        GameManager.Instance.GoToMainMenu();
     }
 
     public void CancelFillCancelBar()

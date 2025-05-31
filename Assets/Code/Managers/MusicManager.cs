@@ -26,9 +26,9 @@ public class MusicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch (GameManagerRemake.Instance.CurrentGameState)
+        switch (GameManager.Instance.CurrentGameState)
         {
-            case GameManagerRemake.GameStates.MainMenu:
+            case GameManager.GameStates.MainMenu:
                 if (currentMusic != MusicType.Menu)
                 {
                     StopAllMusic();
@@ -36,15 +36,15 @@ public class MusicManager : MonoBehaviour
                     currentMusic = MusicType.Menu;
                 }
                 break;
-            case GameManagerRemake.GameStates.Level:
-            case GameManagerRemake.GameStates.Scoreboard:
+            case GameManager.GameStates.Level:
+            case GameManager.GameStates.Scoreboard:
                 StopMenuMusic();
                 PlayLevelMusic();
                 currentMusic = MusicType.Level;
                 break;
-            case GameManagerRemake.GameStates.Credits:
-            case GameManagerRemake.GameStates.GameOver:
-            case GameManagerRemake.GameStates.Lobby:
+            case GameManager.GameStates.Credits:
+            case GameManager.GameStates.GameOver:
+            case GameManager.GameStates.Lobby:
                 if (currentMusic != MusicType.GameOver)
                 {
                     StopAllMusic();

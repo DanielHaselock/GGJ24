@@ -34,7 +34,7 @@ public class Loader : MonoBehaviour
     IEnumerator LoadSceneWithCurtains(string sceneName)
     {
         //If currently in the lobby scene, close the lobby board instead of the curtains.
-        if (GameManagerRemake.Instance.CurrentGameState == GameManagerRemake.GameStates.Lobby)
+        if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Lobby)
         {
             // If the scene is the lobby, we don't want to close the curtains but to close the lobby board instead.
             GameObject lobbyBoard = GameObject.Find("LobbyBoard");
@@ -67,9 +67,9 @@ public class Loader : MonoBehaviour
             {
                 yield return null; // Wait until the scene is loaded
             }
-        if (GameManagerRemake.Instance.CurrentGameState == GameManagerRemake.GameStates.Lobby)
+        if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Lobby)
         {
-            GameManagerRemake.Instance.CurrentGameState = GameManagerRemake.GameStates.Lobby;
+            GameManager.Instance.CurrentGameState = GameManager.GameStates.Lobby;
             InitializeLobbyboard();
         }
         else

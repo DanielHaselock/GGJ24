@@ -40,14 +40,14 @@ public class PlayerController : MonoBehaviour
             Debug.LogError("PlayerInput component is not assigned.");
             return;
         }
-        switch (GameManagerRemake.Instance.CurrentGameState)
+        switch (GameManager.Instance.CurrentGameState)
         {
-            case GameManagerRemake.GameStates.MainMenu:
-            case GameManagerRemake.GameStates.Lobby:
+            case GameManager.GameStates.MainMenu:
+            case GameManager.GameStates.Lobby:
                 _playerInput.SwitchCurrentActionMap("UI");
                 break;
-            case GameManagerRemake.GameStates.Scoreboard:
-            case GameManagerRemake.GameStates.Level:
+            case GameManager.GameStates.Scoreboard:
+            case GameManager.GameStates.Level:
                 _playerInput.SwitchCurrentActionMap("Keyboard");
                 break;
         }
@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
     public void OnSubmit(InputAction.CallbackContext context)
     {
         Debug.Log("Player is submitting");
-        if(GameManagerRemake.Instance.CurrentGameState == GameManagerRemake.GameStates.Lobby)
+        if(GameManager.Instance.CurrentGameState == GameManager.GameStates.Lobby)
         {
             if (context.started)
             {
@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
     public void OnCancel(InputAction.CallbackContext context)
     {
         Debug.Log("Player is canceling");
-        if (GameManagerRemake.Instance.CurrentGameState == GameManagerRemake.GameStates.Lobby)
+        if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Lobby)
         {
             if (context.started)
             {

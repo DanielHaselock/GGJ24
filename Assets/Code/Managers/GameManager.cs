@@ -6,9 +6,9 @@ using UnityEngine.InputSystem;
 /// - Ensures only one instance exists (singleton pattern).
 /// - Will check the settings of the game and load the appropriate scene based on game settings.
 /// </summary>
-public class GameManagerRemake : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public static GameManagerRemake Instance;
+    public static GameManager Instance;
 
     private Loader loader;
 

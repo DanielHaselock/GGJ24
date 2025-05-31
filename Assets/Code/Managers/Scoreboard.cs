@@ -90,6 +90,6 @@ public class Scoreboard : MonoBehaviour
     {
         yield return new WaitForSeconds(timer);
         // Load the next scene here
-        FindAnyObjectByType<GameManagerRemake>().gameObject.GetComponent<Loader>().LoadScene("SampleScene");
+        FindAnyObjectByType<GameManager>().gameObject.GetComponent<Loader>().LoadScene("SampleScene");
     }
 }

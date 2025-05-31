@@ -31,9 +31,9 @@ public class MainMenu : MonoBehaviour
         creditsButton = Buttons.transform.Find("Credits").GetComponent<Button>();
         exitButton = transform.Find("Quit").GetComponent<Button>();
 
-        singlePlayerButton.onClick.AddListener(() => { GameManagerRemake.Instance.StartSingleplayerGame(); });
-        multiplayerButton.onClick.AddListener(() => { GameManagerRemake.Instance.GoToLobby(); });
-        exitButton.onClick.AddListener(() => { GameManagerRemake.Instance.QuitGame(); });
+        singlePlayerButton.onClick.AddListener(() => { GameManager.Instance.StartSingleplayerGame(); });
+        multiplayerButton.onClick.AddListener(() => { GameManager.Instance.GoToLobby(); });
+        exitButton.onClick.AddListener(() => { GameManager.Instance.QuitGame(); });
     }
 
     void Update()
