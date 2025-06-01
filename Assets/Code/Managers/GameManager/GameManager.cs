@@ -66,12 +66,11 @@ public class GameManager : MonoBehaviour
 
     public void StartSingleplayerGame()
     {
-        if (PlayerManager.Instance.players.Count >= 1) return;
         PlayerInputManager.instance.JoinPlayer();
         currentGameState = GameStates.Scoreboard;
-        loader.LoadScene("ScoreBoard");
+        GoToRoundsSelect();
+        //loader.LoadScene("ScoreBoard");
         //PlayerManager.Instance.SwitchActionMaps();
-        maxRounds = 99;
     }
 
     public void StartMultiplayerGame()

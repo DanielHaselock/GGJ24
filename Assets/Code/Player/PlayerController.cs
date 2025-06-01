@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_playerInput == null)
         {
-            Debug.LogError("PlayerInput component is not assigned.");
+            Debug.Log("PlayerInput component is not assigned.");
             return;
         }
         switch (GameManager.Instance.CurrentGameState)
