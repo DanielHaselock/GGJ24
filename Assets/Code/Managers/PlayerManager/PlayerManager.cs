@@ -30,7 +30,7 @@ public class PlayerManager : MonoBehaviour
     // Called when the scene is loaded
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "LobbyScene") // Check if the loaded scene is the Lobby scene
+        if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Lobby) // Check if the loaded scene is the Lobby scene
         {
             // Enable player joining
             GetComponent<PlayerInputManager>().EnableJoining();
@@ -84,6 +84,7 @@ public class PlayerManager : MonoBehaviour
         controller.InitializePlayer(index, $"Player {index + 1}");
         controller.GetComponent<PlayerCustomization>().Randomize();
 
+        if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Lobby)
         controller.Setup(input);
 
         if (SceneManager.GetActiveScene().name == "LobbyScene")
@@ -138,11 +139,6 @@ public class PlayerManager : MonoBehaviour
     }
     public void UpdateScoreOrder()
     {
-        //Testing
-        foreach (var player in players)
-        {
-            player.AddScore(0);
-        }
         if (players.Count <= 1) return; // No need to sort if there's only one player
         players.Sort((a, b) => b.score.CompareTo(a.score)); // Sort in descending order
     }
