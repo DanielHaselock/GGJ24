@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2450579379310151357}
   m_Layer: 0
   m_Name: Ball_Big
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,8 +163,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BounceForce: 12
+  m_xBounceBias: 0
+  m_yBounceBias: 0
   can_kill: 0
-  m_startingVelocity: {x: 0, y: 0}
   m_bouncingforce: 1
   m_bounceSound: {fileID: 8300000, guid: d4e3b714d7a93fa47b712342464f0145, type: 3}
 --- !u!50 &5257636511808098254

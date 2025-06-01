@@ -139,6 +139,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BounceForce: 18
+  m_xBounceBias: 0
+  m_yBounceBias: 0
   can_kill: 1
 --- !u!95 &6752942850111678273
 Animator:

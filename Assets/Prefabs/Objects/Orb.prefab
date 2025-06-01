@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4108279570844019607}
   m_Layer: 0
   m_Name: Orb
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,7 +166,6 @@ MonoBehaviour:
   m_xBounceBias: 0
   m_yBounceBias: 0
   can_kill: 0
-  m_startingVelocity: {x: 0, y: 0}
   m_bouncingforce: 0
   m_bounceSound: {fileID: 8300000, guid: d4e3b714d7a93fa47b712342464f0145, type: 3}
 --- !u!50 &5257636511808098254

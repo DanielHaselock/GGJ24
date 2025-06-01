@@ -4,21 +4,10 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Solid
   - Manager
-  - LevelEditor
-  - Score
-  - ScoreText
-  - UIScoreImage
-  - UIScoreEnd
-  - MainMenuButton
-  - ScoreEnd
-  - EndUI
   - Clock
-  - GoalText
-  - UIScoreImage2
-  - UIScoreImageEnd1
-  - UIScoreImageEnd2
+  - Solid
+  - Object
   - Hazard
   layers:
   - Default
