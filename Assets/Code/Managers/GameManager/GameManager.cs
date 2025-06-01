@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -21,6 +22,13 @@ public class GameManager : MonoBehaviour
     private int roundsPlayed = 0;
 
     private GameStates currentGameState { get; set; } = GameStates.MainMenu;
+
+    private List<string> Levels = new List<string>
+    {
+        "BaseScene",
+        "SampleScene",
+        "SampleScene2"
+    };
     public enum GameStates
     {
         MainMenu,
@@ -113,15 +121,19 @@ public class GameManager : MonoBehaviour
             GoToMainMenu();
         }
         else
-            DEBUG_reloadSampleScene();
+            loader.LoadScene("ScoreBoard");
     }
 
-    private void DEBUG_reloadSampleScene() //Debug only to test the maxRounds
+    public void DEBUG_LoadLevelScene() //Debug only to test the maxRounds
     {
-        if(String.Equals(SceneManager.GetActiveScene().name, "SampleScene")) //Avoid loading the same scene as it bugs the curtains
+        string sceneToLoad = Levels[UnityEngine.Random.Range(0, Levels.Count)];
+        Debug.Log("Loading scene: " + sceneToLoad);
+        loader.LoadScene(sceneToLoad);
+        currentGameState = GameStates.Level;
+        /*if(String.Equals(SceneManager.GetActiveScene().name, "SampleScene")) //Avoid loading the same scene as it bugs the curtains
             loader.LoadScene("SampleScene2");
         else
-            loader.LoadScene("SampleScene");
+            loader.LoadScene("SampleScene");*/
 
     }
 
