@@ -5174,7 +5174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d00818ca9012bdf458d150b63dd35449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startNumbRounds: 3
 --- !u!1 &1338450276
 GameObject:
   m_ObjectHideFlags: 0

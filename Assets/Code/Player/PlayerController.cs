@@ -267,7 +267,9 @@ public class PlayerController : MonoBehaviour
 
     public void AddScore(int score)
     {
-        int scoreTest = Random.Range(0,999);//Testing
-        this.score += scoreTest;
+        /*int scoreTest = Random.Range(0,999);//Testing
+        this.score += scoreTest;*/
+
+        this.score += score;
     }
 }

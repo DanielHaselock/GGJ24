@@ -27,7 +27,8 @@ public class GameManager : MonoBehaviour
     {
         "BaseScene",
         "SampleScene",
-        "SampleScene2"
+        "SampleScene2",
+        "CoinScene"
     };
     public enum GameStates
     {
@@ -105,13 +106,13 @@ public class GameManager : MonoBehaviour
     {
         this.maxRounds += value;
 
-        if(this.maxRounds < 1)
+        if (this.maxRounds < 1)
             this.maxRounds = 1;
 
         FindFirstObjectByType<Rounds>().updateUI(this.maxRounds);
     }
 
-    public void endRoundCheck()
+    public void EndRoundCheck()
     {
         roundsPlayed++;
 
@@ -130,11 +131,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("Loading scene: " + sceneToLoad);
         loader.LoadScene(sceneToLoad);
         currentGameState = GameStates.Level;
-        /*if(String.Equals(SceneManager.GetActiveScene().name, "SampleScene")) //Avoid loading the same scene as it bugs the curtains
-            loader.LoadScene("SampleScene2");
-        else
-            loader.LoadScene("SampleScene");*/
-
     }
 
     // Update is called once per frame

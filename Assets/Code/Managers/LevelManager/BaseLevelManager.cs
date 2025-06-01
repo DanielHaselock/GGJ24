@@ -5,7 +5,7 @@ public class BaseLevelManager : MonoBehaviour
     [SerializeField] private GameObject[] spawnPoints;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected virtual void Start()
     {
         if (GameManager.Instance.CurrentGameState != GameManager.GameStates.Level)
         {
