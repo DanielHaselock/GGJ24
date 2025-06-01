@@ -45,6 +45,7 @@ public class MusicManager : MonoBehaviour
             case GameManager.GameStates.Credits:
             case GameManager.GameStates.GameOver:
             case GameManager.GameStates.Lobby:
+            case GameManager.GameStates.RoundSelect:
                 if (currentMusic != MusicType.GameOver)
                 {
                     StopAllMusic();

@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
         PlayerInputManager.instance.JoinPlayer();
         currentGameState = GameStates.Scoreboard;
         loader.LoadScene("ScoreBoard");
-        PlayerManager.Instance.SwitchActionMaps();
+        //PlayerManager.Instance.SwitchActionMaps();
         maxRounds = 99;
     }
 
