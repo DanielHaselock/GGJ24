@@ -8,7 +8,7 @@ public class CoinLevelManager : BaseLevelManager
     [ReadOnly(true)] private int coinsRemaining;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private new void Start()
+    override protected void Start()
     {
         base.Start();
         coinsRemaining = coins.Length;
