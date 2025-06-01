@@ -90,6 +90,6 @@ public class Scoreboard : MonoBehaviour
     {
         yield return new WaitForSeconds(timer);
         // Load the next scene here
-        GameManager.Instance.DEBUG_LoadLevelScene();
+        GameManager.Instance.LoadLevelScene();
     }
 }
