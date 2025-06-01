@@ -27,11 +27,10 @@ public class Loader : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-
         StartCoroutine(LoadSceneWithCurtains(sceneName));
     }
 
-    IEnumerator LoadSceneWithCurtains(string sceneName)
+    IEnumerator LoadSceneWithCurtains(string sceneName) //TODO Bug on loading the same scene
     {
         //If currently in the lobby scene, close the lobby board instead of the curtains.
         if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Lobby)
@@ -63,10 +62,12 @@ public class Loader : MonoBehaviour
             yield return new WaitForSeconds(closedDelay);
             UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName);
         }
+
         while (!UnityEngine.SceneManagement.SceneManager.GetSceneByName(sceneName).isLoaded)
             {
                 yield return null; // Wait until the scene is loaded
             }
+
         if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Lobby)
         {
             GameManager.Instance.CurrentGameState = GameManager.GameStates.Lobby;
@@ -80,9 +81,9 @@ public class Loader : MonoBehaviour
 
     public void InitializeCurtains()
     {
-
         LeftCurtain = GameObject.Find("LeftCurtain");
         RightCurtain = GameObject.Find("RightCurtain");
+
         if (LeftCurtain == null || RightCurtain == null)
         {
             Debug.LogError("Curtains not found in the scene. Please ensure they are present.");

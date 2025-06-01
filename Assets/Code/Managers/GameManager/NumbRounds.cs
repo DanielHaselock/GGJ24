@@ -1,38 +1,23 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class NumbRounds : MonoBehaviour
 {
-    [SerializeField] private int startNumbRounds = 3;
+    //[SerializeField] private TextMeshProUGUI numbText;
 
-    private int numbRounds;
+    //public void updateUI(int numb)
+    //{
+    //    if(numbText)
+    //    {
+    //        numbText.text = numb.ToString();
+    //    }
+    //}
 
-    void Start()
-    {
-        numbRounds = startNumbRounds;
-    }
-
-    public void increaseNumbRounds() //call from input in scene
-    {
-        numbRounds++;
-        updateUI();
-    }
-
-    public void decreaseNumbRounds() //call from input in scene
-    {
-        numbRounds--;
-        updateUI();
-    }
-
-    private void updateUI()
-    {
-        //Update textMeshPro or other UI here
-    }
-
-    public void submit()
-    {
-        //call a manager and save numbRounds to it here
-    }
+    //public void submit()
+    //{
+    //    //call a manager and save numbRounds to it here
+    //}
 
 }

@@ -22,6 +22,7 @@ public class LobbyUIManager : MonoBehaviour
 
     private const float MAX_TIME_TO_START = 3f; // Maximum time to fill the start bar
     [SerializeField] private Slider cancelBar;
+
     private EventSystem eventSystem;
 
     private Coroutine fillStartCoroutine;
@@ -29,7 +30,6 @@ public class LobbyUIManager : MonoBehaviour
     private Coroutine fillCancelBarCoroutine;
 
     private Dictionary<PlayerController, int> playerSlotMap = new();
-
 
     private void Awake()
     {
@@ -166,7 +166,7 @@ public class LobbyUIManager : MonoBehaviour
         }
 
         ResetStartBar();
-        GameManager.Instance.StartMultiplayerGame();
+        GameManager.Instance.GoToRoundsSelect();
     }
 
     public void CancelFillStartBar()

@@ -1,6 +1,8 @@
+using System;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 /// <summary>
 /// GameManagerRemake is a singleton MonoBehaviour that manages game state transitions.
 /// - Ensures only one instance exists (singleton pattern).
@@ -14,11 +16,16 @@ public class GameManager : MonoBehaviour
 
     private MusicManager musicManager;
 
+    //Add rounds here
+    private int maxRounds = 1;
+    private int roundsPlayed = 0;
+
     private GameStates currentGameState { get; set; } = GameStates.MainMenu;
     public enum GameStates
     {
         MainMenu,
         Lobby,
+        RoundSelect,
         Scoreboard,
         Level,
         Credits,
@@ -31,7 +38,6 @@ public class GameManager : MonoBehaviour
         set
         {
             currentGameState = value;
-            Debug.Log("Current Game State: " + currentGameState);
         }
     }
 
@@ -46,23 +52,21 @@ public class GameManager : MonoBehaviour
     {
         loader = GetComponent<Loader>();
         musicManager = GetComponent<MusicManager>();
+        maxRounds = 1;
     }
-
-
 
     public void StartSingleplayerGame()
     {
         if (PlayerManager.Instance.players.Count >= 1) return;
         PlayerInputManager.instance.JoinPlayer();
         currentGameState = GameStates.Scoreboard;
-
         loader.LoadScene("ScoreBoard");
         PlayerManager.Instance.SwitchActionMaps();
+        maxRounds = 99;
     }
 
     public void StartMultiplayerGame()
     {
-
         musicManager.StopMenuMusic();
         loader.LoadScene("ScoreBoard");
         currentGameState = GameStates.Scoreboard;
@@ -81,6 +85,44 @@ public class GameManager : MonoBehaviour
         currentGameState = GameStates.MainMenu;
         PlayerManager.Instance.SwitchActionMaps();
         PlayerManager.Instance.ClearPlayers();
+    }
+
+    public void GoToRoundsSelect()
+    {
+        loader.LoadScene("RoundScene");
+        currentGameState = GameStates.RoundSelect;
+    }
+
+    public void addMaxRounds(int value)
+    {
+        this.maxRounds += value;
+
+        if(this.maxRounds < 1)
+            this.maxRounds = 1;
+
+        FindFirstObjectByType<Rounds>().updateUI(this.maxRounds);
+    }
+
+    public void endRoundCheck()
+    {
+        roundsPlayed++;
+
+        if (roundsPlayed >= maxRounds)
+        {
+            roundsPlayed = 0;
+            GoToMainMenu();
+        }
+        else
+            DEBUG_reloadSampleScene();
+    }
+
+    private void DEBUG_reloadSampleScene() //Debug only to test the maxRounds
+    {
+        if(String.Equals(SceneManager.GetActiveScene().name, "SampleScene")) //Avoid loading the same scene as it bugs the curtains
+            loader.LoadScene("SampleScene2");
+        else
+            loader.LoadScene("SampleScene");
+
     }
 
     // Update is called once per frame

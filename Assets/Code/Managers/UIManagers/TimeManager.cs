@@ -46,6 +46,7 @@ public class TimeManager : MonoBehaviour
     {
         Clock = GameObject.FindGameObjectWithTag("Clock");
         clockstate = ClockState.Start;
+        state = TimeState.Playing;
 
         clockAnimator = GetComponentInChildren<Animator>();
         if (!clockAnimator)
@@ -71,6 +72,7 @@ public class TimeManager : MonoBehaviour
         }
 
         Timer -= Time.deltaTime;
+
         SetClockState();
 
         if (Timer <= 0.0f)
@@ -98,6 +100,7 @@ public class TimeManager : MonoBehaviour
             state = TimeState.Playing;
             //gameManager.PlayNextLevel(); commendted out because it breaks audio
             Timer = TimePlayingCurrentLevel;
+            GameManager.Instance.endRoundCheck();
         }
 
         else if (state == TimeState.End)

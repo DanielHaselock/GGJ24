@@ -30,7 +30,6 @@ public class PlayerController : MonoBehaviour
     {
         _playerInput = input;
         switchActionMap();
-
     }
 
     public void switchActionMap()
@@ -43,6 +42,7 @@ public class PlayerController : MonoBehaviour
         switch (GameManager.Instance.CurrentGameState)
         {
             case GameManager.GameStates.MainMenu:
+            case GameManager.GameStates.RoundSelect:
             case GameManager.GameStates.Lobby:
                 _playerInput.SwitchCurrentActionMap("UI");
                 break;
@@ -90,9 +90,28 @@ public class PlayerController : MonoBehaviour
                     lobbyUIManager.CancelFillStartBar();
                 }
             }
+        }   
+        else if(GameManager.Instance.CurrentGameState == GameManager.GameStates.RoundSelect) //maybe add UI
+        {
+            if(context.started)
+            {
+                GameManager.Instance.StartMultiplayerGame();
+            }
         }
-        
-        
+    }
+
+    public void OnNavigate(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            if (GameManager.Instance.CurrentGameState == GameManager.GameStates.RoundSelect)
+            {
+                Vector2 input = context.ReadValue<Vector2>();
+                Debug.Log("NAVIGATING: " + input.x);
+                GameManager.Instance.addMaxRounds(input.x < 0 ? -1 : 1);
+                return;
+            }
+        }
     }
 
     public void OnCancel(InputAction.CallbackContext context)
