@@ -106,6 +106,9 @@ public class GameManager : MonoBehaviour
         this.maxRounds += value;
 
         if (this.maxRounds < 1)
+            this.maxRounds = 99;
+
+        if (this.maxRounds >= 100)
             this.maxRounds = 1;
 
         FindFirstObjectByType<Rounds>().updateUI(this.maxRounds);
