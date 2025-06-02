@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 637359f1be2473a4394d24d4ba84f28c
+guid: 83678242649c4bb449c623e9a3c95834
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1832072490816002843
-    second: lobby_title_0
+      213: 1834837893275325657
+    second: clown_bald_angry_0
+  - first:
+      213: 7856640281043962661
+    second: clown_bald_angry_1
+  - first:
+      213: -2944742078557264104
+    second: clown_bald_angry_2
+  - first:
+      213: 4383227966230166143
+    second: clown_bald_angry_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lobby_title_0
+      name: clown_bald_angry_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 208
-        height: 14
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,118 +150,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5e4a52eb6cb2396e0800000000000000
-      internalID: -1832072490816002843
+      spriteID: 9d41a11b757a67910800000000000000
+      internalID: 1834837893275325657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lobby_title_1
+      name: clown_bald_angry_1
       rect:
         serializedVersion: 2
-        x: 208
+        x: 32
         y: 0
-        width: 208
-        height: 14
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 99465a9b7d09a89449408e70312e6a86
-      internalID: 2079419125
+      spriteID: 52b86a795b4680d60800000000000000
+      internalID: 7856640281043962661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lobby_title_2
+      name: clown_bald_angry_2
       rect:
         serializedVersion: 2
-        x: 416
+        x: 64
         y: 0
-        width: 208
-        height: 14
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: dc62e4b84ca26d54188536718317b358
-      internalID: -1301348208
+      spriteID: 817e2747eac2227d0800000000000000
+      internalID: -2944742078557264104
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lobby_title_3
+      name: clown_bald_angry_3
       rect:
         serializedVersion: 2
-        x: 624
+        x: 96
         y: 0
-        width: 208
-        height: 14
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5b2e07d02c695424db4a1705796193b5
-      internalID: 2020987509
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lobby_title_4
-      rect:
-        serializedVersion: 2
-        x: 832
-        y: 0
-        width: 208
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30bfd90cf54ec0b42945a56836f958b6
-      internalID: 1137274337
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lobby_title_5
-      rect:
-        serializedVersion: 2
-        x: 1040
-        y: 0
-        width: 208
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ebc2ea6ecb166bb44aef4fff4bfd0eb9
-      internalID: 2094179786
+      spriteID: f7af4b8ac9a54dc30800000000000000
+      internalID: 4383227966230166143
       vertices: []
       indices: 
       edges: []
@@ -261,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 1650e8fe99e85284d97a78fd2b234f1c
     internalID: 0
     vertices: []
     indices: 
@@ -271,12 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      lobby_title_0: -1832072490816002843
-      lobby_title_1: 2079419125
-      lobby_title_2: -1301348208
-      lobby_title_3: 2020987509
-      lobby_title_4: 1137274337
-      lobby_title_5: 2094179786
+      clown_bald_angry_0: 1834837893275325657
+      clown_bald_angry_1: 7856640281043962661
+      clown_bald_angry_2: -2944742078557264104
+      clown_bald_angry_3: 4383227966230166143
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
