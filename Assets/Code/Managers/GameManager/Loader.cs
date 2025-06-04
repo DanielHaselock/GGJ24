@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 /// <summary>
 ///  MonoBehaviour script that manages scene loading.
@@ -9,8 +10,8 @@ public class Loader : MonoBehaviour
 {
     [SerializeField] private GameObject LeftCurtain;
     [SerializeField] private GameObject RightCurtain;
-
-    [SerializeField] private float closedDelay = 2.0f; // Delay before opening curtains
+    [SerializeField] private float closedDelay = 0.3f; // Delay before closing curtains
+    [SerializeField] private float openDelay = 2.0f; // Delay before opening curtains
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,10 +28,10 @@ public class Loader : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         Debug.Log("Loading scene: " + sceneName);
-        StartCoroutine(LoadSceneWithCurtains(sceneName));
+        StartCoroutine(LoadSceneCoroutine(sceneName));
     }
 
-    IEnumerator LoadSceneWithCurtains(string sceneName) //TODO Bug on loading the same scene
+    IEnumerator LoadSceneCoroutine(string sceneName) //TODO Bug on loading the same scene
     {
         //If currently in the lobby scene, close the lobby board instead of the curtains.
         if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Lobby)
@@ -57,16 +58,21 @@ public class Loader : MonoBehaviour
         }
         else
         {
+            if (GameManager.Instance.CurrentGameState == GameManager.GameStates.RoundSelect)
+            {
+                CloseRoundSelect();
+            }
+            yield return new WaitForSeconds(closedDelay);
             LeftCurtain.GetComponent<Animator>().SetTrigger("close");
             RightCurtain.GetComponent<Animator>().SetTrigger("close");
-            yield return new WaitForSeconds(closedDelay);
+            yield return new WaitForSeconds(openDelay);
             UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName);
         }
 
         while (!UnityEngine.SceneManagement.SceneManager.GetSceneByName(sceneName).isLoaded)
-            {
-                yield return null; // Wait until the scene is loaded
-            }
+        {
+            yield return null; // Wait until the scene is loaded
+        }
 
         if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Lobby)
         {
@@ -76,6 +82,10 @@ public class Loader : MonoBehaviour
         else
         {
             InitializeCurtains();
+        }
+        if (GameManager.Instance.CurrentGameState == GameManager.GameStates.RoundSelect)
+        {
+            InitializeRoundSelect();
         }
     }
 
@@ -94,7 +104,7 @@ public class Loader : MonoBehaviour
             RightCurtain.GetComponent<Animator>().SetTrigger("open");
         }
     }
-    
+
     public void InitializeLobbyboard()
     {
         GameObject lobbyBoard = GameObject.Find("LobbyBoard");
@@ -105,6 +115,32 @@ public class Loader : MonoBehaviour
         else
         {
             Debug.LogError("LobbyBoard not found in the scene. Please ensure it is present.");
+        }
+    }
+
+    private void InitializeRoundSelect()
+    {
+        GameObject RoundOptions = GameObject.Find("RoundOptions");
+        if (RoundOptions != null)
+        {
+            RoundOptions.GetComponent<Animator>().SetBool("show", true);
+        }
+        else
+        {
+            Debug.LogError("RoundOptions not found in the scene. Please ensure it is present.");
+        }
+    }
+
+    private void CloseRoundSelect()
+    {
+        GameObject RoundOptions = GameObject.Find("RoundOptions");
+        if (RoundOptions != null)
+        {
+            RoundOptions.GetComponent<Animator>().SetBool("show", false);
+        }
+        else
+        {
+            Debug.LogError("RoundOptions not found in the scene. Please ensure it is present.");
         }
     }
 }
