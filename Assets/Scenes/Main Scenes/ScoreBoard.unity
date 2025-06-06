@@ -693,6 +693,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 5
   playerScorePanelPrefab: {fileID: 407460550745757039, guid: 6ba7e6e0a844a9f4a8062d26a0c998fb, type: 3}
+  playerScoreBoards:
+  - {fileID: 21300000, guid: d62b0baf78190c042aba3d8f97f5c2bb, type: 3}
+  - {fileID: 21300000, guid: 6695fa91c7677584a954ac727b0860be, type: 3}
+  - {fileID: 21300000, guid: 25f6337c3d710384ebeacb55101d12a5, type: 3}
+  - {fileID: 21300000, guid: 6f0875df9e96557469c775a7a3144ec4, type: 3}
 --- !u!114 &1786067956
 MonoBehaviour:
   m_ObjectHideFlags: 0

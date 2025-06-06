@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5681306816799195596}
   - component: {fileID: 5365307471504479867}
   m_Layer: 5
-  m_Name: PlayerScorePanel
+  m_Name: playerScorePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 1513911347811650277}
   - component: {fileID: 3652999858592182576}
   m_Layer: 5
-  m_Name: PlayerScore
+  m_Name: PlayerScoreBoardImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

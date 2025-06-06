@@ -16,6 +16,8 @@ public class Scoreboard : MonoBehaviour
     [Header("Scoreboard Settings")]
     [SerializeField] private float timer = 5f; // Time before transitioning to the next scene
     [SerializeField] private GameObject playerScorePanelPrefab;
+
+    [SerializeField] private Sprite[] playerScoreBoards;
     void Start()
     {
         CreateScoreboard();
@@ -33,50 +35,34 @@ public class Scoreboard : MonoBehaviour
         for (int i = 0; i < PlayerManager.Instance.players.Count; i++)
         {
             var playerScorePanel = Instantiate(playerScorePanelPrefab, transform);
-
-            Transform playerScorePlacementTransform = playerScorePanel.transform.Find("ScorePlacement");
-            GameObject playerScorePlacement = playerScorePlacementTransform?.gameObject;
-            if (playerScorePlacement != null)
+            //Put the Scoreboard based on PlayerIndex+1
+            Transform playerBoardTransform = playerScorePanel.transform.Find("PlayerScoreBoardImage");
+            GameObject scoreBoardImage = playerBoardTransform?.gameObject;
+            if (scoreBoardImage != null)
             {
-                if (PlayerManager.Instance.players.Count <= 1) playerScorePlacement.GetComponent<TextMeshProUGUI>().text = "";
-                else
-                {
-                    switch (i)
-                    {
-                        case 0:
-                            playerScorePlacement.GetComponent<TextMeshProUGUI>().text = "1st";
-                            break;
-                        case 1:
-                            playerScorePlacement.GetComponent<TextMeshProUGUI>().text = "2nd";
-                            break;
-                        case 2:
-                            playerScorePlacement.GetComponent<TextMeshProUGUI>().text = "3rd";
-                            break;
-                        case 3:
-                            playerScorePlacement.GetComponent<TextMeshProUGUI>().text = "4th";
-                            break;
-                    }
-                }
+                Debug.Log("Player " + PlayerManager.Instance.players[i].PlayerIndex + 1);
+                scoreBoardImage.GetComponent<Image>().sprite = playerScoreBoards[PlayerManager.Instance.players[i].PlayerIndex];
             }
-            /*Transform playerSpriteTransform = playerScorePanel.transform.Find("PlayerSprite");
-            GameObject playerSprite = playerSpriteTransform?.gameObject;
-            if (playerSprite != null)
+            //Show the players name.
+            Transform nameTransform = playerScorePanel.transform.Find("PlayerName");
+            GameObject name = nameTransform?.gameObject;
+            if (name != null)
             {
-                playerSprite.GetComponent<Image>().sprite = PlayerManager.Instance.players[i].GetComponent<SpriteRenderer>().sprite;
-                playerSprite.GetComponent<Image>().material = PlayerManager.Instance.players[i].GetComponent<SpriteRenderer>().material;
-                playerSprite.GetComponent<Image>().preserveAspect = true;
-                playerSprite.GetComponent<Image>().SetNativeSize();
+                Debug.Log("Name of Clown is: " + PlayerManager.Instance.players[i].PlayerName);
+                name.GetComponent<TextMeshProUGUI>().text = PlayerManager.Instance.players[i].PlayerName.ToString();
             }
             else
             {
-                Debug.LogError("PlayerSprite GameObject not found in prefab.");
-            }*/
+                Debug.Log("Name GameObject not found in prefab");
+            }
+
+            //Show the players score.
             Transform scoreTransform = playerScorePanel.transform.Find("Score");
             GameObject score = scoreTransform?.gameObject;
             if (score != null)
             {
                 Debug.Log("Score: " + PlayerManager.Instance.players[i].score);
-                score.GetComponent<TextMeshProUGUI>().text = PlayerManager.Instance.players[i].score.ToString();
+                score.GetComponent<TextMeshProUGUI>().text = "$"+PlayerManager.Instance.players[i].score.ToString();
             }
             else
             {

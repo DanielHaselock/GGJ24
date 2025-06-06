@@ -14,6 +14,8 @@ public class PlayerManager : MonoBehaviour
 
     public List<PlayerController> players = new List<PlayerController>();
 
+    private List<string> names = new List<string> { "Adam", "Keven", "Hyhy", "Daniel" };
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -69,19 +71,20 @@ public class PlayerManager : MonoBehaviour
         }
         var controller = input.GetComponent<PlayerController>();
 
-        controller.SetVisible(false);
+        //controller.SetVisible(false);
 
         if (controller == null)
         {
             Debug.LogError("PlayerInput missing PlayerController!");
             return;
         }
-
+        string name = names[Random.Range(0, names.Count - 1)];
+        names.Remove(name);
         int index = players.Count;
         players.Add(controller);
         DontDestroyOnLoad(controller.gameObject);
 
-        controller.InitializePlayer(index, $"Player {index + 1}");
+        controller.InitializePlayer(index, name);
         controller.GetComponent<PlayerCustomization>().Randomize();
 
         if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Lobby)

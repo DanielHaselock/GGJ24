@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private float m_jumpInput, m_xAxisInput, m_yAxisInput;
 
     public int PlayerIndex { get; private set; }
-    public string PlayerName { get; private set; }
+    public string PlayerName { get; set; }
 
     public int score { get; private set; }
 
