@@ -121,10 +121,16 @@ public class GameManager : MonoBehaviour
         if (roundsPlayed >= maxRounds)
         {
             roundsPlayed = 0;
-            GoToMainMenu();
+            GoToEndScene();
         }
         else
             loader.LoadScene("ScoreBoard");
+    }
+
+    public void GoToEndScene()
+    {
+        loader.LoadScene("EndScene");
+        currentGameState = GameStates.GameOver;
     }
 
     public void LoadLevelScene() //Debug only to test the maxRounds

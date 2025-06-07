@@ -29,5 +29,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test Scenes/CoinScene.unity
     guid: 8b46a9d43be039f4086942562fef571a
+  - enabled: 1
+    path: Assets/Scenes/Test Scenes/EndScene.unity
+    guid: 80af36a242a4cab4dbb2bbe76652c084
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
