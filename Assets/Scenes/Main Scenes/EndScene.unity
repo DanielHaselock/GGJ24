@@ -473,7 +473,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1627120775
   m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!1 &1205969960
@@ -659,6 +659,7 @@ MonoBehaviour:
   - {fileID: 487050457612738149, guid: 37aa1b5d3910a6849ab69d389ab476df, type: 3}
   - {fileID: 487050457612738149, guid: df341798a0acd864892b07703c6fc567, type: 3}
   - {fileID: 487050457612738149, guid: 06d03f599a7793540bca0cfbdef145ed, type: 3}
+  endSceneTimer: 5
 --- !u!1001 &1909599892
 PrefabInstance:
   m_ObjectHideFlags: 0
