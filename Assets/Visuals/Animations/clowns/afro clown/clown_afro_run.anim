@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: clown_bald_hurt
+  m_Name: clown_afro_run
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,9 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 1611109609, guid: 3edef5e8772de6c4295e48a8fd513660, type: 3}
+      value: {fileID: 1063898732424695874, guid: 8f44dc648a38c8543911fd5514f443e4, type: 3}
     - time: 0.083333336
-      value: {fileID: -1109933504, guid: 3edef5e8772de6c4295e48a8fd513660, type: 3}
+      value: {fileID: 6209730942738699500, guid: 8f44dc648a38c8543911fd5514f443e4, type: 3}
+    - time: 0.16666667
+      value: {fileID: 1767319516035945613, guid: 8f44dc648a38c8543911fd5514f443e4, type: 3}
+    - time: 0.25
+      value: {fileID: 96126514726652012, guid: 8f44dc648a38c8543911fd5514f443e4, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,14 +50,16 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 1611109609, guid: 3edef5e8772de6c4295e48a8fd513660, type: 3}
-    - {fileID: -1109933504, guid: 3edef5e8772de6c4295e48a8fd513660, type: 3}
+    - {fileID: 1063898732424695874, guid: 8f44dc648a38c8543911fd5514f443e4, type: 3}
+    - {fileID: 6209730942738699500, guid: 8f44dc648a38c8543911fd5514f443e4, type: 3}
+    - {fileID: 1767319516035945613, guid: 8f44dc648a38c8543911fd5514f443e4, type: 3}
+    - {fileID: 96126514726652012, guid: 8f44dc648a38c8543911fd5514f443e4, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.16666667
+    m_StopTime: 0.33333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
