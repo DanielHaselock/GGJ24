@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class DeathZone : MonoBehaviour
 {
-    void OnCollisionEnter(Collision collision)
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(collision.gameObject);
+        Debug.Log("COLLISION ENTERING");
+        if (collision.gameObject.tag != "Player")
+        {
+            Destroy(collision.gameObject);
+        }
+        else
+        {
+            Debug.Log("COLLISION HITTING PLAYER");
+            collision.gameObject.GetComponent<PlayerRespawn>().onDeath();
+        }
     }
 }

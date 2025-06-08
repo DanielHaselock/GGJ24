@@ -22,9 +22,14 @@ public class BaseLevelManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public Vector3 getSpawnPointForPlayer(GameObject player)
     {
-        
+        for (int i = 0; i < PlayerManager.Instance.players.Count; i++)
+        {
+            if (PlayerManager.Instance.players[i].gameObject == player)
+                return spawnPoints[i].transform.position;
+        }
+
+        return Vector3.zero;
     }
 }
