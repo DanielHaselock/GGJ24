@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerRespawn : MonoBehaviour
 {
@@ -8,6 +9,18 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private Vector2 offscreenPos = new Vector2(100, 100);
 
     BaseLevelManager levelManager; //Maybe change this
+
+    private ReachCheckpoint lastCheckPoint;
+
+    private void Start()
+    {
+        SceneManager.activeSceneChanged += OnSceneChanged;
+    }
+
+    private void OnSceneChanged(Scene s0, Scene s1)
+    {
+        lastCheckPoint = null;
+    }
 
     public void onDeath()
     {
@@ -30,7 +43,12 @@ public class PlayerRespawn : MonoBehaviour
     IEnumerator respawnPlayer()
     {
         yield return new WaitForSeconds(timeForRespawn);
-        transform.position = levelManager.getSpawnPointForPlayer(gameObject);
+
+        if(lastCheckPoint == null)
+            transform.position = levelManager.getSpawnPointForPlayer(gameObject);
+        else
+            transform.position = lastCheckPoint.gameObject.transform.position;
+
         setPlayerKinematic(false);
     }
 
@@ -40,6 +58,19 @@ public class PlayerRespawn : MonoBehaviour
 
         if (p)
             this.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+    }
+
+    public void setNewCheckpoint(ReachCheckpoint newCheckPoint)
+    {
+        if (lastCheckPoint && lastCheckPoint.getPriority() > newCheckPoint.getPriority())
+            return;
+
+        lastCheckPoint = newCheckPoint;
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.activeSceneChanged -= OnSceneChanged;
     }
 
 }
