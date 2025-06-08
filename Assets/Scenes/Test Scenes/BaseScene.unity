@@ -2436,6 +2436,10 @@ PrefabInstance:
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[15].Y
       value: -60000000
       objectReference: {fileID: 0}
+    - target: {fileID: 5519995395034330945, guid: 47cd4f26d13e23844a5ebd1bc51860c9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6489087227387096579, guid: 47cd4f26d13e23844a5ebd1bc51860c9, type: 3}
       propertyPath: m_Size.x
       value: 3
@@ -6241,7 +6245,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1041587777288265919, guid: 47cd4f26d13e23844a5ebd1bc51860c9, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47cd4f26d13e23844a5ebd1bc51860c9, type: 3}
