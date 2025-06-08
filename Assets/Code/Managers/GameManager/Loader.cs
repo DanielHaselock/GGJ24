@@ -62,6 +62,10 @@ public class Loader : MonoBehaviour
             {
                 CloseRoundSelect();
             }
+            else if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Scoreboard)
+            {
+                CloseScoreBoard();
+            }
             yield return new WaitForSeconds(closedDelay);
             LeftCurtain.GetComponent<Animator>().SetTrigger("close");
             RightCurtain.GetComponent<Animator>().SetTrigger("close");
@@ -87,6 +91,7 @@ public class Loader : MonoBehaviour
         {
             InitializeRoundSelect();
         }
+        else if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Scoreboard) InitializeScoreBoard();
     }
 
     public void InitializeCurtains()
@@ -131,6 +136,21 @@ public class Loader : MonoBehaviour
         }
     }
 
+    private void InitializeScoreBoard()
+    {
+        GameObject scoreBoard = GameObject.Find("ScoreBoard");
+        GameObject parent = null;
+        parent = scoreBoard.transform.parent != null ? scoreBoard.transform.parent.gameObject : null;
+        if (parent != null)
+        {
+            parent.GetComponent<Animator>().SetBool("show", true);
+        }
+        else
+        {
+            Debug.LogError("Scoreboard not found in the scene. Please ensure it is present.");
+        }
+    }
+
     private void CloseRoundSelect()
     {
         GameObject RoundOptions = GameObject.Find("RoundOptions");
@@ -141,6 +161,21 @@ public class Loader : MonoBehaviour
         else
         {
             Debug.LogError("RoundOptions not found in the scene. Please ensure it is present.");
+        }
+    }
+
+    private void CloseScoreBoard()
+    {
+        GameObject scoreBoard = GameObject.Find("ScoreBoard");
+        GameObject parent = null;
+        parent = scoreBoard.transform.parent != null ? scoreBoard.transform.parent.gameObject : null;
+        if (parent != null)
+        {
+            parent.GetComponent<Animator>().SetBool("show", false);
+        }
+        else
+        {
+            Debug.LogError("Scoreboard not found in the scene. Please ensure it is present.");
         }
     }
 }
