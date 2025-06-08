@@ -7,13 +7,23 @@ public class ReachCheckpoint : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField] private GameObject LevelEditor;
-    void Start()
+    [SerializeField] private int priority = 0;
+
+    [SerializeField] private bool isFinal = false;
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.gameObject.tag == "Player")
+        {
+            if (isFinal)
+                FindFirstObjectByType<RaceLevelManager>().OnPlayerFinished(collision.gameObject);
+            else
+                collision.gameObject.GetComponent<PlayerRespawn>().setNewCheckpoint(this);
+        }
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    public int getPriority()
     {
-        
+        return priority;
     }
 }

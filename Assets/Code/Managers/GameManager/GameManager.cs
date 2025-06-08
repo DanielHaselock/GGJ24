@@ -67,10 +67,7 @@ public class GameManager : MonoBehaviour
     public void StartSingleplayerGame()
     {
         PlayerInputManager.instance.JoinPlayer();
-        currentGameState = GameStates.Scoreboard;
         GoToRoundsSelect();
-        //loader.LoadScene("ScoreBoard");
-        //PlayerManager.Instance.SwitchActionMaps();
     }
 
     public void StartMultiplayerGame()
@@ -139,7 +136,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Loading scene: " + sceneToLoad);
         loader.LoadScene(sceneToLoad);
         currentGameState = GameStates.Level;*/
-        loader.LoadScene("CoinScene");
+        loader.LoadScene("RaceScene");
         currentGameState = GameStates.Level;
     }
 

@@ -166,6 +166,7 @@ public class Loader : MonoBehaviour
 
     private void CloseScoreBoard()
     {
+        if (GameManager.Instance.CurrentGameState != GameManager.GameStates.Scoreboard) return;
         GameObject scoreBoard = GameObject.Find("ScoreBoard");
         GameObject parent = null;
         parent = scoreBoard.transform.parent != null ? scoreBoard.transform.parent.gameObject : null;
