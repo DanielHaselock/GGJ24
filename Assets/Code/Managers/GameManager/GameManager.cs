@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
 
     private GameStates currentGameState { get; set; } = GameStates.MainMenu;
 
+    private string lastLevel;
+
     private List<string> Levels = new List<string>
     {
         "BaseScene",
@@ -114,14 +116,19 @@ public class GameManager : MonoBehaviour
     public void EndRoundCheck()
     {
         roundsPlayed++;
-
         if (roundsPlayed >= maxRounds)
         {
             roundsPlayed = 0;
             GoToEndScene();
         }
         else
-            loader.LoadScene("ScoreBoard");
+            GoToScoreboard();
+    }
+
+    private void GoToScoreboard()
+    {
+        loader.LoadScene("ScoreBoard");
+        currentGameState = GameStates.Scoreboard;
     }
 
     public void GoToEndScene()
@@ -136,8 +143,21 @@ public class GameManager : MonoBehaviour
         Debug.Log("Loading scene: " + sceneToLoad);
         loader.LoadScene(sceneToLoad);
         currentGameState = GameStates.Level;*/
-        loader.LoadScene("RaceScene");
-        currentGameState = GameStates.Level;
+        if (lastLevel == "RaceScene")
+        {
+            loader.LoadScene("CoinScene");
+            lastLevel = "CoinScene";
+        }
+        /*elseif(lastLevel == "CoinScene){
+            loader.LoadScene("SurviveScene);
+            lastLevel = "SurviveScene"        
+        }*/
+        else
+        {
+            loader.LoadScene("RaceScene");
+            lastLevel = "RaceScene";
+            currentGameState = GameStates.Level;
+        }
     }
 
     // Update is called once per frame

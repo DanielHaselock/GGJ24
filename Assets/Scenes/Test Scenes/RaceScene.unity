@@ -648,11 +648,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5891672602410763473, guid: 3d8fa383d223747459147bf9a8e52a46, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.19
+      value: -3.81
       objectReference: {fileID: 0}
     - target: {fileID: 5891672602410763473, guid: 3d8fa383d223747459147bf9a8e52a46, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.69
+      value: -4.32
       objectReference: {fileID: 0}
     - target: {fileID: 5891672602410763473, guid: 3d8fa383d223747459147bf9a8e52a46, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6310,7 +6310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5891672602410763473, guid: 3d8fa383d223747459147bf9a8e52a46, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.72
+      value: -4.28
       objectReference: {fileID: 0}
     - target: {fileID: 5891672602410763473, guid: 3d8fa383d223747459147bf9a8e52a46, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6363,7 +6363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 864861280358823816, guid: a067a78038de9294d904f2ca50307dad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.69
+      value: -4.27
       objectReference: {fileID: 0}
     - target: {fileID: 864861280358823816, guid: a067a78038de9294d904f2ca50307dad, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6397,10 +6397,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3589034098453705854, guid: a067a78038de9294d904f2ca50307dad, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3589034098453705854, guid: a067a78038de9294d904f2ca50307dad, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6043398192466393446, guid: a067a78038de9294d904f2ca50307dad, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 178267717, guid: 25ea84a06b25331428bb75003884bf1c, type: 3}
     - target: {fileID: 7891107535503716545, guid: a067a78038de9294d904f2ca50307dad, type: 3}
       propertyPath: m_Name
       value: FinalCheckPoint
