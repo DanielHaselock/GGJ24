@@ -49,4 +49,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  score: 1000
+  survivingScore: 500

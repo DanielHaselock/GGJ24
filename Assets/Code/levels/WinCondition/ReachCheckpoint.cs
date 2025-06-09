@@ -15,6 +15,7 @@ public class ReachCheckpoint : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            Debug.Log("PlayerFinished");
             if (isFinal)
                 FindFirstObjectByType<RaceLevelManager>().OnPlayerFinished(collision.gameObject);
             else
