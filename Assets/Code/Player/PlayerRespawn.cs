@@ -12,6 +12,8 @@ public class PlayerRespawn : MonoBehaviour
 
     private ReachCheckpoint lastCheckPoint;
 
+    private bool shouldRespawn = true;
+
     private void Start()
     {
         SceneManager.activeSceneChanged += OnSceneChanged;
@@ -20,14 +22,23 @@ public class PlayerRespawn : MonoBehaviour
     private void OnSceneChanged(Scene s0, Scene s1)
     {
         lastCheckPoint = null;
+        setPlayerKinematic(false);
+    }
+
+    public void setRespawn(bool pShouldRespawn)
+    {
+        shouldRespawn = pShouldRespawn;
     }
 
     public void onDeath()
     {
         levelManager = FindFirstObjectByType<BaseLevelManager>();
+        levelManager.OnDeath(this);
         setPlayerKinematic(true);
         transform.position = offscreenPos;
-        startRespawnPlayer();
+
+        if(shouldRespawn)
+            startRespawnPlayer();
     }
 
     public void startRespawnPlayer()

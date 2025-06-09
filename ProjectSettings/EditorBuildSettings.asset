@@ -35,5 +35,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test Scenes/RaceScene.unity
     guid: e92bd0b3750cfac44a9621efc6c156f5
+  - enabled: 1
+    path: Assets/Scenes/Test Scenes/SurviveScene.unity
+    guid: fbaba9f95d4987f428db7c74e5be3557
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

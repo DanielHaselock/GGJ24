@@ -100,7 +100,9 @@ public class TimeManager : MonoBehaviour
             state = TimeState.Playing;
             //gameManager.PlayNextLevel(); commendted out because it breaks audio
             Timer = TimePlayingCurrentLevel;
-            GameManager.Instance.EndRoundCheck();
+
+            FindFirstObjectByType<BaseLevelManager>().OnRoundEnd(); //should call this only
+            //GameManager.Instance.EndRoundCheck();
         }
 
         else if (state == TimeState.End)

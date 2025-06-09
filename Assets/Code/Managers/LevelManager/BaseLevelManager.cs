@@ -32,4 +32,11 @@ public class BaseLevelManager : MonoBehaviour
 
         return Vector3.zero;
     }
+
+    public virtual void OnDeath(PlayerRespawn player) {} //overriden in SurviveLevelManager
+
+    public virtual void OnRoundEnd() //called when round ends from timemanager
+    {
+        GameManager.Instance.EndRoundCheck();
+    } 
 }
