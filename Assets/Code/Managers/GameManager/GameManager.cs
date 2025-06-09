@@ -30,7 +30,9 @@ public class GameManager : MonoBehaviour
         "BaseScene",
         "SampleScene",
         "SampleScene2",
-        "CoinScene"
+        "CoinScene",
+        "RaceScene",
+        "SurviveScene"
     };
     public enum GameStates
     {
@@ -148,10 +150,10 @@ public class GameManager : MonoBehaviour
             loader.LoadScene("CoinScene");
             lastLevel = "CoinScene";
         }
-        /*elseif(lastLevel == "CoinScene){
-            loader.LoadScene("SurviveScene);
-            lastLevel = "SurviveScene"        
-        }*/
+        else if(lastLevel == "CoinScene"){
+            loader.LoadScene("SurviveScene");
+            lastLevel = "SurviveScene";        
+        }
         else
         {
             loader.LoadScene("RaceScene");
