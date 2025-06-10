@@ -25,11 +25,8 @@ public class GameManager : MonoBehaviour
 
     private string lastLevel;
 
-    private List<string> Levels = new List<string>
+    [SerializeField] private List<string> Levels = new List<string>
     {
-        "BaseScene",
-        "SampleScene",
-        "SampleScene2",
         "CoinScene",
         "RaceScene",
         "SurviveScene"
