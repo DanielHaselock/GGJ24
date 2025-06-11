@@ -67,9 +67,12 @@ public class Loader : MonoBehaviour
             {
                 CloseScoreBoard();
             }
+            else
+            {
+                LeftCurtain.GetComponent<Animator>().SetTrigger("close");
+                RightCurtain.GetComponent<Animator>().SetTrigger("close");
+            }
             yield return new WaitForSeconds(closedDelay);
-            LeftCurtain.GetComponent<Animator>().SetTrigger("close");
-            RightCurtain.GetComponent<Animator>().SetTrigger("close");
             yield return new WaitForSeconds(openDelay);
             UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName);
         }
@@ -84,15 +87,15 @@ public class Loader : MonoBehaviour
             GameManager.Instance.CurrentGameState = GameManager.GameStates.Lobby;
             InitializeLobbyboard();
         }
-        else
-        {
-            InitializeCurtains();
-        }
-        if (GameManager.Instance.CurrentGameState == GameManager.GameStates.RoundSelect)
+        else if (GameManager.Instance.CurrentGameState == GameManager.GameStates.RoundSelect)
         {
             InitializeRoundSelect();
         }
         else if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Scoreboard) InitializeScoreBoard();
+        else
+        {
+            InitializeCurtains();
+        }
     }
 
     public void InitializeCurtains()
