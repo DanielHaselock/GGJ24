@@ -24,15 +24,15 @@ public class TimeManager : MonoBehaviour
     ClockState clockstate;
     // Start is called before the first frame update
 
-    [SerializeField] private float Timer = 4f;
+    [SerializeField] private float Timer = -1f;
 
     [SerializeField]
-    public float TimePlayingCurrentLevel = 5f;
+    public float TimePlayingCurrentLevel = 15f;
 
     [SerializeField]
-    private float TimePlayingScore = 2f;
+    private float TimePlayingScore = 5f;
 
-    public bool pPlayTime = true;
+    public bool hasPlayTime = true;
 
     [SerializeField]
     private GameObject Clock;
@@ -46,7 +46,7 @@ public class TimeManager : MonoBehaviour
     {
         Clock = GameObject.FindGameObjectWithTag("Clock");
         clockstate = ClockState.Start;
-        state = TimeState.Playing;
+        state = TimeState.Start;
 
         clockAnimator = GetComponentInChildren<Animator>();
         if (!clockAnimator)
@@ -60,24 +60,42 @@ public class TimeManager : MonoBehaviour
             Debug.LogError("Clock Slider not found!");
             return;
         }
+
+        TimerStarted();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!pPlayTime)
+        if (!hasPlayTime)
         {
-            Timer = TimePlayingCurrentLevel;
             return;
         }
 
-        Timer -= Time.deltaTime;
+        // Tickdown the timer if it is in the playing / scoring state
+        if (state == TimeState.Playing || state == TimeState.Score)
+        {
+            Timer -= Time.deltaTime;
+        }
 
         SetClockState();
 
         if (Timer <= 0.0f)
         {
             TimerEnded();
+        }
+    }
+
+    public void TimerStarted()
+    {
+        if (state == TimeState.Start)
+        {
+            state = TimeState.Playing;
+            Timer = TimePlayingCurrentLevel;
+        }
+        else if (state == TimeState.Playing)
+        {
+            Timer = TimePlayingCurrentLevel;
         }
     }
 
@@ -94,25 +112,21 @@ public class TimeManager : MonoBehaviour
         {
             state = TimeState.Score;
             Timer = TimePlayingScore;
+            
+            // Change the silder fill to red
+            if (clockSlider)
+            {
+                clockSlider.fillRect.GetComponent<Image>().color = Color.red;
+            }
         }
         else if (state == TimeState.Score)
         {
-            state = TimeState.Playing;
-            //gameManager.PlayNextLevel(); commendted out because it breaks audio
-            Timer = TimePlayingCurrentLevel;
-
-            FindFirstObjectByType<BaseLevelManager>().OnRoundEnd(); //should call this only
-            //GameManager.Instance.EndRoundCheck();
+            state = TimeState.End;
+            FindFirstObjectByType<BaseLevelManager>().OnRoundEnd();
         }
-
         else if (state == TimeState.End)
         {
-            Timer = TimePlayingCurrentLevel;
-        }
-        else if (state == TimeState.Start)
-        {
-            state = TimeState.Playing;
-            Timer = TimePlayingCurrentLevel;
+            Timer = 0.0f;
         }
     }
 
@@ -145,7 +159,7 @@ public class TimeManager : MonoBehaviour
 
     public float CalculatePercentage()
     {
-        return (Timer / TimePlayingCurrentLevel) * 100;
+        return Timer / TimePlayingCurrentLevel * 100;
     }
 
     public void SetClockState()
