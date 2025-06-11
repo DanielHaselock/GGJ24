@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.AI;
 
 public class MainMenu : MonoBehaviour
 {
@@ -19,6 +20,12 @@ public class MainMenu : MonoBehaviour
 
     private MenuStates previousMenuState = MenuStates.None;
 
+    private GameObject gameDetails;
+
+    private GameObject versionNum;
+
+    private GameObject copyright;
+
 
     enum MenuStates
     {
@@ -31,6 +38,8 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        gameDetails = transform.Find("GameDetails")?.gameObject;
+
         singlePlayerButton = Buttons.transform.Find("SinglePlayer").GetComponent<Button>();
         multiplayerButton = Buttons.transform.Find("Multiplayer").GetComponent<Button>();
         creditsButton = Buttons.transform.Find("Credits").GetComponent<Button>();
@@ -39,6 +48,11 @@ public class MainMenu : MonoBehaviour
         singlePlayerButton.onClick.AddListener(() => { GameManager.Instance.StartSingleplayerGame(); });
         multiplayerButton.onClick.AddListener(() => { GameManager.Instance.GoToLobby(); });
         exitButton.onClick.AddListener(() => { GameManager.Instance.QuitGame(); });
+
+        singlePlayerButton.onClick.AddListener(() => { HideGameDetails(); });
+        multiplayerButton.onClick.AddListener(() => { HideGameDetails(); });
+        creditsButton.onClick.AddListener(() => { HideGameDetails(); });
+        exitButton.onClick.AddListener(() => { HideGameDetails(); });
 
         promptAnimator = prompt.GetComponent<Animator>();
     }
@@ -63,8 +77,6 @@ public class MainMenu : MonoBehaviour
             currentMenuState = MenuStates.Exit;
         else
             currentMenuState = MenuStates.None;
-
-        Debug.Log(selected);
     }
 
     private void MenuStateManager()
@@ -88,6 +100,18 @@ public class MainMenu : MonoBehaviour
                 break;
         }
         previousMenuState = currentMenuState;
+    }
+
+    private void HideGameDetails()
+    {
+        Debug.Log("In HideGameDetails");
+        Animator gameDetailsAnimator;
+        if (gameDetails != null)
+        {
+            gameDetailsAnimator = gameDetails.GetComponent<Animator>();
+            gameDetailsAnimator.SetTrigger("hide");
+        }
+        else Debug.LogError("Cannot find Game Details GameObject");
     }
 
 }
