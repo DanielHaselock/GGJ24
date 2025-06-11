@@ -7,6 +7,11 @@ public class BaseLevelManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
     {
+        for (int i = 0; i < spawnPoints.Length && i < spawnPoints.Length; i++)
+        {
+            spawnPoints[i].GetComponent<SpriteRenderer>().color = new Color(0,0,0,0);
+        }
+
         if (GameManager.Instance.CurrentGameState != GameManager.GameStates.Level)
         {
             GameManager.Instance.CurrentGameState = GameManager.GameStates.Level;

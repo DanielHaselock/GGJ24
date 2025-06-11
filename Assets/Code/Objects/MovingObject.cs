@@ -7,15 +7,7 @@ public class MovingObject : MonoBehaviour
     [SerializeField] private float movedDistance = 0;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float maximumMovingDistance;
-    [SerializeField] private bool moveHorizontally;
-    [SerializeField] private bool moveVertically;
     [SerializeField] private Vector3 direction; // 1 as positive direction
-
-    void Start()
-    {
-        direction = new Vector3(moveHorizontally ? 1.0f : 0.0f, moveVertically ? 1.0f : 0.0f, 0);
-
-    }
 
     void Update()
     {

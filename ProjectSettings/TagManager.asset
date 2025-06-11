@@ -9,6 +9,7 @@ TagManager:
   - Solid
   - Object
   - Hazard
+  - Coin
   layers:
   - Default
   - TransparentFX

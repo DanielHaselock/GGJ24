@@ -48,6 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05974be4f5dba0c419d9b4e51d6a6157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Levels:
+  - Race1
+  - Collect1
+  - Survive1
 --- !u!114 &3852745785247651454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,6 +67,7 @@ MonoBehaviour:
   LeftCurtain: {fileID: 0}
   RightCurtain: {fileID: 0}
   closedDelay: 1
+  openDelay: 2
 --- !u!114 &5683390914960852634
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -27,9 +27,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private List<string> Levels = new List<string>
     {
-        "CoinScene",
-        "RaceScene",
-        "SurviveScene"
+        // "CoinScene",
+        // "RaceScene",
+        // "SurviveScene"
     };
     public enum GameStates
     {
@@ -138,25 +138,25 @@ public class GameManager : MonoBehaviour
 
     public void LoadLevelScene() //Debug only to test the maxRounds
     {
-        /*string sceneToLoad = Levels[UnityEngine.Random.Range(0, Levels.Count)];
+        string sceneToLoad = Levels[UnityEngine.Random.Range(0, Levels.Count)];
         Debug.Log("Loading scene: " + sceneToLoad);
         loader.LoadScene(sceneToLoad);
-        currentGameState = GameStates.Level;*/
-        if (lastLevel == "RaceScene")
-        {
-            loader.LoadScene("CoinScene");
-            lastLevel = "CoinScene";
-        }
-        else if(lastLevel == "CoinScene"){
-            loader.LoadScene("SurviveScene");
-            lastLevel = "SurviveScene";        
-        }
-        else
-        {
-            loader.LoadScene("RaceScene");
-            lastLevel = "RaceScene";
-            currentGameState = GameStates.Level;
-        }
+        currentGameState = GameStates.Level;
+        // if (lastLevel == "RaceScene")
+        // {
+        //     loader.LoadScene("CoinScene");
+        //     lastLevel = "CoinScene";
+        // }
+        // else if(lastLevel == "CoinScene"){
+        //     loader.LoadScene("SurviveScene");
+        //     lastLevel = "SurviveScene";        
+        // }
+        // else
+        // {
+        //     loader.LoadScene("RaceScene");
+        //     lastLevel = "RaceScene";
+        //     currentGameState = GameStates.Level;
+        // }
     }
 
     // Update is called once per frame

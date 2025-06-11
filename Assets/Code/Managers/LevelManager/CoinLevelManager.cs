@@ -3,19 +3,13 @@ using UnityEngine;
 
 public class CoinLevelManager : BaseLevelManager
 {
-    [SerializeField] private GameObject[] coins;
-
     [ReadOnly(true)] private int coinsRemaining;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     override protected void Start()
     {
         base.Start();
-        coinsRemaining = coins.Length;
-        foreach (var coin in coins)
-        {
-            coin.SetActive(true);
-        }
+        coinsRemaining = GameObject.FindGameObjectsWithTag("Coin").Length;
     }
 
     public void OnCollectCoin()
@@ -27,13 +21,5 @@ public class CoinLevelManager : BaseLevelManager
             Debug.Log("All coins collected!");
             GameManager.Instance.EndRoundCheck();
         }
-    }
-    
-
-
-    // Update is called once per frame
-    private void Update()
-    {
-
     }
 }

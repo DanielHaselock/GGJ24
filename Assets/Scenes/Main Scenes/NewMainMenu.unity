@@ -5526,15 +5526,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2456737718872409583, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 449.82657
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2456737718872409583, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 251.74956
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2456737718872409583, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.2034206
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2456737718872409583, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5562,6 +5562,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2456737718872409583, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854218134773533737, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
+      propertyPath: Levels.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854218134773533737, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
+      propertyPath: 'Levels.Array.data[0]'
+      value: Collect1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854218134773533737, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
+      propertyPath: 'Levels.Array.data[1]'
+      value: Race1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854218134773533737, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
+      propertyPath: 'Levels.Array.data[2]'
+      value: Survive1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852745785247651454, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
+      propertyPath: openDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852745785247651454, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
+      propertyPath: closedDelay
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3860877124361337013, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
