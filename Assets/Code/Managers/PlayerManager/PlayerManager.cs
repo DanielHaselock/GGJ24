@@ -233,6 +233,11 @@ public class PlayerManager : MonoBehaviour
         "ZOOMY"
     };
 
+    private string[] menuScenesNames =
+    {
+        "NewMainMenu", "LobbyScene", "RoundScene", "ScoreBoard", "EndScene"
+    };
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -259,6 +264,8 @@ public class PlayerManager : MonoBehaviour
             // Disable player joining in any other scene
             GetComponent<PlayerInputManager>().DisableJoining();
         }
+
+        HidePlayersSpriteInMenuScenes();
     }
 
     private void Awake()
@@ -305,7 +312,9 @@ public class PlayerManager : MonoBehaviour
         controller.GetComponent<PlayerCustomization>().Randomize();
 
         if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Lobby)
-        controller.Setup(input);
+            controller.Setup(input);
+        
+        HidePlayersSpriteInMenuScenes();
 
         if (SceneManager.GetActiveScene().name == "LobbyScene")
         {
@@ -364,6 +373,23 @@ public class PlayerManager : MonoBehaviour
     }
 
     public int GetPlayerCount() => players.Count;
+    
+    private void HidePlayersSpriteInMenuScenes()
+    {
+        if (players.Count <= 0) return;
+        // Disable the player sprite renderer to prevent it from showing in the lobby and main menu scenes
+        foreach (string sceneName in menuScenesNames)
+        {
+            if (SceneManager.GetActiveScene().name == sceneName)
+            {
+                foreach (PlayerController playerController in players)
+                {
+                    playerController.SetVisible(false);
+                }
+                return;
+            }
+        }
+    }
 }
 
 
