@@ -43,12 +43,13 @@ public class Loader : MonoBehaviour
             if (lobbyBoard != null)
             {
                 lobbyBoard.GetComponent<Animator>().SetBool("show", false);
+                yield return new WaitForSeconds(closedDelay);
             }
             else
             {
                 Debug.LogError("LobbyBoard not found in the scene. Please ensure it is present.");
             }
-            yield return new WaitForSeconds(closedDelay);
+            yield return new WaitForSeconds(openDelay);
             UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName);
             while (!UnityEngine.SceneManagement.SceneManager.GetSceneByName(sceneName).isLoaded)
             {
