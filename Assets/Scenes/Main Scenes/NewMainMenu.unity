@@ -5261,6 +5261,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1341803729 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5026853294842814599, guid: db4d636403e395843a179453f3057e4e, type: 3}
+  m_PrefabInstance: {fileID: 24212267900359960}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2008506456 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5211848040854421791, guid: db4d636403e395843a179453f3057e4e, type: 3}
@@ -5306,6 +5311,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1111403081}
+    - target: {fileID: 3221159707123206755, guid: db4d636403e395843a179453f3057e4e, type: 3}
+      propertyPath: prompt
+      value: 
+      objectReference: {fileID: 1341803729}
     - target: {fileID: 3664254259412914028, guid: db4d636403e395843a179453f3057e4e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

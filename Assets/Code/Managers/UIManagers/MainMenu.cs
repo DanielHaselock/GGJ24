@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class MainMenu : MonoBehaviour
 {
@@ -11,17 +12,21 @@ public class MainMenu : MonoBehaviour
     private Button multiplayerButton;
     private Button creditsButton;
     private Button exitButton;
-    [SerializeField] private GameObject Prompt;
-    // 0 = on boot up, 1 = main menu, 2 = lobby, 3 = credits, 4 = start game
-    [SerializeField] private MenuStates currentMenuState = MenuStates.Title;
+    [SerializeField] private GameObject prompt;
+
+    private Animator promptAnimator;
+    [SerializeField] private MenuStates currentMenuState = MenuStates.SinglePlayer;
+
+    private MenuStates previousMenuState = MenuStates.None;
+
 
     enum MenuStates
     {
-        Title,
-        MainMenu,
-        Lobby,
+        SinglePlayer,
+        Multiplayer,
         Credits,
-        StartGame
+        Exit,
+        None
     }
 
     private void Start()
@@ -34,32 +39,55 @@ public class MainMenu : MonoBehaviour
         singlePlayerButton.onClick.AddListener(() => { GameManager.Instance.StartSingleplayerGame(); });
         multiplayerButton.onClick.AddListener(() => { GameManager.Instance.GoToLobby(); });
         exitButton.onClick.AddListener(() => { GameManager.Instance.QuitGame(); });
+
+        promptAnimator = prompt.GetComponent<Animator>();
     }
 
     void Update()
     {
-        MenuStateManager();
+        UpdateHighlightedButton();
+        MenuStateManager(); // If you want to do logic based on MenuStates
     }
 
-    public void MenuStateManager()
+    private void UpdateHighlightedButton()
     {
+        GameObject selected = EventSystem.current.currentSelectedGameObject;
+
+        if (selected == singlePlayerButton.gameObject)
+            currentMenuState = MenuStates.SinglePlayer;
+        else if (selected == multiplayerButton.gameObject)
+            currentMenuState = MenuStates.Multiplayer;
+        else if (selected == creditsButton.gameObject)
+            currentMenuState = MenuStates.Credits;
+        else if (selected == exitButton.gameObject)
+            currentMenuState = MenuStates.Exit;
+        else
+            currentMenuState = MenuStates.None;
+
+        Debug.Log(selected);
+    }
+
+    private void MenuStateManager()
+    {
+        if (currentMenuState == previousMenuState) return;
         switch (currentMenuState)
         {
-        case MenuStates.Lobby:
-            GameTitle.GetComponent<Animator>().SetTrigger("title_menu");
-            Prompt.SetActive(false);
-            break;
-        case MenuStates.MainMenu:
-            GameTitle.GetComponent<Animator>().SetTrigger("title_menu");
-            Prompt.SetActive(true);
-            Prompt.transform.localPosition = new Vector3(0, -32, 0);
-            break;
-        case MenuStates.Title:
-            GameTitle.GetComponent<Animator>().SetTrigger("title_start");
-            Prompt.transform.localPosition = new Vector3(0, -52, 0);
-            break;
-        default:
-            break;
+            case MenuStates.SinglePlayer:
+                promptAnimator.SetTrigger("singleplayer");
+                break;
+            case MenuStates.Multiplayer:
+                promptAnimator.SetTrigger("multiplayer");
+                break;
+            case MenuStates.Credits:
+                promptAnimator.SetTrigger("credits");
+                break;
+            case MenuStates.Exit:
+                promptAnimator.SetTrigger("exit");
+                break;
+            case MenuStates.None:
+                break;
         }
+        previousMenuState = currentMenuState;
     }
+
 }
