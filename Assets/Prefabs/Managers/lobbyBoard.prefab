@@ -1143,7 +1143,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -6.1438, y: 0}
+  m_AnchoredPosition: {x: -6.143799, y: 0}
   m_SizeDelta: {x: -17.7123, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5377722356026700264
@@ -1254,7 +1254,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 7.500003, y: 0}
+  m_AnchoredPosition: {x: 7.500004, y: 0}
   m_SizeDelta: {x: -15, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6155691951378203089
@@ -1315,7 +1315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87660b99e6e8cf441903e462e64c337a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSlots:
+  clownRaiseHandSlots:
   - {fileID: 3184892067214572404}
   - {fileID: 2923242375661323947}
   - {fileID: 2824334768258947780}

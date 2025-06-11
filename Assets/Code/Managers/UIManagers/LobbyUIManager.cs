@@ -16,7 +16,7 @@ public class LobbyUIManager : MonoBehaviour
 
     [Header("UI Elements")]
     // Assign in inspector
-    [SerializeField] private GameObject[] playerSlots;
+    [SerializeField] private GameObject[] clownRaiseHandSlots;
     [SerializeField] private GameObject[] buttonPromptSlots;
     [SerializeField] private Slider startBar;
 
@@ -54,9 +54,9 @@ public class LobbyUIManager : MonoBehaviour
     public void Refresh()
     {
         var players = PlayerManager.Instance?.players;
-        if (players == null || playerSlots == null || buttonPromptSlots == null) return;
+        if (players == null || clownRaiseHandSlots == null || buttonPromptSlots == null) return;
 
-        int slotCount = playerSlots.Length;
+        int slotCount = clownRaiseHandSlots.Length;
         bool[] slotTaken = new bool[slotCount];
 
         // STEP 1: Validate and assign each player to a slot
@@ -92,7 +92,7 @@ public class LobbyUIManager : MonoBehaviour
                 playerSlotMap[player] = assignedSlot;
                 slotTaken[assignedSlot] = true;
 
-                var playerAnimator = playerSlots[assignedSlot].GetComponent<Animator>();
+                var playerAnimator = clownRaiseHandSlots[assignedSlot].GetComponent<Animator>();
                 var promptAnimator = buttonPromptSlots[assignedSlot].GetComponent<Animator>();
 
                 if (playerAnimator != null)
@@ -100,8 +100,7 @@ public class LobbyUIManager : MonoBehaviour
 
                 if (promptAnimator != null)
                 {
-                    promptAnimator.SetBool("hasJoined", true);
-                    promptAnimator.SetTrigger("player_" + (assignedSlot + 1)); // Optional
+                    promptAnimator.SetBool("player_"+(assignedSlot+1), true);
                 }
             }
         }
@@ -111,14 +110,16 @@ public class LobbyUIManager : MonoBehaviour
         {
             if (!slotTaken[i])
             {
-                var playerAnimator = playerSlots[i].GetComponent<Animator>();
+                var playerAnimator = clownRaiseHandSlots[i].GetComponent<Animator>();
                 var promptAnimator = buttonPromptSlots[i].GetComponent<Animator>();
 
                 if (playerAnimator != null)
                     playerAnimator.SetBool("hasJoined", false);
 
                 if (promptAnimator != null)
-                    promptAnimator.SetBool("hasJoined", false);
+                    promptAnimator.SetBool("player_"+(i+1), false);
+                else
+                    Debug.LogError("promptAnimator not found");
             }
         }
 
