@@ -32,10 +32,12 @@ public class PlayerRespawn : MonoBehaviour
 
     public void onDeath()
     {
+        Debug.Log("ON DEATH WORKING");
         levelManager = FindFirstObjectByType<BaseLevelManager>();
         levelManager.OnDeath(this);
         setPlayerKinematic(true);
         transform.position = offscreenPos;
+        GetComponent<PlayerController>().resetDeath(); //resets the death effects if they were triggered
 
         if(shouldRespawn)
             startRespawnPlayer();

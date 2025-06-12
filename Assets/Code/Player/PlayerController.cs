@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject _hurtEffect;
     [SerializeField] private int m_maxSpeed, m_acceleration, m_deceleration, m_jumpForce;
     [SerializeField] private float m_lowJumpModifier, m_fallModifier;
+    [SerializeField] private float _deathVelocityY = 5;
+    [SerializeField] private LayerMask deathContactLayers;
     private Animator m_animator;
     private BoxCollider2D m_collider;
     private bool m_isGrounded;
@@ -52,6 +54,32 @@ public class PlayerController : MonoBehaviour
                 break;
         }
         Debug.Log($"Switched action map to {_playerInput.currentActionMap.name} for player {PlayerIndex}");
+        activateInputs();
+    }
+
+    private void freezeInputs()
+    {
+        if (_playerInput == null)
+        {
+            Debug.Log("PlayerInput component is not assigned.");
+            return;
+        }
+
+        if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Level) //don't deactivate UI inputs
+        {
+            _playerInput.DeactivateInput();
+        }
+    }
+
+    public void activateInputs()
+    {
+        if (_playerInput == null)
+        {
+            Debug.Log("PlayerInput component is not assigned.");
+            return;
+        }
+
+        _playerInput.ActivateInput();
     }
 
     private void Awake()
@@ -180,12 +208,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-
-
-    }
-
     private void FixedUpdate()
     {
         if (ComputeIsStandingOn("Solid") && !m_isGrounded)
@@ -256,6 +278,21 @@ public class PlayerController : MonoBehaviour
     public void Hurt()
     {
         m_animator.SetTrigger("Hurt");
+        m_collider.isTrigger = true;
+        m_collider.contactCaptureLayers = deathContactLayers; //set layer only to collide with deathTiles
+        freezeInputs();
+        m_rb.linearVelocity = new Vector2(0, _deathVelocityY);
+    }
+
+    public void resetDeath()
+    {
+        activateInputs();
+
+        if (!m_collider)
+            m_collider = GetComponent<BoxCollider2D>();
+
+        m_collider.isTrigger = false;
+        m_collider.contactCaptureLayers = LayerMask.NameToLayer("Everything");
     }
 
     private void Jump()

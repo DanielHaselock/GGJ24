@@ -311,7 +311,8 @@ public class PlayerManager : MonoBehaviour
         controller.InitializePlayer(index, name);
         controller.GetComponent<PlayerCustomization>().Randomize();
 
-        if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Lobby)
+        if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Lobby
+            || GameManager.Instance.CurrentGameState == GameManager.GameStates.MainMenu)
             controller.Setup(input);
         
         HidePlayersSpriteInMenuScenes();
@@ -385,6 +386,7 @@ public class PlayerManager : MonoBehaviour
                 foreach (PlayerController playerController in players)
                 {
                     playerController.SetVisible(false);
+                    playerController.resetDeath(); //just in case of player death at the exact moment when the scene changes
                 }
                 return;
             }
