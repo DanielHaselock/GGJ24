@@ -55,7 +55,6 @@ public class Loader : MonoBehaviour
             {
                 yield return null; // Wait until the scene is loaded
             }
-            InitializeCurtains();
         }
         else
         {
