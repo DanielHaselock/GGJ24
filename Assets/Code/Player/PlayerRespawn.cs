@@ -32,7 +32,6 @@ public class PlayerRespawn : MonoBehaviour
 
     public void onDeath()
     {
-        Debug.Log("ON DEATH WORKING");
         levelManager = FindFirstObjectByType<BaseLevelManager>();
         levelManager.OnDeath(this);
         setPlayerKinematic(true);
