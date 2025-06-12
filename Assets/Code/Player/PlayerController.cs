@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
 
     private PlayerInput _playerInput;
     private PlayerCustomization _customization;
+    private bool _isDead = false;
 
     public void Setup(PlayerInput input)
     {
@@ -210,6 +211,9 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_isDead)
+            return;
+
         if (ComputeIsStandingOn("Solid") && !m_isGrounded)
             m_animator.SetTrigger("Impact");
 
@@ -281,6 +285,7 @@ public class PlayerController : MonoBehaviour
         m_collider.isTrigger = true;
         m_collider.contactCaptureLayers = deathContactLayers; //set layer only to collide with deathTiles
         freezeInputs();
+        _isDead = true;
         m_rb.linearVelocity = new Vector2(0, _deathVelocityY);
     }
 
@@ -291,6 +296,7 @@ public class PlayerController : MonoBehaviour
         if (!m_collider)
             m_collider = GetComponent<BoxCollider2D>();
 
+        _isDead = false;
         m_collider.isTrigger = false;
         m_collider.contactCaptureLayers = LayerMask.NameToLayer("Everything");
     }
