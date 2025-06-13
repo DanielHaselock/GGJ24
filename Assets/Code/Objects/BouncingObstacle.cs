@@ -37,6 +37,7 @@ public class BouncingObstacle : GenericObstacle
             m_animator.SetTrigger("BounceWall");
 
         if (collision.collider.tag.Equals("Player"))
+            m_animator.SetTrigger("Bounce");
             return;
 
         // Get average surface normal

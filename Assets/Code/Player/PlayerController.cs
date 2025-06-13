@@ -10,15 +10,18 @@ using UnityEngine.TextCore.Text;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameObject _hurtEffect;
+    [SerializeField] private GameObject _hurtTrail;
     [SerializeField] private int m_maxSpeed, m_acceleration, m_deceleration, m_jumpForce;
     [SerializeField] private float m_lowJumpModifier, m_fallModifier;
     [SerializeField] private float _deathVelocityY = 5;
     [SerializeField] private LayerMask deathContactLayers;
     private Animator m_animator;
     private BoxCollider2D m_collider;
-    private bool m_isGrounded;
     private Rigidbody2D m_rb;
     private float m_jumpInput, m_xAxisInput, m_yAxisInput;
+
+    public bool m_isGrounded;
+    public bool is_falling = false;
 
     public int PlayerIndex { get; private set; }
     public string PlayerName { get; set; }
@@ -214,11 +217,21 @@ public class PlayerController : MonoBehaviour
         if (_isDead)
             return;
 
+        if (m_rb.linearVelocity.y < 0f)
+        {
+            is_falling = true;
+        }
+        else if (m_rb.linearVelocity.y >= 0f)
+        {
+            is_falling = false;
+        }
+
         if (ComputeIsStandingOn("Solid") && !m_isGrounded)
             m_animator.SetTrigger("Impact");
 
         m_isGrounded = ComputeIsStandingOn("Solid");
         m_animator.SetBool("grounded", m_isGrounded);
+        m_animator.SetBool("decending", is_falling);
 
         ComputeVelocity();
     }
@@ -247,8 +260,14 @@ public class PlayerController : MonoBehaviour
     private void ComputeYVelocity()
     {
         // Up / Down acceleration
-        if (m_rb.linearVelocity.y > 0 && m_jumpInput == 0 && m_rb.gravityScale <= 1) m_rb.gravityScale += m_lowJumpModifier;
-        if (m_rb.linearVelocity.y < 0 && m_rb.gravityScale <= 1.0f + m_lowJumpModifier) m_rb.gravityScale += m_fallModifier;
+        if (m_rb.linearVelocity.y > 0 && m_jumpInput == 0 && m_rb.gravityScale <= 1)
+        {
+            m_rb.gravityScale += m_lowJumpModifier;
+        }
+        if (m_rb.linearVelocity.y < 0 && m_rb.gravityScale <= 1.0f + m_lowJumpModifier)
+        {
+            m_rb.gravityScale += m_fallModifier;
+        }
     }
 
     private bool ComputeIsStandingOn(string tag)
@@ -286,7 +305,9 @@ public class PlayerController : MonoBehaviour
         m_collider.contactCaptureLayers = deathContactLayers; //set layer only to collide with deathTiles
         freezeInputs();
         _isDead = true;
-        m_rb.linearVelocity = new Vector2(0, _deathVelocityY);
+        _hurtEffect.SetActive(true);
+        _hurtTrail.SetActive(true);
+        // m_rb.linearVelocity = new Vector2(0, _deathVelocityY);
     }
 
     public void resetDeath()
@@ -299,6 +320,8 @@ public class PlayerController : MonoBehaviour
         _isDead = false;
         m_collider.isTrigger = false;
         m_collider.contactCaptureLayers = LayerMask.NameToLayer("Everything");
+        _hurtEffect.SetActive(false);
+        _hurtTrail.SetActive(false);
     }
 
     private void Jump()

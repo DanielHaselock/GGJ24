@@ -143,7 +143,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -165,7 +165,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -174,50 +174,6 @@ TextureImporter:
       bones: []
       spriteID: 67a1af750b7d57730800000000000000
       internalID: 3996337396751407734
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: clown_party_jump_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 153f7a08491063fe0800000000000000
-      internalID: -1209777712577121455
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: clown_party_jump_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cc5adbe9eaeb2b5b0800000000000000
-      internalID: -5354007349793282612
       vertices: []
       indices: 
       edges: []
