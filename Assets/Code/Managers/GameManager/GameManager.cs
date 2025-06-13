@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -18,7 +19,7 @@ public class GameManager : MonoBehaviour
     private MusicManager musicManager;
 
     //Add rounds here
-    private int maxRounds = 1;
+    public int maxRounds { get; private set; } = 1;
     private int roundsPlayed = 0;
 
     private GameStates currentGameState { get; set; } = GameStates.MainMenu;
