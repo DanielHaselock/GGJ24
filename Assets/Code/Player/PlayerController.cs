@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
 
     public int score { get; private set; }
 
+    [SerializeField] private GameObject playerNumIcon;
+
     private PlayerInput _playerInput;
     private PlayerCustomization _customization;
     private bool _isDead = false;
@@ -38,6 +40,40 @@ public class PlayerController : MonoBehaviour
         switchActionMap();
     }
 
+    private void Awake()
+    {
+        //_playerInput = GetComponent<PlayerInput>();
+        _customization = GetComponent<PlayerCustomization>();
+    }
+
+    private void Start()
+    {
+        m_animator = GetComponent<Animator>();
+        m_collider = GetComponent<BoxCollider2D>();
+        m_rb = GetComponent<Rigidbody2D>();
+        Transform playerNumIconTransform = transform.Find("PlayerNumIcon");
+        playerNumIcon = playerNumIconTransform?.gameObject;
+        if (playerNumIcon != null)
+        {
+            SpriteRenderer playerNumIconSprite = playerNumIcon.GetComponent<SpriteRenderer>();
+            switch (PlayerIndex)
+            {
+                case 0:
+                    playerNumIconSprite.color = Color.red;
+                    break;
+                case 1:
+                    playerNumIconSprite.color = Color.blue;
+                    break;
+                case 2:
+                    playerNumIconSprite.color = Color.green;
+                    break;
+                case 3:
+                    playerNumIconSprite.color = Color.yellow;
+                    break;
+            }
+        }
+        else Debug.LogError("Could not find PlayerNumIcon");
+    }
     public void switchActionMap()
     {
         if (_playerInput == null)
@@ -84,19 +120,6 @@ public class PlayerController : MonoBehaviour
         }
 
         _playerInput.ActivateInput();
-    }
-
-    private void Awake()
-    {
-        //_playerInput = GetComponent<PlayerInput>();
-        _customization = GetComponent<PlayerCustomization>();
-    }
-
-    private void Start()
-    {
-        m_animator = GetComponent<Animator>();
-        m_collider = GetComponent<BoxCollider2D>();
-        m_rb = GetComponent<Rigidbody2D>();
     }
 
     public void OnSubmit(InputAction.CallbackContext context)
