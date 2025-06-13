@@ -36,7 +36,7 @@ public class BouncingObstacle : GenericObstacle
         else
             m_animator.SetTrigger("BounceWall");
 
-        if (collision.collider.tag.Equals("Player"))
+        if (collision.collider.tag.Equals("Player") || collision.collider.tag.Equals("Object"))
             m_animator.SetTrigger("Bounce");
             return;
 
