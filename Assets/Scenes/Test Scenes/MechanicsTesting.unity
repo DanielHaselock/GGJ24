@@ -676,10 +676,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8581494693713673147, guid: 82b4c9b69159b8b41a2771d9c3b23473, type: 3}
-      propertyPath: m_bouncingforce
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4539656367513664345, guid: 82b4c9b69159b8b41a2771d9c3b23473, type: 3}
     m_RemovedGameObjects: []

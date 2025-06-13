@@ -12,6 +12,8 @@ public class BouncingObstacle : GenericObstacle
 
     [SerializeField] private AudioClip m_bounceSound;
 
+    private float m_initialbounceforce;
+
     private AudioSource m_audioSource;
 
     protected override void Start()
@@ -38,7 +40,6 @@ public class BouncingObstacle : GenericObstacle
 
         if (collision.collider.tag.Equals("Player") || collision.collider.tag.Equals("Object"))
             m_animator.SetTrigger("Bounce");
-            return;
 
         // Get average surface normal
         Vector2 averageNormal = Vector2.zero;

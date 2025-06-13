@@ -41,10 +41,12 @@ public class Balloon : GenericObstacle
     {
         base.OnCollisionEnter2D(collision);
 
-        if (collision.collider.tag.Equals("Player"))
+        if (collision.collider.tag.Equals("Player") || collision.collider.tag.Equals("Hazard"))
         {
-            Instantiate(confetti, transform.position,transform.rotation);
-            m_animator.SetTrigger("Pop");
+            if (collision.collider.tag.Equals("Player")) 
+            {
+                Instantiate(confetti, transform.position,transform.rotation);
+            }
             StartCoroutine(Pop());
             m_rb.bodyType = RigidbodyType2D.Static;
         }
@@ -56,7 +58,8 @@ public class Balloon : GenericObstacle
         {
             audioSource.Play();
         }
-        yield return new WaitForSeconds(audioSource.clip.length);
+        m_animator.SetTrigger("Pop");
+        yield return new WaitForSeconds(0.2f);
         Destroy(gameObject);
     }
 }
