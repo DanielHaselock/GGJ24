@@ -34,7 +34,9 @@ public class GameManager : MonoBehaviour
         Lobby,
         RoundSelect,
         Scoreboard,
-        Level,
+        CoinLevel,
+        SurviveLevel,
+        RaceLevel,
         Credits,
         GameOver,
     }
@@ -138,7 +140,21 @@ public class GameManager : MonoBehaviour
         string sceneToLoad = Levels[UnityEngine.Random.Range(0, Levels.Count)];
         Debug.Log("Loading scene: " + sceneToLoad);
         loader.LoadScene(sceneToLoad);
-        currentGameState = GameStates.Level;
+        switch (sceneToLoad)
+        {
+            case "Collect1":
+            case "Collect2":
+                currentGameState = GameStates.CoinLevel;
+                break;
+            case "Race1":
+            case "Race2":
+                currentGameState = GameStates.RaceLevel;
+                break;
+            case "Survive1":
+            case "Survive2":
+                currentGameState = GameStates.SurviveLevel;
+                break;
+        }
     }
 
     public void QuitGame()

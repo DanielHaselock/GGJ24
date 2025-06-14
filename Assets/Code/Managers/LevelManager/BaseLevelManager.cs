@@ -12,11 +12,11 @@ public class BaseLevelManager : MonoBehaviour
             spawnPoints[i].GetComponent<SpriteRenderer>().color = new Color(0,0,0,0);
         }
 
-        if (GameManager.Instance.CurrentGameState != GameManager.GameStates.Level)
+        /*if (GameManager.Instance.CurrentGameState != GameManager.GameStates.Level)
         {
             GameManager.Instance.CurrentGameState = GameManager.GameStates.Level;
             Debug.Log("Current Game State: " + GameManager.Instance.CurrentGameState);
-        }
+        }*/
 
         for (int i = 0; i < PlayerManager.Instance.players.Count && i < spawnPoints.Length; i++)
         {

@@ -89,7 +89,9 @@ public class PlayerController : MonoBehaviour
                 _playerInput.SwitchCurrentActionMap("UI");
                 break;
             case GameManager.GameStates.Scoreboard:
-            case GameManager.GameStates.Level:
+            case GameManager.GameStates.CoinLevel:
+            case GameManager.GameStates.RaceLevel:
+            case GameManager.GameStates.SurviveLevel:
                 _playerInput.SwitchCurrentActionMap("Keyboard");
                 break;
         }
@@ -105,7 +107,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Level) //don't deactivate UI inputs
+        if (GameManager.Instance.CurrentGameState == GameManager.GameStates.RaceLevel||GameManager.Instance.CurrentGameState == GameManager.GameStates.SurviveLevel) //don't deactivate UI inputs
         {
             _playerInput.DeactivateInput();
         }

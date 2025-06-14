@@ -36,7 +36,9 @@ public class MusicManager : MonoBehaviour
                     currentMusic = MusicType.Menu;
                 }
                 break;
-            case GameManager.GameStates.Level:
+            case GameManager.GameStates.CoinLevel:
+            case GameManager.GameStates.RaceLevel:
+            case GameManager.GameStates.SurviveLevel:
             case GameManager.GameStates.Scoreboard:
                 StopMenuMusic();
                 PlayLevelMusic();
