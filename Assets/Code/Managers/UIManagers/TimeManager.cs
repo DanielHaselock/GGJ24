@@ -91,7 +91,7 @@ public class TimeManager : MonoBehaviour
         if (state == TimeState.Start)
         {
             state = TimeState.Playing;
-            Timer = TimePlayingCurrentLevel;
+            Timer = TimePlayingCurrentLevel + (5 * (PlayerManager.Instance.players.Count-1));
         }
         else if (state == TimeState.Playing)
         {
