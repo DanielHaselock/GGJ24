@@ -257,7 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameTitle: {fileID: 9118784895439754232}
   Buttons: {fileID: 4617769319862557695}
-  Prompt: {fileID: 5026853294842814599}
+  prompt: {fileID: 0}
   currentMenuState: 0
 --- !u!1 &1078908843264821516
 GameObject:
