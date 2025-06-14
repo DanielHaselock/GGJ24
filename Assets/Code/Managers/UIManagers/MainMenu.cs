@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject GameTitle;
     [SerializeField] private GameObject Buttons;
+    [SerializeField] private Material Highlight;
 
     private Button singlePlayerButton;
     private Button multiplayerButton;
@@ -59,6 +60,12 @@ public class MainMenu : MonoBehaviour
 
     void Update()
     {
+        // make sure the buttons don't have a material applied when not selected
+        singlePlayerButton.GetComponent<Image>().material = null;
+        multiplayerButton.GetComponent<Image>().material = null;
+        creditsButton.GetComponent<Image>().material = null;
+        exitButton.GetComponent<Image>().material = null;
+
         UpdateHighlightedButton();
         MenuStateManager(); // If you want to do logic based on MenuStates
     }
@@ -66,6 +73,8 @@ public class MainMenu : MonoBehaviour
     private void UpdateHighlightedButton()
     {
         GameObject selected = EventSystem.current.currentSelectedGameObject;
+        // apply highlight to selected button
+        selected.GetComponent<Image>().material = Highlight;
 
         if (selected == singlePlayerButton.gameObject)
             currentMenuState = MenuStates.SinglePlayer;

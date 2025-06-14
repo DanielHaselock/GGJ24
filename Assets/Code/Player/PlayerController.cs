@@ -55,20 +55,20 @@ public class PlayerController : MonoBehaviour
         playerNumIcon = playerNumIconTransform?.gameObject;
         if (playerNumIcon != null)
         {
-            SpriteRenderer playerNumIconSprite = playerNumIcon.GetComponent<SpriteRenderer>();
+            Animator playerNumIconAnimator = playerNumIcon.GetComponent<Animator>();
             switch (PlayerIndex)
             {
                 case 0:
-                    playerNumIconSprite.color = Color.red;
+                    playerNumIconAnimator.Play("icon_1");
                     break;
                 case 1:
-                    playerNumIconSprite.color = Color.blue;
+                    playerNumIconAnimator.Play("icon_2");
                     break;
                 case 2:
-                    playerNumIconSprite.color = Color.green;
+                    playerNumIconAnimator.Play("icon_3");
                     break;
                 case 3:
-                    playerNumIconSprite.color = Color.yellow;
+                    playerNumIconAnimator.Play("icon_4");
                     break;
             }
         }
@@ -235,6 +235,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public Vector3 GetTopmostVertex()
+    {
+        //Get top most vertex of each sprite to dynamically place number icon
+        Vector2[] localVertices = GetComponent<SpriteRenderer>().sprite.vertices;
+        Vector3 topVertex = Vector3.zero;
+        float maxY = float.MinValue;
+
+        foreach (Vector2 localVertex in localVertices)
+        {
+            Vector3 worldVertex = transform.TransformPoint(localVertex);
+            if (worldVertex.y > maxY)
+            {
+                maxY = worldVertex.y;
+                topVertex = worldVertex;
+            }
+        }
+        return topVertex;
+    }
+
     private void FixedUpdate()
     {
         if (_isDead)
@@ -257,7 +276,13 @@ public class PlayerController : MonoBehaviour
         m_animator.SetBool("decending", is_falling);
 
         ComputeVelocity();
+        // Place number icon
+        Vector3 playerNumIconPos = playerNumIcon.transform.position;
+        playerNumIconPos.y = GetTopmostVertex().y;
+        playerNumIcon.transform.position = playerNumIconPos;
     }
+
+
 
     private void ComputeVelocity()
     {
@@ -330,7 +355,6 @@ public class PlayerController : MonoBehaviour
         _isDead = true;
         _hurtEffect.SetActive(true);
         _hurtTrail.SetActive(true);
-        // m_rb.linearVelocity = new Vector2(0, _deathVelocityY);
     }
 
     public void resetDeath()

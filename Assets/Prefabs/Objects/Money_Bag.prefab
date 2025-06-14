@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5960668921372559755}
   - component: {fileID: 8551059710608886254}
   m_Layer: 0
-  m_Name: Coin
+  m_Name: Money_Bag
   m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.35
+  m_Radius: 0.4
 --- !u!212 &2112581417793914866
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -116,7 +116,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -81266637, guid: 8761dd4f1e04cac4da628269f6886b0b, type: 3}
+  m_Sprite: {fileID: 8150601028122166053, guid: d73c227ef6c065f47a5614215bd7fde2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectSound: {fileID: 8300000, guid: 00dfe67112e83fc4595038387b526d1a, type: 3}
-  scoreValue: 100
+  scoreValue: 500
 --- !u!95 &5960668921372559755
 Animator:
   serializedVersion: 7
@@ -151,7 +151,7 @@ Animator:
   m_GameObject: {fileID: 921874338069685760}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f32098b1af3d34343818f82ba6a8798e, type: 2}
+  m_Controller: {fileID: 9100000, guid: e7472b91d6720904498d82fd0582fc25, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

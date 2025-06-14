@@ -63,10 +63,32 @@ public class EndScene : MonoBehaviour
                 Debug.LogError("Cannot find PlayerDummy");
             }
             //Display which player they were
+            Transform winBalloonTransform = podium.transform.Find("WinBalloon");
+            GameObject winBalloon = winBalloonTransform?.gameObject;
+            Animator winBalloonAnimator = winBalloon.GetComponent<Animator>();
+
             Transform playerNumberTransform = podium.transform.Find("PlayerNumber");
             GameObject playerNumber = playerNumberTransform?.gameObject;
             if (playerNumber != null) playerNumber.GetComponent<TextMeshProUGUI>().text = "~P" + (PlayerManager.Instance.players[i].PlayerIndex + 1) + "~";
             else Debug.LogError("Cannot find PlayerNumber");
+
+            switch (PlayerManager.Instance.players[i].PlayerIndex)
+                {
+                    case 0:
+                        winBalloonAnimator.SetTrigger("player_1");
+                        break;
+                    case 1:
+                        winBalloonAnimator.SetTrigger("player_2");
+                        break;
+                    case 2:
+                        winBalloonAnimator.SetTrigger("player_3");
+                        break;
+                    case 3:
+                        winBalloonAnimator.SetTrigger("player_4");
+                        break;
+                    default:
+                        break;
+                }
             //Display the name of the player
             Transform playerNameTransform = podium.transform.Find("PlayerName");
             GameObject playerName = playerNameTransform?.gameObject;
