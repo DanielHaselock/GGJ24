@@ -219,11 +219,15 @@ public class PlayerController : MonoBehaviour
         float previousYAxisInput = m_yAxisInput;
         m_yAxisInput = context.ReadValue<Vector2>().y;
 
-        if (previousYAxisInput != m_yAxisInput && previousYAxisInput == -1)
+        if (previousYAxisInput != m_yAxisInput && previousYAxisInput <= -0.8)
+        {
             m_animator.SetBool("crouching", false);
-
-        if (m_yAxisInput == -1 && m_isGrounded)
+        }
+        if (m_yAxisInput <= -0.8 && m_isGrounded)
+        {
             m_animator.SetBool("crouching", true);
+            m_xAxisInput = 0;
+        }
     }
 
     public void OnJump(InputAction.CallbackContext context)
