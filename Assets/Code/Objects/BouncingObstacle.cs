@@ -28,6 +28,9 @@ public class BouncingObstacle : GenericObstacle
     {
         StartCoroutine(BounceSound());
 
+        if (m_animator == null) // I think the ball hits another ball that has just spawned -- it doesn't have an animator setup yet so it cannot play
+            return;
+
         base.OnCollisionEnter2D(collision);
 
         Vector2 relativevVelocity = collision.relativeVelocity;
@@ -55,6 +58,11 @@ public class BouncingObstacle : GenericObstacle
 
     IEnumerator BounceSound()
     {
+        if(m_audioSource == null)
+        {
+            yield return null;
+        }
+
         if (m_audioSource != null && !m_audioSource.isPlaying)
         {
             m_audioSource.Play();

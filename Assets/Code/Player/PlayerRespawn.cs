@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +9,7 @@ public class PlayerRespawn : MonoBehaviour
 
     [SerializeField] private Vector2 offscreenPos = new Vector2(100, 100);
 
-    BaseLevelManager levelManager; //Maybe change this
+    BaseLevelManager levelManager;
 
     private ReachCheckpoint lastCheckPoint;
 
@@ -56,10 +57,13 @@ public class PlayerRespawn : MonoBehaviour
     {
         yield return new WaitForSeconds(timeForRespawn);
 
-        if(lastCheckPoint == null)
-            transform.position = levelManager.getSpawnPointForPlayer(gameObject);
-        else
-            transform.position = lastCheckPoint.gameObject.transform.position;
+        if (levelManager != null) // we have ended the level
+        {
+            if (lastCheckPoint == null)
+                transform.position = levelManager.getSpawnPointForPlayer(gameObject);
+            else
+                transform.position = lastCheckPoint.gameObject.transform.position;
+        }
 
         setPlayerKinematic(false);
     }
