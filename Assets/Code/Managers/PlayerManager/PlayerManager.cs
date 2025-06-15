@@ -34,6 +34,7 @@ public class PlayerManager : MonoBehaviour
         "BOOMER",
         "BOZO",
         "BRONZE",
+        "BUDGIE",
         "BUFFY",
         "BUGGS",
         "BUMBUM",

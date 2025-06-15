@@ -144,14 +144,17 @@ public class GameManager : MonoBehaviour
         {
             case "Collect1":
             case "Collect2":
+            case "Collect3":
                 currentGameState = GameStates.CoinLevel;
                 break;
             case "Race1":
             case "Race2":
+            case "Race3":
                 currentGameState = GameStates.RaceLevel;
                 break;
             case "Survive1":
             case "Survive2":
+            case "Survive3":
                 currentGameState = GameStates.SurviveLevel;
                 break;
         }

@@ -118,10 +118,10 @@ public class TimeManager : MonoBehaviour
             state = TimeState.Score;
             Timer = TimePlayingScore;
             
-            // Change the silder fill to red
+            // Change the silder fill to transparent
             if (clockSlider)
             {
-                clockSlider.fillRect.GetComponent<Image>().color = Color.red;
+                clockSlider.fillRect.GetComponent<Image>().color = new Color(0,0,0,0);
             }
         }
         else if (state == TimeState.Score)

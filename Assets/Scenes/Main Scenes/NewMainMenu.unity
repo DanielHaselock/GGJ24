@@ -5010,7 +5010,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 0.99817103
+    height: 0.9981851
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -5608,7 +5608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2854218134773533737, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
       propertyPath: Levels.Array.size
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2854218134773533737, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
       propertyPath: 'Levels.Array.data[0]'
@@ -5620,18 +5620,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2854218134773533737, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
       propertyPath: 'Levels.Array.data[2]'
-      value: Race1
+      value: Collect3
       objectReference: {fileID: 0}
     - target: {fileID: 2854218134773533737, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
       propertyPath: 'Levels.Array.data[3]'
-      value: Race2
+      value: Race1
       objectReference: {fileID: 0}
     - target: {fileID: 2854218134773533737, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
       propertyPath: 'Levels.Array.data[4]'
-      value: Survive1
+      value: Race2
       objectReference: {fileID: 0}
     - target: {fileID: 2854218134773533737, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
       propertyPath: 'Levels.Array.data[5]'
+      value: Race3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854218134773533737, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
+      propertyPath: 'Levels.Array.data[6]'
+      value: Survive1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854218134773533737, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
+      propertyPath: 'Levels.Array.data[7]'
       value: Survive2
       objectReference: {fileID: 0}
     - target: {fileID: 3852745785247651454, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
