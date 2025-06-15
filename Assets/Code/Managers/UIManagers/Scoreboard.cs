@@ -79,6 +79,7 @@ public class Scoreboard : MonoBehaviour
     IEnumerator TimerUntilNextScene()
     {
         yield return new WaitForSeconds(scoreTimer);
+        CloseScoreBoard();
         string roundType = GameManager.Instance.calculateNextScene();
         int roundNumb = GameManager.Instance.getRoundsPlayed();
 
@@ -95,5 +96,19 @@ public class Scoreboard : MonoBehaviour
 
         // Load the next scene here
         GameManager.Instance.LoadLevelScene();
+    }
+
+    public void CloseScoreBoard()
+    {
+        GameObject parent = null;
+        parent = this.transform.parent != null ? this.transform.parent.gameObject : null;
+        if (parent != null)
+        {
+            parent.GetComponent<Animator>().SetBool("show", false);
+        }
+        else
+        {
+            Debug.LogError("Scoreboard not found in the scene. Please ensure it is present.");
+        }
     }
 }

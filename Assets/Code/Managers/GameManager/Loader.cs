@@ -65,7 +65,7 @@ public class Loader : MonoBehaviour
             }
             else if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Scoreboard)
             {
-                CloseScoreBoard();
+                //Do nothing
             }
             else if(GameManager.Instance.CurrentGameState != GameManager.GameStates.Credits)
             {
@@ -165,22 +165,6 @@ public class Loader : MonoBehaviour
         else
         {
             Debug.LogError("RoundOptions not found in the scene. Please ensure it is present.");
-        }
-    }
-
-    private void CloseScoreBoard()
-    {
-        if (GameManager.Instance.CurrentGameState != GameManager.GameStates.Scoreboard) return;
-        GameObject scoreBoard = GameObject.Find("ScoreBoard");
-        GameObject parent = null;
-        parent = scoreBoard.transform.parent != null ? scoreBoard.transform.parent.gameObject : null;
-        if (parent != null)
-        {
-            parent.GetComponent<Animator>().SetBool("show", false);
-        }
-        else
-        {
-            Debug.LogError("Scoreboard not found in the scene. Please ensure it is present.");
         }
     }
 }
