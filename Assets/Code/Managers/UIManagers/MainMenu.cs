@@ -48,6 +48,7 @@ public class MainMenu : MonoBehaviour
 
         singlePlayerButton.onClick.AddListener(() => { GameManager.Instance.StartSingleplayerGame(); });
         multiplayerButton.onClick.AddListener(() => { GameManager.Instance.GoToLobby(); });
+        creditsButton.onClick.AddListener(() => { GameManager.Instance.GoToCredits(); });
         exitButton.onClick.AddListener(() => { GameManager.Instance.QuitGame(); });
 
         singlePlayerButton.onClick.AddListener(() => { HideGameDetails(); });

@@ -84,6 +84,12 @@ public class GameManager : MonoBehaviour
         currentGameState = GameStates.Lobby;
     }
 
+    public void GoToCredits()
+    {
+        loader.LoadScene("Credits");
+        currentGameState = GameStates.Credits;
+    }
+
     public void GoToMainMenu()
     {
         loader.LoadScene("NewMainMenu");
