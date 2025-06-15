@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Net;
 using Unity.VisualScripting;
 using UnityEngine;
 /// <summary>
@@ -66,7 +67,7 @@ public class Loader : MonoBehaviour
             {
                 CloseScoreBoard();
             }
-            else
+            else if(GameManager.Instance.CurrentGameState != GameManager.GameStates.Credits)
             {
                 LeftCurtain.GetComponent<Animator>().SetTrigger("close");
                 RightCurtain.GetComponent<Animator>().SetTrigger("close");
@@ -91,7 +92,7 @@ public class Loader : MonoBehaviour
             InitializeRoundSelect();
         }
         else if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Scoreboard) InitializeScoreBoard();
-        else
+        else if (GameManager.Instance.CurrentGameState != GameManager.GameStates.Credits)
         {
             InitializeCurtains();
         }
