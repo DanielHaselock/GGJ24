@@ -23,10 +23,13 @@ public class GameManager : MonoBehaviour
     private int roundsPlayed = 0;
 
     private GameStates currentGameState { get; set; } = GameStates.MainMenu;
-
-    private string lastLevel;
+    private GameStates nextGameState { get; set; } = GameStates.MainMenu;
 
     [SerializeField] private List<string> Levels = new List<string>{};
+
+    private bool hasFoundNextLevel = false;
+
+    private string nextSceneToLoad = "";
     
     public enum GameStates
     {
@@ -129,6 +132,11 @@ public class GameManager : MonoBehaviour
             GoToScoreboard();
     }
 
+    public int getRoundsPlayed()
+    {
+        return roundsPlayed;
+    }
+
     private void GoToScoreboard()
     {
         loader.LoadScene("ScoreBoard");
@@ -141,29 +149,51 @@ public class GameManager : MonoBehaviour
         currentGameState = GameStates.GameOver;
     }
 
-    public void LoadLevelScene()
+    public string calculateNextScene()
     {
         string sceneToLoad = Levels[UnityEngine.Random.Range(0, Levels.Count)];
-        Debug.Log("Loading scene: " + sceneToLoad);
-        loader.LoadScene(sceneToLoad);
+        string roundType = "";
+        Debug.Log("calculating scene: " + sceneToLoad);
+        //loader.LoadScene(sceneToLoad);
         switch (sceneToLoad)
         {
             case "Collect1":
             case "Collect2":
             case "Collect3":
-                currentGameState = GameStates.CoinLevel;
+                nextGameState = GameStates.CoinLevel;
+                roundType = "Collect";
                 break;
             case "Race1":
             case "Race2":
             case "Race3":
-                currentGameState = GameStates.RaceLevel;
+                nextGameState = GameStates.RaceLevel;
+                roundType = "Race";
                 break;
             case "Survive1":
             case "Survive2":
             case "Survive3":
-                currentGameState = GameStates.SurviveLevel;
-                break;
+                nextGameState = GameStates.SurviveLevel;
+                roundType = "Survive";
+                break;      
         }
+        hasFoundNextLevel = true;
+
+        nextSceneToLoad = sceneToLoad;
+
+        return roundType;
+    }
+
+    public void LoadLevelScene()
+    {
+        if (!hasFoundNextLevel) 
+        {
+            Debug.Log("BUG with level loading"); //should never happen
+            calculateNextScene();
+        }
+
+        loader.LoadScene(nextSceneToLoad);
+
+        currentGameState = nextGameState;
     }
 
     public void QuitGame()
