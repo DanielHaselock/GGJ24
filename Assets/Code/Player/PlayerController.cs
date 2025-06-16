@@ -123,6 +123,7 @@ public class PlayerController : MonoBehaviour
 
         if(m_animator) //Clear these in case
         {
+            m_collider.contactCaptureLayers = LayerMask.NameToLayer("Everything");
             m_animator.ResetTrigger("Cheer");
             m_animator.ResetTrigger("Angry");
         }
@@ -404,8 +405,9 @@ public class PlayerController : MonoBehaviour
     {
         _isFinished = true;
         freezeInputs();
-        m_animator.SetTrigger("Cheer");
+        m_collider.contactCaptureLayers = deathContactLayers; //stop playing contacting other objects
         m_rb.linearVelocity = new Vector2(0, 0); // stop player
+        m_animator.SetTrigger("Cheer");
     }
 
     public void checkAngry()

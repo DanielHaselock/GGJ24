@@ -122,6 +122,9 @@ public class GameManager : MonoBehaviour
 
     public void EndRoundCheck()
     {
+        if(currentGameState == GameStates.Scoreboard)
+            return;
+
         roundsPlayed++;
         if (roundsPlayed >= maxRounds)
         {
