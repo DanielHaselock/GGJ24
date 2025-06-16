@@ -81,7 +81,7 @@ public class Scoreboard : MonoBehaviour
         yield return new WaitForSeconds(scoreTimer);
         CloseScoreBoard();
         string roundType = GameManager.Instance.calculateNextScene();
-        int roundNumb = GameManager.Instance.getRoundsPlayed();
+        int roundNumb = GameManager.Instance.getRoundsPlayed() + 1;
 
         roundNumbertext.text = roundNumb.ToString();
         roundTypetext.text = roundType;
