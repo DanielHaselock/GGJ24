@@ -16,7 +16,7 @@ public class Scoreboard : MonoBehaviour
     [Header("Scoreboard Settings")]
     [SerializeField] private float scoreTimer = 5f; // Time before transitioning to the next scene
     [SerializeField] private float roundNumbTimer = 5f; // Time for UI to show before playing next scene
-    [SerializeField] private float roundTypeTimer = 0.5f; // Time for UI to show before playing next scene
+    // [SerializeField] private float roundTypeTimer = 5f; // Time for UI to show before playing next scene
     [SerializeField] private GameObject playerScorePanelPrefab;
     [SerializeField] private GameObject roundSignPrefab;
     [SerializeField] private TextMeshProUGUI roundNumbertext;
@@ -115,10 +115,6 @@ public class Scoreboard : MonoBehaviour
             levelPrompt.SetActive(true);
             levelPrompt.GetComponent<Animator>().SetTrigger("survive");
         }
-
-        yield return new WaitForSeconds(roundTypeTimer);
-
-        //play anims Moving out objects HERE!
 
         // Load the next scene here
         GameManager.Instance.LoadLevelScene();

@@ -1087,9 +1087,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e1032ac6954a742b69b1300d7d4e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreTimer: 2
+  scoreTimer: 3
   roundNumbTimer: 2
-  roundTypeTimer: 2
+  roundTypeTimer: 0.5
   playerScorePanelPrefab: {fileID: 407460550745757039, guid: 6ba7e6e0a844a9f4a8062d26a0c998fb, type: 3}
   roundSignPrefab: {fileID: 1730988390}
   roundNumbertext: {fileID: 1730988389}
