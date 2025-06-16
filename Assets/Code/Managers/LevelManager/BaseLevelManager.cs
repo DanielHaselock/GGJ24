@@ -1,8 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class BaseLevelManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] spawnPoints;
+    [SerializeField] private int roundEarlyEndWaitTime = 2;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
@@ -43,5 +45,16 @@ public class BaseLevelManager : MonoBehaviour
     public virtual void OnRoundEnd() //called when round ends from timemanager
     {
         GameManager.Instance.EndRoundCheck();
-    } 
+    }
+
+    public virtual void OnRoundEndEarly()
+    {
+        StartCoroutine(roundEarlyEndWait());
+    }
+
+    private IEnumerator roundEarlyEndWait()
+    {
+        yield return new WaitForSeconds(roundEarlyEndWaitTime);
+        OnRoundEnd();
+    }
 }

@@ -19,13 +19,6 @@ public class Loader : MonoBehaviour
         InitializeCurtains();
         DontDestroyOnLoad(gameObject);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void LoadScene(string sceneName)
     {
         Debug.Log("Loading scene: " + sceneName);

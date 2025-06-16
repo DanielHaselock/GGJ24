@@ -12,14 +12,16 @@ public class CoinLevelManager : BaseLevelManager
         coinsRemaining = GameObject.FindGameObjectsWithTag("Coin").Length;
     }
 
-    public void OnCollectCoin()
+    public void OnCollectCoin(PlayerController player)
     {
         coinsRemaining--;
         Debug.Log($"Coins remaining: {coinsRemaining}");
         if (coinsRemaining <= 0)
         {
             Debug.Log("All coins collected!");
-            GameManager.Instance.EndRoundCheck();
+
+            PlayerManager.Instance.checkGameStateAndPlayers();
+            this.OnRoundEndEarly();
         }
     }
 }

@@ -26,7 +26,7 @@ public class RaceLevelManager : BaseLevelManager
                 PlayerManager.Instance.players.Find(p => p.PlayerIndex == players[i].GetComponent<PlayerController>().PlayerIndex).AddScore(scores[i]);
             }
 
-            GameManager.Instance.EndRoundCheck();
+            this.OnRoundEndEarly();
         }
     }
 

@@ -712,10 +712,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.25052086
     y: 0
-    width: 1
-    height: 1
+    width: 0.31914064
+    height: 0.31851852
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -897,7 +897,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5681306816799195596, guid: 9c77989869f22d34d80642439fb4d725, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -56.1
+      value: -56.099976
       objectReference: {fileID: 0}
     - target: {fileID: 5681306816799195596, guid: 9c77989869f22d34d80642439fb4d725, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1021,7 +1021,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreTimer: 2
-  nextRoundTimer: 3
+  roundNumbTimer: 2
+  roundTypeTimer: 2
   playerScorePanelPrefab: {fileID: 407460550745757039, guid: 6ba7e6e0a844a9f4a8062d26a0c998fb, type: 3}
   roundSignPrefab: {fileID: 1730988390}
   roundNumbertext: {fileID: 1730988389}

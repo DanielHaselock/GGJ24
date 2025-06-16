@@ -107,7 +107,8 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        if (GameManager.Instance.CurrentGameState == GameManager.GameStates.RaceLevel||GameManager.Instance.CurrentGameState == GameManager.GameStates.SurviveLevel) //don't deactivate UI inputs
+        if (GameManager.Instance.CurrentGameState == GameManager.GameStates.RaceLevel||GameManager.Instance.CurrentGameState == GameManager.GameStates.SurviveLevel
+            || GameManager.Instance.CurrentGameState == GameManager.GameStates.CoinLevel) //don't deactivate UI inputs
         {
             _playerInput.DeactivateInput();
         }

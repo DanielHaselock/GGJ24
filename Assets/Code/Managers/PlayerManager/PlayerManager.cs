@@ -405,12 +405,19 @@ public class PlayerManager : MonoBehaviour
 
     public void checkGameStateAndPlayers() //checks if the state is race
     {
-        if(GameManager.Instance.CurrentGameState == GameManager.GameStates.RaceLevel
-            || GameManager.Instance.CurrentGameState == GameManager.GameStates.CoinLevel)
+        if(GameManager.Instance.CurrentGameState == GameManager.GameStates.RaceLevel)
         {
             foreach (PlayerController player in players)
             {
                 player.checkAngry();
+            }
+        }
+        else if(GameManager.Instance.CurrentGameState == GameManager.GameStates.CoinLevel
+            || GameManager.Instance.CurrentGameState == GameManager.GameStates.SurviveLevel)
+        {
+            foreach (PlayerController player in players)
+            {
+                player.cheer();
             }
         }
 

@@ -37,7 +37,7 @@ public class CoinData : MonoBehaviour
         audioSource.PlayOneShot(collectSound);
         PlayerManager.Instance.players.Find(p => p.PlayerIndex == player.PlayerIndex).AddScore(scoreValue);
         if(GameManager.Instance.CurrentGameState == GameManager.GameStates.CoinLevel)
-            FindFirstObjectByType<CoinLevelManager>().OnCollectCoin();
+            FindFirstObjectByType<CoinLevelManager>().OnCollectCoin(player);
         StartCoroutine(FinishCollect());
     }
 

@@ -15,7 +15,8 @@ public class Scoreboard : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [Header("Scoreboard Settings")]
     [SerializeField] private float scoreTimer = 5f; // Time before transitioning to the next scene
-    [SerializeField] private float nextRoundTimer = 5f; // Time for UI to show before playing next scene
+    [SerializeField] private float roundNumbTimer = 5f; // Time for UI to show before playing next scene
+    [SerializeField] private float roundTypeTimer = 5f; // Time for UI to show before playing next scene
     [SerializeField] private GameObject playerScorePanelPrefab;
     [SerializeField] private GameObject roundSignPrefab;
     [SerializeField] private TextMeshProUGUI roundNumbertext;
@@ -84,15 +85,21 @@ public class Scoreboard : MonoBehaviour
         int roundNumb = GameManager.Instance.getRoundsPlayed() + 1;
 
         roundNumbertext.text = roundNumb.ToString();
-        roundTypetext.text = roundType;
 
-        //play anims Moving in objects HERE
+        
         roundSignPrefab.GetComponent<Animator>().SetBool("show", true);
 
-        yield return new WaitForSeconds(nextRoundTimer);
+        yield return new WaitForSeconds(roundNumbTimer);
+
+        
+        roundSignPrefab.GetComponent<Animator>().SetBool("show", false);
+
+        //play anims Moving in objects HERE
+        roundTypetext.text = roundType;
+
+        yield return new WaitForSeconds(roundTypeTimer);
 
         //play anims Moving out objects HERE!
-        roundSignPrefab.GetComponent<Animator>().SetBool("show", false);
 
         // Load the next scene here
         GameManager.Instance.LoadLevelScene();
