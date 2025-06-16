@@ -1176,6 +1176,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1856395957317797745, guid: df0da24512b3f2549a1de5d756a98d1a, type: 3}
+      propertyPath: moving_object
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7452685717093555960, guid: df0da24512b3f2549a1de5d756a98d1a, type: 3}
       propertyPath: m_SortingOrder
       value: -1
@@ -13318,10 +13322,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.60121214
+    x: 0
     y: 0
-    width: 1.3084091
-    height: 1.3060344
+    width: 1
+    height: 0.99817103
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60

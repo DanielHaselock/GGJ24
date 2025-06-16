@@ -84,7 +84,12 @@ public class Scoreboard : MonoBehaviour
         string roundType = GameManager.Instance.calculateNextScene();
         int roundNumb = GameManager.Instance.getRoundsPlayed() + 1;
 
-        roundNumbertext.text = roundNumb.ToString();
+        roundNumbertext.text = "ROUND " + roundNumb.ToString();
+
+        if (GameManager.Instance.getRoundsPlayed() == GameManager.Instance.maxRounds - 1)
+        {
+            roundNumbertext.text = "FINAL ROUND!";
+        }
 
         
         roundSignPrefab.GetComponent<Animator>().SetBool("show", true);
