@@ -17,7 +17,11 @@ public class ReachCheckpoint : MonoBehaviour
         {
             Debug.Log("PlayerFinished");
             if (isFinal)
+            {
                 FindFirstObjectByType<RaceLevelManager>().OnPlayerFinished(collision.gameObject);
+                collision.gameObject.GetComponent<PlayerController>().cheer();
+            }
+               
             else
                 collision.gameObject.GetComponent<PlayerRespawn>().setNewCheckpoint(this);
         }

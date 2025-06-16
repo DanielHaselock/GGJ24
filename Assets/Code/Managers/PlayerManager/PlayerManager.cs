@@ -368,6 +368,15 @@ public class PlayerManager : MonoBehaviour
             player.switchActionMap();
         }
     }
+
+    public void unFreezePlayers()
+    {
+        foreach (var player in players)
+        {
+            player.activateInputs();
+        }
+    }
+
     public void UpdateScoreOrder()
     {
         if (players.Count <= 1) return; // No need to sort if there's only one player
@@ -392,6 +401,19 @@ public class PlayerManager : MonoBehaviour
                 return;
             }
         }
+    }
+
+    public void checkGameStateAndPlayers() //checks if the state is race
+    {
+        if(GameManager.Instance.CurrentGameState == GameManager.GameStates.RaceLevel
+            || GameManager.Instance.CurrentGameState == GameManager.GameStates.CoinLevel)
+        {
+            foreach (PlayerController player in players)
+            {
+                player.checkAngry();
+            }
+        }
+
     }
 }
 

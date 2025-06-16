@@ -117,6 +117,8 @@ public class TimeManager : MonoBehaviour
         {
             state = TimeState.Score;
             Timer = TimePlayingScore;
+
+            PlayerManager.Instance.checkGameStateAndPlayers();
             
             // Change the silder fill to transparent
             if (clockSlider)

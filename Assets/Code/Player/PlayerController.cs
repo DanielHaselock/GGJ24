@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     private PlayerInput _playerInput;
     private PlayerCustomization _customization;
-    private bool _isDead = false;
+    private bool _isDead, _isFinished = false;
 
     public void Setup(PlayerInput input)
     {
@@ -120,6 +120,14 @@ public class PlayerController : MonoBehaviour
             Debug.Log("PlayerInput component is not assigned.");
             return;
         }
+
+        if(m_animator) //Clear these in case
+        {
+            m_animator.ResetTrigger("Cheer");
+            m_animator.ResetTrigger("Angry");
+        }
+
+        _isFinished = false;
 
         _playerInput.ActivateInput();
     }
@@ -262,7 +270,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_isDead)
+        if (_isDead || _isFinished)
             return;
 
         if (m_rb.linearVelocity.y < 0f)
@@ -390,5 +398,27 @@ public class PlayerController : MonoBehaviour
         this.score += scoreTest;*/
 
         this.score += score;
+    }
+
+    public void cheer()
+    {
+        _isFinished = true;
+        freezeInputs();
+        m_animator.SetTrigger("Cheer");
+        m_rb.linearVelocity = new Vector2(0, 0); // stop player
+    }
+
+    public void checkAngry()
+    {
+        if (_isFinished == false)
+            angry();
+    }
+
+    private void angry()
+    {
+        _isFinished = true;
+        freezeInputs();
+        m_animator.SetTrigger("Angry");
+        m_rb.linearVelocity = new Vector2(0, 0); // stop player
     }
 }

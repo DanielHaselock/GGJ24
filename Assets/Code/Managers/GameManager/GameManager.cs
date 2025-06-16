@@ -192,6 +192,7 @@ public class GameManager : MonoBehaviour
         }
 
         loader.LoadScene(nextSceneToLoad);
+        PlayerManager.Instance.unFreezePlayers();
 
         currentGameState = nextGameState;
     }
