@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour
         FindFirstObjectByType<Rounds>().updateUI(this.maxRounds);
     }
 
-    public void EndRoundCheck(bool shouldWait = false)
+    public void EndRoundCheck()
     {
         roundsPlayed++;
         if (roundsPlayed >= maxRounds)
