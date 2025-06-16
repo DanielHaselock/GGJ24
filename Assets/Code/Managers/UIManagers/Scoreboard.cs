@@ -16,11 +16,11 @@ public class Scoreboard : MonoBehaviour
     [Header("Scoreboard Settings")]
     [SerializeField] private float scoreTimer = 5f; // Time before transitioning to the next scene
     [SerializeField] private float roundNumbTimer = 5f; // Time for UI to show before playing next scene
-    [SerializeField] private float roundTypeTimer = 5f; // Time for UI to show before playing next scene
+    [SerializeField] private float roundTypeTimer = 0.5f; // Time for UI to show before playing next scene
     [SerializeField] private GameObject playerScorePanelPrefab;
     [SerializeField] private GameObject roundSignPrefab;
     [SerializeField] private TextMeshProUGUI roundNumbertext;
-    [SerializeField] private TextMeshProUGUI roundTypetext;
+    [SerializeField] private GameObject levelPrompt;
 
     [SerializeField] private Sprite[] playerScoreBoards;
     void Start()
@@ -90,17 +90,31 @@ public class Scoreboard : MonoBehaviour
         {
             roundNumbertext.text = "FINAL ROUND!";
         }
-
         
         roundSignPrefab.GetComponent<Animator>().SetBool("show", true);
 
         yield return new WaitForSeconds(roundNumbTimer);
-
         
         roundSignPrefab.GetComponent<Animator>().SetBool("show", false);
 
+        yield return new WaitForSeconds(0.75f);
+
         //play anims Moving in objects HERE
-        roundTypetext.text = roundType;
+        if (roundType == "Collect")
+        {
+            levelPrompt.SetActive(true);
+            levelPrompt.GetComponent<Animator>().SetTrigger("collect");
+        }
+        if (roundType == "Race")
+        {
+            levelPrompt.SetActive(true);
+            levelPrompt.GetComponent<Animator>().SetTrigger("race");
+        }
+        if (roundType == "Survive")
+        {
+            levelPrompt.SetActive(true);
+            levelPrompt.GetComponent<Animator>().SetTrigger("survive");
+        }
 
         yield return new WaitForSeconds(roundTypeTimer);
 
