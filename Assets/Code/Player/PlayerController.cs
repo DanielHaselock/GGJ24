@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject _hurtTrail;
     [SerializeField] private int m_maxSpeed, m_acceleration, m_deceleration, m_jumpForce;
     [SerializeField] private float m_lowJumpModifier, m_fallModifier;
-    [SerializeField] private float _deathVelocityY = 5;
     [SerializeField] private LayerMask deathContactLayers;
     private Animator m_animator;
     private BoxCollider2D m_collider;

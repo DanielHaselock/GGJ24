@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numbText: {fileID: 1932975086}
-  arrows: {fileID: 0}
+  arrows: {fileID: 1932975089}
 --- !u!1 &1305030941
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,9 +472,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.0016556291
+    y: 0
     width: 1
-    height: 0.9982573
+    height: 0.9988728
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -725,6 +725,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1932975089 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1577413506132368164, guid: aa639f4ee763b624f973585a1a7bdd84, type: 3}
+  m_PrefabInstance: {fileID: 1932975084}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2101696678
 PrefabInstance:
   m_ObjectHideFlags: 0

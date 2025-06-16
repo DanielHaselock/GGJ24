@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Rounds : MonoBehaviour
 {
@@ -13,15 +14,20 @@ public class Rounds : MonoBehaviour
 
     public void updateUI(int numb)
     {
+        float horizontalInput = Input.GetAxis("Horizontal");
+
         if (numbText)
         {
             numbText.text = numb.ToString("00");
+        }
 
-            // if (???)
-            // arrows.GetComponent<Animator>().SetTrigger("more");
-
-            // else if (???)
-            // arrows.GetComponent<Animator>().SetTrigger("less");
+        if (horizontalInput > 0)
+        {
+            arrows.GetComponent<Animator>().SetTrigger("more");
+        }
+        else if (horizontalInput < 0)
+        {
+            arrows.GetComponent<Animator>().SetTrigger("less");
         }
     }
 }

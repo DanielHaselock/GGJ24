@@ -8,16 +8,35 @@ public class MovingObject : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float maximumMovingDistance;
     [SerializeField] private Vector3 direction; // 1 as positive direction
+    [SerializeField] private float delay = 0f;
+    private bool move_object;
+    
+    void Start()
+    {
+        if (delay > 0) {
+            move_object = false;
+        }
+        StartCoroutine(Delay());
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(delay);
+        move_object = true;
+    }
 
     void Update()
     {
-        movedDistance += Time.deltaTime * moveSpeed;
-        Vector3 temp = new Vector3(transform.position.x + Time.deltaTime * moveSpeed * direction.x, transform.position.y + Time.deltaTime * moveSpeed * direction.y, 0);
-        if(movedDistance > maximumMovingDistance)
+        if (move_object == true)
         {
-            direction = -direction;
-            movedDistance = 0;
+            movedDistance += Time.deltaTime * moveSpeed;
+            Vector3 temp = new Vector3(transform.position.x + Time.deltaTime * moveSpeed * direction.x, transform.position.y + Time.deltaTime * moveSpeed * direction.y, 0);
+            if(movedDistance > maximumMovingDistance)
+            {
+                direction = -direction;
+                movedDistance = 0;
+            }
+            transform.position = temp;
         }
-        transform.position = temp;
     }
 }

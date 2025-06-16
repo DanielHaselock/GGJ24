@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectSound: {fileID: 8300000, guid: 00dfe67112e83fc4595038387b526d1a, type: 3}
+  scoreGraphic: {fileID: 4791644950911959813, guid: c5ec54968de38cd4c8c4e19ad5536084, type: 3}
   scoreValue: 250
 --- !u!95 &5960668921372559755
 Animator:

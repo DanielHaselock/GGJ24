@@ -8,6 +8,7 @@ public class CoinData : MonoBehaviour
     private bool m_collected;
 
     [SerializeField] private AudioClip collectSound;
+    [SerializeField] private GameObject scoreGraphic;
     [SerializeField] private int scoreValue = 100;
 
     private AudioSource audioSource;
@@ -35,6 +36,7 @@ public class CoinData : MonoBehaviour
     private void Collect(PlayerController player)
     {
         audioSource.PlayOneShot(collectSound);
+        Instantiate(scoreGraphic, transform.position,transform.rotation);
         PlayerManager.Instance.players.Find(p => p.PlayerIndex == player.PlayerIndex).AddScore(scoreValue);
         if(GameManager.Instance.CurrentGameState == GameManager.GameStates.CoinLevel)
             FindFirstObjectByType<CoinLevelManager>().OnCollectCoin(player);

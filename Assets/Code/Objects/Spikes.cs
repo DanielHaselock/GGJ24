@@ -4,21 +4,41 @@ using UnityEngine;
 
 public class Spikes : GenericObstacle
 {
+    [SerializeField] private bool already_hidden;
 
     protected override void Start()
     {
         base.Start();
+        if (already_hidden == true)
+        {
+            m_animator.Play("spikes_return");
+        }
+        else if (already_hidden == false)
+        {
+            m_animator.Play("spikes_emerge");
+        }
         StartCoroutine(ActiveInactiveLoop());
     }
 
     private IEnumerator ActiveInactiveLoop() { 
         while (true)
         {
-            yield return new WaitForSeconds(1.875f);
-            m_animator.SetTrigger("Return");
+            if (already_hidden == true)
+            {
+                yield return new WaitForSeconds(1.875f);
+                m_animator.SetTrigger("Emerge");
 
-            yield return new WaitForSeconds(1.875f);
-            m_animator.SetTrigger("Emerge");
+                yield return new WaitForSeconds(1.875f);
+                m_animator.SetTrigger("Return");
+            }
+            else if (already_hidden == false)
+            {
+                yield return new WaitForSeconds(1.875f);
+                m_animator.SetTrigger("Return");
+
+                yield return new WaitForSeconds(1.875f);
+                m_animator.SetTrigger("Emerge");
+            }
         }
     }
 }

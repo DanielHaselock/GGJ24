@@ -2,17 +2,23 @@ using System.Collections;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class EndScene : MonoBehaviour
 {
     [SerializeField] private GameObject[] podiumPrefabs;
 
-    [SerializeField] private float endSceneTimer = 5f;
+    [SerializeField] private float delay = 2f;
+    private bool can_leave = false;
 
+    InputAction buttonAction;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        buttonAction = new InputAction(binding: "/*/<button>");
+        buttonAction.started += OnButtonPressed;
+        buttonAction.Enable();
+
         PlayerManager.Instance.UpdateScoreOrder();
         for (int i = 0; i < PlayerManager.Instance.players.Count; i++)
         {
@@ -88,14 +94,23 @@ public class EndScene : MonoBehaviour
             if (playerScore != null) playerScore.GetComponent<TextMeshProUGUI>().text = "$" + PlayerManager.Instance.players[i].score;
             else Debug.LogError("Cannot find PlayerScore");
         }
-
-        StartCoroutine(EndSceneTimerCoroutine(endSceneTimer));
         
+        StartCoroutine(Delay());
     }
 
-    private IEnumerator EndSceneTimerCoroutine(float time)
+    IEnumerator Delay()
     {
-        yield return new WaitForSecondsRealtime(time);
+        yield return new WaitForSeconds(delay);
+        can_leave = true;
+    }
+
+    void OnButtonPressed(InputAction.CallbackContext context)
+    {
+        if (can_leave == true)
+        {
+        buttonAction.started -= OnButtonPressed;
+        buttonAction.Disable();
         GameManager.Instance.GoToMainMenu();
+        }
     }
 }
