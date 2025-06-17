@@ -162,12 +162,16 @@ public class LobbyUIManager : MonoBehaviour
 
         while (startBar.value < 1f)
         {
+            if (PlayerManager.Instance.players.Count < 2)
+            {
+                break;
+            }
             startBar.value += Time.deltaTime / MAX_TIME_TO_START;
             yield return null;
         }
 
+        if (startBar.value >= 1) GameManager.Instance.GoToRoundsSelect();
         ResetStartBar();
-        GameManager.Instance.GoToRoundsSelect();
     }
 
     public void CancelFillStartBar()
