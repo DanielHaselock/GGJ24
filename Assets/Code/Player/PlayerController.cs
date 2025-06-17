@@ -33,6 +33,11 @@ public class PlayerController : MonoBehaviour
     private PlayerCustomization _customization;
     private bool _isDead, _isFinished = false;
 
+    public void SetPlayerIndex(int index)
+    {
+        PlayerIndex = index;
+    }
+
     public void Setup(PlayerInput input)
     {
         _playerInput = input;

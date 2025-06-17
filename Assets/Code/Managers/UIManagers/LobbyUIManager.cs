@@ -85,6 +85,8 @@ public class LobbyUIManager : MonoBehaviour
                     }
                 }
             }
+            
+            player.SetPlayerIndex(assignedSlot);
 
             // Update the slot map
             if (assignedSlot != -1)
@@ -100,7 +102,7 @@ public class LobbyUIManager : MonoBehaviour
 
                 if (promptAnimator != null)
                 {
-                    promptAnimator.SetBool("player_"+(assignedSlot+1), true);
+                    promptAnimator.SetBool("player_" + (assignedSlot + 1), true);
                 }
             }
         }

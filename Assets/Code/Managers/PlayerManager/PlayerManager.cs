@@ -380,7 +380,18 @@ public class PlayerManager : MonoBehaviour
     public void UpdateScoreOrder()
     {
         if (players.Count <= 1) return; // No need to sort if there's only one player
-        players.Sort((a, b) => b.score.CompareTo(a.score)); // Sort in descending order
+
+        players.Sort((a, b) =>
+        {
+            // First compare scores (descending)
+            int scoreComparison = b.score.CompareTo(a.score);
+
+            if (scoreComparison != 0)
+                return scoreComparison;
+
+            // If scores are equal, sort by PlayerIndex (ascending)
+            return a.PlayerIndex.CompareTo(b.PlayerIndex);
+        });
     }
 
     public int GetPlayerCount() => players.Count;
