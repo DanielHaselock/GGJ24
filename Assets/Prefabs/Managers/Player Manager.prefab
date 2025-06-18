@@ -88,7 +88,7 @@ MonoBehaviour:
         m_Flags: 0
       - m_Name: 
         m_Id: e5ceef6e-6d51-47d0-9b65-7e3d565a85f4
-        m_Path: <Gamepad>/start
+        m_Path: <Gamepad>/buttonSouth
         m_Interactions: 
         m_Processors: 
         m_Groups: 

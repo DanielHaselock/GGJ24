@@ -250,6 +250,7 @@ MonoBehaviour:
   moveSpeed: 2
   maximumMovingDistance: 3.5
   direction: {x: 0, y: 1, z: 0}
+  delay: 0
 --- !u!1001 &292421435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -526,11 +527,11 @@ PrefabInstance:
       objectReference: {fileID: 8257206748512138988, guid: e088a2989e3f3e948a26c6af6e06cf8e, type: 3}
     - target: {fileID: 6363142188303557942, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: SpawnRateLower
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6363142188303557942, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: SpawnRateUpper
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7096481261963746136, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: m_Name
@@ -1020,11 +1021,11 @@ PrefabInstance:
       objectReference: {fileID: 8257206748512138988, guid: e088a2989e3f3e948a26c6af6e06cf8e, type: 3}
     - target: {fileID: 6363142188303557942, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: SpawnRateLower
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6363142188303557942, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: SpawnRateUpper
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7096481261963746136, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: m_Name
@@ -1191,6 +1192,7 @@ MonoBehaviour:
   moveSpeed: 2
   maximumMovingDistance: 3.5
   direction: {x: 0, y: -1, z: 0}
+  delay: 0
 --- !u!1 &1951740093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1290,10 +1292,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.74666667
+    x: 0
     y: 0
-    width: 1.3084091
-    height: 1.3060344
+    width: 1
+    height: 0.9988728
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60

@@ -20,7 +20,7 @@ public class LobbyUIManager : MonoBehaviour
     [SerializeField] private GameObject[] buttonPromptSlots;
     [SerializeField] private Slider startBar;
 
-    private const float MAX_TIME_TO_START = 3f; // Maximum time to fill the start bar
+    private const float MAX_TIME_TO_START = 1.5f; // Maximum time to fill the start bar
     [SerializeField] private Slider cancelBar;
 
     private EventSystem eventSystem;
@@ -147,7 +147,7 @@ public class LobbyUIManager : MonoBehaviour
             return;
         }
 
-        if (PlayerManager.Instance.players.Count < 2)
+        if (PlayerManager.Instance.players.Count < 1)
         {
             Debug.LogWarning("Not enough players to start the game.");
             return;
@@ -164,7 +164,7 @@ public class LobbyUIManager : MonoBehaviour
 
         while (startBar.value < 1f)
         {
-            if (PlayerManager.Instance.players.Count < 2)
+            if (PlayerManager.Instance.players.Count < 1)
             {
                 break;
             }
