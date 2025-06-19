@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -362,7 +363,11 @@ public class PlayerManager : MonoBehaviour
 
     public void ClearPlayers()
     {
-        foreach (var player in players) Destroy(player.gameObject);
+        foreach (var player in players.ToList()) //copy list
+        {
+            Destroy(player.gameObject);
+        }
+
         players.Clear();
     }
 
