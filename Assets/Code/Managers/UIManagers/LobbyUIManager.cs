@@ -191,14 +191,8 @@ public class LobbyUIManager : MonoBehaviour
         startBar.value = 0f;
     }
 
-    public void FillCancelBar(PlayerController player)
+    public void FillCancelBar()
     {
-        if (PlayerManager.Instance.players.Find(p => p == player) == null)
-        {
-            Debug.LogWarning("Player not found in the player list.");
-            return;
-        }
-
         if (fillCancelBarCoroutine == null)
         {
             fillCancelBarCoroutine = StartCoroutine(FillCancelBarOverTime());
