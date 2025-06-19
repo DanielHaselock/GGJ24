@@ -85,6 +85,7 @@ public class GameManager : MonoBehaviour
     {
         loader.LoadScene("LobbyScene");
         currentGameState = GameStates.Lobby;
+        PlayerManager.Instance.ClearPlayers();
     }
 
     public void GoToCredits()

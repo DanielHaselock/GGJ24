@@ -188,7 +188,7 @@ public class PlayerController : MonoBehaviour
     public void OnCancel(InputAction.CallbackContext context)
     {
         Debug.Log("Player is canceling");
-        if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Lobby)
+        if (GameManager.Instance.CurrentGameState == GameManager.GameStates.RoundSelect)
         {
             //if (context.started) --> done now in seperate script = LobbyLeave.cs
             //{
@@ -199,14 +199,9 @@ public class PlayerController : MonoBehaviour
             //        lobbyUIManager.FillCancelBar(this);
             //    }
             //}
-            if (context.canceled)
+            if (context.started)
             {
-                //LobbyUIManager lobbyUIManager = FindAnyObjectByType<LobbyUIManager>();
-                //if (lobbyUIManager != null)
-                //{
-                //    lobbyUIManager.CancelFillCancelBar();
-                //}
-                PlayerManager.Instance.RemovePlayer(this);
+                GameManager.Instance.GoToLobby();
             }
         }
     }
