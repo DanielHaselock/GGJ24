@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
-    [SerializeField] private float SpawnRateUpper = 2f;
-    [SerializeField] private float SpawnRateLower = 5f;
+    [SerializeField] private float SpawnRateUpper;
+    [SerializeField] private float SpawnRateLower;
     // initial timer value to set up a delay before cannons start shooting when the level starts
     private float Timer = 0.5f;
     private Vector3 initial_position;
@@ -14,7 +14,8 @@ public class Cannon : MonoBehaviour
     [SerializeField] private Transform SpawnPoint;
 
     private float SpawnRate;
-    [SerializeField] public float forceMagnitude = 1000f;
+    [SerializeField] public float forceMagnitudeUpper;
+    [SerializeField] public float forceMagnitudeLower;
 
     [SerializeField] public GameObject SpawnedObject;
     [SerializeField] private GameObject CannonPuff;
@@ -54,7 +55,7 @@ public class Cannon : MonoBehaviour
                 Rigidbody2D rigidbody = instance.GetComponent<Rigidbody2D>();
                 if (rigidbody != null)
                 {
-                    rigidbody.AddForce(SpawnPoint.transform.up * forceMagnitude, ForceMode2D.Impulse);
+                    rigidbody.AddForce(SpawnPoint.transform.up * Random.Range(forceMagnitudeLower, forceMagnitudeUpper), ForceMode2D.Impulse);
                 }
                 // play shooting animations
                 m_animator.SetTrigger("shoot");

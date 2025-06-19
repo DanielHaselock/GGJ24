@@ -162,11 +162,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5da8866fc80b8649adbc6f56ee01155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BounceForce: 12
+  m_BounceForce: 8
   m_xBounceBias: 0
   m_yBounceBias: 0
+  can_stun: 1
   can_kill: 0
-  m_bouncingforce: 1
+  m_bouncingforce: 0.9
   moving_object: 0
   m_bounceSound: {fileID: 8300000, guid: d4e3b714d7a93fa47b712342464f0145, type: 3}
 --- !u!50 &5257636511808098254

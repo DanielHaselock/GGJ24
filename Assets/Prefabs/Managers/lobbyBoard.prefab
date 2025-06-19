@@ -1268,6 +1268,7 @@ GameObject:
   - component: {fileID: 8466254554074132429}
   - component: {fileID: 7008119653722760038}
   - component: {fileID: 3381154172650286682}
+  - component: {fileID: 936428693831378068}
   - component: {fileID: 4836363767687754082}
   m_Layer: 5
   m_Name: lobbyBoard
@@ -1339,6 +1340,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b944c37d2604b14eb09243e7b912856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &936428693831378068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6155691951378203089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e5c6238c3d094848ace694169b52978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leaveAction:
+    m_Name: Leave
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 59909a6b-d606-4b0b-b94f-94df80ec9efa
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: ccdc5f57-aeb5-4b21-82bb-ec9d93932abf
+      m_Path: <Gamepad>/buttonEast
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Leave
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 3de643db-8126-4102-819a-9214fc26130f
+      m_Path: <Keyboard>/backspace
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Leave
+      m_Flags: 0
+    m_Flags: 0
 --- !u!95 &4836363767687754082
 Animator:
   serializedVersion: 7

@@ -527,11 +527,19 @@ PrefabInstance:
       objectReference: {fileID: 8257206748512138988, guid: e088a2989e3f3e948a26c6af6e06cf8e, type: 3}
     - target: {fileID: 6363142188303557942, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: SpawnRateLower
-      value: 1.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6363142188303557942, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: SpawnRateUpper
-      value: 0.5
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6363142188303557942, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
+      propertyPath: forceMagnitudeLower
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6363142188303557942, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
+      propertyPath: forceMagnitudeUpper
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7096481261963746136, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: m_Name
@@ -1021,11 +1029,19 @@ PrefabInstance:
       objectReference: {fileID: 8257206748512138988, guid: e088a2989e3f3e948a26c6af6e06cf8e, type: 3}
     - target: {fileID: 6363142188303557942, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: SpawnRateLower
-      value: 1.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6363142188303557942, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: SpawnRateUpper
-      value: 0.5
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6363142188303557942, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
+      propertyPath: forceMagnitudeLower
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6363142188303557942, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
+      propertyPath: forceMagnitudeUpper
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7096481261963746136, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: m_Name
@@ -1295,7 +1311,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 0.9988728
+    height: 0.9992798
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60

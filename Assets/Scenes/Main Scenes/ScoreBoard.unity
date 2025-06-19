@@ -677,7 +677,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 0.9988728
+    height: 0.9992798
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1088,8 +1088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreTimer: 3
-  roundNumbTimer: 2
-  roundTypeTimer: 0.5
+  roundNumbTimer: 2.5
   playerScorePanelPrefab: {fileID: 407460550745757039, guid: 6ba7e6e0a844a9f4a8062d26a0c998fb, type: 3}
   roundSignPrefab: {fileID: 1730988390}
   roundNumbertext: {fileID: 1730988389}

@@ -165,6 +165,7 @@ MonoBehaviour:
   m_BounceForce: 10
   m_xBounceBias: 0
   m_yBounceBias: 0
+  can_stun: 1
   can_kill: 0
   m_bouncingforce: 0.9
   moving_object: 0
