@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Spikes : GenericObstacle
 {
+    [SerializeField] private float cycle_time = 1.875f;
     [SerializeField] private bool already_hidden;
 
     protected override void Start()
@@ -25,18 +26,18 @@ public class Spikes : GenericObstacle
         {
             if (already_hidden == true)
             {
-                yield return new WaitForSeconds(1.875f);
+                yield return new WaitForSeconds(cycle_time);
                 m_animator.SetTrigger("Emerge");
 
-                yield return new WaitForSeconds(1.875f);
+                yield return new WaitForSeconds(cycle_time);
                 m_animator.SetTrigger("Return");
             }
             else if (already_hidden == false)
             {
-                yield return new WaitForSeconds(1.875f);
+                yield return new WaitForSeconds(cycle_time);
                 m_animator.SetTrigger("Return");
 
-                yield return new WaitForSeconds(1.875f);
+                yield return new WaitForSeconds(cycle_time);
                 m_animator.SetTrigger("Emerge");
             }
         }
