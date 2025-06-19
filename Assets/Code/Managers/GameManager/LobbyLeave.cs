@@ -25,7 +25,6 @@ public class LobbyLeave : MonoBehaviour
         }
         else if(context.canceled)
         {
-            Debug.Log("CANCELLING WITH LOBBYLEAVE");
             LobbyUIManager lobbyUIManager = FindAnyObjectByType<LobbyUIManager>();
             if (lobbyUIManager != null)
             {
