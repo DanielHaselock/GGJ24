@@ -913,7 +913,7 @@ PrefabInstance:
     - target: {fileID: 1994892837877050797, guid: 3e41fac0f9db16c4599216905d877fca, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 7f155e41ff032194cbac5ad6fa03198d, type: 2}
+      objectReference: {fileID: 9100000, guid: 01ea40cb15d06d341af6bfe2e637422b, type: 2}
     - target: {fileID: 2487610207616000207, guid: 3e41fac0f9db16c4599216905d877fca, type: 3}
       propertyPath: m_Enabled
       value: 1
