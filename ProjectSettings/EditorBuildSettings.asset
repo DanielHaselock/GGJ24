@@ -48,6 +48,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Scenes/Collect3.unity
     guid: 8f1fe33c28093cf41adc9bc94fc322ca
   - enabled: 1
+    path: Assets/Scenes/Main Scenes/Collect4.unity
+    guid: 31acc44e9d88a7b41a28b2d9bff81243
+  - enabled: 1
     path: Assets/Scenes/Main Scenes/Race1.unity
     guid: c4d05408ff6b67945bb21ce81c178459
   - enabled: 1

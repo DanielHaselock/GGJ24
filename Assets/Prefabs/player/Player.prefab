@@ -5362,6 +5362,7 @@ MonoBehaviour:
   m_BounceForce: 6
   m_xBounceBias: 0
   m_yBounceBias: 0
+  can_stun: 0
   can_kill: 0
 --- !u!1 &3674065160819146746
 GameObject:
