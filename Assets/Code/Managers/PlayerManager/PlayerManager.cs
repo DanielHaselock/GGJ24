@@ -342,7 +342,12 @@ public class PlayerManager : MonoBehaviour
             LobbyUIManager lobbyUIManager = FindAnyObjectByType<LobbyUIManager>();
             if (lobbyUIManager != null)
             {
-                lobbyUIManager.Refresh();
+                lobbyUIManager.Refresh(true);
+
+                foreach (PlayerController p in players)
+                {
+                    p.setNumbIcon();
+                }
             }
             else
             {

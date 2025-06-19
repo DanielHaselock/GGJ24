@@ -55,6 +55,11 @@ public class PlayerController : MonoBehaviour
         m_animator = GetComponent<Animator>();
         m_collider = GetComponent<BoxCollider2D>();
         m_rb = GetComponent<Rigidbody2D>();
+        setNumbIcon();
+    }
+
+    public void setNumbIcon()
+    {
         Transform playerNumIconTransform = transform.Find("PlayerNumIcon");
         playerNumIcon = playerNumIconTransform?.gameObject;
         if (playerNumIcon != null)
@@ -78,6 +83,7 @@ public class PlayerController : MonoBehaviour
         }
         else Debug.LogError("Could not find PlayerNumIcon");
     }
+
     public void switchActionMap()
     {
         if (_playerInput == null)
@@ -206,6 +212,11 @@ public class PlayerController : MonoBehaviour
                 else
                     GameManager.Instance.GoToMainMenu();
             }
+        }
+        else if(GameManager.Instance.CurrentGameState == GameManager.GameStates.Lobby)
+        {
+            if(context.canceled)
+                PlayerManager.Instance.RemovePlayer(this);
         }
     }
 

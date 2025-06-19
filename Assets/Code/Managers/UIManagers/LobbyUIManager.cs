@@ -51,7 +51,7 @@ public class LobbyUIManager : MonoBehaviour
     /// Refreshes the lobby UI to display the current players and their status.
     /// Updates the text of each player slot to indicate whether a player has joined or is waiting.
     /// </summary>
-    public void Refresh()
+    public void Refresh(bool shouldReinitialise = false)
     {
         var players = PlayerManager.Instance?.players;
         if (players == null || clownRaiseHandSlots == null || buttonPromptSlots == null) return;
@@ -64,12 +64,15 @@ public class LobbyUIManager : MonoBehaviour
         {
             int assignedSlot = -1;
 
-            // Check if player has a previously assigned slot
-            if (playerSlotMap.TryGetValue(player, out int existingSlot))
+            if(!shouldReinitialise)
             {
-                if (existingSlot >= 0 && existingSlot < slotCount && !slotTaken[existingSlot])
+                // Check if player has a previously assigned slot
+                if (playerSlotMap.TryGetValue(player, out int existingSlot))
                 {
-                    assignedSlot = existingSlot; // Keep their original slot
+                    if (existingSlot >= 0 && existingSlot < slotCount && !slotTaken[existingSlot])
+                    {
+                        assignedSlot = existingSlot; // Keep their original slot
+                    }
                 }
             }
 
