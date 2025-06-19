@@ -428,10 +428,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.21927084
     y: 0
-    width: 1
-    height: 1
+    width: 0.31914064
+    height: 0.31851852
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -582,14 +582,13 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: 3de643db-8126-4102-819a-9214fc26130f
-      m_Path: <Keyboard>/enter
+      m_Path: <Keyboard>/backspace
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Leave
       m_Flags: 0
     m_Flags: 0
-  waitTime: 2
 --- !u!4 &2061128908
 Transform:
   m_ObjectHideFlags: 0
