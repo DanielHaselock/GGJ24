@@ -201,7 +201,10 @@ public class PlayerController : MonoBehaviour
             //}
             if (context.started)
             {
-                GameManager.Instance.GoToLobby();
+                if(PlayerManager.Instance.players.Count > 1)
+                    GameManager.Instance.GoToLobby();
+                else
+                    GameManager.Instance.GoToMainMenu();
             }
         }
     }
