@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        loader.LoadScene("NewMainMenu");
+        loader.LoadScene("MainMenu");
         currentGameState = GameStates.MainMenu;
         PlayerManager.Instance.SwitchActionMaps();
         PlayerManager.Instance.ClearPlayers();

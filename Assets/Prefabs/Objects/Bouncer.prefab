@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7452685717093555960}
   - component: {fileID: 441064867219879173}
   - component: {fileID: 869077779068649927}
-  - component: {fileID: 1856395957317797745}
+  - component: {fileID: 643751350482725533}
   - component: {fileID: 5257636511808098254}
   - component: {fileID: 4108279570844019607}
   m_Layer: 0
@@ -150,7 +150,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1856395957317797745
+--- !u!114 &643751350482725533
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,16 +159,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8257206748512138988}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5da8866fc80b8649adbc6f56ee01155, type: 3}
+  m_Script: {fileID: 11500000, guid: 8259654b15e6c984e9abaf7f42887ae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_BounceForce: 11
   m_xBounceBias: 0
   m_yBounceBias: 0
+  can_stun: 0
   can_kill: 0
-  m_bouncingforce: 0
   moving_object: 0
   m_bounceSound: {fileID: 8300000, guid: d4e3b714d7a93fa47b712342464f0145, type: 3}
+  audio_pitch: 0.8
 --- !u!50 &5257636511808098254
 Rigidbody2D:
   serializedVersion: 5

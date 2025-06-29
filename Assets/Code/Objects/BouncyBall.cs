@@ -4,13 +4,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BouncingObstacle : GenericObstacle
+public class BouncyBall : GenericObstacle
 {
     private Rigidbody2D m_rb;
 
     [SerializeField] private float m_bouncingforce = 0.5f;
-    [SerializeField] private bool moving_object;
     [SerializeField] private AudioClip m_bounceSound;
+    [SerializeField] private float audio_pitch = 1f;
 
     private float m_initialbounceforce;
 
@@ -22,13 +22,6 @@ public class BouncingObstacle : GenericObstacle
         m_rb = GetComponent<Rigidbody2D>();
         m_audioSource = GetComponent<AudioSource>();
         m_audioSource.clip = m_bounceSound;
-    }
-
-    protected void FixedUpdate()
-    {
-        if (moving_object == true) {
-            m_animator.SetBool("is_moving", moving_object);
-        }
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)
@@ -72,6 +65,7 @@ public class BouncingObstacle : GenericObstacle
 
         if (m_audioSource != null && !m_audioSource.isPlaying)
         {
+            m_audioSource.pitch = audio_pitch;
             m_audioSource.Play();
         }
         yield return new WaitForSeconds(m_audioSource.clip.length);

@@ -237,7 +237,7 @@ public class PlayerManager : MonoBehaviour
 
     private string[] menuScenesNames =
     {
-        "NewMainMenu", "LobbyScene", "RoundScene", "ScoreBoard", "EndScene"
+        "MainMenu", "LobbyScene", "RoundScene", "ScoreBoard", "EndScene"
     };
 
     private void OnEnable()
