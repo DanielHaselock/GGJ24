@@ -42,6 +42,7 @@ public class TimeManager : MonoBehaviour
     public TimeState state;
 
     private Animator clockAnimator;
+    private float initialTime = 0f;
     void Start()
     {
         Clock = GameObject.FindGameObjectWithTag("Clock");
@@ -92,14 +93,16 @@ public class TimeManager : MonoBehaviour
         {
             state = TimeState.Playing;
             if (GameManager.Instance.CurrentGameState == GameManager.GameStates.CoinLevel)
-                Timer = TimePlayingCurrentLevel - (2 * (PlayerManager.Instance.players.Count - 1));
+                initialTime = TimePlayingCurrentLevel - (2 * (PlayerManager.Instance.players.Count - 1));
             else if (GameManager.Instance.CurrentGameState == GameManager.GameStates.RaceLevel)
-                Timer = Timer = TimePlayingCurrentLevel + (5 * (PlayerManager.Instance.players.Count - 1));
+                initialTime = TimePlayingCurrentLevel + (5 * (PlayerManager.Instance.players.Count - 1));
             else
-                Timer = TimePlayingCurrentLevel;
+                initialTime = TimePlayingCurrentLevel;
+
+            Timer = initialTime;
         }
-        else if (state == TimeState.Playing)
-        {
+        else if (state == TimeState.Playing) //should not happen
+        { 
             Timer = TimePlayingCurrentLevel;
         }
     }
@@ -166,7 +169,7 @@ public class TimeManager : MonoBehaviour
 
     public float CalculatePercentage()
     {
-        return Timer / TimePlayingCurrentLevel * 100;
+        return Timer / initialTime * 100;
     }
 
     public void SetClockState()
