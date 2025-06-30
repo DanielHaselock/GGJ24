@@ -31,6 +31,8 @@ public class LobbyUIManager : MonoBehaviour
 
     private Dictionary<PlayerController, int> playerSlotMap = new();
 
+    private InputDevice playerControllingBars = null;
+
     private void Awake()
     {
 
@@ -38,6 +40,8 @@ public class LobbyUIManager : MonoBehaviour
 
     private void Start()
     {
+        playerControllingBars = null;
+
         Refresh();
         // Make sure GameManager is the actual runtime instance
 
@@ -140,9 +144,7 @@ public class LobbyUIManager : MonoBehaviour
             playerSlotMap.Remove(player);
     }
 
-
-
-    public void FillStartBar(PlayerController player)
+    public void FillStartBar(PlayerController player, InputDevice device)
     {
         if (PlayerManager.Instance.players.Find(p => p == player) == null)
         {
@@ -156,15 +158,15 @@ public class LobbyUIManager : MonoBehaviour
             return;
         }
 
-        if (fillStartCoroutine == null)
+        if (fillStartCoroutine == null && playerControllingBars == null)
         {
+            playerControllingBars = device;
             fillStartCoroutine = StartCoroutine(FillStartBarOverTime());
         }
     }
 
     public IEnumerator FillStartBarOverTime()
     {
-
         while (startBar.value < 1f)
         {
             if (PlayerManager.Instance.players.Count < 1)
@@ -179,10 +181,11 @@ public class LobbyUIManager : MonoBehaviour
         ResetStartBar();
     }
 
-    public void CancelFillStartBar()
+    public void CancelFillStartBar(InputDevice device)
     {
-        if (fillStartCoroutine != null)
+        if (fillStartCoroutine != null && (playerControllingBars == device))
         {
+            playerControllingBars = null;
             StopCoroutine(fillStartCoroutine);
             fillStartCoroutine = null;
             ResetStartBar();
@@ -194,10 +197,11 @@ public class LobbyUIManager : MonoBehaviour
         startBar.value = 0f;
     }
 
-    public void FillCancelBar()
+    public void FillCancelBar(InputDevice device)
     {
-        if (fillCancelBarCoroutine == null)
+        if (fillCancelBarCoroutine == null && playerControllingBars == null)
         {
+            playerControllingBars = device;
             fillCancelBarCoroutine = StartCoroutine(FillCancelBarOverTime());
         }
     }
@@ -214,10 +218,11 @@ public class LobbyUIManager : MonoBehaviour
         GameManager.Instance.GoToMainMenu();
     }
 
-    public void CancelFillCancelBar()
+    public void CancelFillCancelBar(InputDevice device)
     {
-        if (fillCancelBarCoroutine != null)
+        if (fillCancelBarCoroutine != null && (playerControllingBars == device))
         {
+            playerControllingBars = null;
             StopCoroutine(fillCancelBarCoroutine);
             fillCancelBarCoroutine = null;
             ResetCancelBar();

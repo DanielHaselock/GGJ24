@@ -20,7 +20,7 @@ public class LobbyLeave : MonoBehaviour
             LobbyUIManager lobbyUIManager = FindAnyObjectByType<LobbyUIManager>();
             if (lobbyUIManager != null)
             {
-                lobbyUIManager.FillCancelBar();
+                lobbyUIManager.FillCancelBar(context.control.device);
             }
         }
         else if(context.canceled)
@@ -28,7 +28,7 @@ public class LobbyLeave : MonoBehaviour
             LobbyUIManager lobbyUIManager = FindAnyObjectByType<LobbyUIManager>();
             if (lobbyUIManager != null)
             {
-                lobbyUIManager.CancelFillCancelBar();
+                lobbyUIManager.CancelFillCancelBar(context.control.device);
             }
         }
     }

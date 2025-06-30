@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviour
                 LobbyUIManager lobbyUIManager = FindAnyObjectByType<LobbyUIManager>();
                 if (lobbyUIManager != null)
                 {
-                    lobbyUIManager.FillStartBar(this);
+                    lobbyUIManager.FillStartBar(this, context.control.device);
                 }
             }
             else if (context.canceled)
@@ -164,7 +164,7 @@ public class PlayerController : MonoBehaviour
                 LobbyUIManager lobbyUIManager = FindAnyObjectByType<LobbyUIManager>();
                 if (lobbyUIManager != null)
                 {
-                    lobbyUIManager.CancelFillStartBar();
+                    lobbyUIManager.CancelFillStartBar(context.control.device);
                 }
             }
         }   
