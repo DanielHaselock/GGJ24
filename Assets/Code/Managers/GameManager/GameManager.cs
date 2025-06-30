@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     //Add rounds here
     public int maxRounds { get; private set; } = 1;
     private int roundsPlayed = 0;
+    private bool roundStopped = false;
 
     private GameStates currentGameState { get; set; } = GameStates.MainMenu;
     private GameStates nextGameState { get; set; } = GameStates.MainMenu;
@@ -121,10 +122,12 @@ public class GameManager : MonoBehaviour
         FindFirstObjectByType<Rounds>().updateUI(this.maxRounds);
     }
 
-    public void EndRoundCheck()
+    public void EndRoundCheck() //checks if round has already ended
     {
-        if(currentGameState == GameStates.Scoreboard)
+        if(roundStopped) //round has already been stopped
             return;
+
+        roundStopped = true;
 
         roundsPlayed++;
         if (roundsPlayed >= maxRounds)
@@ -186,7 +189,7 @@ public class GameManager : MonoBehaviour
         hasFoundNextLevel = true;
 
         nextSceneToLoad = sceneToLoad;
-
+        
         return roundType;
     }
 
@@ -200,6 +203,7 @@ public class GameManager : MonoBehaviour
 
         loader.LoadScene(nextSceneToLoad);
         PlayerManager.Instance.unFreezePlayers();
+        roundStopped = false;
 
         currentGameState = nextGameState;
     }
