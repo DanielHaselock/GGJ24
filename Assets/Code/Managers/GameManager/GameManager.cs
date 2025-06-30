@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
     private GameStates nextGameState { get; set; } = GameStates.MainMenu;
 
     [SerializeField] private List<string> Levels = new List<string>{};
+    private List<string> currentLevels;
 
     private bool hasFoundNextLevel = false;
 
@@ -66,6 +68,7 @@ public class GameManager : MonoBehaviour
         loader = GetComponent<Loader>();
         musicManager = GetComponent<MusicManager>();
         maxRounds = 1;
+        currentLevels = new List<string>(Levels);
     }
 
     public void StartSingleplayerGame()
@@ -101,6 +104,7 @@ public class GameManager : MonoBehaviour
         currentGameState = GameStates.MainMenu;
         PlayerManager.Instance.SwitchActionMaps();
         PlayerManager.Instance.ClearPlayers();
+        currentLevels = new List<string>(Levels);
     }
 
     public void GoToRoundsSelect()
@@ -158,10 +162,15 @@ public class GameManager : MonoBehaviour
 
     public string calculateNextScene()
     {
-        string sceneToLoad = Levels[UnityEngine.Random.Range(0, Levels.Count)];
+        string sceneToLoad = currentLevels[UnityEngine.Random.Range(0, currentLevels.Count)];
+        currentLevels.Remove(sceneToLoad);
+
+        if(currentLevels.Count == 0) //in case we run out of levels
+            currentLevels = new List<string>(Levels);
+
         string roundType = "";
         Debug.Log("calculating scene: " + sceneToLoad);
-        //loader.LoadScene(sceneToLoad);
+
         switch (sceneToLoad)
         {
             case "Collect1":
