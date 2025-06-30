@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int m_maxSpeed, m_acceleration, m_deceleration, m_jumpForce;
     [SerializeField] private float m_lowJumpModifier, m_fallModifier;
     [SerializeField] private LayerMask deathContactLayers;
+    [SerializeField] private string baseLayer;
+    [SerializeField] private string noCollideLayer;
+
     private Animator m_animator;
     private BoxCollider2D m_collider;
     private Rigidbody2D m_rb;
@@ -137,6 +140,7 @@ public class PlayerController : MonoBehaviour
             m_collider.contactCaptureLayers = LayerMask.NameToLayer("Everything");
             m_animator.ResetTrigger("Cheer");
             m_animator.ResetTrigger("Angry");
+            this.gameObject.layer = LayerMask.NameToLayer(baseLayer);
         }
 
         _isFinished = false;
@@ -419,6 +423,7 @@ public class PlayerController : MonoBehaviour
     {
         _isFinished = true;
         freezeInputs();
+        this.gameObject.layer = LayerMask.NameToLayer(noCollideLayer);
         m_collider.contactCaptureLayers = deathContactLayers; //stop playing contacting other objects
         m_rb.linearVelocity = new Vector2(0, 0); // stop player
         m_animator.SetTrigger("Cheer");
@@ -434,6 +439,7 @@ public class PlayerController : MonoBehaviour
     {
         _isFinished = true;
         freezeInputs();
+        this.gameObject.layer = LayerMask.NameToLayer(noCollideLayer);
         m_animator.SetTrigger("Angry");
         m_rb.linearVelocity = new Vector2(0, 0); // stop player
     }

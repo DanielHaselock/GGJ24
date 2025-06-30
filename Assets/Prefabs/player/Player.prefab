@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 769775105202251298}
   - component: {fileID: 6005329601613009490}
   - component: {fileID: 5309638357239767461}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerNumIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 7059357438070053649}
   - component: {fileID: 1903273252875774888}
   - component: {fileID: 6521543753097318639}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HurtTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4964,7 +4964,7 @@ GameObject:
   - component: {fileID: 8451361391753385194}
   - component: {fileID: 6316101970941891554}
   - component: {fileID: 8710790959756135634}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5091,16 +5091,16 @@ BoxCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 247
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 247
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 247
   m_CallbackLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 247
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
@@ -5162,6 +5162,8 @@ MonoBehaviour:
   deathContactLayers:
     serializedVersion: 2
     m_Bits: 64
+  baseLayer: Player_normal
+  noCollideLayer: Player_noCollide
   m_isGrounded: 0
   is_falling: 0
   playerNumIcon: {fileID: 0}
@@ -5377,7 +5379,7 @@ GameObject:
   - component: {fileID: 8739267706360367386}
   - component: {fileID: 8198512127689179250}
   - component: {fileID: 1166221424242828934}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HurtEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
