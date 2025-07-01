@@ -55,7 +55,7 @@ public class LobbyUIManager : MonoBehaviour
     /// Refreshes the lobby UI to display the current players and their status.
     /// Updates the text of each player slot to indicate whether a player has joined or is waiting.
     /// </summary>
-    public void Refresh(bool shouldReinitialise = false)
+    public void Refresh()
     {
         var players = PlayerManager.Instance?.players;
         if (players == null || clownRaiseHandSlots == null || buttonPromptSlots == null) return;
@@ -68,15 +68,12 @@ public class LobbyUIManager : MonoBehaviour
         {
             int assignedSlot = -1;
 
-            if(!shouldReinitialise)
+            // Check if player has a previously assigned slot
+            if (playerSlotMap.TryGetValue(player, out int existingSlot))
             {
-                // Check if player has a previously assigned slot
-                if (playerSlotMap.TryGetValue(player, out int existingSlot))
+                if (existingSlot >= 0 && existingSlot < slotCount && !slotTaken[existingSlot])
                 {
-                    if (existingSlot >= 0 && existingSlot < slotCount && !slotTaken[existingSlot])
-                    {
-                        assignedSlot = existingSlot; // Keep their original slot
-                    }
+                    assignedSlot = existingSlot; // Keep their original slot
                 }
             }
 
@@ -92,8 +89,6 @@ public class LobbyUIManager : MonoBehaviour
                     }
                 }
             }
-            
-            player.SetPlayerIndex(assignedSlot);
 
             // Update the slot map
             if (assignedSlot != -1)
@@ -126,7 +121,7 @@ public class LobbyUIManager : MonoBehaviour
                     playerAnimator.SetBool("hasJoined", false);
 
                 if (promptAnimator != null)
-                    promptAnimator.SetBool("player_"+(i+1), false);
+                    promptAnimator.SetBool("player_" + (i + 1), false);
                 else
                     Debug.LogError("promptAnimator not found");
             }

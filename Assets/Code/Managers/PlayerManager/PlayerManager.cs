@@ -343,7 +343,7 @@ public class PlayerManager : MonoBehaviour
             LobbyUIManager lobbyUIManager = FindAnyObjectByType<LobbyUIManager>();
             if (lobbyUIManager != null)
             {
-                lobbyUIManager.Refresh(true);
+                lobbyUIManager.Refresh();
 
                 foreach (PlayerController p in players)
                 {
