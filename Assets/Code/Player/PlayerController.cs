@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject playerNumIcon;
 
     private PlayerInput _playerInput;
-    private PlayerCustomization _customization;
+    //private PlayerCustomization _customization; not used in any meaningful way
     private bool _isDead, _isFinished = false;
 
     public void SetPlayerIndex(int index)
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         //_playerInput = GetComponent<PlayerInput>();
-        _customization = GetComponent<PlayerCustomization>();
+        //_customization = GetComponent<PlayerCustomization>();
     }
 
     private void Start()
@@ -230,7 +230,7 @@ public class PlayerController : MonoBehaviour
         PlayerName = name;
 
         // Randomize visual customization
-        _customization?.Randomize();
+        //_customization?.Randomize();
     }
 
     public void SetVisible(bool visible)
