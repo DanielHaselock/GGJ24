@@ -80,7 +80,7 @@ MonoBehaviour:
       m_SingletonActionBindings:
       - m_Name: 
         m_Id: 075401e9-fcf7-4324-9551-65f8bd7c24b5
-        m_Path: <Keyboard>/space
+        m_Path: <Keyboard>/x
         m_Interactions: 
         m_Processors: 
         m_Groups: 

@@ -5009,8 +5009,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
-    height: 1
+    width: 0.99999994
+    height: 0.9989346
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -5359,6 +5359,10 @@ PrefabInstance:
     - target: {fileID: 420612928340226206, guid: db4d636403e395843a179453f3057e4e, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 696627745213501360, guid: db4d636403e395843a179453f3057e4e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 708305611217399551, guid: db4d636403e395843a179453f3057e4e, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5735,11 +5739,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2021161028000728785, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1271431880}
-    - targetCorrespondingSourceObject: {fileID: 2021161028000728785, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
-      insertIndex: -1
+      insertIndex: 3
       addedObject: {fileID: 1271431881}
+    - targetCorrespondingSourceObject: {fileID: 2021161028000728785, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1271431880}
   m_SourcePrefab: {fileID: 100100000, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

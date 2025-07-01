@@ -12,8 +12,6 @@ public class BouncyBall : GenericObstacle
     [SerializeField] private AudioClip m_bounceSound;
     [SerializeField] private float audio_pitch = 1f;
 
-    private float m_initialbounceforce;
-
     private AudioSource m_audioSource;
 
     protected override void Start()

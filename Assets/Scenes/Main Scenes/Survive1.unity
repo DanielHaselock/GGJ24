@@ -535,11 +535,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6363142188303557942, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: forceMagnitudeLower
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6363142188303557942, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: forceMagnitudeUpper
-      value: 12
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7096481261963746136, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: m_Name
@@ -1037,11 +1037,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6363142188303557942, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: forceMagnitudeLower
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6363142188303557942, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: forceMagnitudeUpper
-      value: 12
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7096481261963746136, guid: 6a81a950f391d09428c71f4827d863bc, type: 3}
       propertyPath: m_Name
@@ -1310,8 +1310,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
-    height: 0.9992798
+    width: 0.99999994
+    height: 0.9989346
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60

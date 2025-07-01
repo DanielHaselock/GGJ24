@@ -428,10 +428,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.21927084
+    x: 0
     y: 0
-    width: 0.31914064
-    height: 0.31851852
+    width: 0.99999994
+    height: 0.9989346
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -535,75 +535,6 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
---- !u!1 &2061128906
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2061128908}
-  - component: {fileID: 2061128907}
-  m_Layer: 0
-  m_Name: leave
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2061128907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2061128906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e5c6238c3d094848ace694169b52978, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leaveAction:
-    m_Name: Leave
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 59909a6b-d606-4b0b-b94f-94df80ec9efa
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: ccdc5f57-aeb5-4b21-82bb-ec9d93932abf
-      m_Path: <Gamepad>/buttonEast
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Leave
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 3de643db-8126-4102-819a-9214fc26130f
-      m_Path: <Keyboard>/backspace
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Leave
-      m_Flags: 0
-    m_Flags: 0
---- !u!4 &2061128908
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2061128906}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4736792, y: 9.028604, z: 0.42011338}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2074553745
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,6 +703,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2074553749}
     m_Modifications:
+    - target: {fileID: 936428693831378068, guid: 2c9a22fa7fe82574f8be738ad9aa7a75, type: 3}
+      propertyPath: leaveAction.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Keyboard>/z
+      objectReference: {fileID: 0}
     - target: {fileID: 3160286389818930766, guid: 2c9a22fa7fe82574f8be738ad9aa7a75, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -955,4 +890,3 @@ SceneRoots:
   - {fileID: 351813103}
   - {fileID: 2074553749}
   - {fileID: 2132601641}
-  - {fileID: 2061128908}

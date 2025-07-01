@@ -171,10 +171,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball_Small
       objectReference: {fileID: 0}
-    - target: {fileID: 8581494693713673147, guid: e088a2989e3f3e948a26c6af6e06cf8e, type: 3}
-      propertyPath: audio_pitch
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
