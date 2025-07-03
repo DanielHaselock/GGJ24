@@ -306,7 +306,7 @@ public class PlayerManager : MonoBehaviour
         }
         string name = names[Random.Range(0, names.Count - 1)];
         names.Remove(name);
-        int index = players.Count;
+        int index = getIndex();
         players.Add(controller);
         DontDestroyOnLoad(controller.gameObject);
 
@@ -331,6 +331,21 @@ public class PlayerManager : MonoBehaviour
                 Debug.LogWarning("LobbyUIManager not found in the scene. Cannot refresh lobby UI.");
             }
         }
+    }
+
+    private int getIndex()
+    {
+        int lowestIndex = 0;
+
+        for(int i = 0; i < players.Count; ++i)
+        {
+            if (players[i].PlayerIndex == lowestIndex)
+                lowestIndex++;
+            else
+                break;
+        }
+
+        return lowestIndex;
     }
 
 
