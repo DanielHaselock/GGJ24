@@ -5122,6 +5122,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 76550229408475120, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 76550229408475120, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[1].m_Id
+      value: aa73809f-6bf8-44f7-83df-03a733098ad5
+      objectReference: {fileID: 0}
+    - target: {fileID: 76550229408475120, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[2].m_Id
+      value: 02b1332b-f326-44ae-9d1a-584ea89e758e
+      objectReference: {fileID: 0}
+    - target: {fileID: 76550229408475120, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[3].m_Id
+      value: e5ceef6e-6d51-47d0-9b65-7e3d565a85f4
+      objectReference: {fileID: 0}
+    - target: {fileID: 76550229408475120, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/enter
+      objectReference: {fileID: 0}
+    - target: {fileID: 76550229408475120, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Keyboard>/space
+      objectReference: {fileID: 0}
+    - target: {fileID: 76550229408475120, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[2].m_Path
+      value: <Keyboard>/x
+      objectReference: {fileID: 0}
+    - target: {fileID: 76550229408475120, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[3].m_Path
+      value: <Gamepad>/buttonSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: 76550229408475120, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[2].m_Action
+      value: Join
+      objectReference: {fileID: 0}
+    - target: {fileID: 76550229408475120, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[3].m_Action
+      value: Join
+      objectReference: {fileID: 0}
     - target: {fileID: 229252357925244521, guid: 598ea1dc5bb55ff4e896e73f3f894cc1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

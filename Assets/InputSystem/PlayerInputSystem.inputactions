@@ -28,6 +28,17 @@
                 {
                     "name": "",
                     "id": "76cd1703-2d80-4dab-a871-be3c1d3c173e",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "89984c8f-6f00-492a-9746-7a11c73de674",
                     "path": "<Keyboard>/x",
                     "interactions": "",
                     "processors": "",
@@ -499,6 +510,28 @@
                 {
                     "name": "",
                     "id": "9a384afb-19ec-4028-aed8-9a2398b7cdcf",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "72b58040-686c-49b8-b39d-5a5e4858d26f",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0514ce11-6ae7-4b88-8198-6a79dde67749",
                     "path": "<Keyboard>/x",
                     "interactions": "",
                     "processors": "",
@@ -521,6 +554,17 @@
                 {
                     "name": "",
                     "id": "a56d5134-879a-4c9f-a35a-3e1eececba1b",
+                    "path": "<Keyboard>/backspace",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "27e63710-f995-4b47-9674-d281e2ba2e17",
                     "path": "<Keyboard>/z",
                     "interactions": "",
                     "processors": "",

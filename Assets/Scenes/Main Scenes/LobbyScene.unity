@@ -704,8 +704,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 2074553749}
     m_Modifications:
     - target: {fileID: 936428693831378068, guid: 2c9a22fa7fe82574f8be738ad9aa7a75, type: 3}
+      propertyPath: leaveAction.m_SingletonActionBindings.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 936428693831378068, guid: 2c9a22fa7fe82574f8be738ad9aa7a75, type: 3}
+      propertyPath: leaveAction.m_SingletonActionBindings.Array.data[2].m_Id
+      value: 45e7fd97-d7c4-4e85-adb3-a2e3f81a05f1
+      objectReference: {fileID: 0}
+    - target: {fileID: 936428693831378068, guid: 2c9a22fa7fe82574f8be738ad9aa7a75, type: 3}
       propertyPath: leaveAction.m_SingletonActionBindings.Array.data[1].m_Path
       value: <Keyboard>/z
+      objectReference: {fileID: 0}
+    - target: {fileID: 936428693831378068, guid: 2c9a22fa7fe82574f8be738ad9aa7a75, type: 3}
+      propertyPath: leaveAction.m_SingletonActionBindings.Array.data[2].m_Path
+      value: <Keyboard>/backspace
+      objectReference: {fileID: 0}
+    - target: {fileID: 936428693831378068, guid: 2c9a22fa7fe82574f8be738ad9aa7a75, type: 3}
+      propertyPath: leaveAction.m_SingletonActionBindings.Array.data[2].m_Action
+      value: Leave
       objectReference: {fileID: 0}
     - target: {fileID: 3160286389818930766, guid: 2c9a22fa7fe82574f8be738ad9aa7a75, type: 3}
       propertyPath: m_AnchorMax.y
