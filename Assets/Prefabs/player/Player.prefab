@@ -5297,46 +5297,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75875e93263c39045a244a2f00d6b89d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_clownAnimators:
-  - {fileID: 9100000, guid: 33b412589666eaa4dac02c620331961a, type: 2}
-  - {fileID: 9100000, guid: 7f155e41ff032194cbac5ad6fa03198d, type: 2}
-  - {fileID: 9100000, guid: 73c4c390d2df89447bdd999fed1137eb, type: 2}
-  - {fileID: 9100000, guid: 2fa15cb807afb96429caf977e3a431eb, type: 2}
-  - {fileID: 9100000, guid: d6b4ee985188ed841bf6db2db1d1d856, type: 2}
-  - {fileID: 9100000, guid: 01ea40cb15d06d341af6bfe2e637422b, type: 2}
-  m_palettes:
-  - {fileID: 2800000, guid: d3660b02220c03e40be52f1220b8369a, type: 3}
-  - {fileID: 2800000, guid: f5b7ad213ea93c0409be4ad336c1be0b, type: 3}
-  - {fileID: 2800000, guid: 111f4d7b0bced9442b3e488458f24e5e, type: 3}
-  - {fileID: 2800000, guid: 32840a8695ed8ed4fad1e7e13c396e2f, type: 3}
-  - {fileID: 2800000, guid: 90682d7da68c81d40beac3229e538e93, type: 3}
-  - {fileID: 2800000, guid: 2e4bc17ee876e9d4f8bc95cbd942ce87, type: 3}
-  - {fileID: 2800000, guid: ab6843d71edbb874ca3f9fb908d8a3f7, type: 3}
-  - {fileID: 2800000, guid: 1a7721bd13d31d841becf842b77ef7e4, type: 3}
-  - {fileID: 2800000, guid: 9ce2124664663a547af3e38d753809fb, type: 3}
-  - {fileID: 2800000, guid: df50a10abe6c2c94fbee6d5195c1a251, type: 3}
-  - {fileID: 2800000, guid: 29865ec3b8098844bb8c4853a245c736, type: 3}
-  - {fileID: 2800000, guid: 83feb85ef2eb33e488fc873dd5831e41, type: 3}
-  - {fileID: 2800000, guid: ab54ac4804e6f764aaa7505209eca36d, type: 3}
-  - {fileID: 2800000, guid: b35dcceb5757f7841a8a68a2e70c4246, type: 3}
-  - {fileID: 2800000, guid: 2bb968c03f2e8e842bcab6a54870cfe1, type: 3}
-  - {fileID: 2800000, guid: 6301586401625954d80bb1d73bb76706, type: 3}
-  - {fileID: 2800000, guid: c311cdc2e5051104aa6def9554df37ed, type: 3}
-  - {fileID: 2800000, guid: 8851f6ab4c9981043a379a815ac7cb44, type: 3}
-  - {fileID: 2800000, guid: 0db50a20136a79949a3cd5608313a442, type: 3}
-  - {fileID: 2800000, guid: f7d18d3f1b3b363409d7e9791a3dfac2, type: 3}
-  - {fileID: 2800000, guid: 0b1340815219015469553d7a356f7976, type: 3}
-  - {fileID: 2800000, guid: 948a09ca72e41944bb0075521c626a54, type: 3}
-  - {fileID: 2800000, guid: eec6ba87c8d092a4d9026f430c365c4d, type: 3}
-  - {fileID: 2800000, guid: 2c767936a7402fe4dbd8beef9c420580, type: 3}
-  - {fileID: 2800000, guid: ff60040ed70d36245b5c8ab8ce242d26, type: 3}
-  - {fileID: 2800000, guid: 2c7745583d0354c4e91654d709f315ce, type: 3}
-  - {fileID: 2800000, guid: 6371bcd08a998a442bf746a33f2139d4, type: 3}
-  - {fileID: 2800000, guid: 3bfca15953f242d458ad0575bed9ffd1, type: 3}
-  - {fileID: 2800000, guid: 3dde7afc8e991334eba3c0662aac8b17, type: 3}
-  - {fileID: 2800000, guid: 74e4a3cc019d84140b910dfb7f10bff0, type: 3}
-  - {fileID: 2800000, guid: a04bc89b44cd5e142bfe1eee5e20b971, type: 3}
-  - {fileID: 2800000, guid: 91f8f7de25c857e46be0ff37b8211042, type: 3}
 --- !u!114 &6316101970941891554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5349,7 +5309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9b86db34f6f82449138c087e64a944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeForRespawn: 2
+  timeForRespawn: 1.5
   offscreenPos: {x: 100, y: 100}
 --- !u!114 &8710790959756135634
 MonoBehaviour:
@@ -5366,7 +5326,6 @@ MonoBehaviour:
   m_BounceForce: 6
   m_xBounceBias: 0
   m_yBounceBias: 0
-  can_stun: 0
   can_kill: 0
 --- !u!1 &3674065160819146746
 GameObject:

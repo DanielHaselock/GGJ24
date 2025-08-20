@@ -1176,6 +1176,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 643751350482725533, guid: df0da24512b3f2549a1de5d756a98d1a, type: 3}
+      propertyPath: moving_object
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1856395957317797745, guid: df0da24512b3f2549a1de5d756a98d1a, type: 3}
       propertyPath: moving_object
       value: 1
@@ -1222,6 +1226,7 @@ MonoBehaviour:
   moveSpeed: 1.5
   maximumMovingDistance: 3
   direction: {x: 1, y: 0, z: 0}
+  delay: 0
 --- !u!1001 &1224604262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13324,8 +13329,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
-    height: 0.99817103
+    width: 0.99999994
+    height: 0.9989346
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60

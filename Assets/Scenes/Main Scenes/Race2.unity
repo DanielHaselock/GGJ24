@@ -1472,8 +1472,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
-    height: 0.9992798
+    width: 0.99999994
+    height: 0.9989346
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -12474,7 +12474,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 864861280358823816, guid: a067a78038de9294d904f2ca50307dad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.482903
+      value: 4.478
       objectReference: {fileID: 0}
     - target: {fileID: 864861280358823816, guid: a067a78038de9294d904f2ca50307dad, type: 3}
       propertyPath: m_LocalPosition.y

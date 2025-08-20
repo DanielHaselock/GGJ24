@@ -93,9 +93,9 @@ public class TimeManager : MonoBehaviour
         {
             state = TimeState.Playing;
             if (GameManager.Instance.CurrentGameState == GameManager.GameStates.CoinLevel)
-                initialTime = TimePlayingCurrentLevel - (2 * (PlayerManager.Instance.players.Count - 1));
+                initialTime = TimePlayingCurrentLevel - (1.25f * (PlayerManager.Instance.players.Count - 1));
             else if (GameManager.Instance.CurrentGameState == GameManager.GameStates.RaceLevel)
-                initialTime = TimePlayingCurrentLevel + (5 * (PlayerManager.Instance.players.Count - 1));
+                initialTime = TimePlayingCurrentLevel + (5f * (PlayerManager.Instance.players.Count - 1));
             else
                 initialTime = TimePlayingCurrentLevel;
 
