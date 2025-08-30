@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     private MusicManager musicManager;
 
     //Add rounds here
-    public int maxRounds { get; private set; } = 1;
+    public int maxRounds { get; private set; } = 5;
     private int roundsPlayed = 0;
     private bool roundStopped = false;
 
@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
     {
         loader = GetComponent<Loader>();
         musicManager = GetComponent<MusicManager>();
-        maxRounds = 1;
+        maxRounds = 5;
         currentLevels = new List<string>(Levels);
     }
 
@@ -115,13 +115,13 @@ public class GameManager : MonoBehaviour
 
     public void addMaxRounds(int value)
     {
-        this.maxRounds += value;
+        this.maxRounds += (value * 5);
 
-        if (this.maxRounds < 1)
-            this.maxRounds = 99;
+        if (this.maxRounds < 5)
+            this.maxRounds = 30;
 
-        if (this.maxRounds >= 100)
-            this.maxRounds = 1;
+        if (this.maxRounds >= 31)
+            this.maxRounds = 5;
 
         FindFirstObjectByType<Rounds>().updateUI(this.maxRounds);
     }

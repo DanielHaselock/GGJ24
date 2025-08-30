@@ -472,9 +472,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.18231292
     width: 1
-    height: 0.9988728
+    height: 0.6354935
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -666,10 +666,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5024897515909838064, guid: aa639f4ee763b624f973585a1a7bdd84, type: 3}
-      propertyPath: m_text
-      value: 01
-      objectReference: {fileID: 0}
     - target: {fileID: 9062426023657764276, guid: aa639f4ee763b624f973585a1a7bdd84, type: 3}
       propertyPath: m_Name
       value: RoundOptions
@@ -677,10 +673,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9062426023657764276, guid: aa639f4ee763b624f973585a1a7bdd84, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1932975088}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa639f4ee763b624f973585a1a7bdd84, type: 3}
 --- !u!224 &1932975085 stripped
 RectTransform:
@@ -698,33 +691,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1932975087 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9062426023657764276, guid: aa639f4ee763b624f973585a1a7bdd84, type: 3}
-  m_PrefabInstance: {fileID: 1932975084}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1932975088
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1932975087}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4fbd5b58aa36adb4db14eac8c2ec12b4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1932975089 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1577413506132368164, guid: aa639f4ee763b624f973585a1a7bdd84, type: 3}
