@@ -268,6 +268,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            GameManager.Instance.TogglePauseGame();
+        }
+    }
+
     public Vector3 GetTopmostVertex()
     {
         //Get top most vertex of each sprite to dynamically place number icon

@@ -222,4 +222,18 @@ public class GameManager : MonoBehaviour
         Debug.Log("Quit Game");
         Application.Quit();
     }
+
+    public void TogglePauseGame()
+    {
+        if (Time.timeScale == 1f)
+        {
+            Time.timeScale = 0f;
+            // Show pause menu UI
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            // Hide pause menu UI
+        }
+    }
 }
