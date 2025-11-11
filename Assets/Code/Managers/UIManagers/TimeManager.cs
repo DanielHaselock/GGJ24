@@ -109,6 +109,7 @@ public class TimeManager : MonoBehaviour
 
     public void TimerEnded()
     {
+        FindFirstObjectByType<BaseLevelManager>().ToggleDeathZone();
         // set animation trigger
         if (clockAnimator)
         {

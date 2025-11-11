@@ -6,6 +6,8 @@ public class BaseLevelManager : MonoBehaviour
     [SerializeField] private GameObject[] spawnPoints;
     [SerializeField] private int roundEarlyEndWaitTime = 2;
 
+    protected DeathZone deathZone;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
     {
@@ -27,6 +29,12 @@ public class BaseLevelManager : MonoBehaviour
             PlayerManager.Instance.players[i].transform.position = spawnPoints[i].transform.position;
             PlayerManager.Instance.players[i].SetVisible(true);
         }
+
+        deathZone = FindAnyObjectByType<Grid>().gameObject.transform.Find("DeathZone").gameObject.GetComponent<DeathZone>();
+        if(deathZone == null)
+        {
+            Debug.LogError("deathZone was not found");
+        }
     }
 
     public Vector3 getSpawnPointForPlayer(GameObject player)
@@ -44,6 +52,7 @@ public class BaseLevelManager : MonoBehaviour
 
     public virtual void OnRoundEnd() //called when round ends from timemanager
     {
+        deathZone.ToggleDeathZone(false);
         GameManager.Instance.EndRoundCheck();
     }
 
@@ -54,7 +63,13 @@ public class BaseLevelManager : MonoBehaviour
 
     private IEnumerator roundEarlyEndWait()
     {
+        deathZone.ToggleDeathZone(false);
         yield return new WaitForSeconds(roundEarlyEndWaitTime);
         OnRoundEnd();
+    }
+
+    public void ToggleDeathZone()
+    {
+        deathZone.ToggleDeathZone(false);
     }
 }

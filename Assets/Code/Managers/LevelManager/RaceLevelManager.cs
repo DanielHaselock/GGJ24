@@ -27,13 +27,14 @@ public class RaceLevelManager : BaseLevelManager
         if (players.Count == PlayerManager.Instance.players.Count)
         {
             addScores();
-            this.OnRoundEndEarly();
+            OnRoundEndEarly();
         }
     }
 
     public override void OnRoundEnd()
     {
         addScores();
+        deathZone.ToggleDeathZone(false);
         GameManager.Instance.EndRoundCheck();
     }
 
