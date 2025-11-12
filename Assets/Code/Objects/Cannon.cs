@@ -20,10 +20,15 @@ public class Cannon : MonoBehaviour
     [SerializeField] public GameObject SpawnedObject;
     [SerializeField] private GameObject CannonPuff;
 
+    [SerializeField] private AudioClip canonAudioClip;
+
+    private AudioSource audioSource; 
+
     void Start()
     {
         initial_position = transform.position;
         m_animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -41,7 +46,7 @@ public class Cannon : MonoBehaviour
     }
 
    IEnumerator ShootObject()
-   {
+    {
         Timer -= Time.deltaTime;
         while (Timer <= 0)
         {
@@ -49,6 +54,7 @@ public class Cannon : MonoBehaviour
             Timer = SpawnRate;
             if (start_shooting == true)
             {
+                
                 // spawn object
                 GameObject instance = Instantiate(SpawnedObject, SpawnPoint.transform.position, Quaternion.identity);
                 // get the rigidbody of the object and apply a force
@@ -58,6 +64,7 @@ public class Cannon : MonoBehaviour
                     rigidbody.AddForce(SpawnPoint.transform.up * Random.Range(forceMagnitudeLower, forceMagnitudeUpper), ForceMode2D.Impulse);
                 }
                 // play shooting animations
+                audioSource.PlayOneShot(canonAudioClip);
                 m_animator.SetTrigger("shoot");
                 CannonPuff.GetComponent<Animator>().Play("cannon_puff");
             }

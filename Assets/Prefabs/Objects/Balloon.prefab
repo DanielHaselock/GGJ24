@@ -57,6 +57,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -78,6 +80,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
@@ -177,7 +180,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 970466ad4e2fa1c4d9604ede0cb5265d, type: 3}
   m_spriteRenderer: {fileID: 4908389568584211482}
   confetti: {fileID: 4791644950911959813, guid: 7cb2adfbae1ea454383a44a4499c7834, type: 3}
-  popSound: {fileID: 8300000, guid: c6f7726ee0d8740459c624a50d796e68, type: 3}
+  popSound: {fileID: 8300000, guid: 7c6de34bf77c59d77af4dd498901922d, type: 3}
 --- !u!50 &8469676173690398383
 Rigidbody2D:
   serializedVersion: 5

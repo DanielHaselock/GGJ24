@@ -45,8 +45,7 @@ public class CoinData : MonoBehaviour
 
     IEnumerator FinishCollect()
     {
-        yield return new WaitUntil(() => !audioSource.isPlaying);
-        yield return new WaitUntil(() => m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f && !m_animator.IsInTransition(0));
+        yield return new WaitUntil(() => !audioSource.isPlaying && m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f && !m_animator.IsInTransition(0));
         gameObject.SetActive(false);
     }
 
