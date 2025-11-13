@@ -35,6 +35,10 @@ public class RaceLevelManager : BaseLevelManager
     {
         addScores();
         deathZone.ToggleDeathZone(false);
+        if(players.Count >= 1 && !audienceCheer)
+        {
+            audioSource.PlayOneShot(audienceCheer);
+        }
         GameManager.Instance.EndRoundCheck();
     }
 

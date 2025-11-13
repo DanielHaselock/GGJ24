@@ -8,6 +8,12 @@ public class BaseLevelManager : MonoBehaviour
 
     protected DeathZone deathZone;
 
+    public AudioSource audioSource;
+
+    public AudioClip audienceCheer;
+
+    public bool audienceCheered = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
     {
@@ -35,6 +41,8 @@ public class BaseLevelManager : MonoBehaviour
         {
             Debug.LogError("deathZone was not found");
         }
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     public Vector3 getSpawnPointForPlayer(GameObject player)
@@ -63,6 +71,11 @@ public class BaseLevelManager : MonoBehaviour
 
     private IEnumerator roundEarlyEndWait()
     {
+        if (!audienceCheered)
+        {
+            audioSource.PlayOneShot(audienceCheer);
+            audienceCheered = true;
+        }
         deathZone.ToggleDeathZone(false);
         yield return new WaitForSeconds(roundEarlyEndWaitTime);
         OnRoundEnd();
