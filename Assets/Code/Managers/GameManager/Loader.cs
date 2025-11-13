@@ -64,6 +64,7 @@ public class Loader : MonoBehaviour
             {
                 LeftCurtain.GetComponent<Animator>().SetTrigger("close");
                 RightCurtain.GetComponent<Animator>().SetTrigger("close");
+                RightCurtain.GetComponent<AudioSource>().Play();
             }
             yield return new WaitForSeconds(closedDelay);
             yield return new WaitForSeconds(openDelay);
@@ -104,7 +105,9 @@ public class Loader : MonoBehaviour
         {
             LeftCurtain.GetComponent<Animator>().SetTrigger("open");
             RightCurtain.GetComponent<Animator>().SetTrigger("open");
-        }
+            LeftCurtain.GetComponent<AudioSource>().Play();
+            RightCurtain.GetComponent<AudioSource>().Play();       
+            }
     }
 
     public void InitializeLobbyboard()
