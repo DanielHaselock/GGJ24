@@ -43,11 +43,11 @@ public class SurviveLevelManager : BaseLevelManager
 
     public override void OnRoundEnd()
     {
+        deathZone.ToggleDeathZone(false);
         foreach (PlayerController player in PlayerManager.Instance.players)
         {
             player.gameObject.GetComponent<PlayerRespawn>().setRespawn(true);
         }
-
         addPlayersScores();
         GameManager.Instance.EndRoundCheck();
     }

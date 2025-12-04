@@ -21,7 +21,7 @@ public class CoinLevelManager : BaseLevelManager
             Debug.Log("All coins collected!");
 
             PlayerManager.Instance.checkGameStateAndPlayers();
-            this.OnRoundEndEarly();
+            OnRoundEndEarly();
         }
     }
 }
