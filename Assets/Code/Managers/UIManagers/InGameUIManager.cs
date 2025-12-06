@@ -50,10 +50,10 @@ public class InGameUIManager : MonoBehaviour
             Debug.LogWarning("Player Indicators are not assigned in the inspector.");
         }
 
-        pauseMenu.SetActive(false);
+        HidePauseMenu();
     }
 
-    public void ShowPauseMenu(int PlayerIndex, string PlayerName)
+    public void ShowPauseMenu(int PlayerIndex = 0, string PlayerName = "Unknown")
     {
         if (pauseMenu != null)
         {
@@ -65,7 +65,7 @@ public class InGameUIManager : MonoBehaviour
         }
     }
 
-    public void HidePauseMenu(int PlayerIndex, string PlayerName)
+    public void HidePauseMenu(int PlayerIndex = 0, string PlayerName = "Unknown")
     {
         if (pauseMenu != null)
         {
@@ -81,8 +81,8 @@ public class InGameUIManager : MonoBehaviour
 
     public void OnQuitToMainMenuButtonPressed()
     {
-        Time.timeScale = 1f; // Ensure time scale is reset
-        GameManager.Instance.GoToCredits();
+        GameManager.Instance.TogglePauseGame();
+        GameManager.Instance.GoToMainMenu();
     }
     #endregion
 }

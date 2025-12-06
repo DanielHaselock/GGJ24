@@ -229,11 +229,12 @@ public class GameManager : MonoBehaviour
     public void TogglePauseGame(int PlayerIndex = 0, string PlayerName = "Unknown")
     {
         // Only allow pausing in certain game states
-        if (currentGameState != GameStates.CoinLevel &&
+        if (currentGameState != GameStates.Pause &&
+            currentGameState != GameStates.CoinLevel &&
             currentGameState != GameStates.RaceLevel &&
             currentGameState != GameStates.SurviveLevel)
         {
-            Debug.Log("Cannot pause in the current game state: " + currentGameState);
+            Debug.Log("Cannot toggle pause in the current game state: " + currentGameState);
             return;
         }
 
@@ -242,7 +243,10 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
             currentGameState = GameStates.Pause;
             // Show pause menu UI
-            InGameUIManager.Instance.ShowPauseMenu(PlayerIndex, PlayerName);
+            if (InGameUIManager.Instance != null)
+            {
+                InGameUIManager.Instance.ShowPauseMenu(PlayerIndex, PlayerName);
+            } 
         }
         else
         {
@@ -251,7 +255,10 @@ public class GameManager : MonoBehaviour
             // nextGameState holds the correct state, and has not been updated yet
             currentGameState = nextGameState;
             // Hide pause menu UI
-            InGameUIManager.Instance.HidePauseMenu(PlayerIndex, PlayerName);
+            if (InGameUIManager.Instance != null)
+            {
+                InGameUIManager.Instance.HidePauseMenu(PlayerIndex, PlayerName);
+            }
         }
     }
 }
