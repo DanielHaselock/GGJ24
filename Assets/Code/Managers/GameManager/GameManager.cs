@@ -6,6 +6,8 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+
+[RequireComponent(typeof(Loader), typeof(MusicManager))]
 /// <summary>
 /// GameManagerRemake is a singleton MonoBehaviour that manages game state transitions.
 /// - Ensures only one instance exists (singleton pattern).
@@ -45,6 +47,7 @@ public class GameManager : MonoBehaviour
         RaceLevel,
         Credits,
         GameOver,
+        Pause,
     }
 
     public GameStates CurrentGameState
@@ -223,17 +226,32 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void TogglePauseGame()
+    public void TogglePauseGame(int PlayerIndex = 0, string PlayerName = "Unknown")
     {
+        // Only allow pausing in certain game states
+        if (currentGameState != GameStates.CoinLevel &&
+            currentGameState != GameStates.RaceLevel &&
+            currentGameState != GameStates.SurviveLevel)
+        {
+            Debug.Log("Cannot pause in the current game state: " + currentGameState);
+            return;
+        }
+
         if (Time.timeScale == 1f)
         {
             Time.timeScale = 0f;
+            currentGameState = GameStates.Pause;
             // Show pause menu UI
+            InGameUIManager.Instance.ShowPauseMenu(PlayerIndex, PlayerName);
         }
         else
         {
             Time.timeScale = 1f;
+            // ASSUME: when we unpause, we are back to the same scene. 
+            // nextGameState holds the correct state, and has not been updated yet
+            currentGameState = nextGameState;
             // Hide pause menu UI
+            InGameUIManager.Instance.HidePauseMenu(PlayerIndex, PlayerName);
         }
     }
 }

@@ -272,7 +272,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.started)
         {
-            GameManager.Instance.TogglePauseGame();
+            GameManager.Instance.TogglePauseGame(PlayerIndex, PlayerName);
         }
     }
 
