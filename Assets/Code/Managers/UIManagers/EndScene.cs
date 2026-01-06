@@ -91,7 +91,7 @@ public class EndScene : MonoBehaviour
             //Display the final score of the player
             Transform playerScoreTransform = podium.transform.Find("PlayerScore");
             GameObject playerScore = playerScoreTransform?.gameObject;
-            if (playerScore != null) playerScore.GetComponent<TextMeshProUGUI>().text = "$" + PlayerManager.Instance.players[i].score;
+            if (playerScore != null) playerScore.GetComponent<TextMeshProUGUI>().text = "$" + PlayerManager.Instance.players[i].Score;
             else Debug.LogError("Cannot find PlayerScore");
         }
         

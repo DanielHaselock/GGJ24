@@ -66,8 +66,8 @@ public class Scoreboard : MonoBehaviour
             GameObject score = scoreTransform?.gameObject;
             if (score != null)
             {
-                Debug.Log("Score: " + PlayerManager.Instance.players[i].score);
-                score.GetComponent<TextMeshProUGUI>().text = "$"+PlayerManager.Instance.players[i].score.ToString();
+                Debug.Log("Score: " + PlayerManager.Instance.players[i].Score);
+                score.GetComponent<TextMeshProUGUI>().text = "$"+PlayerManager.Instance.players[i].Score.ToString();
             }
             else
             {

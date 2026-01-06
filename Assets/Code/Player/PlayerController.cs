@@ -11,29 +11,36 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameObject _hurtEffect;
     [SerializeField] private GameObject _hurtTrail;
+
+    [Header("Movement Parameters")]
+    [SerializeField] private float m_jumpBufferTime;
+    [SerializeField] private float m_coyoteTime;
     [SerializeField] private int m_maxSpeed, m_acceleration, m_deceleration, m_jumpForce;
     [SerializeField] private float m_lowJumpModifier, m_fallModifier;
+
+    [Header("Layers Settings")]
     [SerializeField] private LayerMask deathContactLayers;
     [SerializeField] private string baseLayer;
     [SerializeField] private string noCollideLayer;
+
+    [Header("Player Number Icon")]
+    public GameObject playerNumIcon;
+
+    [Header("DEBUG: No assignments")]
+    public bool m_isGrounded;
+    public bool is_falling = false;
+    public float jumpBufferTimeCounter;
+    public float coyoteTimeCounter;
+
+    public int PlayerIndex { get; private set; }
+    public string PlayerName { get; set; }
+    public int Score { get; private set; }
 
     private Animator m_animator;
     private BoxCollider2D m_collider;
     private Rigidbody2D m_rb;
     private float m_jumpInput, m_xAxisInput, m_yAxisInput;
-
-    public bool m_isGrounded;
-    public bool is_falling = false;
-
-    public int PlayerIndex { get; private set; }
-    public string PlayerName { get; set; }
-
-    public int score { get; private set; }
-
-    [SerializeField] private GameObject playerNumIcon;
-
     private PlayerInput _playerInput;
-    //private PlayerCustomization _customization; not used in any meaningful way
     private bool _isDead, _isFinished = false;
 
     public void SetPlayerIndex(int index)
@@ -260,11 +267,20 @@ public class PlayerController : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context)
     {
         m_jumpInput = context.ReadValue<float>();
-        if (m_isGrounded)
+        // Jump buffer
+        jumpBufferTimeCounter = m_jumpBufferTime;
+
+        // has coyote time or is grounded
+        if (m_isGrounded && jumpBufferTimeCounter >= 0f || coyoteTimeCounter > 0f)
         {
             m_rb.gravityScale = 1.0f;
 
             if (m_jumpInput != 0) Jump();
+
+            // Make sure jump buffer is only used once
+            jumpBufferTimeCounter = 0;
+            // make sure coyote time can only be used once
+            coyoteTimeCounter = 0;
         }
     }
 
@@ -321,6 +337,14 @@ public class PlayerController : MonoBehaviour
         Vector3 playerNumIconPos = playerNumIcon.transform.position;
         playerNumIconPos.y = GetTopmostVertex().y;
         playerNumIcon.transform.position = playerNumIconPos;
+
+        MovementCounterTickdowns();
+        // Jump when on the ground and jump was buffered
+        if (m_isGrounded && jumpBufferTimeCounter > 0f)
+        {
+            Jump();
+            jumpBufferTimeCounter = 0;  // Reset jump buffer after jumping
+        }
     }
 
 
@@ -424,7 +448,7 @@ public class PlayerController : MonoBehaviour
         /*int scoreTest = Random.Range(0,999);//Testing
         this.score += scoreTest;*/
 
-        this.score += score;
+        this.Score += score;
     }
 
     public void cheer()
@@ -450,5 +474,22 @@ public class PlayerController : MonoBehaviour
         this.gameObject.layer = LayerMask.NameToLayer(noCollideLayer);
         m_animator.SetTrigger("Angry");
         m_rb.linearVelocity = new Vector2(0, 0); // stop player
+    }
+
+    private void MovementCounterTickdowns()
+    {
+        // Movement counter tickdowns
+        if (m_isGrounded)
+        {
+            coyoteTimeCounter = m_coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.fixedDeltaTime;
+        }
+        if (jumpBufferTimeCounter > 0)
+        {
+            jumpBufferTimeCounter -= Time.fixedDeltaTime;
+        }
     }
 }

@@ -422,7 +422,7 @@ public class PlayerManager : MonoBehaviour
         players.Sort((a, b) =>
         {
             // First compare scores (descending)
-            int scoreComparison = b.score.CompareTo(a.score);
+            int scoreComparison = b.Score.CompareTo(a.Score);
 
             if (scoreComparison != 0)
                 return scoreComparison;

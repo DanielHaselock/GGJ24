@@ -5162,6 +5162,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hurtEffect: {fileID: 3674065160819146746}
   _hurtTrail: {fileID: 1532122645710759595}
+  m_jumpBufferTime: 0
+  m_coyoteTime: 0
   m_maxSpeed: 7
   m_acceleration: 50
   m_deceleration: 15
@@ -5173,9 +5175,11 @@ MonoBehaviour:
     m_Bits: 64
   baseLayer: Player_normal
   noCollideLayer: Player_noCollide
+  playerNumIcon: {fileID: 864085739943857344}
   m_isGrounded: 0
   is_falling: 0
-  playerNumIcon: {fileID: 0}
+  _jumpBufferTimeCounter: 0
+  m_coyoteTimeCounter: 0
 --- !u!114 &2257231119019016172
 MonoBehaviour:
   m_ObjectHideFlags: 0
