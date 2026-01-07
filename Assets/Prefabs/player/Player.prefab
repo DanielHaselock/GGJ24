@@ -5066,7 +5066,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 0.05
   m_AngularDamping: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -5162,14 +5162,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hurtEffect: {fileID: 3674065160819146746}
   _hurtTrail: {fileID: 1532122645710759595}
-  m_jumpBufferTime: 0
-  m_coyoteTime: 0
+  m_jumpBufferTime: 0.15
+  m_coyoteTime: 0.2
   m_maxSpeed: 7
   m_acceleration: 50
   m_deceleration: 15
   m_jumpForce: 7
   m_lowJumpModifier: 1
-  m_fallModifier: 1
+  m_fallModifier: 2
+  visualizeRaycasts: 1
+  m_jumpRaycastLength: 0.1
   deathContactLayers:
     serializedVersion: 2
     m_Bits: 64
@@ -5178,8 +5180,13 @@ MonoBehaviour:
   playerNumIcon: {fileID: 864085739943857344}
   m_isGrounded: 0
   is_falling: 0
-  _jumpBufferTimeCounter: 0
-  m_coyoteTimeCounter: 0
+  jumpBufferTimeCounter: 0
+  coyoteTimeCounter: 0
+  m_jumpRaycastOrigin:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &2257231119019016172
 MonoBehaviour:
   m_ObjectHideFlags: 0

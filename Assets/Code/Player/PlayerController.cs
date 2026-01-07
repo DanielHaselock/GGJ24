@@ -1,12 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.TextCore.Text;
 
-
+[RequireComponent(typeof(Rigidbody2D), typeof(BoxCollider2D), typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameObject _hurtEffect;
@@ -17,6 +12,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float m_coyoteTime;
     [SerializeField] private int m_maxSpeed, m_acceleration, m_deceleration, m_jumpForce;
     [SerializeField] private float m_lowJumpModifier, m_fallModifier;
+    [SerializeField] private bool visualizeRaycasts = false;
+    [SerializeField] private float m_jumpRaycastLength = 0.5f;
 
     [Header("Layers Settings")]
     [SerializeField] private LayerMask deathContactLayers;
@@ -31,6 +28,7 @@ public class PlayerController : MonoBehaviour
     public bool is_falling = false;
     public float jumpBufferTimeCounter;
     public float coyoteTimeCounter;
+    public Transform[] m_jumpRaycastOrigin;
 
     public int PlayerIndex { get; private set; }
     public string PlayerName { get; set; }
@@ -62,10 +60,12 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        m_animator = GetComponent<Animator>();
-        m_collider = GetComponent<BoxCollider2D>();
         m_rb = GetComponent<Rigidbody2D>();
+        m_collider = GetComponent<BoxCollider2D>();
+        m_animator = GetComponent<Animator>();
+        
         setNumbIcon();
+        SpawnRaycastAtCollider();
     }
 
     public void setNumbIcon()
@@ -92,6 +92,66 @@ public class PlayerController : MonoBehaviour
             }
         }
         else Debug.LogError("Could not find PlayerNumIcon");
+    }
+
+    [ContextMenu("Spawn Raycast at Player Collider")]
+    private void SpawnRaycastAtCollider()
+    {
+        if (!m_collider)
+        {
+            m_collider = GetComponent<BoxCollider2D>();
+        }
+
+        // Delete existing raycast origins if any
+        Transform raycastOriginsTransform = transform.Find("JumpRaycastOrigins");
+        if (raycastOriginsTransform != null)
+        {
+            DestroyImmediate(raycastOriginsTransform.gameObject);
+        }
+
+        GameObject newRaycastOrigins = new("JumpRaycastOrigins");
+        newRaycastOrigins.transform.parent = transform;
+
+        // Create 4 raycast origins at the top of the player's collider
+        m_jumpRaycastOrigin = new Transform[4];
+        Vector3 offset = new(m_collider.offset.x, m_collider.offset.y);
+        m_jumpRaycastOrigin[0] = new GameObject("LeftJumpRaycastOrigin").transform;
+        m_jumpRaycastOrigin[0].position = transform.position - new Vector3(m_collider.size.x / 2.0f, -m_collider.size.y / 1.9f) + offset;
+        m_jumpRaycastOrigin[1] = new GameObject("MiddleLeftJumpRaycastOrigin").transform;
+        m_jumpRaycastOrigin[1].position = transform.position - new Vector3(m_collider.size.x / 4.0f, -m_collider.size.y / 1.9f) + offset;
+        m_jumpRaycastOrigin[2] = new GameObject("MiddleRightJumpRaycastOrigin").transform;
+        m_jumpRaycastOrigin[2].position = transform.position + new Vector3(m_collider.size.x / 4.0f, m_collider.size.y / 1.9f) + offset;
+        m_jumpRaycastOrigin[3] = new GameObject("RightJumpRaycastOrigin").transform;
+        m_jumpRaycastOrigin[3].position = transform.position + new Vector3(m_collider.size.x / 2.0f, m_collider.size.y / 1.9f) + offset;
+
+        // Set the raycast origins as children of the JumpRaycastOrigins object
+        foreach (Transform origin in m_jumpRaycastOrigin)
+        {
+            origin.parent = newRaycastOrigins.transform;
+        }
+
+        // Visualize raycasts in editor for testing
+        for (int i = 0; i < m_jumpRaycastOrigin.Length; i++)
+        {
+            Debug.DrawRay(m_jumpRaycastOrigin[i].position, Vector3.up * m_jumpRaycastLength, Color.green, 5f);
+        }
+    }
+
+    [ContextMenu("Set Raycast from Children")]
+    private void SetRaycastFromChildren()
+    {
+        Transform raycastOriginsTransform = transform.Find("JumpRaycastOrigins");
+        if (raycastOriginsTransform != null)
+        {
+            m_jumpRaycastOrigin = new Transform[raycastOriginsTransform.childCount];
+            for (int i = 0; i < raycastOriginsTransform.childCount; i++)
+            {
+                m_jumpRaycastOrigin[i] = raycastOriginsTransform.GetChild(i);
+                // Visualize raycasts in editor for testing
+                Debug.DrawRay(m_jumpRaycastOrigin[i].position, Vector3.up * m_jumpRaycastLength, Color.green, 5f);
+            }
+        }
+        else Debug.LogError("Could not find JumpRaycastOrigins");
     }
 
     public void switchActionMap()
@@ -267,19 +327,24 @@ public class PlayerController : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context)
     {
         m_jumpInput = context.ReadValue<float>();
+
         // Jump buffer
         jumpBufferTimeCounter = m_jumpBufferTime;
 
         // has coyote time or is grounded
-        if (m_isGrounded && jumpBufferTimeCounter >= 0f || coyoteTimeCounter > 0f)
+        if (m_isGrounded || coyoteTimeCounter > 0f)
         {
             m_rb.gravityScale = 1.0f;
 
-            if (m_jumpInput != 0) Jump();
+            if (m_jumpInput != 0) 
+            {
+                CheckJumpRaycasts();
+                Jump();
+            }
 
-            // Make sure jump buffer is only used once
+            // Make sure jump buffer is only set when falling
             jumpBufferTimeCounter = 0;
-            // make sure coyote time can only be used once
+            // Make sure coyote time can only be used once
             coyoteTimeCounter = 0;
         }
     }
@@ -311,6 +376,8 @@ public class PlayerController : MonoBehaviour
         return topVertex;
     }
 
+    #region FixedUpdate
+
     private void FixedUpdate()
     {
         if (_isDead || _isFinished)
@@ -339,13 +406,19 @@ public class PlayerController : MonoBehaviour
         playerNumIcon.transform.position = playerNumIconPos;
 
         MovementCounterTickdowns();
-        // Jump when on the ground and jump was buffered
-        if (m_isGrounded && jumpBufferTimeCounter > 0f)
+        CheckJumpBuffer();
+
+        // Visualize jump raycasts
+        if (visualizeRaycasts)
         {
-            Jump();
-            jumpBufferTimeCounter = 0;  // Reset jump buffer after jumping
+            foreach (Transform origin in m_jumpRaycastOrigin)
+            {
+                Debug.DrawRay(origin.position, Vector3.up * m_jumpRaycastLength, Color.green);
+            }
         }
     }
+
+    #endregion
 
 
 
@@ -387,7 +460,7 @@ public class PlayerController : MonoBehaviour
     {
         // Make three raycasts for more accuracy
         float epsilon = 0.0625f;
-        Vector3 offset = new Vector3(GetComponent<BoxCollider2D>().offset.x, GetComponent<BoxCollider2D>().offset.y);
+        Vector3 offset = new(m_collider.offset.x, m_collider.offset.y);
         Ray ray = new(transform.position - new Vector3(0, m_collider.size.y / 2.0f) + offset, Vector3.down);
         Debug.DrawRay(ray.origin, Vector2.down, Color.yellow);
         RaycastHit2D[] isMiddleTouching = Physics2D.RaycastAll(ray.origin, ray.direction, epsilon);
@@ -490,6 +563,45 @@ public class PlayerController : MonoBehaviour
         if (jumpBufferTimeCounter > 0)
         {
             jumpBufferTimeCounter -= Time.fixedDeltaTime;
+        }
+    }
+
+    private void CheckJumpBuffer()
+    {
+        // Jump when on the ground and jump was buffered
+        if (m_isGrounded && jumpBufferTimeCounter > 0f)
+        {
+            m_rb.gravityScale = 1.0f;
+            Jump();
+            jumpBufferTimeCounter = 0;  // Reset jump buffer after jumping
+        }
+    }
+
+    private void CheckJumpRaycasts()
+    {
+        // Don't correct jump if there aren't 4 raycasts assigned
+        if (m_jumpRaycastOrigin.Length < 4)
+        {
+            return;
+        }
+
+        // Check each jump raycasts to see if all of them hit something
+        RaycastHit2D leftHit = Physics2D.Raycast(m_jumpRaycastOrigin[0].position, Vector3.up, m_jumpRaycastLength);
+        RaycastHit2D middleLeftHit = Physics2D.Raycast(m_jumpRaycastOrigin[1].position, Vector3.up, m_jumpRaycastLength);
+        RaycastHit2D middleRightHit = Physics2D.Raycast(m_jumpRaycastOrigin[2].position, Vector3.up, m_jumpRaycastLength);
+        RaycastHit2D rightHit = Physics2D.Raycast(m_jumpRaycastOrigin[3].position, Vector3.up, m_jumpRaycastLength);
+        float correctJumpDistance = 0.15f;
+        
+        // Correct jump
+        if (leftHit.collider != null && middleLeftHit.collider == null
+            && middleRightHit.collider == null && rightHit.collider == null)
+        {
+            m_rb.position += new Vector2(correctJumpDistance, 0); //nudge player to avoid getting stuck
+        }
+        else if (rightHit.collider != null && middleRightHit.collider == null
+            && middleLeftHit.collider == null && leftHit.collider == null)
+        {
+            m_rb.position += new Vector2(-correctJumpDistance, 0); //nudge player to avoid getting stuck
         }
     }
 }
