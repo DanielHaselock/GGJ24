@@ -110,6 +110,12 @@ public class TimeManager : MonoBehaviour
     public void TimerEnded()
     {
         FindFirstObjectByType<BaseLevelManager>().ToggleDeathZone();
+        if (!FindAnyObjectByType<BaseLevelManager>().audienceCheered)
+        {
+            FindAnyObjectByType<BaseLevelManager>().audioSource.PlayOneShot(FindAnyObjectByType<BaseLevelManager>()
+            .audienceCheer);
+            FindAnyObjectByType<BaseLevelManager>().audienceCheered = true;
+        }
         // set animation trigger
         if (clockAnimator)
         {

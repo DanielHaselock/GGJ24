@@ -44,6 +44,10 @@ public class SurviveLevelManager : BaseLevelManager
     public override void OnRoundEnd()
     {
         deathZone.ToggleDeathZone(false);
+        if(players.Count < PlayerManager.Instance.players.Count && !audienceCheered)
+        {
+            audioSource.PlayOneShot(audienceCheer);
+        }
         foreach (PlayerController player in PlayerManager.Instance.players)
         {
             player.gameObject.GetComponent<PlayerRespawn>().setRespawn(true);
