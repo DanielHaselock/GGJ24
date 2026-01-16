@@ -141,9 +141,9 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 16
-      alignment: 0
+        width: 87
+        height: 25
+      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -161,12 +161,12 @@ TextureImporter:
       name: version_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 87
         y: 0
-        width: 48
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 87
+        height: 25
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -191,7 +191,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":1.0},"gridSpriteSize":{"x":87.0,"y":25.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       version_0: 1746474956
       version_1: -2040712652
