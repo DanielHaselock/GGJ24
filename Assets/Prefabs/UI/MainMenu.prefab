@@ -266,7 +266,7 @@ MonoBehaviour:
   GameTitle: {fileID: 9118784895439754232}
   Buttons: {fileID: 4617769319862557695}
   Highlight: {fileID: 2100000, guid: 0c39fa668d738a24997363a31e24f093, type: 2}
-  DefaultMaterial: {fileID: 0}
+  DefaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   prompt: {fileID: 5026853294842814599}
   currentMenuState: 0
 --- !u!1 &1078908843264821516
@@ -1491,8 +1491,8 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4750397540116793495}
   m_SourcePrefab: {fileID: 100100000, guid: 4813aba6b0b43f74f99d0f682aeaa998, type: 3}
---- !u!4 &1848060031015225346 stripped
-Transform:
+--- !u!224 &1848060031015225346 stripped
+RectTransform:
   m_CorrespondingSourceObject: {fileID: 7666407352953033084, guid: 4813aba6b0b43f74f99d0f682aeaa998, type: 3}
   m_PrefabInstance: {fileID: 8340996432240040318}
   m_PrefabAsset: {fileID: 0}
