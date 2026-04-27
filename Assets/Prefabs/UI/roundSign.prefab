@@ -227,7 +227,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 6.25}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 7, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1655831378974564165
 Canvas:
@@ -261,7 +261,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4144129501572551667}
-  - component: {fileID: 1513911347811650277}
   - component: {fileID: 2354901616594430163}
   m_Layer: 5
   m_Name: RoundImage
@@ -285,14 +284,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5681306816799195596}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!222 &1513911347811650277
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6066128680657891681}
-  m_CullTransparentMesh: 1
 --- !u!212 &2354901616594430163
 SpriteRenderer:
   m_ObjectHideFlags: 0

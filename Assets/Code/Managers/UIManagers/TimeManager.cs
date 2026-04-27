@@ -13,17 +13,6 @@ public class TimeManager : MonoBehaviour
         Start = 4
     }
 
-    public enum ClockState
-    {
-        Calm,
-        Medium,
-        Red,
-        Start
-    }
-
-    ClockState clockstate;
-    // Start is called before the first frame update
-
     [SerializeField] private float Timer = -1f;
 
     [SerializeField]
@@ -37,7 +26,8 @@ public class TimeManager : MonoBehaviour
     [SerializeField]
     private GameObject Clock;
 
-    private Slider clockSlider;
+    [SerializeField]
+    private GameObject clockSlider;
 
     public TimeState state;
 
@@ -46,19 +36,12 @@ public class TimeManager : MonoBehaviour
     void Start()
     {
         Clock = GameObject.FindGameObjectWithTag("Clock");
-        clockstate = ClockState.Start;
         state = TimeState.Start;
 
         clockAnimator = GetComponentInChildren<Animator>();
         if (!clockAnimator)
         {
             Debug.LogError("Clock Animator not found!");
-            return;
-        }
-        clockSlider = Clock.GetComponentInChildren<Slider>();
-        if (!clockSlider)
-        {
-            Debug.LogError("Clock Slider not found!");
             return;
         }
 
@@ -133,7 +116,7 @@ public class TimeManager : MonoBehaviour
             // Change the silder fill to transparent
             if (clockSlider)
             {
-                clockSlider.fillRect.GetComponent<Image>().color = new Color(0,0,0,0);
+                clockSlider.SetActive(false);
             }
         }
         else if (state == TimeState.Score)
@@ -184,7 +167,7 @@ public class TimeManager : MonoBehaviour
         float percentage = CalculatePercentage();
 
         clockAnimator.speed = 2f - (percentage / 100f);
-        
-        clockSlider.value = percentage/100f; // Assuming the slider value is between 0 and 1
+
+        clockSlider.transform.localScale = new Vector3(percentage/100f, 1f, 1f);
     }
 }

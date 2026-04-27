@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement Parameters")]
     [SerializeField] private float m_jumpBufferTime;
     [SerializeField] private float m_coyoteTime;
-    [SerializeField] private int m_maxSpeed, m_acceleration, m_deceleration, m_jumpForce;
+    [SerializeField] private float m_maxSpeed, m_acceleration, m_deceleration, m_jumpForce, m_initialGravity;
     [SerializeField] private float m_lowJumpModifier, m_fallModifier;
     [SerializeField] private bool visualizeRaycasts = false;
     [SerializeField] private float m_jumpRaycastLength = 0.5f;
@@ -267,15 +267,6 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Player is canceling");
         if (GameManager.Instance.CurrentGameState == GameManager.GameStates.RoundSelect)
         {
-            //if (context.started) --> done now in seperate script = LobbyLeave.cs
-            //{
-            //    // If in the lobby, reset the start bar
-            //    LobbyUIManager lobbyUIManager = FindAnyObjectByType<LobbyUIManager>();
-            //    if (lobbyUIManager != null)
-            //    {
-            //        lobbyUIManager.FillCancelBar(this);
-            //    }
-            //}
             if (context.started)
             {
                 if(PlayerManager.Instance.players.Count > 1)
@@ -295,9 +286,6 @@ public class PlayerController : MonoBehaviour
     {
         PlayerIndex = index;
         PlayerName = name;
-
-        // Randomize visual customization
-        //_customization?.Randomize();
     }
 
     public void SetVisible(bool visible)
@@ -334,7 +322,7 @@ public class PlayerController : MonoBehaviour
         // has coyote time or is grounded
         if (m_isGrounded || coyoteTimeCounter > 0f)
         {
-            m_rb.gravityScale = 1.0f;
+            m_rb.gravityScale = m_initialGravity;
 
             if (m_jumpInput != 0) 
             {
@@ -446,7 +434,7 @@ public class PlayerController : MonoBehaviour
     private void ComputeYVelocity()
     {
         // Up / Down acceleration
-        if (m_rb.linearVelocity.y > 0 && m_jumpInput == 0 && m_rb.gravityScale <= 1)
+        if (m_rb.linearVelocity.y > 0 && m_jumpInput == 0 && m_rb.gravityScale <= m_initialGravity)
         {
             m_rb.gravityScale += m_lowJumpModifier;
         }
@@ -518,9 +506,6 @@ public class PlayerController : MonoBehaviour
 
     public void AddScore(int score)
     {
-        /*int scoreTest = Random.Range(0,999);//Testing
-        this.score += scoreTest;*/
-
         this.Score += score;
     }
 
@@ -571,7 +556,7 @@ public class PlayerController : MonoBehaviour
         // Jump when on the ground and jump was buffered
         if (m_isGrounded && jumpBufferTimeCounter > 0f)
         {
-            m_rb.gravityScale = 1.0f;
+            m_rb.gravityScale = m_initialGravity;
             Jump();
             jumpBufferTimeCounter = 0;  // Reset jump buffer after jumping
         }
