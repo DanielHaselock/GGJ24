@@ -46,7 +46,7 @@ public class Scoreboard : MonoBehaviour
             if (scoreBoardImage != null)
             {
                 Debug.Log("Player " + PlayerManager.Instance.players[i].PlayerIndex + 1);
-                scoreBoardImage.GetComponent<Image>().sprite = playerScoreBoards[PlayerManager.Instance.players[i].PlayerIndex];
+                scoreBoardImage.GetComponent<SpriteRenderer>().sprite = playerScoreBoards[PlayerManager.Instance.players[i].PlayerIndex];
             }
             //Show the players name.
             Transform nameTransform = playerScorePanel.transform.Find("PlayerName");
