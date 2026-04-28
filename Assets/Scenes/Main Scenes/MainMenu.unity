@@ -5793,7 +5793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2854218134773533737, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
       propertyPath: Levels.Array.size
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2854218134773533737, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
       propertyPath: 'Levels.Array.data[0]'
@@ -5801,23 +5801,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2854218134773533737, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
       propertyPath: 'Levels.Array.data[1]'
-      value: Race1
+      value: Collect2
       objectReference: {fileID: 0}
     - target: {fileID: 2854218134773533737, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
       propertyPath: 'Levels.Array.data[2]'
-      value: Survive1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2854218134773533737, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
-      propertyPath: 'Levels.Array.data[3]'
-      value: Collect4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2854218134773533737, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
-      propertyPath: 'Levels.Array.data[4]'
       value: Race1
       objectReference: {fileID: 0}
     - target: {fileID: 2854218134773533737, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
-      propertyPath: 'Levels.Array.data[5]'
+      propertyPath: 'Levels.Array.data[3]'
       value: Race2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854218134773533737, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
+      propertyPath: 'Levels.Array.data[4]'
+      value: Survive1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854218134773533737, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
+      propertyPath: 'Levels.Array.data[5]'
+      value: Survive2
       objectReference: {fileID: 0}
     - target: {fileID: 2854218134773533737, guid: a5194e3fbf8f77043a867e6e42835f35, type: 3}
       propertyPath: 'Levels.Array.data[6]'
@@ -5929,6 +5929,10 @@ PrefabInstance:
     - target: {fileID: 4313930044657436732, guid: 287aef23d6bdcad4eb37314a195f4c81, type: 3}
       propertyPath: m_Name
       value: MainCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758431118922368881, guid: 287aef23d6bdcad4eb37314a195f4c81, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.99920225
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
