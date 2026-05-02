@@ -1,0 +1,414 @@
+fileFormatVersion: 2
+guid: 094563818e4cd37429174bf832b47c0f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8932743213421909540
+    second: are_you_sure_0
+  - first:
+      213: -7201387531257524014
+    second: are_you_sure_1
+  - first:
+      213: 2464694884825135438
+    second: are_you_sure_2
+  - first:
+      213: 3496003758184179290
+    second: are_you_sure_3
+  - first:
+      213: 3263935091126181223
+    second: are_you_sure_4
+  - first:
+      213: 1012540654694746273
+    second: are_you_sure_5
+  - first:
+      213: -4204655569667300581
+    second: are_you_sure_6
+  - first:
+      213: -8624214208107546767
+    second: are_you_sure_7
+  - first:
+      213: -7908039740423473668
+    second: are_you_sure_8
+  - first:
+      213: -1541299360329288231
+    second: are_you_sure_9
+  - first:
+      213: 3317345552367714625
+    second: are_you_sure_10
+  - first:
+      213: -3688975674306754408
+    second: are_you_sure_11
+  - first:
+      213: 9074290283118032226
+    second: are_you_sure_12
+  - first:
+      213: -1145005452798317268
+    second: are_you_sure_13
+  - first:
+      213: 7193134383780159349
+    second: are_you_sure_14
+  - first:
+      213: -6089230688813058110
+    second: are_you_sure_15
+  - first:
+      213: 4099470918611686698
+    second: are_you_sure_16
+  - first:
+      213: 1387033256529144190
+    second: are_you_sure_17
+  - first:
+      213: -9078757983730961429
+    second: are_you_sure_18
+  - first:
+      213: -220681833439005128
+    second: are_you_sure_19
+  - first:
+      213: 7296738226361288334
+    second: are_you_sure_20
+  - first:
+      213: -757029412706444123
+    second: are_you_sure_21
+  - first:
+      213: 6588589558542579658
+    second: are_you_sure_22
+  - first:
+      213: -2633350108065085824
+    second: are_you_sure_23
+  - first:
+      213: 6463116906082379573
+    second: are_you_sure_24
+  - first:
+      213: -9141360675471461469
+    second: are_you_sure_25
+  - first:
+      213: -736165289723976098
+    second: are_you_sure_26
+  - first:
+      213: -557352195064061744
+    second: are_you_sure_27
+  - first:
+      213: 7963975948892548843
+    second: are_you_sure_28
+  - first:
+      213: -4327223883349478020
+    second: are_you_sure_29
+  - first:
+      213: 2551621719955938887
+    second: are_you_sure_30
+  - first:
+      213: -3611201153787036954
+    second: are_you_sure_31
+  - first:
+      213: 6418004208711838571
+    second: are_you_sure_32
+  - first:
+      213: 8710770610416331912
+    second: are_you_sure_33
+  - first:
+      213: 3156833278714662110
+    second: are_you_sure_34
+  - first:
+      213: 3571277000702183091
+    second: are_you_sure_35
+  - first:
+      213: -1083335359806593079
+    second: are_you_sure_36
+  - first:
+      213: 1799180578548094122
+    second: are_you_sure_37
+  - first:
+      213: 5615377066007853472
+    second: are_you_sure_38
+  - first:
+      213: -2660194506506680536
+    second: are_you_sure_39
+  - first:
+      213: -2777451932241279489
+    second: are_you_sure_40
+  - first:
+      213: -2401086099453249918
+    second: are_you_sure_41
+  - first:
+      213: 3208711699545276915
+    second: are_you_sure_42
+  - first:
+      213: -7642741460417298602
+    second: are_you_sure_43
+  - first:
+      213: -4957050880350093430
+    second: are_you_sure_44
+  - first:
+      213: 5602879324246818873
+    second: are_you_sure_45
+  - first:
+      213: -8572409242126612815
+    second: are_you_sure_46
+  - first:
+      213: 3507855341651998870
+    second: are_you_sure_47
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: are_you_sure_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 112
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd9a4360065880480800000000000000
+      internalID: -8932743213421909540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: are_you_sure_1
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 112
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d0d775e1388f0c90800000000000000
+      internalID: -7201387531257524014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: are_you_sure_2
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 112
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4979b170fa543220800000000000000
+      internalID: 2464694884825135438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: are_you_sure_3
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 112
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a56affb35ec448030800000000000000
+      internalID: 3496003758184179290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: are_you_sure_4
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 112
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76d128c1ca3db4d20800000000000000
+      internalID: 3263935091126181223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: are_you_sure_5
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 112
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a8c8bb5c544d0e00800000000000000
+      internalID: 1012540654694746273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6b8e1977e15c7d949841013144e893a2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":112.0,"y":28.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      are_you_sure_0: -8932743213421909540
+      are_you_sure_1: -7201387531257524014
+      are_you_sure_2: 2464694884825135438
+      are_you_sure_3: 3496003758184179290
+      are_you_sure_4: 3263935091126181223
+      are_you_sure_5: 1012540654694746273
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
